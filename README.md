@@ -26,4 +26,4 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Design System
 
-To view the design system go to [http://localhost:3000](http://localhost:3000/design)
+To view the design system go to [http://localhost:3000/design](http://localhost:3000/design)
