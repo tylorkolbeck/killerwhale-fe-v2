@@ -1,0 +1,11 @@
+.Testimonial {
+  max-width: 600px;
+}
+
+.cardDetails {
+  grid-template-columns: 1fr 1fr;
+}
+
+.strategyCard {
+  background: hsl(var(--clr-accent));
+}

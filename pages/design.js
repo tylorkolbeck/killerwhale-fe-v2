@@ -2,6 +2,7 @@
 import Button from '../components/Button/Button.component'
 import Link from '../components/Link/Link.component'
 import List from '../components/List/List.component'
+import Testimonial from '../components/Testimonial/Testimonial.component'
 
 function Styles() {
   return (
@@ -341,11 +342,23 @@ function Styles() {
           style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
         >
           <h4 className='fs-600 uppercase ff-good'>Props:</h4>
+          <p>description: string </p>
+          <p>strategy: string </p>
+          <p>startBal: string</p>
+          <p>profit: string</p>
+          <p>name: string</p>
+          <p>strategyCard: Component StrategyCard </p>
         </div>
         <div className='flex'>
           <div style={{ flexGrow: 1 }} className='flow'>
-            <p className='text-accent'>Testimonial</p>
-            <h4>Needs to be implemented</h4>
+            <p className='text-accent'>Testimonial Card</p>
+            <Testimonial
+              description='Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.'
+              strategy='Gain BTC'
+              startBal='$2,000 USD'
+              profit='$2,000 USD (100%)'
+              name='Fred Durst'
+            />
           </div>
         </div>
       </section>
