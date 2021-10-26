@@ -41,7 +41,7 @@ export default function CustomLink({
     )
   } else {
     return (
-      <Link href={linkTo}>
+      <Link href={linkTo} passHref>
         <a className={linkClasses}>{children}</a>
       </Link>
     )

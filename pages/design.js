@@ -1,5 +1,7 @@
+// Components
 import Button from '../components/Button/Button.component'
 import Link from '../components/Link/Link.component'
+import List from '../components/List/List.component'
 
 function Styles() {
   return (
@@ -178,16 +180,12 @@ function Styles() {
           style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
         >
           <h4 className='fs-600 uppercase ff-good'>Props:</h4>
-          <p className='text-accent'>fullWidth: true | false</p>
-          <p className='text-accent'>
-            type: cta | contained(default) | secondary
-          </p>
-          <p className='text-accent'>iconStart: IconComponent</p>
-          <p className='text-accent'>
-            iconEnd: IconComponent(default arrow for cta)
-          </p>
-          <p className='text-accent'>onClick: function</p>
-          <p className='text-accent'>children: any</p>
+          <p>fullWidth: true | false</p>
+          <p>type: cta | contained(default) | secondary</p>
+          <p>iconStart: IconComponent</p>
+          <p>iconEnd: IconComponent(default arrow for cta)</p>
+          <p>onClick: function</p>
+          <p>children: any</p>
         </div>
         <div className='flex'>
           <div style={{ flexGrow: 1 }} className='flow'>
@@ -230,12 +228,12 @@ function Styles() {
           style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
         >
           <h4 className='fs-600 uppercase ff-good'>Props:</h4>
-          <p className='text-accent'>type: nav | navSub | link(default) </p>
-          <p className='text-accent'>iconStart: IconComponent</p>
-          <p className='text-accent'>iconEnd: IconComponent</p>
-          <p className='text-accent'>linkTo: url</p>
-          <p className='text-accent'>children: string | ul</p>
-          <p className='text-accent'>active: boolean</p>
+          <p>type: nav | navSub | link(default) </p>
+          <p>iconStart: IconComponent</p>
+          <p>iconEnd: IconComponent</p>
+          <p>linkTo: url</p>
+          <p>children: string | ul</p>
+          <p>active: boolean</p>
         </div>
         <div className='flex'>
           <div style={{ flexGrow: 1 }} className='flow'>
@@ -277,8 +275,77 @@ function Styles() {
           <div style={{ flexGrow: 1 }} className='flow'>
             <p className='text-accent'>Inline Link</p>
             <div>
-              <Link linkTo='/design'>Click Me</Link>
+              <Link linkTo='/design'>
+                <p>Click Me</p>
+              </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* -- Lists -- */}
+      <section id='lists' style={{ margin: '4rem 0' }} className='flow'>
+        <h2 className='numbered-title'>
+          <span>05 </span>Lists
+        </h2>
+        <div
+          className='flow'
+          style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
+        >
+          <h4 className='fs-600 uppercase ff-good'>Props:</h4>
+          <p>children: ul</p>
+        </div>
+        <div className='flex'>
+          <div style={{ flexGrow: 1 }} className='flow'>
+            <p className='text-accent'>Unordered List</p>
+            <div>
+              <List items={['item 1', 'item 2', 'item 3', 'item 4']}></List>
+            </div>
+          </div>
+
+          <div style={{ flexGrow: 1 }} className='flow'>
+            <p className='text-accent'>Unordered List</p>
+            <div>
+              <h4>Needs to be implemented</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* -- Forms -- */}
+      <section id='forms' style={{ margin: '4rem 0' }} className='flow'>
+        <h2 className='numbered-title'>
+          <span>06 </span>Form Inputs
+        </h2>
+        <div
+          className='flow'
+          style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
+        >
+          <h4 className='fs-600 uppercase ff-good'>Props:</h4>
+        </div>
+        <div className='flex'>
+          <div style={{ flexGrow: 1 }} className='flow'>
+            <p className='text-accent'>Text Input</p>
+            <h4>Needs to be implemented</h4>
+          </div>
+        </div>
+      </section>
+
+      {/* -- Testimonial -- */}
+      <section id='testimonial' style={{ margin: '4rem 0' }} className='flow'>
+        <h2 className='numbered-title'>
+          <span>07 </span>Testimonial
+        </h2>
+        <div
+          className='flow'
+          style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
+        >
+          <h4 className='fs-600 uppercase ff-good'>Props:</h4>
+        </div>
+        <div className='flex'>
+          <div style={{ flexGrow: 1 }} className='flow'>
+            <p className='text-accent'>Testimonial</p>
+            <h4>Needs to be implemented</h4>
           </div>
         </div>
       </section>
