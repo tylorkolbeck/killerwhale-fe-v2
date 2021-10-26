@@ -1,0 +1,42 @@
+/* Custom properties */
+
+:root {
+  /* colors */
+  --clr-dark: 210 77% 10%;
+  --clr-light: 211 80% 16%;
+  --clr-white: 0 0% 100%;
+  --clr-accent: 203 29% 70%;
+  --clr-green: 167 79% 68%;
+}
+
+/* ---------- */
+/* Colors */
+/* ---------- */
+
+/* background color classes */
+.bg-dark {
+  background-color: hsl(var(--clr-dark));
+}
+.bg-light {
+  background-color: hsl(var(--clr-light));
+}
+.bg-green {
+  background-color: hsl(var(--clr-green));
+}
+
+/* text color classes */
+.text-dark {
+  color: hsl(var(--clr-dark));
+}
+.text-light {
+  color: hsl(var(--clr-light));
+}
+.text-white {
+  color: hsl(var(--clr-white));
+}
+.text-accent {
+  color: hsl(var(--clr-accent));
+}
+.text-green {
+  color: hsl(var(--clr-green));
+}

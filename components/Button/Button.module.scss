@@ -1,0 +1,46 @@
+.button {
+  background: transparent;
+  border-radius: 8px;
+  border: none;
+  color: hsl(var(--clr-white));
+  font-weight: bold;
+  padding: 0.25em 1em;
+  text-transform: uppercase;
+  transition: all 0.1s ease-in-out;
+
+  &.fullWidth {
+    display: block;
+    width: 100%;
+  }
+
+  & .icon {
+    margin-left: 0.5em;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: translateY(-0.1em);
+    box-shadow: 2px 2px 3px hsl(var(--clr-green) / 0.45);
+  }
+
+  &:focus {
+    // outline: 1px solid hsl(var(--clr-white));
+    outline: none;
+    background-color: hsl(var(--clr-green) / 0.5);
+  }
+}
+
+.cta,
+.contained {
+  background-color: hsl(var(--clr-green));
+}
+
+.cta {
+  border-radius: 20px;
+  padding: 0.4em 1.4em;
+}
+
+.outlined {
+  border: 2px solid hsl(var(--clr-green));
+}
