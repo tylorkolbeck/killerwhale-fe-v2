@@ -318,16 +318,21 @@ function Styles() {
         <h2 className='numbered-title'>
           <span>06 </span>Form Inputs
         </h2>
-        <div
+        {/* <div
           className='flow'
           style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
         >
           <h4 className='fs-600 uppercase ff-good'>Props:</h4>
-        </div>
+        </div> */}
         <div className='flex'>
           <div style={{ flexGrow: 1 }} className='flow'>
             <p className='text-accent'>Text Input</p>
-            <h4>Needs to be implemented</h4>
+            <div style={{ maxWidth: 300 }}>
+              <label htmlFor='input' className='grid'>
+                Input Label
+                <input type='text' name='input' placeholder='Placeholder...' />
+              </label>
+            </div>
           </div>
         </div>
       </section>

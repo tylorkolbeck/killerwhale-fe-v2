@@ -27,3 +27,13 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 ## Design System
 
 To view the design system go to [http://localhost:3000/design](http://localhost:3000/design)
+
+## Project Structure
+
+### Components
+
+A directory exsists to hold UI components. These components should contain very little logic. Props are passed to these components generally from "sections". The data passed from props is formatted and ready to be displayed as is when given to a component.
+
+### Sections
+
+Sections hold multiple components as well as the logic required to provide their child components with the data neccessary to render it. API calls and other data formatting logic will always be contained inside a section.

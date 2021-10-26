@@ -54,6 +54,10 @@ picture {
   display: block;
 }
 
+input:focus {
+  outline: none;
+}
+
 /* Forms reset styling */
 input,
 button,
