@@ -409,6 +409,44 @@ function Styles() {
           </div>
         </div>
       </section>
+
+      {/* -- Misc -- */}
+      <section id='misc' style={{ margin: '4rem 0' }} className='flow'>
+        <h2 className='numbered-title'>
+          <span>09 </span>Misc
+        </h2>
+
+        <div className='flex'>
+          <div style={{ flexGrow: 1 }} className='flow'>
+            <p className='text-accent'>Chips</p>
+            <div className='flex'>
+              <h4>Not Implemented</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Assets */}
+      <section id='product-card' style={{ margin: '4rem 0' }} className='flow'>
+        <h2 className='numbered-title'>
+          <span>10 </span>Assets
+        </h2>
+
+        <div className='flex'>
+          <div style={{ flexGrow: 1 }} className='flow'>
+            <p className='text-accent'>Logo</p>
+            <div className='flex'>
+              <h4>Not Implemented</h4>
+            </div>
+          </div>
+          <div style={{ flexGrow: 1 }} className='flow'>
+            <p className='text-accent'>Experience Level Chips</p>
+            <div className='flex'>
+              <h4>Not Implemented</h4>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

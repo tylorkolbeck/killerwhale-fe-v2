@@ -1,6 +1,7 @@
 .productCard {
   // background: hsl(var(--clr-light));
   max-width: 400px;
+  min-width: 300px;
   padding: 1rem;
   background: url("/images/bg_card.png");
   background-position: bottom center;
