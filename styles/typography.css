@@ -8,6 +8,7 @@
   --fs-400: 1.125rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
+  --fs-100: 0.575rem;
 
   /* font-families */
   --ff-good: good-times, sans-serif;
@@ -58,6 +59,10 @@
 }
 .fs-200 {
   font-size: var(--fs-200);
+}
+
+.fs-100 {
+  font-size: var(--fs-100);
 }
 
 .fs-900,

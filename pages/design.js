@@ -3,6 +3,7 @@ import Button from '../components/Button/Button.component'
 import Link from '../components/Link/Link.component'
 import List from '../components/List/List.component'
 import Testimonial from '../components/Testimonial/Testimonial.component'
+import ProductCard from '../components/ProductCard/ProductCard.component'
 
 function Styles() {
   return (
@@ -367,6 +368,42 @@ function Styles() {
                 startBal='$2,000 USD'
                 profit='$2,000 USD (100%)'
                 name='Fred Durst'
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* -- Product Card -- */}
+      <section id='product-card' style={{ margin: '4rem 0' }} className='flow'>
+        <h2 className='numbered-title'>
+          <span>08 </span>Product Card
+        </h2>
+        <div
+          className='flow'
+          style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
+        >
+          <h4 className='fs-600 uppercase ff-good'>Props:</h4>
+          <p>name: string</p>
+          <p>type: string</p>
+          <p>tradeDuration: num (0 | 50 | 100)</p>
+          <p>tradeFreq: num (0 | 50 | 100)</p>
+        </div>
+        <div className='flex'>
+          <div style={{ flexGrow: 1 }} className='flow'>
+            <p className='text-accent'>Product Card</p>
+            <div className='flex'>
+              <ProductCard
+                name='GAIN BTC '
+                type='strategy'
+                tradeDuration={0}
+                tradeFreq={50}
+              />
+              <ProductCard
+                name='GAIN BTC LONGER'
+                type='strategy'
+                tradeDuration={100}
+                tradeFreq={100}
               />
             </div>
           </div>
