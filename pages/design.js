@@ -357,13 +357,18 @@ function Styles() {
         <div className='flex'>
           <div style={{ flexGrow: 1 }} className='flow'>
             <p className='text-accent'>Testimonial Card</p>
-            <Testimonial
-              description='Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.'
-              strategy='Gain BTC'
-              startBal='$2,000 USD'
-              profit='$2,000 USD (100%)'
-              name='Fred Durst'
-            />
+            <div
+              className='bg-light'
+              style={{ padding: '1rem', maxWidth: 600, borderRadius: 4 }}
+            >
+              <Testimonial
+                description='Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.'
+                strategy='Gain BTC'
+                startBal='$2,000 USD'
+                profit='$2,000 USD (100%)'
+                name='Fred Durst'
+              />
+            </div>
           </div>
         </div>
       </section>

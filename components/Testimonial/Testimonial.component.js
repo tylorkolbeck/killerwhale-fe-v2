@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Testimonial.module.scss'
 import clsx from 'clsx'
+import Link from '../Link/Link.component'
 
 export default function Testimonial({
   description,
@@ -12,7 +13,7 @@ export default function Testimonial({
 }) {
   return (
     <div className={clsx('flow', styles.Testimonial)}>
-      <div>
+      <div className={styles.cardHeader}>
         <h4 className='fs-500 ff-good'> {name}</h4>
         <p className='text-accent'>{description}</p>
       </div>
@@ -31,7 +32,12 @@ export default function Testimonial({
           </div>
           <div>
             <p className='fs-200 uppercase letter-spacing-3'>Strategy Used</p>
-            <p className='text-green'>{strategy}</p>
+            <p className='text-accent'>
+              {strategy}
+              <span className={clsx('fs-200', styles.link)}>
+                <Link linkTo='/'>View</Link>
+              </span>
+            </p>
           </div>
         </div>
         <div className={styles.strategyCard}>Strategy Card</div>
