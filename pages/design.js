@@ -4,8 +4,6 @@ import Link from '../components/Link/Link.component'
 import List from '../components/List/List.component'
 import Testimonial from '../components/Testimonial/Testimonial.component'
 import ProductCard from '../components/ProductCard/ProductCard.component'
-import styles from './design-system.module.scss'
-import clsx from 'clsx'
 
 function Styles() {
   return (
@@ -390,7 +388,7 @@ function Styles() {
         <div className='flex'>
           <div style={{ flexGrow: 1 }} className='flow'>
             <p className='text-accent'>Product Card</p>
-            <div className={clsx('flex', styles.productCardContainer)}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
               <ProductCard
                 name='GAIN BTC '
                 type='strategy'
