@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
   return (
     <div className={styles.productCard}>
-      <div
+      {/* <div
         className={clsx(
           styles.logoName,
 
@@ -13,7 +13,7 @@ export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
         )}
       >
         KILLERWHALE
-      </div>
+      </div> */}
       <div className={styles.header}>
         <Image
           src='/images/kw_logo_accent.svg'
@@ -34,12 +34,15 @@ export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
         <div className={styles.statBox}>
           <p className={clsx('fs-200 ff-serif uppercase')}>Trade Duration</p>
           <div className={clsx(styles.bar)}>
-            {tradeDuration > 0 && (
-              <div
-                className={styles.progressBar}
-                style={{ width: tradeDuration + '%' }}
-              ></div>
-            )}
+            <div
+              className={styles.progressBar}
+              style={{
+                width:
+                  tradeDuration === 0
+                    ? tradeDuration + 20 + '%'
+                    : tradeDuration + '%'
+              }}
+            ></div>
           </div>
           <div className={clsx(styles.barLabels, 'fs-200')}>
             <p className='fs-100 uppercase'>low</p>
@@ -50,12 +53,12 @@ export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
         <div className={styles.statBox}>
           <p className={clsx('fs-200 ff-serif uppercase')}>Trade Frequency</p>
           <div className={clsx(styles.bar)}>
-            {tradeFreq > 0 && (
-              <div
-                className={styles.progressBar}
-                style={{ width: tradeFreq + '%' }}
-              ></div>
-            )}
+            <div
+              className={styles.progressBar}
+              style={{
+                width: tradeFreq === 0 ? tradeFreq + 20 + '%' : tradeFreq + '%'
+              }}
+            ></div>
           </div>
           <div className={clsx(styles.barLabels, 'fs-200')}>
             <p className='fs-100 uppercase'>low</p>

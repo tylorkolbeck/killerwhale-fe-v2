@@ -4,6 +4,8 @@ import Link from '../components/Link/Link.component'
 import List from '../components/List/List.component'
 import Testimonial from '../components/Testimonial/Testimonial.component'
 import ProductCard from '../components/ProductCard/ProductCard.component'
+import styles from './design-system.module.scss'
+import clsx from 'clsx'
 
 function Styles() {
   return (
@@ -86,37 +88,28 @@ function Styles() {
             style={{ flexBasis: '100%', '--flow-space': '4rem' }}
           >
             <div>
-              <p className='text-accent'>
-                Heading 1 - Bellefair Regular - 150px
-              </p>
+              <p className='text-accent'>Heading 1 - Good Times - 150px</p>
               <p className='fs-900 uppercase ff-good'>Earth</p>
             </div>
             <div>
-              <p className='text-accent'>
-                Heading 2 - Bellefair Regular - 100px
-              </p>
+              <p className='text-accent'>Heading 2 - Good Times - 100px</p>
               <p className='fs-800 uppercase ff-good'>Venus</p>
             </div>
             <div>
-              <p className='text-accent'>
-                Heading 3 - Bellefair Regular - 56px
-              </p>
+              <p className='text-accent'>Heading 3 - Good Times - 56px</p>
               <p className='fs-700 uppercase ff-good'>Jupiter & Saturn</p>
             </div>
             <div>
-              <p className='text-accent'>
-                Heading 4 - Bellefair Regular - 32px
-              </p>
+              <p className='text-accent'>Heading 4 - Good Times - 32px</p>
               <p className='fs-600 uppercase ff-good'>
                 Uranus, Neptune, & Pluto
               </p>
             </div>
             <div>
               <p className='text-accent'>
-                Heading 5 - Barlow Condensed Regular - 28px - 4.75 Character
-                Space
+                Heading 5 - Montserrat - 28px - 2.35px Character Space
               </p>
-              <p className='text-accent fs-500 uppercase ff-serif letter-spacing-1'>
+              <p className='text-accent fs-500 uppercase ff-serif letter-spacing-3'>
                 So, you want to travel to space
               </p>
             </div>
@@ -127,15 +120,12 @@ function Styles() {
             style={{ flexBasis: '100%', '--flow-space': '4rem' }}
           >
             <div>
-              <p className='text-accent'>
-                Subheading 1 - Bellefair Regular - 28px
-              </p>
+              <p className='text-accent'>Subheading 1 - Montserrat - 28px</p>
               <p className='fs-500 ff-serif uppercase'>384,400 km</p>
             </div>
             <div>
               <p className='text-accent'>
-                Subheading 2 - Barlow Condensed Regular - 14px - 2.35 Character
-                Space
+                Subheading 2 - Montserrat Regular - 14px - 2.35 Character Space
               </p>
               <p className='fs-200 uppercase ff-serif letter-spacing-3'>
                 Avg. Distance
@@ -143,14 +133,14 @@ function Styles() {
             </div>
             <div>
               <p className='text-accent'>
-                Nav Text - Barlow Condensed Regular - 16px - 2.7 Character Space
+                Nav Text - Montserrat Regular - 16px - 2.7 Character Space
               </p>
               <p className='fs-300 uppercase ff-serif letter-spacing-2'>
                 Europa
               </p>
             </div>
             <div>
-              <p className='text-accent'>Body Text</p>
+              <p className='text-accent'>Body Text - Montserrat - 18px </p>
               <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
@@ -368,6 +358,14 @@ function Styles() {
                 startBal='$2,000 USD'
                 profit='$2,000 USD (100%)'
                 name='Fred Durst'
+                strategyCard={
+                  <ProductCard
+                    name='GAIN BTC '
+                    type='strategy'
+                    tradeDuration={0}
+                    tradeFreq={50}
+                  />
+                }
               />
             </div>
           </div>
@@ -392,7 +390,7 @@ function Styles() {
         <div className='flex'>
           <div style={{ flexGrow: 1 }} className='flow'>
             <p className='text-accent'>Product Card</p>
-            <div className='flex'>
+            <div className={clsx('flex', styles.productCardContainer)}>
               <ProductCard
                 name='GAIN BTC '
                 type='strategy'
