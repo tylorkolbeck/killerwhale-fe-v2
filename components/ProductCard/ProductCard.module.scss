@@ -1,15 +1,12 @@
 .productCard {
-  // background: hsl(var(--clr-light));
   max-width: 400px;
   min-width: 300px;
   padding: 1rem;
   background: url("/images/bg_card.png");
   background-position: bottom center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px;
-  box-shadow: 3px 3px 4px rgba(107, 107, 107, 0.1);
-  border: 1px solid rgba(107, 107, 107, 0.2);
   position: relative;
   display: flex;
   flex-direction: column;

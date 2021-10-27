@@ -1,6 +1,7 @@
 import styles from './Button.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import clsx from 'clsx'
 
 export default function Button({
   type,
@@ -12,9 +13,16 @@ export default function Button({
 }) {
   const typeStyle = type ? styles[type] : styles.contained
 
-  const classes = [typeStyle, styles.button, fullWidth ? styles.fullWidth : '']
   return (
-    <button className={classes.join(' ')} onClick={onClick}>
+    <button
+      className={clsx(
+        typeStyle,
+        styles.button,
+        { [styles.fullWidth]: fullWidth },
+        'letter-spacing-3'
+      )}
+      onClick={onClick}
+    >
       {iconStart && iconStart} {children} {iconEnd && iconEnd}{' '}
       {type === 'cta' && (
         <span className={styles.icon}>

@@ -40,7 +40,7 @@ export default function Testimonial({
             </p>
           </div>
         </div>
-        <div className={styles.strategyCard}>Strategy Card</div>
+        <div className={styles.strategyCard}>{strategyCard}</div>
       </div>
     </div>
   )
