@@ -1,77 +1,77 @@
 // Components
-import Button from "../components/Button/Button.component";
-import Link from "../components/Link/Link.component";
-import List from "../components/List/List.component";
-import Testimonial from "../components/Testimonial/Testimonial.component";
-import ProductCard from "../components/ProductCard/ProductCard.component";
+import Button from '../components/Button/Button.component'
+import Link from '../components/Link/Link.component'
+import List from '../components/List/List.component'
+import Testimonial from '../components/Testimonial/Testimonial.component'
+import ProductCard from '../components/ProductCard/ProductCard.component'
 
 function Styles() {
   return (
     <div className="container">
-        <ul
-          style={{
-            listStyle: "none",
-            position: "fixed",
-            top: "150px",
-            left: "0px",
-          }}
-        >
-          <li>
-            <Link linkTo="#colors" type="nav">
-              01 Colors
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#typography" type="nav">
-              02 Typography
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#buttons" type="nav">
-              03 Buttons
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#links" type="nav">
-              04 Links
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#lists" type="nav">
-              05 Lists
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#forms" type="nav">
-              06 Form Inputs
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#testimonial" type="nav">
-              07 Testimonial
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#product-card" type="nav">
-              08 Product Card
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#misc" type="nav">
-              09 MISC
-            </Link>
-          </li>
-          <li>
-            <Link linkTo="#assets" type="nav">
-              10 Assets
-            </Link>
-          </li>
-        </ul>
+      <ul
+        style={{
+          listStyle: 'none',
+          position: 'fixed',
+          top: '150px',
+          left: '0px',
+        }}
+      >
+        <li>
+          <Link linkTo="#colors" type="nav">
+            01 Colors
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#typography" type="nav">
+            02 Typography
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#buttons" type="nav">
+            03 Buttons
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#links" type="nav">
+            04 Links
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#lists" type="nav">
+            05 Lists
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#forms" type="nav">
+            06 Form Inputs
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#testimonial" type="nav">
+            07 Testimonial
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#product-card" type="nav">
+            08 Product Card
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#misc" type="nav">
+            09 MISC
+          </Link>
+        </li>
+        <li>
+          <Link linkTo="#assets" type="nav">
+            10 Assets
+          </Link>
+        </li>
+      </ul>
       <div>
         <h1 className="ff-good">Design System</h1>
 
         {/* -- Colors -- */}
-        <section id="colors" style={{ margin: "4rem 0" }} className="flow">
+        <section id="colors" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>01</span> colors
           </h2>
@@ -81,8 +81,8 @@ function Styles() {
               <div
                 className="bg-dark"
                 style={{
-                  padding: "3rem 1rem 1rem",
-                  border: "1px solid #eeeeee92",
+                  padding: '3rem 1rem 1rem',
+                  border: '1px solid #eeeeee92',
                 }}
               >
                 #06101A
@@ -100,8 +100,8 @@ function Styles() {
               <div
                 className="bg-dark text-white bg-light"
                 style={{
-                  padding: "3rem 1rem 1rem",
-                  border: "1px solid #eeeeee92",
+                  padding: '3rem 1rem 1rem',
+                  border: '1px solid #eeeeee92',
                 }}
               >
                 #081829
@@ -119,8 +119,8 @@ function Styles() {
               <div
                 className="bg-dark text-white bg-green"
                 style={{
-                  padding: "3rem 1rem 1rem",
-                  border: "1px solid #eeeeee92",
+                  padding: '3rem 1rem 1rem',
+                  border: '1px solid #eeeeee92',
                 }}
               >
                 #24AE8F
@@ -136,14 +136,14 @@ function Styles() {
         </section>
 
         {/*  -- Typography -- */}
-        <section id="typography" style={{ margin: "4rem 0" }} className="flow">
+        <section id="typography" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>02 </span>Typography
           </h2>
           <div className="flex">
             <div
               className="flow"
-              style={{ flexBasis: "100%", "--flow-space": "4rem" }}
+              style={{ flexBasis: '100%', '--flow-space': '4rem' }}
             >
               <div>
                 <p className="text-accent">
@@ -184,7 +184,7 @@ function Styles() {
 
             <div
               className="flow"
-              style={{ flexBasis: "100%", "--flow-space": "4rem" }}
+              style={{ flexBasis: '100%', '--flow-space': '4rem' }}
             >
               <div>
                 <p className="text-accent">
@@ -227,7 +227,7 @@ function Styles() {
                   Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer
                   adipiscing elit. Phasellus hendrerit. Pellentesque aliquet
                   nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis
-                  vel, nisi.{" "}
+                  vel, nisi.{' '}
                 </p>
               </div>
             </div>
@@ -235,13 +235,13 @@ function Styles() {
         </section>
 
         {/* -- Buttons -- */}
-        <section id="buttons" style={{ margin: "4rem 0" }} className="flow">
+        <section id="buttons" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>03 </span>Buttons
           </h2>
           <div
             className="flow"
-            style={{ border: "1px solid #eeeeee92", padding: "1rem 1rem 1rem" }}
+            style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
           >
             <h4 className="fs-600 uppercase ff-good">Props:</h4>
             <p>fullWidth: true | false</p>
@@ -283,13 +283,13 @@ function Styles() {
         </section>
 
         {/* -- Links -- */}
-        <section id="links" style={{ margin: "4rem 0" }} className="flow">
+        <section id="links" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>04 </span>Links
           </h2>
           <div
             className="flow"
-            style={{ border: "1px solid #eeeeee92", padding: "1rem 1rem 1rem" }}
+            style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
           >
             <h4 className="fs-600 uppercase ff-good">Props:</h4>
             <p>type: nav | navSub | link(default) </p>
@@ -348,13 +348,13 @@ function Styles() {
         </section>
 
         {/* -- Lists -- */}
-        <section id="lists" style={{ margin: "4rem 0" }} className="flow">
+        <section id="lists" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>05 </span>Lists
           </h2>
           <div
             className="flow"
-            style={{ border: "1px solid #eeeeee92", padding: "1rem 1rem 1rem" }}
+            style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
           >
             <h4 className="fs-600 uppercase ff-good">Props:</h4>
             <p>children: ul</p>
@@ -363,7 +363,7 @@ function Styles() {
             <div style={{ flexGrow: 1 }} className="flow">
               <p className="text-accent">Unordered List</p>
               <div>
-                <List items={["item 1", "item 2", "item 3", "item 4"]}></List>
+                <List items={['item 1', 'item 2', 'item 3', 'item 4']}></List>
               </div>
             </div>
 
@@ -377,7 +377,7 @@ function Styles() {
         </section>
 
         {/* -- Forms -- */}
-        <section id="forms" style={{ margin: "4rem 0" }} className="flow">
+        <section id="forms" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>06 </span>Form Inputs
           </h2>
@@ -405,13 +405,13 @@ function Styles() {
         </section>
 
         {/* -- Testimonial -- */}
-        <section id="testimonial" style={{ margin: "4rem 0" }} className="flow">
+        <section id="testimonial" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>07 </span>Testimonial
           </h2>
           <div
             className="flow"
-            style={{ border: "1px solid #eeeeee92", padding: "1rem 1rem 1rem" }}
+            style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
           >
             <h4 className="fs-600 uppercase ff-good">Props:</h4>
             <p>description: string </p>
@@ -426,7 +426,7 @@ function Styles() {
               <p className="text-accent">Testimonial Card</p>
               <div
                 className="bg-light"
-                style={{ padding: "1rem", maxWidth: 600, borderRadius: 4 }}
+                style={{ padding: '1rem', maxWidth: 600, borderRadius: 4 }}
               >
                 <Testimonial
                   description="Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier."
@@ -443,7 +443,7 @@ function Styles() {
         {/* -- Product Card -- */}
         <section
           id="product-card"
-          style={{ margin: "4rem 0" }}
+          style={{ margin: '4rem 0' }}
           className="flow"
         >
           <h2 className="numbered-title">
@@ -451,7 +451,7 @@ function Styles() {
           </h2>
           <div
             className="flow"
-            style={{ border: "1px solid #eeeeee92", padding: "1rem 1rem 1rem" }}
+            style={{ border: '1px solid #eeeeee92', padding: '1rem 1rem 1rem' }}
           >
             <h4 className="fs-600 uppercase ff-good">Props:</h4>
             <p>name: string</p>
@@ -481,7 +481,7 @@ function Styles() {
         </section>
 
         {/* -- Misc -- */}
-        <section id="misc" style={{ margin: "4rem 0" }} className="flow">
+        <section id="misc" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>09 </span>Misc
           </h2>
@@ -497,7 +497,7 @@ function Styles() {
         </section>
 
         {/* Assets */}
-        <section id="assets" style={{ margin: "4rem 0" }} className="flow">
+        <section id="assets" style={{ margin: '4rem 0' }} className="flow">
           <h2 className="numbered-title">
             <span>10 </span>Assets
           </h2>
@@ -519,7 +519,7 @@ function Styles() {
         </section>
       </div>
     </div>
-  );
+  )
 }
 
-export default Styles;
+export default Styles
