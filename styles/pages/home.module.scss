@@ -1,0 +1,90 @@
+.infoContainer {
+  padding: 2rem;
+  border-radius: 6px;
+
+  & p:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+}
+
+.cLeft {
+  text-align: center;
+  ul {
+    margin-top: 4rem;
+    text-align: left;
+  }
+}
+
+.cRight {
+  margin-top: 4rem;
+}
+
+.divider {
+  display: inline-block;
+}
+
+.twoColumn {
+  display: grid;
+  // grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "left"
+    "right";
+
+  gap: 3rem;
+
+  .cLeft {
+    grid-area: left;
+
+    button {
+      margin-top: 3rem;
+    }
+  }
+
+  .cRight {
+    grid-area: right;
+  }
+}
+
+.experienceLevels {
+  & > div {
+    margin: 4rem 0;
+    width: 300px;
+  }
+}
+
+.infobar {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.productCards {
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+  .twoColumn {
+    grid-template-areas: "left right";
+
+    .cLeft {
+      margin-top: 1rem;
+      text-align: left;
+    }
+
+    .cRight {
+      margin-top: 0;
+    }
+  }
+
+  .experienceLevels {
+    display: flex;
+    & > div {
+      margin: 3rem 2rem;
+    }
+  }
+
+  .productCards {
+    grid-template-columns: 1fr 1fr;
+  }
+}

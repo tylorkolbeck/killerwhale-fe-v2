@@ -63,9 +63,11 @@ export default function Hero({ bgImage }) {
             <div className='grid'>
               <p>Daily news articles from Killer Whale Experts</p>
               <span className='fs-200'>
-                <Link linkTo='/'>
+                <Link
+                  linkTo='/'
+                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                >
                   Articles
-                  <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
               </span>
             </div>
@@ -82,9 +84,11 @@ export default function Hero({ bgImage }) {
             <div className='grid'>
               <p>A large Killer Whale Community!</p>
               <span className='fs-200'>
-                <Link linkTo='/'>
+                <Link
+                  linkTo='/'
+                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                >
                   Discord
-                  <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
               </span>
             </div>

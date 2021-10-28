@@ -1,6 +1,17 @@
+import styles from '../styles/pages/home.module.scss'
 import Head from 'next/head'
 import HomepageHero from '../sections/HomepageHero/HomepageHero.component'
 import TradeScroller from '../sections/TradeScroller/TradeScroller.component'
+import Divider from '../components/Divider/Divider.component'
+import List from '../components/List/List.component'
+import Link from '../components/Link/Link.component'
+import Image from 'next/image'
+import clsx from 'clsx'
+import Button from '../components/Button/Button.component'
+import ProductCard from '../components/ProductCard/ProductCard.component'
+import Testimonial from '../components/Testimonial/Testimonial.component'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   return (
@@ -12,6 +23,268 @@ export default function Home() {
       </Head>
       <HomepageHero bgImage='/images/background_1.png' />
       <TradeScroller />
+
+      <section className='section bg-light'>
+        <div className={clsx('container', styles.twoColumn)}>
+          <div className={clsx('flow', styles.cLeft)}>
+            <h3
+              className={clsx('fs-600 uppercase ff-good', styles.centerOnSmall)}
+              style={{ maxWidth: '500px' }}
+            >
+              Why Killer Whale Crypto
+            </h3>
+            <div className={styles.divider}>
+              <Divider width='200px' />
+            </div>
+            <p className={clsx('text-accent', styles.centerOnSmall)}>
+              Take the emotion out of your trading and maximize your profits,
+              with our automated strategies, hand picked premium and elite
+              signals, sent via our experienced traders.
+            </p>
+            <List
+              items={[
+                'All Skill Levels',
+                'Trade While You Sleep',
+                'Advanced AI',
+                'Large Community'
+              ]}
+            ></List>
+            <Button type='cta'>About Us</Button>
+          </div>
+
+          <div
+            className={clsx(
+              'bg-green flow',
+              styles.infoContainer,
+              styles.cRight
+            )}
+          >
+            <h4 className='fs-500 fw-bold'>All Skill Levels</h4>
+            <p>
+              Killer Whale Signals and strategies have been designed for all
+              levels of traders, if you’re new to Crypto or an experienced
+              HODL’R we have strategies and signals for every experience level.{' '}
+            </p>
+
+            <h4 className='fs-500 fw-bold'>Trade While You Sleep</h4>
+            <p>
+              Never miss a dip in the market, a pump, or an all time high.
+              Killer Whale monitors all of your favorite currencies 24/7. Our
+              Advanced AI picks the right time to buy and sell to ensure the
+              best return aligned to your investment strategy, without the need
+              to worry about the next bear or bull market.
+            </p>
+
+            <h4 className='fs-500 fw-bold'>Advanced AI</h4>
+            <p>
+              Our Team of experienced traders use advanced AI to watch the
+              market and then executing with precision the best trades on up to
+              75 different coins, giving our users the best exposure to multiple
+              cryptocurrencies whilst ensuring the best returns possible. Join
+              our pod and swim with the whales.{' '}
+            </p>
+          </div>
+          <div></div>
+        </div>
+      </section>
+      <section className='section'>
+        <div className='container center flow' style={{ maxWidth: '600px' }}>
+          <h3 className={clsx('fs-600 uppercase ff-good')}>
+            What Type Of Trader are you?
+          </h3>
+          <div className={styles.divider}>
+            <Divider width='200px' />
+          </div>
+          <p className='text-accent mb-2'>
+            Not sure where to get started? Don’t worry, we have you covered. We
+            have strategies and templates picked out to best match your trading
+            style.
+          </p>
+        </div>
+
+        <div className='container grid center'>
+          <div className={styles.experienceLevels}>
+            <div className='flow'>
+              <div>
+                <Image
+                  src='/images/badges/badge_fish.svg'
+                  height='100'
+                  width='100'
+                  layout='fixed'
+                  alt='Fish Badge'
+                />
+              </div>
+              <h5 className='fs-400 fw-bold uppercase'>New To Trading</h5>
+              <p className='text-accent'>
+                Your first step to gain access to our top rated strategies. Your
+                first step to gain access to our top rated strategies.
+              </p>
+              <div>
+                <Link
+                  linkTo='/'
+                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+
+            <div className='flow'>
+              <Image
+                src='/images/badges/badge_dolphin.svg'
+                height='100'
+                width='100'
+                layout='fixed'
+                alt='Dolphin Badge'
+              />
+              <h5 className='fs-400 fw-bold uppercase'>Experienced</h5>
+              <p className='text-accent'>
+                Your first step to gain access to our top rated strategies. Your
+                first step to gain access to our top rated strategies.
+              </p>
+              <div>
+                <Link
+                  linkTo='/'
+                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+            <div className='flow'>
+              <Image
+                src='/images/badges/badge_whale.svg'
+                height='100'
+                width='100'
+                layout='fixed'
+                alt='Whale Badge'
+              />
+              <h5 className='fs-400 fw-bold uppercase'>Killer Whale</h5>
+              <p className='text-accent'>
+                Your first step to gain access to our top rated strategies. Your
+                first step to gain access to our top rated strategies.
+              </p>
+              <div>
+                <Link
+                  linkTo='/'
+                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={clsx('bg-green', styles.infobar)}>
+        <h4 className='fs-500'>Are you ready to join the Killer Whale Pod?</h4>
+        <div className='mt-1'>
+          <Button type='ctaInverted' inverted>
+            Getting Started
+          </Button>
+        </div>
+      </section>
+
+      <section className='section bg-light'>
+        <div className={clsx('container', styles.twoColumn)}>
+          <div className={clsx('flow', styles.cLeft)}>
+            <h3
+              className={clsx('fs-600 uppercase ff-good', styles.centerOnSmall)}
+              style={{ maxWidth: '500px' }}
+            >
+              Our Hand Picked Strategies & Signals
+            </h3>
+            <div className={styles.divider}>
+              <Divider width='200px' />
+            </div>
+            <p className={clsx('text-accent', styles.centerOnSmall)}>
+              Never miss a dip in the market, a pump, or an all time high.
+              Killer Whale monitors all of your favorite currencies 24/7. Our
+            </p>
+            <Button type='cta'>View All Products</Button>
+          </div>
+
+          <div
+            className={clsx(styles.productCards, styles.cRight)}
+            style={{
+              padding: '1rem',
+              borderRadius: 6
+            }}
+          >
+            <ProductCard
+              name='GAIN BTC '
+              type='strategy'
+              tradeDuration={0}
+              tradeFreq={50}
+            />
+            <ProductCard
+              name='GAIN BTC LONGER'
+              type='strategy'
+              tradeDuration={100}
+              tradeFreq={100}
+            />
+            <ProductCard
+              name='GAIN BTC '
+              type='strategy'
+              tradeDuration={0}
+              tradeFreq={50}
+            />
+            <ProductCard
+              name='GAIN BTC LONGER'
+              type='strategy'
+              tradeDuration={100}
+              tradeFreq={100}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className='section bg-dark'>
+        <div className={clsx('container', styles.twoColumn)}>
+          <div className={clsx('flow', styles.cLeft)}>
+            <h3
+              className={clsx('fs-600 uppercase ff-good', styles.centerOnSmall)}
+              style={{ maxWidth: '500px' }}
+            >
+              Killer Whale Pod Results
+            </h3>
+            <div className={styles.divider}>
+              <Divider width='200px' />
+            </div>
+            <p className={clsx('text-accent', styles.centerOnSmall)}>
+              These results are taken live from CryptoHopper, and showcase trade
+              profitability of Killer Whale Strategies & Signals. These results
+              can be verified in our Discord community
+            </p>
+            <Button type='cta'>View All Products</Button>
+          </div>
+
+          <div
+            className={clsx(styles.cRight, 'bg-light')}
+            style={{
+              padding: '2rem',
+              borderRadius: 6
+            }}
+          >
+            <Testimonial
+              description='Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.'
+              strategy='Gain BTC'
+              startBal='$2,000 USD'
+              profit='$2,000 USD (100%)'
+              name='Fred Durst'
+              strategyCard={
+                <ProductCard
+                  name='GAIN BTC '
+                  type='strategy'
+                  tradeDuration={0}
+                  tradeFreq={50}
+                />
+              }
+            />
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
