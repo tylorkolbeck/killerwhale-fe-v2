@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import HomepageHero from '../sections/HomepageHero/HomepageHero.component'
+import TradeScroller from '../sections/TradeScroller/TradeScroller.component'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HomepageHero bgImage='/images/background_1.png' />
+      <TradeScroller />
     </div>
   )
 }
