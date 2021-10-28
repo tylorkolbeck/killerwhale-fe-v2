@@ -8,6 +8,46 @@ import ProductCard from '../components/ProductCard/ProductCard.component'
 function Styles() {
   return (
     <div className='container'>
+      <ul
+        style={{
+          position: 'fixed',
+          top: '150px',
+          left: '30px',
+          listStyle: 'none'
+        }}
+      >
+        <li>
+          <Link type='nav' linkTo='#colors'>01 Colors</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#typography'>02 Typography</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#buttons'>03 Buttons</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#links'>04 Links</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#lists'>05 Lists</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#forms'>06 Form Inputs</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#testimonial'>07 Testimonial</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#product-card'>08 Product Card</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#misc'>09 Misc</Link>
+        </li>
+        <li>
+          <Link type='nav' linkTo='#assets'>10 Assets</Link>
+        </li>
+      </ul>
+
       <h1 className='ff-good'>Design System</h1>
 
       {/* -- Colors -- */}
@@ -423,7 +463,7 @@ function Styles() {
       </section>
 
       {/* Assets */}
-      <section id='product-card' style={{ margin: '4rem 0' }} className='flow'>
+      <section id='assets' style={{ margin: '4rem 0' }} className='flow'>
         <h2 className='numbered-title'>
           <span>10 </span>Assets
         </h2>

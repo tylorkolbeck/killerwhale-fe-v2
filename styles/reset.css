@@ -2,6 +2,10 @@
 /* CSS Reset File */
 /* -------------- */
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Box sizing */
 *,
 *::after,
