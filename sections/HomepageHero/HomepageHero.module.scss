@@ -1,0 +1,74 @@
+.hero {
+  width: 100%;
+  min-height: 90vh; // account for navbar height of 10vh
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
+.heroSection {
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    "herotext"
+    "infocards";
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 10vh;
+}
+
+.heroText {
+  grid-area: herotext;
+  text-align: center;
+
+  & p {
+    margin-top: 2rem;
+  }
+}
+
+.divider {
+  display: inline-block;
+}
+
+.infoCardWrapper {
+  grid-area: infocards;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 900px) {
+  .heroSection {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "herotext herotext infocards";
+    grid-template-rows: auto;
+
+    .heroText {
+      text-align: left;
+      max-width: 600px;
+      align-self: flex-end;
+
+      & h2 {
+        margin-top: 0.25rem;
+        font-size: var(--fs-700);
+      }
+    }
+
+    .infoCardWrapper {
+      margin-top: 0;
+    }
+    // background: red;
+  }
+}
+
+// xs, extra-small: 0px
+// sm, small: 600px
+// md, medium: 900px
+// lg, large: 1200px
+// xl, extra-large: 1536px

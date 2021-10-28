@@ -1,0 +1,16 @@
+.statsBar {
+  background: hsl(var(--clr-dark) / 0.55);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin-top: 5rem;
+
+  & > div {
+    margin: 0 3rem;
+  }
+
+  .stat {
+    font-size: var(--fs-700);
+  }
+}
