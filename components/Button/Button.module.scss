@@ -44,3 +44,8 @@
 .outlined {
   border: 2px solid hsl(var(--clr-green));
 }
+
+.ctaInverted {
+  background-color: white !important;
+  color: hsl(var(--clr-green)) !important;
+}

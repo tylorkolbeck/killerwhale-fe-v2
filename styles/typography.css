@@ -71,3 +71,7 @@
 .fs-600 {
   line-height: 1.1;
 }
+
+.fw-bold {
+  font-weight: bold;
+}

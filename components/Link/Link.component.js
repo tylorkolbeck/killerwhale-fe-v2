@@ -11,7 +11,8 @@ export default function CustomLink({
   iconEnd,
   linkTo,
   children,
-  active
+  active,
+  className
 }) {
   const [dropdownVisible, setDropdownVisible] = useState(false)
   const navClasses = `fs-200 uppercase ff-serif letter-spacing-2 ${active}`

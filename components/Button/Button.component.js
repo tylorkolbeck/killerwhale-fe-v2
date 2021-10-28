@@ -9,7 +9,8 @@ export default function Button({
   onClick,
   iconStart,
   iconEnd,
-  fullWidth
+  fullWidth,
+  inverted
 }) {
   const typeStyle = type ? styles[type] : styles.contained
 
@@ -18,13 +19,13 @@ export default function Button({
       className={clsx(
         typeStyle,
         styles.button,
-        { [styles.fullWidth]: fullWidth },
+        { [styles.fullWidth]: fullWidth, inverted: inverted },
         'letter-spacing-3'
       )}
       onClick={onClick}
     >
       {iconStart && iconStart} {children} {iconEnd && iconEnd}{' '}
-      {type === 'cta' && (
+      {(type === 'cta' || type === 'ctaInverted') && (
         <span className={styles.icon}>
           <FontAwesomeIcon icon={faArrowRight} />
         </span>

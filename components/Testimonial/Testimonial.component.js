@@ -14,7 +14,7 @@ export default function Testimonial({
   return (
     <div className={clsx('flow', styles.Testimonial)}>
       <div className={styles.cardHeader}>
-        <h4 className='fs-500 ff-good'> {name}</h4>
+        <h4 className='fs-500'> {name}</h4>
         <p className='text-accent'>{description}</p>
       </div>
 
