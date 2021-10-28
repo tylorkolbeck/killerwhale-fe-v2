@@ -14,7 +14,7 @@ export default function CustomLink({
   active
 }) {
   const [dropdownVisible, setDropdownVisible] = useState(false)
-  const navClasses = `fs-300 uppercase ff-serif letter-spacing-2 ${active}`
+  const navClasses = `fs-200 uppercase ff-serif letter-spacing-2 ${active}`
 
   const linkClasses = [
     type ? styles[type] : styles.link,
@@ -42,7 +42,10 @@ export default function CustomLink({
   } else {
     return (
       <Link href={linkTo} passHref>
-        <a className={linkClasses}>{children}</a>
+        <a className={linkClasses}>
+          {children}{' '}
+          {iconEnd && <span className={styles.iconEnd}>{iconEnd}</span>}
+        </a>
       </Link>
     )
   }

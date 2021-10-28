@@ -1,0 +1,44 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  max-width: 90rem;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+
+.logoContainer {
+  width: auto;
+  height: 40px;
+  width: 75px;
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+}
+
+.navLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  & li {
+    margin-right: 20px;
+
+    & a {
+      font-size: var(--fs-200);
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .navLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

@@ -1,0 +1,9 @@
+.infoCard {
+  background-color: hsl(var(--clr-dark));
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  max-width: 300px;
+  align-items: center;
+  gap: 2rem;
+}

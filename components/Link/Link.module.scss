@@ -42,12 +42,17 @@
 
 .dropdownWrapper {
   display: inline-block;
+  position: relative;
 }
 
 .subLinks {
   background: hsl(var(--clr-light));
-  border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 2px 2px;
   padding: 0.5rem;
+  position: absolute;
+  top: 30px;
+  font-size: var(--fs-200);
+  width: 100%;
   & ul {
     margin: 0;
     padding: 0;
