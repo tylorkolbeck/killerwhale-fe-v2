@@ -1,0 +1,62 @@
+.footer {
+  & h4 {
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+  }
+
+  a {
+    color: hsl(var(--clr-accent) / 0.7) !important;
+  }
+}
+
+.subLinks {
+  margin-left: 1rem;
+}
+
+.linkWrapper {
+  display: grid;
+}
+
+.col {
+  display: grid;
+  gap: 1rem;
+}
+
+.partnersWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.linkCategory {
+  display: grid;
+  gap: 0.5rem;
+  align-content: flex-start;
+}
+
+.socialWrapper {
+  display: grid;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    & > p {
+      width: 35px;
+    }
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .footer {
+    & h4 {
+      margin-top: 3rem;
+    }
+  }
+}

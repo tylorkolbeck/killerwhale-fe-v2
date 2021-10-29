@@ -76,8 +76,12 @@
   }
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 .section {
-  padding: 6rem 0;
+  padding: 5rem 2rem;
 }
 
 input[type="text"] {

@@ -17,8 +17,31 @@ export default function Testimonial({
         <h4 className='fs-500'> {name}</h4>
         <p className='text-accent'>{description}</p>
       </div>
+      <div className='flex'>
+        <div>
+          <p className='fs-200 uppercase letter-spacing-3 text-accent'>
+            Starting Balance
+          </p>
+          <p className='text-green'>{startBal}</p>
+        </div>
+        <div>
+          <p className='fs-200 uppercase letter-spacing-3 text-accent'>
+            Profit
+          </p>
+          <p className='text-green'>{profit}</p>
+        </div>
+        {/* <div>
+          <p className='fs-200 uppercase letter-spacing-3'>Used</p>
+          <p className='text-accent'>
+            {strategy}
+            <span className={clsx('fs-200', styles.link)}>
+              <Link linkTo='/'>View</Link>
+            </span>
+          </p>
+        </div> */}
+      </div>
 
-      <div className={clsx('grid', styles.cardDetails)}>
+      {/* <div className={clsx('grid', styles.cardDetails)}>
         <div className='flow'>
           <div>
             <p className='fs-200 uppercase letter-spacing-3'>
@@ -40,8 +63,8 @@ export default function Testimonial({
             </p>
           </div>
         </div>
-        <div className={styles.strategyCard}>{strategyCard}</div>
-      </div>
+      </div> */}
+      <div className={styles.strategyCard}>{strategyCard}</div>
     </div>
   )
 }
