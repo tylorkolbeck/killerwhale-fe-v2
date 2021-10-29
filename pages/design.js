@@ -11,7 +11,7 @@ function Styles() {
       className='container'
       style={{
         display: 'grid',
-        gridTemplateColumns: '10% 90%',
+        gridTemplateColumns: 'max-content 90%'
       }}
     >
       <div>
@@ -21,7 +21,7 @@ function Styles() {
             left: '0px',
             top: '150px',
             listStyle: 'none'
-           }}
+          }}
         >
           <li>
             <Link type='nav' linkTo='#colors'>
@@ -79,7 +79,7 @@ function Styles() {
         <h1 className='ff-good'>Design System</h1>
 
         {/* -- Colors -- */}
-        <section id='colors' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='colors' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>01</span> colors
           </h2>
@@ -144,7 +144,7 @@ function Styles() {
         </section>
 
         {/*  -- Typography -- */}
-        <section id='typography' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='typography' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>02 </span>Typography
           </h2>
@@ -191,7 +191,8 @@ function Styles() {
               </div>
               <div>
                 <p className='text-accent'>
-                  Subheading 2 - Montserrat Regular - 14px - 2.35 Character Space
+                  Subheading 2 - Montserrat Regular - 14px - 2.35 Character
+                  Space
                 </p>
                 <p className='fs-200 uppercase ff-serif letter-spacing-3'>
                   Avg. Distance
@@ -230,7 +231,7 @@ function Styles() {
         </section>
 
         {/* -- Buttons -- */}
-        <section id='buttons' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='buttons' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>03 </span>Buttons
           </h2>
@@ -278,7 +279,7 @@ function Styles() {
         </section>
 
         {/* -- Links -- */}
-        <section id='links' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='links' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>04 </span>Links
           </h2>
@@ -343,7 +344,7 @@ function Styles() {
         </section>
 
         {/* -- Lists -- */}
-        <section id='lists' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='lists' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>05 </span>Lists
           </h2>
@@ -372,7 +373,7 @@ function Styles() {
         </section>
 
         {/* -- Forms -- */}
-        <section id='forms' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='forms' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>06 </span>Form Inputs
           </h2>
@@ -400,7 +401,7 @@ function Styles() {
         </section>
 
         {/* -- Testimonial -- */}
-        <section id='testimonial' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='testimonial' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>07 </span>Testimonial
           </h2>
@@ -446,7 +447,7 @@ function Styles() {
         {/* -- Product Card -- */}
         <section
           id='product-card'
-          style={{ margin: '4rem 0' }}
+          style={{ margin: '6rem 0' }}
           className='flow'
         >
           <h2 className='numbered-title'>
@@ -484,7 +485,7 @@ function Styles() {
         </section>
 
         {/* -- Misc -- */}
-        <section id='misc' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='misc' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>09 </span>Misc
           </h2>
@@ -500,7 +501,7 @@ function Styles() {
         </section>
 
         {/* Assets */}
-        <section id='assets' style={{ margin: '4rem 0' }} className='flow'>
+        <section id='assets' style={{ margin: '6rem 0' }} className='flow'>
           <h2 className='numbered-title'>
             <span>10 </span>Assets
           </h2>

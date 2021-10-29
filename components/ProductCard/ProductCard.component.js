@@ -5,15 +5,11 @@ import Image from 'next/image'
 export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
   return (
     <div className={styles.productCard}>
-      {/* <div
-        className={clsx(
-          styles.logoName,
-
-          'fs-400 letter-spacing-2'
-        )}
-      >
-        KILLERWHALE
-      </div> */}
+      <div className={clsx(styles.badges)}>
+        <Image src='/images/badges/badge_dolphin.svg' height='30' width='30' />
+        <Image src='/images/badges/badge_fish.svg' height='30' width='30' />
+        <Image src='/images/badges/badge_whale.svg' height='30' width='30' />
+      </div>
       <div className={styles.header}>
         <Image
           src='/images/kw_logo_accent.svg'

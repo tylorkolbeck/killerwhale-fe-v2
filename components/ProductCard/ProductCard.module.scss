@@ -1,6 +1,5 @@
 .productCard {
-  max-width: 100%;
-  // min-width: 300px;
+  max-width: 350px;
   padding: 1rem;
   background: url("/images/bg_card.png");
   background-position: bottom center;
@@ -12,13 +11,13 @@
   flex-direction: column;
   border: 6px solid hsl(var(--clr-accent));
 
-  .logoName {
+  .badges {
     position: absolute;
     right: 10px;
-    top: 0px;
-    transform: rotate(-90deg);
-    transform-origin: 100% 100%;
-    color: hsl(var(--clr-accent) / 0.55);
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .header {
