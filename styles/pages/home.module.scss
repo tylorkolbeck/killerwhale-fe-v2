@@ -30,6 +30,8 @@
     "left"
     "right";
 
+  justify-content: center;
+
   gap: 3rem;
 
   .cLeft {
@@ -48,7 +50,7 @@
 .experienceLevels {
   & > div {
     margin: 4rem 0;
-    width: 300px;
+    max-width: 300px;
   }
 }
 
@@ -61,6 +63,16 @@
   display: grid;
   gap: 2rem;
   justify-content: center;
+  grid-template-columns: 1fr;
+}
+
+.centerOnSmall {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.signUpSection {
+  background: hsl(var(--clr-light));
 }
 
 @media screen and (min-width: 900px) {
@@ -84,6 +96,13 @@
     }
   }
 
+  .centerOnSmall {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .productCards {
     grid-template-columns: 1fr 1fr;
   }

@@ -10,6 +10,7 @@ import clsx from 'clsx'
 import Button from '../components/Button/Button.component'
 import ProductCard from '../components/ProductCard/ProductCard.component'
 import Testimonial from '../components/Testimonial/Testimonial.component'
+import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -177,7 +178,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={clsx('bg-green', styles.infobar)}>
+      <section className={clsx('section bg-green', styles.infobar)}>
         <h4 className='fs-500'>Are you ready to join the Killer Whale Pod?</h4>
         <div className='mt-1'>
           <Button type='ctaInverted' inverted>
@@ -198,20 +199,14 @@ export default function Home() {
             <div className={styles.divider}>
               <Divider width='200px' />
             </div>
-            <p className={clsx('text-accent', styles.centerOnSmall)}>
+            <p className={clsx('text-accent')}>
               Never miss a dip in the market, a pump, or an all time high.
               Killer Whale monitors all of your favorite currencies 24/7. Our
             </p>
             <Button type='cta'>View All Products</Button>
           </div>
 
-          <div
-            className={clsx(styles.productCards, styles.cRight)}
-            style={{
-              padding: '1rem',
-              borderRadius: 6
-            }}
-          >
+          <div className={clsx(styles.productCards, styles.cRight)}>
             <ProductCard
               name='GAIN BTC '
               type='strategy'
@@ -231,10 +226,10 @@ export default function Home() {
               tradeFreq={50}
             />
             <ProductCard
-              name='GAIN BTC LONGER'
+              name='GAIN BTC '
               type='strategy'
-              tradeDuration={100}
-              tradeFreq={100}
+              tradeDuration={0}
+              tradeFreq={50}
             />
           </div>
         </div>
@@ -252,7 +247,7 @@ export default function Home() {
             <div className={styles.divider}>
               <Divider width='200px' />
             </div>
-            <p className={clsx('text-accent', styles.centerOnSmall)}>
+            <p className={clsx('text-accent')}>
               These results are taken live from CryptoHopper, and showcase trade
               profitability of Killer Whale Strategies & Signals. These results
               can be verified in our Discord community
@@ -283,6 +278,12 @@ export default function Home() {
               }
             />
           </div>
+        </div>
+      </section>
+
+      <section className={clsx('section', styles.signUpSection)}>
+        <div className='container'>
+          <NewsLetterSignup />
         </div>
       </section>
     </div>

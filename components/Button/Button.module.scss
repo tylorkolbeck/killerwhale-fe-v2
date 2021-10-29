@@ -49,3 +49,9 @@
   background-color: white !important;
   color: hsl(var(--clr-green)) !important;
 }
+
+@media screen and (max-width: 400px) {
+  .button {
+    font-size: 16px;
+  }
+}
