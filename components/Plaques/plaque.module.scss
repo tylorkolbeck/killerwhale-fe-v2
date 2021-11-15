@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 2fr 2fr;
+  margin: 2rem;
+  max-width: 80vw;
+}
+
+.formGrid {
+  display: grid;
+  grid-column: 2/3;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem;
+}
+
+.productGrid {
+  display: grid;
+  grid-column: 3/3;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem;
+}
+
+.label {
+  padding: 1rem;
+}
+
+.input {
+  margin: 0.5rem;
+}
+
+.cardInput {
+  margin: 0.5rem;
+  max-width: 70px;
+}
