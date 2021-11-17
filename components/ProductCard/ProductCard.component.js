@@ -2,28 +2,34 @@ import clsx from 'clsx'
 import styles from './ProductCard.module.scss'
 import Image from 'next/image'
 
-export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
+export default function ProductCard({ name, type, tradeDuration, tradeFreq, newLevel, experiencedLevel, whaleLevel }) {
   return (
     <div className={styles.productCard}>
       <div className={clsx(styles.badges)}>
-        <Image
-          src='/images/badges/badge_dolphin.svg'
-          height='30'
-          width='30'
-          alt='Dolphin'
-        />
-        <Image
-          src='/images/badges/badge_fish.svg'
-          height='30'
-          width='30'
-          alt='Fish'
-        />
-        <Image
-          src='/images/badges/badge_whale.svg'
-          height='30'
-          width='30'
-          alt='Whale'
-        />
+        <div style={{ display: newLevel ? "block" : "none"}} >
+          <Image
+            src='/images/badges/badge_dolphin.svg'
+            height='30'
+            width='30'
+            alt='Dolphin'
+          />
+        </div>
+        <div style={{ display: experiencedLevel ? "block" : "none"}} >
+          <Image
+            src='/images/badges/badge_fish.svg'
+            height='30'
+            width='30'
+            alt='Fish'
+          />
+        </div>
+        <div style={{ display: whaleLevel ? "block" : "none"}} >
+          <Image
+            src='/images/badges/badge_whale.svg'
+            height='30'
+            width='30'
+            alt='Whale'
+          />
+        </div>
       </div>
       <div className={styles.header}>
         <Image

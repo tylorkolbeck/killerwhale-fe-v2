@@ -8,6 +8,9 @@ const Plaque = () => {
   const [productType, setProductType] = useState('')
   const [tradeDuration, setTradeDuration] = useState('')
   const [tradeFrequency, setTradeFrequency] = useState('')
+  const [expLevelNew, setExpLevelNew] = useState(false)
+  const [expLevelExperienced, setExpLevelExperienced] = useState(false)
+  const [expLevelWhale, setExpLevelWhale] = useState(false)
 
   const nameChangeHandler = (event) => {
     setProductName(event.target.value)
@@ -20,6 +23,15 @@ const Plaque = () => {
   }
   const tradeFrequencyChangeHandler = (event) => {
     setTradeFrequency(event.target.value)
+  }
+  const expLevelNewHandler = () => {
+    setExpLevelNew(!expLevelNew)
+  }
+  const expLevelExperiencedHandler = () => {
+    setExpLevelExperienced(!expLevelExperienced)
+  }
+  const expLevelWhaleHandler = () => {
+    setExpLevelWhale(!expLevelWhale)
   }
 
   return (
@@ -71,15 +83,15 @@ const Plaque = () => {
         </label>
         <label className={styles.label}>
           New
-          <input type='checkbox' value='new' />
+          <input type='checkbox' value='new' checked={expLevelNew} onChange={expLevelNewHandler} />
         </label>
         <label className={styles.label}>
           Experienced
-          <input type='checkbox' value='experienced' />
+          <input type='checkbox' value='experienced' checked={expLevelExperienced} onChange={expLevelExperiencedHandler}/>
         </label>
         <label className={styles.label}>
           Whale
-          <input type='checkbox' value='whale' />
+          <input type='checkbox' value='whale' checked={expLevelWhale} onChange={expLevelWhaleHandler}/>
         </label>
       </form>
 
@@ -89,6 +101,9 @@ const Plaque = () => {
           type={productType}
           tradeDuration={tradeDuration}
           tradeFreq={tradeFrequency}
+          newLevel={expLevelNew}
+          experiencedLevel={expLevelExperienced}
+          whaleLevel={expLevelWhale}
         />
         <div>
           <label htmlFor='height' className={styles.label}>
