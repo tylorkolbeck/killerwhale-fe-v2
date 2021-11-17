@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import { exportComponentAsPNG } from 'react-component-export-image'
 import ProductCard from '../ProductCard/ProductCard.component'
 import Button from '../Button/Button.component'
 import styles from './plaque.module.scss'
@@ -11,6 +12,26 @@ const Plaque = () => {
   const [expLevelNew, setExpLevelNew] = useState(false)
   const [expLevelExperienced, setExpLevelExperienced] = useState(false)
   const [expLevelWhale, setExpLevelWhale] = useState(false)
+  const [imageHeight, setImageHeight] = useState('')
+  const [imageWidth, setImageWidth] = useState('')
+  const componentRef = useRef()
+
+  // eslint-disable-next-line react/display-name
+  const ComponentToPrint = React.forwardRef((props, ref) => {
+    return (
+      <div ref={ref}>
+        <ProductCard
+          name={productName}
+          type={productType}
+          tradeDuration={tradeDuration}
+          tradeFreq={tradeFrequency}
+          newLevel={expLevelNew}
+          experiencedLevel={expLevelExperienced}
+          whaleLevel={expLevelWhale}
+        />
+      </div>
+    )
+  })
 
   const nameChangeHandler = (event) => {
     setProductName(event.target.value)
@@ -32,6 +53,12 @@ const Plaque = () => {
   }
   const expLevelWhaleHandler = () => {
     setExpLevelWhale(!expLevelWhale)
+  }
+  const heightChangeHandler = (event) => {
+    setImageHeight(event.target.value)
+  }
+  const widthChangeHandler = (event) => {
+    setImageWidth(event.target.value)
   }
 
   return (
@@ -83,49 +110,70 @@ const Plaque = () => {
         </label>
         <label className={styles.label}>
           New
-          <input type='checkbox' value='new' checked={expLevelNew} onChange={expLevelNewHandler} />
+          <input
+            type='checkbox'
+            value='new'
+            checked={!expLevelNew}
+            onChange={expLevelNewHandler}
+          />
         </label>
         <label className={styles.label}>
           Experienced
-          <input type='checkbox' value='experienced' checked={expLevelExperienced} onChange={expLevelExperiencedHandler}/>
+          <input
+            type='checkbox'
+            value='experienced'
+            checked={!expLevelExperienced}
+            onChange={expLevelExperiencedHandler}
+          />
         </label>
         <label className={styles.label}>
           Whale
-          <input type='checkbox' value='whale' checked={expLevelWhale} onChange={expLevelWhaleHandler}/>
+          <input
+            type='checkbox'
+            value='whale'
+            checked={!expLevelWhale}
+            onChange={expLevelWhaleHandler}
+          />
         </label>
       </form>
 
       <div className={styles.productGrid}>
-        <ProductCard
-          name={productName}
-          type={productType}
-          tradeDuration={tradeDuration}
-          tradeFreq={tradeFrequency}
-          newLevel={expLevelNew}
-          experiencedLevel={expLevelExperienced}
-          whaleLevel={expLevelWhale}
-        />
+        <ComponentToPrint ref={componentRef} />
         <div>
           <label htmlFor='height' className={styles.label}>
             Height
             <input
+              className={styles.cardInput}
+              onChange={heightChangeHandler}
               id='height'
               type='number'
               min='0'
-              className={styles.cardInput}
             />
           </label>
           <label htmlFor='width' className={styles.label}>
             Width
             <input
+              className={styles.cardInput}
+              onChange={widthChangeHandler}
               id='width'
               type='number'
               min='0'
-              className={styles.cardInput}
             />
           </label>
         </div>
-        <Button>Export As PNG</Button>
+        <Button
+          onClick={() =>
+            exportComponentAsPNG(componentRef, {
+              html2CanvasOptions: {
+                height: imageHeight,
+                width: imageWidth,
+                backgroundColor: null
+              }
+            })
+          }
+        >
+          Export As PNG
+        </Button>
       </div>
     </div>
   )
