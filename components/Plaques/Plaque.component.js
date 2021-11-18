@@ -2,18 +2,18 @@ import React, { useState, useRef } from 'react'
 import { exportComponentAsPNG } from 'react-component-export-image'
 import ProductCard from '../ProductCard/ProductCard.component'
 import Button from '../Button/Button.component'
-import styles from './plaque.module.scss'
+import styles from './Plaque.module.scss'
 
 const Plaque = () => {
-  const [productName, setProductName] = useState('')
-  const [productType, setProductType] = useState('')
-  const [tradeDuration, setTradeDuration] = useState('')
-  const [tradeFrequency, setTradeFrequency] = useState('')
+  const [productName, setProductName] = useState('gain btc')
+  const [productType, setProductType] = useState('strategy')
+  const [tradeDuration, setTradeDuration] = useState('25')
+  const [tradeFrequency, setTradeFrequency] = useState('75')
   const [expLevelNew, setExpLevelNew] = useState(false)
   const [expLevelExperienced, setExpLevelExperienced] = useState(false)
   const [expLevelWhale, setExpLevelWhale] = useState(false)
-  const [imageHeight, setImageHeight] = useState('')
-  const [imageWidth, setImageWidth] = useState('')
+  const [imageHeight, setImageHeight] = useState('720')
+  const [imageWidth, setImageWidth] = useState('1000')
   const componentRef = useRef()
 
   // eslint-disable-next-line react/display-name
@@ -166,8 +166,7 @@ const Plaque = () => {
             exportComponentAsPNG(componentRef, {
               html2CanvasOptions: {
                 height: imageHeight,
-                width: imageWidth,
-                backgroundColor: null
+                width: imageWidth
               }
             })
           }

@@ -1,14 +1,14 @@
 .container {
   display: grid;
   justify-content: center;
-  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr;
   margin: 2rem;
   max-width: 80vw;
 }
 
 .formGrid {
   display: grid;
-  grid-column: 2/3;
+  grid-column: 1/2;
   justify-content: center;
   align-content: center;
   padding: 2rem;
@@ -16,7 +16,7 @@
 
 .productGrid {
   display: grid;
-  grid-column: 3/3;
+  grid-column: 2/2;
   justify-content: center;
   align-content: center;
   padding: 2rem;
