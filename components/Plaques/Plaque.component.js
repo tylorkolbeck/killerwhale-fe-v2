@@ -12,14 +12,20 @@ const Plaque = () => {
   const [expLevelNew, setExpLevelNew] = useState(false)
   const [expLevelExperienced, setExpLevelExperienced] = useState(false)
   const [expLevelWhale, setExpLevelWhale] = useState(false)
-  const [imageHeight, setImageHeight] = useState('720')
-  const [imageWidth, setImageWidth] = useState('1000')
+  const [imageHeight, setImageHeight] = useState('270')
+  const [imageWidth, setImageWidth] = useState('380')
   const componentRef = useRef()
 
   // eslint-disable-next-line react/display-name
   const ComponentToPrint = React.forwardRef((props, ref) => {
     return (
-      <div ref={ref}>
+      <div
+        ref={ref}
+        style={{
+          width: `${imageWidth}px`,
+          height: `${imageHeight}px`
+        }}
+      >
         <ProductCard
           name={productName}
           type={productType}
@@ -28,6 +34,8 @@ const Plaque = () => {
           newLevel={expLevelNew}
           experiencedLevel={expLevelExperienced}
           whaleLevel={expLevelWhale}
+          width={imageWidth}
+          height={imageHeight}
         />
       </div>
     )
@@ -147,7 +155,8 @@ const Plaque = () => {
               onChange={heightChangeHandler}
               id='height'
               type='number'
-              min='0'
+              min='250'
+              step='10'
             />
           </label>
           <label htmlFor='width' className={styles.label}>
@@ -157,7 +166,8 @@ const Plaque = () => {
               onChange={widthChangeHandler}
               id='width'
               type='number'
-              min='0'
+              min='350'
+              step='10'
             />
           </label>
         </div>

@@ -16,7 +16,7 @@ export default function ProductCard({
       <div className={clsx(styles.badges)}>
         <div style={{ display: newLevel ? 'none' : 'block' }}>
           <Image
-            src='/images/badges/badge_dolphin.png'
+            src='/images/badges/badge_dolphin.png' //changed from svg to png
             height='30'
             width='30'
             alt='Dolphin'
@@ -24,7 +24,7 @@ export default function ProductCard({
         </div>
         <div style={{ display: experiencedLevel ? 'none' : 'block' }}>
           <Image
-            src='/images/badges/badge_fish.png'
+            src='/images/badges/badge_fish.png' //changed from svg to png
             height='30'
             width='30'
             alt='Fish'
@@ -32,7 +32,7 @@ export default function ProductCard({
         </div>
         <div style={{ display: whaleLevel ? 'none' : 'block' }}>
           <Image
-            src='/images/badges/badge_whale.png'
+            src='/images/badges/badge_whale.png' //changed from svg to png
             height='30'
             width='30'
             alt='Whale'
@@ -41,7 +41,7 @@ export default function ProductCard({
       </div>
       <div className={styles.header}>
         <Image
-          src='/images/kw_logo_accent.png'
+          src='/images/kw_logo_accent.png' //changed from svg to png
           width='50'
           height='35'
           alt='Killer Whale Logo'
@@ -62,6 +62,7 @@ export default function ProductCard({
             <div
               className={styles.progressBar}
               style={{
+                visibility: tradeDuration == 0 ? 'hidden' : 'visible',
                 width:
                   tradeDuration === 0
                     ? tradeDuration + 20 + '%'
@@ -81,6 +82,7 @@ export default function ProductCard({
             <div
               className={styles.progressBar}
               style={{
+                visibility: tradeFreq == 0 ? 'hidden' : 'visible',
                 width: tradeFreq === 0 ? tradeFreq + 20 + '%' : tradeFreq + '%'
               }}
             ></div>
