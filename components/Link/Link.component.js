@@ -3,6 +3,7 @@ import styles from './Link.module.scss'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import useOnclickOutside from "react-cool-onclickoutside";
 
 export default function CustomLink({
   type,
@@ -15,7 +16,14 @@ export default function CustomLink({
   className
 }) {
   const [dropdownVisible, setDropdownVisible] = useState(false)
+
   const navClasses = `fs-200 uppercase ff-serif letter-spacing-2 ${active}`
+
+  const closeMenu = ()=> setDropdownVisible(false);
+  const ref = useOnclickOutside(() => closeMenu()); 
+  const handleClickBtn = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
 
   const linkClasses = [
     type ? styles[type] : styles.link,
@@ -25,9 +33,9 @@ export default function CustomLink({
 
   if (subLinks) {
     return (
-      <div>
+      <div ref={ref}>
         <div
-          onClick={() => setDropdownVisible(!dropdownVisible)}
+          onClick={handleClickBtn}        
           className={styles.dropdownWrapper}
         >
           <p className={[styles.nav, navClasses].join(' ')}>
@@ -36,7 +44,7 @@ export default function CustomLink({
               <FontAwesomeIcon icon={faChevronDown} />
             </span>
           </p>
-          {dropdownVisible && <div className={styles.subLinks}>{subLinks}</div>}
+          {dropdownVisible && <div onClick={closeMenu} className={styles.subLinks}>{subLinks}</div>}
         </div>
       </div>
     )
