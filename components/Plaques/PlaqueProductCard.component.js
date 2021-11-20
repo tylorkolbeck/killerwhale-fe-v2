@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import styles from './ProductCard.module.scss'
+import styles from './PlaqueProductCard.module.scss'
 import Image from 'next/image'
 
 export default function ProductCard({
@@ -14,36 +14,43 @@ export default function ProductCard({
   return (
     <div className={styles.productCard}>
       <div className={clsx(styles.badges)}>
-        <div style={{ display: newLevel ? 'none' : 'block' }}>
+        {!newLevel ? (
           <Image
-            src='/images/badges/badge_dolphin.svg' //changed from svg to png
+            src='/images/badges/badge_dolphin.png'
             height='30'
             width='30'
             alt='Dolphin'
           />
-        </div>
-        <div style={{ display: experiencedLevel ? 'none' : 'block' }}>
+        ) : (
+          ''
+        )}
+
+        {!experiencedLevel ? (
           <Image
-            src='/images/badges/badge_fish.svg' //changed from svg to png
+            src='/images/badges/badge_fish.png'
             height='30'
             width='30'
-            alt='Fish'
+            alt='fish'
           />
-        </div>
-        <div style={{ display: whaleLevel ? 'none' : 'block' }}>
+        ) : (
+          ''
+        )}
+        {!whaleLevel ? (
           <Image
-            src='/images/badges/badge_whale.svg' //changed from svg to png
+            src='/images/badges/badge_whale.png'
             height='30'
             width='30'
-            alt='Whale'
+            alt='whale'
           />
-        </div>
+        ) : (
+          ''
+        )}
       </div>
       <div className={styles.header}>
         <Image
-          src='/images/kw_logo_accent.svg' //changed from svg to png
-          width='30'
-          height='30'
+          src='/images/kw_logo_accent.png'
+          width='50'
+          height='35'
           alt='Killer Whale Logo'
         />
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { exportComponentAsPNG } from 'react-component-export-image'
-import ProductCard from '../ProductCard/ProductCard.component'
+import PlaqueProductCard from './PlaqueProductCard.component'
 import Button from '../Button/Button.component'
 import styles from './Plaque.module.scss'
 
@@ -26,7 +26,7 @@ const Plaque = () => {
           height: `${imageHeight}px`
         }}
       >
-        <ProductCard
+        <PlaqueProductCard
           name={productName}
           type={productType}
           tradeDuration={tradeDuration}
@@ -34,8 +34,6 @@ const Plaque = () => {
           newLevel={expLevelNew}
           experiencedLevel={expLevelExperienced}
           whaleLevel={expLevelWhale}
-          width={imageWidth}
-          height={imageHeight}
         />
       </div>
     )
@@ -68,7 +66,6 @@ const Plaque = () => {
   const widthChangeHandler = (event) => {
     setImageWidth(event.target.value)
   }
-
   return (
     <div className={styles.container}>
       <form className={styles.formGrid}>
@@ -147,7 +144,7 @@ const Plaque = () => {
 
       <div className={styles.productGrid}>
         <ComponentToPrint ref={componentRef} />
-        <div>
+        <div className={styles.cardInputs}>
           <label htmlFor='height' className={styles.label}>
             Height
             <input
