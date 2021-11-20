@@ -2,48 +2,34 @@ import clsx from 'clsx'
 import styles from './ProductCard.module.scss'
 import Image from 'next/image'
 
-export default function ProductCard({
-  name,
-  type,
-  tradeDuration,
-  tradeFreq,
-  newLevel,
-  experiencedLevel,
-  whaleLevel
-}) {
+export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
   return (
     <div className={styles.productCard}>
       <div className={clsx(styles.badges)}>
-        <div style={{ display: newLevel ? 'none' : 'block' }}>
-          <Image
-            src='/images/badges/badge_dolphin.svg' //changed from svg to png
-            height='30'
-            width='30'
-            alt='Dolphin'
-          />
-        </div>
-        <div style={{ display: experiencedLevel ? 'none' : 'block' }}>
-          <Image
-            src='/images/badges/badge_fish.svg' //changed from svg to png
-            height='30'
-            width='30'
-            alt='Fish'
-          />
-        </div>
-        <div style={{ display: whaleLevel ? 'none' : 'block' }}>
-          <Image
-            src='/images/badges/badge_whale.svg' //changed from svg to png
-            height='30'
-            width='30'
-            alt='Whale'
-          />
-        </div>
+        <Image
+          src='/images/badges/badge_dolphin.svg'
+          height='30'
+          width='30'
+          alt='Dolphin'
+        />
+        <Image
+          src='/images/badges/badge_fish.svg'
+          height='30'
+          width='30'
+          alt='Fish'
+        />
+        <Image
+          src='/images/badges/badge_whale.svg'
+          height='30'
+          width='30'
+          alt='Whale'
+        />
       </div>
       <div className={styles.header}>
         <Image
-          src='/images/kw_logo_accent.svg' //changed from svg to png
-          width='30'
-          height='30'
+          src='/images/kw_logo_accent.svg'
+          width='50'
+          height='50'
           alt='Killer Whale Logo'
         />
       </div>
@@ -62,7 +48,6 @@ export default function ProductCard({
             <div
               className={styles.progressBar}
               style={{
-                visibility: tradeDuration == 0 ? 'hidden' : 'visible',
                 width:
                   tradeDuration === 0
                     ? tradeDuration + 20 + '%'
@@ -82,7 +67,6 @@ export default function ProductCard({
             <div
               className={styles.progressBar}
               style={{
-                visibility: tradeFreq == 0 ? 'hidden' : 'visible',
                 width: tradeFreq === 0 ? tradeFreq + 20 + '%' : tradeFreq + '%'
               }}
             ></div>

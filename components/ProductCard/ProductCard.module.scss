@@ -1,7 +1,5 @@
 .productCard {
   max-width: 350px;
-  height: 100%;
-  width: 100%;
   padding: 1rem;
   background: url('/images/bg_card.png');
   background-position: bottom center;
@@ -19,7 +17,7 @@
     top: 10px;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
 
   .header {
@@ -51,7 +49,7 @@
       border-radius: 20px;
       margin: 0.5rem 0;
       position: relative;
-      box-shadow: inset 0 0 0 4px hsl(var(--clr-green)); // this line causing display issues when exporting to PNG
+      box-shadow: inset 0 0 0 4px hsl(var(--clr-green));
 
       .progressBar {
         content: '';
