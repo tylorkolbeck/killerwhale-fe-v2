@@ -12,8 +12,8 @@ const Plaque = () => {
   const [expLevelNew, setExpLevelNew] = useState(false)
   const [expLevelExperienced, setExpLevelExperienced] = useState(false)
   const [expLevelWhale, setExpLevelWhale] = useState(false)
-  const [imageHeight, setImageHeight] = useState('270')
-  const [imageWidth, setImageWidth] = useState('380')
+  const [imageHeight, setImageHeight] = useState('430')
+  const [imageWidth, setImageWidth] = useState('600')
   const componentRef = useRef()
 
   // eslint-disable-next-line react/display-name

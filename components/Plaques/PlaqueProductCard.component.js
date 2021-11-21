@@ -16,9 +16,9 @@ export default function ProductCard({
       <div className={clsx(styles.badges)}>
         {!newLevel ? (
           <Image
-            src='/images/badges/badge_dolphin.png'
-            height='30'
-            width='30'
+            src='/images/badges/badge_fish.png'
+            height='60px'
+            width='60px'
             alt='Dolphin'
           />
         ) : (
@@ -27,9 +27,9 @@ export default function ProductCard({
 
         {!experiencedLevel ? (
           <Image
-            src='/images/badges/badge_fish.png'
-            height='30'
-            width='30'
+            src='/images/badges/badge_dolphin.png'
+            height='60px'
+            width='60px'
             alt='fish'
           />
         ) : (
@@ -38,8 +38,8 @@ export default function ProductCard({
         {!whaleLevel ? (
           <Image
             src='/images/badges/badge_whale.png'
-            height='30'
-            width='30'
+            height='60px'
+            width='60px'
             alt='whale'
           />
         ) : (
@@ -49,8 +49,8 @@ export default function ProductCard({
       <div className={styles.header}>
         <Image
           src='/images/kw_logo_accent.png'
-          width='50'
-          height='35'
+          width='75px'
+          height='75px'
           alt='Killer Whale Logo'
         />
       </div>
