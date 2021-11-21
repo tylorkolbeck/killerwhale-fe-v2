@@ -13,6 +13,7 @@ import Testimonial from '../components/Testimonial/Testimonial.component'
 import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import InfoBar from '../components/InfoBar/InfoBar.component'
 
 export default function Home() {
   return (
@@ -178,14 +179,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={clsx('section bg-green', styles.infobar)}>
-        <h4 className='fs-500'>Are you ready to join the Killer Whale Pod?</h4>
-        <div className='mt-1'>
+      <InfoBar
+        text='Are you ready to join the Killer Whale Pod?'
+        button={
           <Button type='ctaInverted' inverted>
             Getting Started
           </Button>
-        </div>
-      </section>
+        }
+      />
 
       <section className='section bg-light'>
         <div className={clsx('container', styles.twoColumn)}>
