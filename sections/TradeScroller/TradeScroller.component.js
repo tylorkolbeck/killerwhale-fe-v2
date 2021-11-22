@@ -10,13 +10,13 @@ function Profile() {
   return <div>hello {data.name}!</div>
 }
 
-function fetchTwitterFeed() {
-  // call api endpoint with fetch
-  // /api/twitter-feed
-}
+// function fetchTwitterFeed() {
+// call api endpoint with fetch
+// /api/twitter-feed
+// }
 
 export default function TradeScroller() {
-  const { data, error } = useSWR('/api/user', fetchTwitterFeed)
+  // const { data, error } = useSWR('/api/user', fetchTwitterFeed)
 
   // if (error) return
   // if (!data) return <div>Loading twitter feed</div>

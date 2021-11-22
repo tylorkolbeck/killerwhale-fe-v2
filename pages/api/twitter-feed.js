@@ -1,15 +1,40 @@
 export default function handler(req, res) {
-  // Do the twitter fetching logic
-  // return the last 20 posts from @DylanShively6
-  const twitterApiKey = process.env.TWITTER_API_KEY
+  const needle = require('needle')
+  const token = process.env.TWITTER_BEARER_TOKEN
+  const endpointUrl = 'https://api.twitter.com/2/tweets/search/recent'
 
-  console.log(twitterApiKey)
+  async function getRequest() {
+    const params = {
+      query: 'from:DylanShively6'
+    }
 
-  res.status(200).json({
-    tweets: [
-      {
-        test: 'test tweet'
+    const res = await needle('get', endpointUrl, params, {
+      headers: {
+        'User-Agent': 'v2RecentSearchJS',
+        authorization: `Bearer ${token}`
       }
-    ]
-  })
+    })
+
+    if (res.body) {
+      return res.body
+    } else {
+      throw new Error('Unsuccessful request')
+    }
+  }
+
+  ;(async () => {
+    try {
+      // Make request
+      const response = await getRequest()
+      console.log('success')
+      res.status(200).json({ response })
+    } catch (e) {
+      console.log(e)
+    }
+  })()
 }
+
+// {
+//   id: '1462765933856972803',
+//   text: 'Happy! My #hopper just sold #MANA with 7.26% profit on #kucoin! To the moon! #cryptohopper'
+// },
