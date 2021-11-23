@@ -18,23 +18,17 @@ export default function handler(req, res) {
     if (res.body) {
       return res.body
     } else {
-      throw new Error('Unsuccessful request')
+      return
     }
   }
 
   ;(async () => {
     try {
-      // Make request
-      const response = await getRequest()
-      console.log('success')
-      res.status(200).json({ response })
+      const tweets = await getRequest()
+      res.status(200).json({ tweets })
+      // console.log(response)
     } catch (e) {
       console.log(e)
     }
   })()
 }
-
-// {
-//   id: '1462765933856972803',
-//   text: 'Happy! My #hopper just sold #MANA with 7.26% profit on #kucoin! To the moon! #cryptohopper'
-// },
