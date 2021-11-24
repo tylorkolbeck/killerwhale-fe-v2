@@ -27,15 +27,13 @@ export default function TradeScroller() {
             }
           })}
         </p>
-        <span style={{ margin: '0 1.5rem' }}>|</span>
+        <span className={styles.tweetDivider}>|</span>
       </React.Fragment>
     )
   }
-
   if (error) return
   if (!data || data.tweets.length === 0)
     return <div className={styles.loading}>Loading twitter feed. . .</div>
-
   return (
     <div className={styles.tradeScroller}>
       <Marquee gradient={false}>
