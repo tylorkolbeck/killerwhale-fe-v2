@@ -11,7 +11,9 @@ export default function Footer() {
   return (
     <div className={clsx('section', styles.footer)}>
       <div className='container flow'>
-        <h4 className='uppercase ff-good fs-700 mb-4'>KILLER WHALE</h4>
+        <h4 className={clsx('uppercase ff-good fs-700 mb-4', styles.logoName)}>
+          KILLER WHALE
+        </h4>
         <div className={styles.linkWrapper}>
           <div className={styles.col}>
             <div className={styles.linkCategory}>

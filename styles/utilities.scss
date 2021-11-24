@@ -106,12 +106,3 @@ input[type='text']:focus {
   border: 2px solid hsl(var(--clr-green));
   box-shadow: 0px 0px 4px hsl(var(--clr-green));
 }
-
-.hero {
-  width: 100%;
-  background-image: url('/images/background_1.png');
-  min-height: 90vh; // account for navbar height of 10vh
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
