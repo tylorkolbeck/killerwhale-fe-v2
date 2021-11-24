@@ -7,11 +7,11 @@ export default function TradeScroller() {
 
   const { data, error } = useSWR('/api/twitter-feed', tweetFetcher)
 
-  // console.log(data)
+  console.log(data)
 
   if (error) return
   if (!data)
-    return <div className={styles.loading}>Loading twitter feed...</div>
+    return <div className={styles.loading}>Loading twitter feed. . .</div>
   return (
     <div className={styles.tradeScroller}>
       <Marquee gradient={false}>
@@ -25,7 +25,16 @@ export default function TradeScroller() {
         <p>{data.tweets.data[7].text}</p>
         <p>{data.tweets.data[8].text}</p>
         <p>{data.tweets.data[9].text}</p>
-        <p>{data.tweets.data[0].text}</p>
+        <p>{data.tweets.data[10].text}</p>
+        <p>{data.tweets.data[11].text}</p>
+        <p>{data.tweets.data[12].text}</p>
+        <p>{data.tweets.data[13].text}</p>
+        <p>{data.tweets.data[14].text}</p>
+        <p>{data.tweets.data[15].text}</p>
+        <p>{data.tweets.data[16].text}</p>
+        <p>{data.tweets.data[17].text}</p>
+        <p>{data.tweets.data[18].text}</p>
+        <p>{data.tweets.data[19].text}</p>
         {/* <p>
           Signal just sold #XRP with{' '}
           <span className='text-green fs-200'>1.88% profit</span> on #kucoin!
@@ -37,3 +46,4 @@ export default function TradeScroller() {
     </div>
   )
 }
+// App rate limit: 450 requests per 15-minute window shared among all users of your app

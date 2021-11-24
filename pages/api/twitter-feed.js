@@ -5,7 +5,8 @@ export default function handler(req, res) {
 
   async function getRequest() {
     const params = {
-      query: 'from:DylanShively6'
+      query: 'from:DylanShively6',
+      max_results: '20'
     }
 
     const res = await needle('get', endpointUrl, params, {
