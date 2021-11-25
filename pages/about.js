@@ -6,7 +6,7 @@ import Bios from '../components/Bios/Bios.component'
 export default function about() {
   return (
     <div>
-      {/* <div className='hero v-align-c'>
+      <div className='hero v-align-c'>
         <section className='section flow'>
           <h1 className='fs-700 uppercase ff-good center'>We Have Strategy</h1>
           <div className='center flex'>
@@ -18,8 +18,8 @@ export default function about() {
             - in summary, we have strategy!
           </p>
         </section>
-      </div> */}
-      {/* <section className='section bg-dark grid flow'>
+      </div>
+      <section className='section bg-dark grid flow'>
         <div className='flow'>
           <h3 className='fs-600 uppercase ffgood'>The Killer Whale Story</h3>
           <Divider width='200px'></Divider>
@@ -53,18 +53,18 @@ export default function about() {
             your hopper and swim with the whales.
           </p>
         </div>
-      </section> */}
-      {/* <InfoBar
+      </section>
+      <InfoBar
         text={'Are you ready to join the Killer Whale Pod?'}
         button={
           <Button type='ctaInverted' inverted>
             Getting Started
           </Button>
         }
-      /> */}
+      />
       <Bios />
 
-      {/* <section className='section'>
+      <section className='section'>
         <div>
           <h3>What sets the good traders apart from the bad?</h3>
           <Divider width='200px' />
@@ -76,7 +76,7 @@ export default function about() {
             summary they had a strategy!
           </p>
         </div>
-      </section> */}
+      </section>
     </div>
   )
 }

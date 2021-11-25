@@ -1,59 +1,58 @@
 $cardWidth: 80vw;
 
 @mixin responsiveWidth {
-  // width: $cardWidth;
   max-width: 300px;
   max-height: 300px;
   margin: 0 auto;
 }
 
+.shown .imgWrapper,
+.shown .Bio_img_footer {
+  background-color: hsl(var(--clr-light));
+}
+
 .Bio {
   border-radius: 6px;
-
-  .BioCard {
-  }
 
   .imgWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: grey;
     border-radius: 6px 6px 0px 0px;
     height: $cardWidth;
 
     @include responsiveWidth();
 
     & img {
-      max-width: 90%;
-      max-height: 90%;
-    }
-  }
-  .bioDetails {
-    background-color: hsl(var(--clr-light));
-    padding: 2rem;
-
-    & .bioDetailsWrapper {
-      display: grid;
-    }
-
-    .bioDetails_info {
-      display: none;
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 8px;
     }
   }
 
   .Bio_img_footer {
     @include responsiveWidth();
-    background: grey;
     text-align: center;
+    padding-bottom: 1rem;
   }
 }
 
-.shown {
+.bioDetails {
   background-color: hsl(var(--clr-light));
+  padding: 4rem 3rem;
+
+  & .bioDetailsWrapper {
+    display: grid;
+  }
+
+  .bioDetails_info {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 600px) {
-  .Bio .bioDetails {
+  .Bio .bioDetailsWrapper {
+    max-width: 1200px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;

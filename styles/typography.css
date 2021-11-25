@@ -12,7 +12,7 @@
 
   /* font-families */
   --ff-good: good-times, sans-serif;
-  --ff-serif: "Montserrat", sans-serif;
+  --ff-serif: 'Montserrat', sans-serif;
 }
 
 .ff-serif {
@@ -34,6 +34,10 @@
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .fs-900 {

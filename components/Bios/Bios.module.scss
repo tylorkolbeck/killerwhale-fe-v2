@@ -1,0 +1,25 @@
+.Bios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bioBar {
+  background-color: hsl(var(--clr-light));
+  padding: 4rem 3rem;
+
+  .bioContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .bioBar .bioContent {
+    grid-template-columns: 1fr 1fr;
+  }
+}
