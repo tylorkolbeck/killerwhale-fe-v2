@@ -2,6 +2,7 @@ import Button from '../components/Button/Button.component'
 import Divider from '../components/Divider/Divider.component'
 import InfoBar from '../components/InfoBar/InfoBar.component'
 import Bios from '../components/Bios/Bios.component'
+import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 
 export default function about() {
   return (
@@ -62,6 +63,9 @@ export default function about() {
           </Button>
         }
       />
+      <div className='section flex center'>
+        <SectionHeader header='Our Team' />
+      </div>
       <Bios />
 
       <section className='section'>
