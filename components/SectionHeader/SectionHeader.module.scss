@@ -19,6 +19,11 @@
 
 .subText {
   text-align: center;
+  max-width: 600px;
+}
+
+.center .subText {
+  margin: 0 auto;
 }
 
 .center .header {

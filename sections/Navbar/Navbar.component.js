@@ -24,11 +24,15 @@ export default function Navbar() {
       <ul className={styles.navLinks}>
         <li>
           <Link
-            linkTo='/'
+            linkTo='/strategies-signals'
             type='nav'
             subLinks={
               <ul>
-                <li>Link1</li>
+                <li>
+                  <Link linkTo='/strategies-signals' type='nav'>
+                    All
+                  </Link>
+                </li>
               </ul>
             }
           >

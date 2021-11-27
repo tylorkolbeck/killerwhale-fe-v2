@@ -1,0 +1,59 @@
+.TypeOfTrader {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+  justify-content: center;
+  padding-bottom: 0;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  & .typeCard {
+    &.selected {
+      background-color: hsl(var(--clr-light));
+      border-radius: 8px 8px 8px 8px;
+    }
+    display: flex;
+    flex-direction: column;
+
+    & img {
+      padding: 2rem;
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+    & p {
+      padding: 1rem 1rem 1rem 1rem;
+    }
+  }
+}
+
+.description {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .descriptionContent {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+}
+
+.productCardWrapper {
+  max-width: 1200px;
+  margin: 5rem auto;
+}
+
+@media screen and (min-width: 900px) {
+  .TypeOfTrader {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0rem;
+
+    & .typeCard {
+      &.selected {
+        background-color: hsl(var(--clr-light));
+        border-radius: 8px 8px 0px 0px;
+      }
+    }
+  }
+}
