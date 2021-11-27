@@ -7,6 +7,7 @@
   --clr-white: 0 0% 100%;
   --clr-accent: 0 0% 85%;
   --clr-green: 167 66% 41%;
+  --clr-black: rgb(19, 19, 19);
 }
 
 /* ---------- */
@@ -39,4 +40,17 @@
 }
 .text-green {
   color: hsl(var(--clr-green));
+}
+
+.hero {
+  width: 100%;
+  background-image: url('/images/background_2_ov.png');
+  min-height: 90vh; // account for navbar height of 10vh
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  & h1 {
+    font-size: clamp(16px, 12vw, var(--fs-800));
+  }
 }

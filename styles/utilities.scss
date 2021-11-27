@@ -40,6 +40,14 @@
   }
 }
 
+// One column on small two column on med up
+.c1-c2 {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 5rem;
+}
+
 .v-align-c {
   display: grid;
   align-items: center;
@@ -65,7 +73,6 @@
 
 .flow > * + * {
   margin-top: var(--flow-space, 1rem);
-  // outline: 1px solid red;
 }
 
 .center {
@@ -83,10 +90,6 @@
     font-weight: 700;
     color: hsl(var(--clr-white) / 0.3);
   }
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 .section {
@@ -107,11 +110,23 @@ input[type='text']:focus {
   box-shadow: 0px 0px 4px hsl(var(--clr-green));
 }
 
-.hero {
-  width: 100%;
-  background-image: url('/images/background_1.png');
-  min-height: 90vh; // account for navbar height of 10vh
-  background-position: center;
+.logoBg::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.1;
+
+  background-image: url('/images/kw_logo_accent.svg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+  background-position: center;
+}
+
+@media screen and (min-width: 900px) {
+  .c1-c2 {
+    grid-template-columns: 1fr 1fr;
+  }
 }

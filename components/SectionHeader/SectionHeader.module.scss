@@ -1,0 +1,65 @@
+// .SectionHeader {
+//   text-align: center;
+// }
+
+.divider {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.center {
+  text-align: center;
+}
+
+.subText {
+  text-align: center;
+}
+
+.center .header {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.center .divider {
+  display: inline-block;
+}
+
+.center .subText {
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+  .SectionHeader {
+    .header {
+      text-align: left;
+      margin: 0;
+    }
+  }
+  .divider {
+    justify-content: flex-start;
+  }
+
+  .subText {
+    text-align: left;
+  }
+
+  .center .subText {
+    text-align: center;
+  }
+
+  .center .header {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
