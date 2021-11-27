@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 const traderTypes = [
   {
     id: 1,
-    type: 'New To Trading',
+    type: 'New',
     title: 'So, you are new to trading...',
     description:
       'Eu fugiat proident pariatur voluptate deserunt non sunt consectetur laborum sunt aliquip aliqua.',
@@ -107,7 +107,7 @@ const traderTypes = [
   },
   {
     id: 3,
-    type: 'Killer Whale',
+    type: 'Whale',
     title: 'So, you are one of us...',
     description:
       'Eu fugiat proident pariatur voluptate deserunt non sunt consectetur laborum sunt aliquip aliqua.',
@@ -143,7 +143,7 @@ export default function TypeOfTrader() {
 
   return (
     <div>
-      <div className={styles.TypeOfTrader}>
+      <div className={clsx(styles.TypeOfTrader, 'bg-dark')}>
         {traderTypes.map((type) => {
           return (
             <div
@@ -164,7 +164,6 @@ export default function TypeOfTrader() {
       {typeSelected && (
         <div className={clsx(styles.description, 'bg-light')} id='ProductTable'>
           <div className={clsx('container', 'flow', styles.descriptionContent)}>
-            <p className='text-green bold'>{typeSelected.type}</p>
             <SectionHeader
               header={typeSelected.title}
               subText={typeSelected.description}
