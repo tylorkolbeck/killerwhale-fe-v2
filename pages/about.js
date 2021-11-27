@@ -8,7 +8,7 @@ export default function about() {
     <div>
       <div className='hero v-align-c'>
         <SectionHeader
-          header='We Have Strategy'
+          header='The People Behind Killer Whale'
           subText="We understand the market conditions, and we don't let emotions cloud
             our judgement. We help you look for the optimum time to buy and sell
             - in summary, we have strategy!"

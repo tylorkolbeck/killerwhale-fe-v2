@@ -6,6 +6,12 @@ $cardWidth: 80vw;
   margin: 0 auto;
 }
 
+.BioCard:hover {
+  & img {
+    opacity: 1 !important;
+  }
+}
+
 .BioCard {
   padding-top: 2rem;
 }
@@ -52,6 +58,7 @@ $cardWidth: 80vw;
     @include responsiveWidth();
     text-align: center;
     padding-bottom: 1rem;
+    padding-top: 1rem;
   }
 }
 
