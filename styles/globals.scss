@@ -50,7 +50,8 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  & h1 {
+  & h1,
+  h3 {
     font-size: clamp(16px, 12vw, var(--fs-800));
   }
 }

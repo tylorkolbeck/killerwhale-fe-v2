@@ -22,6 +22,18 @@
   margin-top: 2rem;
 }
 
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -38,6 +50,10 @@
   &.center {
     justify-content: center;
   }
+}
+
+.pointer:hover {
+  cursor: pointer;
 }
 
 // One column on small two column on med up
