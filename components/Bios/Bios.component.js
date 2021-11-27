@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styles from './Bios.module.scss'
 import { useState } from 'react'
 import Bio from './Bio/Bio.component'
@@ -33,7 +33,7 @@ const bios = [
 export default function AboutUs() {
   const [bioShown, setBioShown] = useState(null)
   const [bioPairs, setBioPairs] = useState(null)
-  const [bioRows, setBioRows] = useState([[], []])
+  const [bioRows, setBioRows] = useState([])
 
   useEffect(() => {
     let rows = []
@@ -75,7 +75,7 @@ export default function AboutUs() {
     <>
       {bioPairs?.map((pair, index) => {
         return (
-          <>
+          <React.Fragment key={index}>
             <div
               key={index}
               style={{
@@ -119,7 +119,7 @@ export default function AboutUs() {
                 </div>
               </div>
             )}
-          </>
+          </React.Fragment>
         )
       })}
     </>
