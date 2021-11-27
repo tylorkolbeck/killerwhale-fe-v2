@@ -1,17 +1,16 @@
 import styles from './ProductTable.module.scss'
 import ProductCard from './../ProductCard/ProductCard.component'
 import clsx from 'clsx'
-import { useRouter } from 'next/router'
 import Button from '../Button/Button.component'
 
 export default function ProductTable({ products, type }) {
   return (
     <div className={styles.ProductTable}>
-      <div className={clsx(styles.row)}>
+      {/* <div className={clsx(styles.row)}>
         <div></div>
-        <p className='fs-500 center'>{type}</p>
+        <p className='fs-500 center text-green bold'> Viewing {type}</p>
         <div></div>
-      </div>
+      </div> */}
       {products.map((product) => (
         <div className={clsx(styles.row, styles.productRow)} key={product.id}>
           <div className={styles.cell}>
