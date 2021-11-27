@@ -176,6 +176,12 @@ export default function TypeOfTrader() {
               products={typeSelected?.products}
               type={typeSelected?.type}
             />
+            <p
+              className='center text-green bold pointer'
+              onClick={() => setSelectedTypeHandler(typeSelected.id)}
+            >
+              Back to top
+            </p>
           </div>
         </div>
       )}

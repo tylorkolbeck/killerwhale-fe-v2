@@ -52,6 +52,10 @@
   }
 }
 
+.pointer:hover {
+  cursor: pointer;
+}
+
 // One column on small two column on med up
 .c1-c2 {
   display: grid;

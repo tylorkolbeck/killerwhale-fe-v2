@@ -1,6 +1,7 @@
 import styles from './ProductTable.module.scss'
 import ProductCard from './../ProductCard/ProductCard.component'
 import clsx from 'clsx'
+import { useRouter } from 'next/router'
 import Button from '../Button/Button.component'
 
 export default function ProductTable({ products, type }) {

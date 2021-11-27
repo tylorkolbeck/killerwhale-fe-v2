@@ -1,5 +1,6 @@
 import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import TypeOfTrader from '../sections/TypeOfTrader/TypeOfTrader.component'
+import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.component'
 
 export default function StrategiesSignals() {
   return (
@@ -27,6 +28,11 @@ export default function StrategiesSignals() {
           <TypeOfTrader />
         </div>
       </div>
+      <section className='section bg-light mt-5'>
+        <div className='container'>
+          <NewsLetterSignup />
+        </div>
+      </section>
     </div>
   )
 }
