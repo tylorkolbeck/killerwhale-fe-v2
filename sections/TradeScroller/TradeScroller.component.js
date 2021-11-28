@@ -32,13 +32,17 @@ export default function TradeScroller() {
     )
   }
   if (error) return
-  if (!data || data.tweets.length === 0)
+  if (!data || data?.tweets?.length === 0)
     return <div className={styles.loading}>Loading twitter feed. . .</div>
   return (
-    <div className={styles.tradeScroller}>
-      <Marquee gradient={false}>
-        {data.tweets.map(({ text, id }) => formatTweet(text, id))}
-      </Marquee>
+    <div>
+      {data?.tweets ? (
+        <div className={styles.tradeScroller}>
+          <Marquee gradient={false}>
+            {data?.tweets?.map(({ text, id }) => formatTweet(text, id))}
+          </Marquee>
+        </div>
+      ) : null}
     </div>
   )
 }
