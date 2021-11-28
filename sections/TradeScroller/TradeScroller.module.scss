@@ -2,8 +2,15 @@
   background-color: hsl(var(--clr-light) / 0.7);
   padding: 1rem;
   max-width: 100%;
+}
 
-  p {
-    margin-right: 3rem;
-  }
+.tweetDivider {
+  margin: 0 1.5rem;
+}
+
+.loading {
+  background-color: hsl(var(--clr-light) / 0.7);
+  padding: 1rem;
+  max-width: 100%;
+  text-align: center;
 }
