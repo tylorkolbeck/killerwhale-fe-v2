@@ -1,6 +1,19 @@
 .infoContainer {
-  padding: 2rem;
   border-radius: 6px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  padding: 2rem 0;
+
+  & > div {
+    border-radius: 6px;
+    padding: 2rem;
+    // background: red;
+    margin: 0 20px;
+    h4 {
+      margin-bottom: 2rem;
+    }
+  }
 
   & p:not(:last-of-type) {
     margin-bottom: 2rem;
@@ -21,13 +34,13 @@
 
 .twoColumn {
   display: grid;
+  width: 100%;
   // grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'left'
     'right';
 
   justify-content: center;
-
   gap: 3rem;
 
   .cLeft {
@@ -90,6 +103,10 @@
   .centerOnSmall {
     text-align: left;
     margin: 0;
+  }
+
+  .infoContainer {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 

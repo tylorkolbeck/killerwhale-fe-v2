@@ -1,0 +1,117 @@
+.productRowContainer {
+  border: 1px solid rgba(238, 238, 238, 0.2);
+
+  border-radius: 8px;
+  position: relative;
+
+  .container__wrapper {
+    /* Displayed at the top left corner */
+    left: 0px;
+    position: absolute;
+    top: 0px;
+
+    /* Size */
+    height: 120px;
+    width: 120px;
+    z-index: 1;
+
+    /* Hide the part of its children which is displayed outside */
+    overflow: hidden;
+  }
+
+  .container__ribbon {
+    /* Position */
+    left: -64px;
+    position: absolute;
+    top: 32px;
+
+    /* Size */
+    height: 24px;
+    width: 206px;
+
+    /* Displayed diagonally */
+    transform: rotate(-45deg);
+
+    /* Background color */
+    background-color: hsl(var(--clr-green));
+
+    /* Centerize the text content */
+    text-align: center;
+  }
+
+  .header {
+    // background: hsl(var(--clr-accent) / 0.1);
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 4px 1rem;
+    border-radius: 8px 8px 0px 0px;
+  }
+  & .ctaRow {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  & .productRow {
+    border-radius: 4px;
+    margin: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & .row {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    align-items: center;
+    margin: 1rem 0rem;
+
+    & .cell {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 1rem;
+
+      &:not(:nth-child(1)) {
+        text-align: center;
+      }
+    }
+
+    .mt {
+      margin-top: 20px;
+
+      margin: 1rem 0;
+      .chip {
+        &:nth-child(1) {
+          background: hsl(var(--clr-blue-light));
+        }
+        &:nth-child(2) {
+          background-color: hsl(var(--clr-blue-light) / 0.45);
+        }
+        padding: 3px 6px;
+        margin: 1rem 0;
+        border-radius: 8px;
+      }
+    }
+
+    & .cell:not(:first-of-type) {
+      padding: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .productRowContainer {
+    & .ctaRow {
+      display: none;
+    }
+
+    & .row {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

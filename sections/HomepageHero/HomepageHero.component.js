@@ -19,7 +19,7 @@ export default function Hero({ bgImage }) {
             Killer Whale Crypto
           </h1>
           <h2 className={clsx('fs-600 uppercase ff-good')}>
-            Change The Way You Trade
+            Change The Way <span className='text-green'>You Trade</span>
           </h2>
           <div className={styles.divider}>
             <Divider width='clamp(80px, 40vw, 200px)' />

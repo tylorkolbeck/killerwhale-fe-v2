@@ -2,12 +2,18 @@
 
 :root {
   /* colors */
-  --clr-dark: 210 63% 7%;
-  --clr-light: 210 63% 10%;
+  --clr-dark: 210 63% 7%; // #07121d
+  // --clr-light: 210 63% 10%;
+  --clr-light: 210 65% 12%; // #0e2943
+  --clr-blue-light: 210 43% 42%; //	#5085b9
   --clr-white: 0 0% 100%;
   --clr-accent: 0 0% 85%;
-  --clr-green: 167 66% 41%;
-  --clr-black: rgb(19, 19, 19);
+  --clr-green: 167 66% 41%; // #24ae90
+  --clr-black: 0 0% 10%;
+
+  --clr-purple: #5c3f75;
+  --clr-brown: #856e55;
+  --clr-green-dark: #4b754f;
 }
 
 /* ---------- */
@@ -23,6 +29,10 @@
 }
 .bg-green {
   background-color: hsl(var(--clr-green));
+}
+
+.bg-black {
+  background-color: hsl(var(--clr-black));
 }
 
 /* text color classes */

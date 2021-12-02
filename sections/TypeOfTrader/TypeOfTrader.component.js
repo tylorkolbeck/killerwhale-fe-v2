@@ -9,9 +9,10 @@ const traderTypes = [
   {
     id: 1,
     type: 'New',
-    title: 'So, you are new to trading...',
+    sectionTitle: 'Best for new traders',
+    title: 'New To Trading',
     description:
-      'Eu fugiat proident pariatur voluptate deserunt non sunt consectetur laborum sunt aliquip aliqua.',
+      'Killer Whale strategies and signals and automated bot trading is a great way to start out in Crypto, without the need to understand market trends and do deep analysis.',
     products: [
       {
         name: 'GAIN BTC',
@@ -98,32 +99,275 @@ const traderTypes = [
   {
     id: 2,
     type: 'Experienced',
-    title: 'So, you are not new but looking for some help...',
+    title: 'Experienced Trader',
+    sectionTitle: 'Best for experienced traders',
     description:
-      'Eu fugiat proident pariatur voluptate deserunt non sunt consectetur laborum sunt aliquip aliqua.',
+      'Our variety of strategies will let you take your trading to the next level, no matter what your investment strategy or the market condition. ',
     products: [],
     imgSrc: '/images/badges/badge_dolphin.svg',
-    alt: 'Experienced Trader'
+    alt: 'Experienced Trader',
+    products: [
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      }
+    ]
   },
   {
     id: 3,
-    type: 'Whale',
-    title: 'So, you are one of us...',
+    type: 'Killer Whale',
+    title: 'Killer Whale',
+    sectionTitle: 'Best for the Killer Whales',
     description:
-      'Eu fugiat proident pariatur voluptate deserunt non sunt consectetur laborum sunt aliquip aliqua.',
+      'Our variety of strategies and signals suit a multitude of trading styles. Whether you want to get in and out of trades in hours or invest in trades in the mid to short term Killer Whale has you covered.',
     products: [],
     imgSrc: '/images/badges/badge_whale.svg',
-    alt: 'Killer Whale'
+    alt: 'Killer Whale',
+    products: [
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      }
+    ]
   },
   {
     id: 4,
     type: 'All Products',
-    title: 'Want to just see everything?',
+    title: 'See everything?',
+    sectionTitle: 'Viewing All Products',
     description:
-      'Eu fugiat proident pariatur voluptate deserunt non sunt consectetur laborum sunt aliquip aliqua.',
+      'Want to browse everything we have and make your own choice? Below are all the Killer Whale Strategies and Signals',
     products: [],
-    imgSrc: '/images/badges/badge_fish.svg',
-    alt: 'All products'
+    imgSrc: '/images/badges/badge_all.svg',
+    alt: 'All products',
+    products: [
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      },
+      {
+        name: 'GAIN BTC',
+        type: 'Strategy',
+        tradeDuration: '50',
+        tradeFreq: '50',
+        startingBalance: [
+          '$500 - $1,000',
+          '$1,000 - $2,500',
+          '$2,500 - $10,000',
+          '$10,000+'
+        ],
+        plans: ['Explorer', 'Adventurer']
+      }
+    ]
   }
 ]
 
@@ -164,24 +408,27 @@ export default function TypeOfTrader() {
       {typeSelected && (
         <div className={clsx(styles.description, 'bg-light')} id='ProductTable'>
           <div className={clsx('container', 'flow', styles.descriptionContent)}>
+            <p className='text-green bold'>
+              <i>{typeSelected.type}</i>
+            </p>
             <SectionHeader
-              header={typeSelected.title}
+              header={typeSelected.sectionTitle}
               subText={typeSelected.description}
               hSize='m'
             />
           </div>
-          <div className={styles.productCardWrapper}>
+          <div className={clsx(styles.productCardWrapper, 'bg-dark')}>
             <ProductTable
               products={typeSelected?.products}
               type={typeSelected?.type}
             />
-            <p
-              className='center text-green bold pointer'
-              onClick={() => setSelectedTypeHandler(typeSelected.id)}
-            >
-              Back to top
-            </p>
           </div>
+          <p
+            className='center text-green bold pointer'
+            onClick={() => setSelectedTypeHandler(typeSelected.id)}
+          >
+            Back to top
+          </p>
         </div>
       )}
     </div>

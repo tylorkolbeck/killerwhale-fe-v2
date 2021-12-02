@@ -8,14 +8,15 @@
   flex-direction: column;
   align-content: space-between;
   justify-content: space-between;
+  background-attachment: fixed;
 }
 
 .heroSection {
   display: grid;
   width: 100%;
   grid-template-areas:
-    "herotext"
-    "infocards";
+    'herotext'
+    'infocards';
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 10vh;
@@ -47,7 +48,7 @@
 @media screen and (min-width: 900px) {
   .heroSection {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "herotext herotext infocards";
+    grid-template-areas: 'herotext herotext infocards';
     grid-template-rows: auto;
 
     .heroText {

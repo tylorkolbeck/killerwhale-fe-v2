@@ -37,9 +37,13 @@
 }
 
 .description {
-  max-width: 1200px;
+  // max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
+
+  & > div {
+    max-width: 1200px;
+  }
 
   .descriptionContent {
     padding: 2rem 0rem 2rem 0rem;

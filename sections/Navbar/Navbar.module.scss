@@ -1,11 +1,17 @@
 .navBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 10vh;
-  max-width: 90rem;
   padding: 0 2em;
-  margin: 0 auto;
+  display: flex;
+  background: transparent;
+
+  .navbarContent {
+    width: 100%;
+    max-width: 90rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .logoContainer {
