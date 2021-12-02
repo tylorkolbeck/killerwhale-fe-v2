@@ -1,67 +1,72 @@
-.ProductTable {
-  & .ctaRow {
-    text-align: center;
-    padding: 2rem;
-  }
-
-  & .productRow {
-    background-color: hsl(var(--clr-dark));
-    border-radius: 4px;
-    margin: 0;
-
-    &:hover {
-      cursor: pointer;
-      background-color: hsla(var(--clr-green));
-    }
-  }
-
-  & .row {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    align-items: center;
-    margin: 2rem 0rem;
-
-    & .cell {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      padding: 1rem;
-
-      &:not(:nth-child(1)) {
-        text-align: center;
-      }
-    }
-
-    & .cell:not(:first-of-type) {
-      padding: 2rem;
-    }
-  }
+.product {
+  background: hsl(var(--clr-dark) / 0.2);
+  border-radius: 8px;
 }
 
-@media screen and (min-width: 900px) {
-  .ProductTable {
-    & .ctaRow {
-      display: none;
-    }
+// .ProductTable {
+//   & .ctaRow {
+//     text-align: center;
+//     padding: 2rem;
+//   }
 
-    & .row {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+//   & .productRow {
+//     background-color: hsl(var(--clr-dark));
+//     border-radius: 4px;
+//     margin: 0;
 
-    & .cell:nth-child(2) {
-      &::after {
-        content: '';
-        position: absolute;
-        height: 30%;
-        border-radius: 4px;
-        width: 1px;
-        transform: translateY(100%);
-        right: 0;
-        border: 1px solid rgba(238, 238, 238, 0.384);
-      }
-    }
-  }
-}
+//     &:hover {
+//       cursor: pointer;
+//       background-color: hsla(var(--clr-green));
+//     }
+//   }
+
+//   & .row {
+//     display: grid;
+//     grid-template-columns: 1fr;
+
+//     align-items: center;
+//     margin: 2rem 0rem;
+
+//     & .cell {
+//       height: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       position: relative;
+//       padding: 1rem;
+
+//       &:not(:nth-child(1)) {
+//         text-align: center;
+//       }
+//     }
+
+//     & .cell:not(:first-of-type) {
+//       padding: 2rem;
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 900px) {
+//   .ProductTable {
+//     & .ctaRow {
+//       display: none;
+//     }
+
+//     & .row {
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+
+//     & .cell:nth-child(2) {
+//       &::after {
+//         content: '';
+//         position: absolute;
+//         height: 30%;
+//         border-radius: 4px;
+//         width: 1px;
+//         transform: translateY(100%);
+//         right: 0;
+//         border: 1px solid rgba(238, 238, 238, 0.384);
+//       }
+//     }
+//   }
+// }

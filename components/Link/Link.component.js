@@ -13,7 +13,8 @@ export default function CustomLink({
   linkTo,
   children,
   active,
-  className
+  className,
+  newTab
 }) {
   const [dropdownVisible, setDropdownVisible] = useState(false)
 
@@ -52,7 +53,7 @@ export default function CustomLink({
   } else {
     return (
       <Link href={linkTo} passHref>
-        <a className={linkClasses}>
+        <a className={linkClasses} target={newTab ? '_blank' : '_self'}>
           {children}{' '}
           {iconEnd && <span className={styles.iconEnd}>{iconEnd}</span>}
         </a>

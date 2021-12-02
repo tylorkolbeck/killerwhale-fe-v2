@@ -1,25 +1,14 @@
-import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import TypeOfTrader from '../sections/TypeOfTrader/TypeOfTrader.component'
 import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.component'
+import Divider from '../components/Divider/Divider.component'
 
 export default function StrategiesSignals() {
   return (
     <div>
-      <div className='v-align-c hero'>
-        <div>
-          <SectionHeader
-            header='Strategies & Signals'
-            subText='Killer Whale has  hand picked the best strategies and signals based on your trading experience. To get started select your trading experience below.'
-            hSize='l'
-            center
-          />
-          <section className='section center text-green'>
-            <div>
-              <p className='bold fs-500'>
-                Voted #1 Strategy and Signal Provider On Cryptohopper!
-              </p>
-            </div>
-          </section>
+      <div className='container'>
+        <h1 className='ff-good mt-3 center'>Signals And Strategies</h1>
+        <div className='grid center mt-2'>
+          <Divider width='200px' />
         </div>
       </div>
 

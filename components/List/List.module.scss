@@ -4,7 +4,7 @@
   padding-left: 1rem;
 
   & li::before {
-    content: "\2022";
+    content: '\2022';
     color: hsl(var(--clr-green));
     font-weight: bold;
     display: inline-block;
