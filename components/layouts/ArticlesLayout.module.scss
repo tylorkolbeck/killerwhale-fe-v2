@@ -16,11 +16,15 @@
   display: none;
 }
 
-@media screen and (min-width: 900px) {
+.toTop {
+  text-align: right;
+}
+
+@media screen and (min-width: 960px) {
   .grid {
     display: grid;
-    grid-template-columns: 5fr 1fr;
-    gap: var(--gap, 1rem);
+    grid-template-columns: 2fr 1fr;
+    gap: var(--gap, 3rem);
   }
   .sideBar {
     display: block;

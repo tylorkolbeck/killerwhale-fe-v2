@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './article.module.scss'
+import Link from '../../components/Link/Link.component'
 import { DateTime } from 'luxon'
 import ArticleLayout from '../../components/layouts/ArticleLayout'
 import { getAllPostsIds, getPostData } from '../../lib/posts'
@@ -18,8 +19,6 @@ const Article = ({ postData }) => {
         <br />
       </div>
     ))
-
-  // console.log(postData)
   return (
     <>
       <div>
@@ -36,6 +35,14 @@ const Article = ({ postData }) => {
         </p>
         <div className={styles.content}>{formattedContent}</div>
       </div>
+      <div className={styles.nav}>
+        <Link type='nav' linkTo='#'>
+          Previous
+        </Link>
+        <Link type='nav' linkTo='#'>
+          Next
+        </Link>
+      </div>
     </>
   )
 }
@@ -46,7 +53,6 @@ export default Article
 
 export async function getStaticPaths() {
   const paths = await getAllPostsIds()
-
   return {
     paths,
     fallback: true
@@ -56,7 +62,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.slug)
   const { coin } = await fetchAPI('/coin-list')
-  console.log(coin)
   return {
     props: {
       postData,
