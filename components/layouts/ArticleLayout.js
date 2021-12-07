@@ -1,11 +1,10 @@
 import React from 'react'
 import styles from './ArticlesLayout.module.scss'
 
-export default function ArticlesLayout({ children }) {
+export default function ArticleLayout({ children }) {
   return (
     <>
       <div className='container'>
-        <div className={styles.topPromo}>Promo 1</div>
         <div className={styles.grid}>
           <div>{children}</div>
           <div className={styles.sideBar}>
@@ -22,7 +21,7 @@ export default function ArticlesLayout({ children }) {
             aspernatur provident voluptas. Fuga libero fugit quae.
           </div>
         </div>
-        <div className={styles.bottomPromo}>Promo 2</div>
+        <div className={styles.bottomPromo}>Promo</div>
       </div>
     </>
   )
