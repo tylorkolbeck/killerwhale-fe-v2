@@ -1,4 +1,5 @@
 import styles from './TradeScroller.module.scss'
+import Link from 'next/link'
 import Marquee from 'react-fast-marquee'
 import useSWR from 'swr'
 import React from 'react'
@@ -38,9 +39,16 @@ export default function TradeScroller() {
     <div>
       {data?.tweets ? (
         <div className={styles.tradeScroller}>
-          <Marquee gradient={false}>
-            {data?.tweets?.map(({ text, id }) => formatTweet(text, id))}
-          </Marquee>
+          <a
+            href='https://twitter.com/DylanShively6?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'
+            target='_blank'
+            rel='noreferrer'
+            className={styles.link}
+          >
+            <Marquee gradient={false}>
+              {data?.tweets?.map(({ text, id }) => formatTweet(text, id))}
+            </Marquee>
+          </a>
         </div>
       ) : null}
     </div>
