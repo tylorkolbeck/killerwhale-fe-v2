@@ -5,6 +5,7 @@ import { DateTime } from 'luxon'
 import ArticleLayout from '../../components/layouts/ArticleLayout'
 import { getAllPostsIds, getPostData } from '../../lib/posts'
 import { fetchAPI } from '../../lib/api'
+import NewsLetterSignup from '../../sections/NewsLetterSignup/NewsLetterSignup.component'
 
 const Article = ({ postData }) => {
   let formattedDate = DateTime.fromISO(postData.created_at).toFormat(
@@ -43,6 +44,7 @@ const Article = ({ postData }) => {
           Next
         </Link>
       </div>
+      <NewsLetterSignup />
     </>
   )
 }
