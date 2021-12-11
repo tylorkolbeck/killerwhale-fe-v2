@@ -26,10 +26,11 @@
 
 .active {
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     height: 3px;
     background-color: hsl(var(--clr-green));
+
     width: 100%;
     bottom: -10px;
     left: 0;
@@ -47,12 +48,18 @@
 
 .subLinks {
   background: hsl(var(--clr-light));
+  // background-color: red;
+  z-index: 300;
   border-radius: 0px 0px 2px 2px;
-  padding: 0.5rem;
+  padding: 1rem;
   position: absolute;
   top: 30px;
   font-size: var(--fs-200);
-  width: 100%;
+  & li {
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+  }
+  // width: 100%;
   & ul {
     margin: 0;
     padding: 0;
