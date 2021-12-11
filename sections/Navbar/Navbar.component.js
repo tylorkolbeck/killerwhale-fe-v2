@@ -66,7 +66,7 @@ export default function Navbar() {
                 </ul>
               }
             >
-              updates
+              Articles
             </Link>
           </li>
         </ul>
