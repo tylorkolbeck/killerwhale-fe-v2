@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useCallback } from 'react'
 import styles from '../styles/pages/home.module.scss'
 import Head from 'next/head'
 import HomepageHero from '../sections/HomepageHero/HomepageHero.component'
@@ -14,8 +15,71 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import InfoBar from '../components/InfoBar/InfoBar.component'
 import SectionHeader from '../components/SectionHeader/SectionHeader.component'
+import useEmblaCarousel from 'embla-carousel-react'
+import {
+  PrevButton,
+  NextButton
+} from '../components/CarouselButtons/CarouselButtons.component'
 
 export default function Home() {
+  // Testimonial carousel helper functions start
+  const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false })
+  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
+  const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
+
+  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla])
+  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla])
+  const onSelect = useCallback(() => {
+    if (!embla) return
+    setPrevBtnEnabled(embla.canScrollPrev())
+    setNextBtnEnabled(embla.canScrollNext())
+  }, [embla])
+  useEffect(() => {
+    if (!embla) return
+    embla.on('select', onSelect)
+    onSelect()
+  }, [embla, onSelect])
+  // Testimonial carousel helper functions end
+
+  let testimonialArray = [
+    {
+      description:
+        'Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.',
+      strategy: 'Gain BTC',
+      startBal: '$2,000 USD',
+      profit: '$2,000 USD (100%)',
+      name: 'Fred Durst',
+      prodName: 'GAIN BTC ',
+      type: 'strategy',
+      tradeDuration: 0,
+      tradeFreq: 50
+    },
+    {
+      description:
+        'Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.',
+      strategy: 'Gain BTC',
+      startBal: '$2,000 USD',
+      profit: '$2,000 USD (100%)',
+      name: 'Fred Durst',
+      prodName: 'GAIN BTC ',
+      type: 'strategy',
+      tradeDuration: 0,
+      tradeFreq: 50
+    },
+    {
+      description:
+        'Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.',
+      strategy: 'Gain BTC',
+      startBal: '$2,000 USD',
+      profit: '$2,000 USD (100%)',
+      name: 'Fred Durst',
+      prodName: 'GAIN BTC ',
+      type: 'strategy',
+      tradeDuration: 0,
+      tradeFreq: 50
+    }
+  ]
+
   return (
     <div>
       <Head>
@@ -87,7 +151,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='section bg-light'>
+      <section className='section'>
         <div className='container center flow' style={{ maxWidth: '600px' }}>
           <SectionHeader
             header='What Type Of Trader are you?'
@@ -256,21 +320,34 @@ export default function Home() {
               borderRadius: 6
             }}
           >
-            <Testimonial
-              description='Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.'
-              strategy='Gain BTC'
-              startBal='$2,000 USD'
-              profit='$2,000 USD (100%)'
-              name='Fred Durst'
-              strategyCard={
-                <ProductCard
-                  name='GAIN BTC '
-                  type='strategy'
-                  tradeDuration={0}
-                  tradeFreq={50}
-                />
-              }
-            />
+            {/* Testimonial Carousel start */}
+            <div className={styles.embla}>
+              <div className={styles.embla__viewport} ref={viewportRef}>
+                <div className={styles.embla__container}>
+                  {testimonialArray.map((testimonial, i) => (
+                    <Testimonial
+                      key={i}
+                      description={testimonial.description}
+                      strategy={testimonial.strategy}
+                      startBal={testimonial.startBal}
+                      profit={testimonial.profit}
+                      name={testimonial.name}
+                      strategyCard={
+                        <ProductCard
+                          name={testimonial.prodName}
+                          type={testimonial.type}
+                          tradeDuration={testimonial.tradeDuration}
+                          tradeFreq={testimonial.tradeFreq}
+                        />
+                      }
+                    />
+                  ))}
+                </div>
+              </div>
+              <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+              <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+            </div>
+            {/* Testimonial Carousel start */}
           </div>
         </div>
       </section>

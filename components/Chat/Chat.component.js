@@ -1,14 +1,8 @@
-import styles from './Chat.module.scss'
-import clsx from 'clsx'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComment } from '@fortawesome/free-solid-svg-icons'
+import Script from 'next/script'
 
 export default function Chat() {
-  return (
-    <div className={clsx(styles.Chat, 'bg-green text-white')}>
-      {' '}
-      <FontAwesomeIcon icon={faComment} />
-    </div>
-  )
+  const zendeskKey = process.env.NEXT_PUBLIC_ZENDESK_KEY
+  const chatSource = `https:static.zdassets.com/ekr/snippet.js?key=${zendeskKey}`
+
+  return <Script id='ze-snippet' src={chatSource} />
 }

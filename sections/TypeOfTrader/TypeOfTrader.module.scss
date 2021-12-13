@@ -7,10 +7,14 @@
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  // padding: 2rem;
 
   & .typeCard {
     cursor: pointer;
+
+    & .type {
+      margin-top: auto;
+    }
 
     &.selected {
       background-color: hsl(var(--clr-light));
@@ -25,13 +29,14 @@
 
     & img {
       padding: 2rem;
+      padding-bottom: 1rem;
       width: 100%;
       max-width: 200px;
       margin: 0 auto;
       opacity: 0.6;
     }
     & p {
-      padding: 1rem 1rem 1rem 1rem;
+      padding: 0rem 1rem 1rem 1rem;
     }
   }
 }

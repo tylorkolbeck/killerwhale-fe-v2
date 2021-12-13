@@ -12,25 +12,26 @@ export default function Testimonial({
   strategyCard
 }) {
   return (
-    <div className={clsx('flow', styles.Testimonial)}>
-      <div className={styles.cardHeader}>
-        <h4 className='fs-500'> {name}</h4>
-        <p className='text-accent'>{description}</p>
-      </div>
-      <div className='flex'>
-        <div>
-          <p className='fs-200 uppercase letter-spacing-3 text-accent'>
-            Starting Balance
-          </p>
-          <p className='text-green'>{startBal}</p>
+    <div className={clsx('flow', styles.Testimonial, styles.embla__slide)}>
+      <div className={styles.embla__slide__inner}>
+        <div className={styles.cardHeader}>
+          <h4 className='fs-500'> {name}</h4>
+          <p className='text-accent'>{description}</p>
         </div>
-        <div>
-          <p className='fs-200 uppercase letter-spacing-3 text-accent'>
-            Profit
-          </p>
-          <p className='text-green'>{profit}</p>
-        </div>
-        {/* <div>
+        <div className='flex'>
+          <div>
+            <p className='fs-200 uppercase letter-spacing-3 text-accent'>
+              Starting Balance
+            </p>
+            <p className='text-green'>{startBal}</p>
+          </div>
+          <div>
+            <p className='fs-200 uppercase letter-spacing-3 text-accent'>
+              Profit
+            </p>
+            <p className='text-green'>{profit}</p>
+          </div>
+          {/* <div>
           <p className='fs-200 uppercase letter-spacing-3'>Used</p>
           <p className='text-accent'>
             {strategy}
@@ -39,9 +40,9 @@ export default function Testimonial({
             </span>
           </p>
         </div> */}
-      </div>
+        </div>
 
-      {/* <div className={clsx('grid', styles.cardDetails)}>
+        {/* <div className={clsx('grid', styles.cardDetails)}>
         <div className='flow'>
           <div>
             <p className='fs-200 uppercase letter-spacing-3'>
@@ -64,7 +65,8 @@ export default function Testimonial({
           </div>
         </div>
       </div> */}
-      <div className={styles.strategyCard}>{strategyCard}</div>
+        <div className={styles.strategyCard}>{strategyCard}</div>
+      </div>
     </div>
   )
 }
