@@ -3,7 +3,6 @@ import { getAllPostsIds, getPostData } from '../../lib/posts'
 import { fetchAPI } from '../../lib/api'
 
 const Article = ({ postData }) => {
-  console.log(postData)
   return <h1>hello world</h1>
 }
 

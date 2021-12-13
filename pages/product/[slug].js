@@ -50,8 +50,8 @@ export default function product({ product }) {
                 <b>Templates</b>
               </p>
 
-              {product.template.map((temp) => (
-                <p>
+              {product.template.map((temp, index) => (
+                <p key={index}>
                   <Link linkTo={temp.link} className='text-accent'>
                     {temp.title}
                     <span className='ml'>
@@ -83,14 +83,14 @@ export default function product({ product }) {
               className={clsx(styles.controls)}
               style={{ marginTop: 'auto' }}
             >
-              <a href={product.setupGuideLink} target='_blank'>
+              <a href={product.setupGuideLink} target='_blank' rel='noreferrer'>
                 <Button fullWidth type='outlined'>
                   Setup Guide
                 </Button>
               </a>
 
               <div className='mt-1'>
-                <a href={product.chLink} target='_blank'>
+                <a href={product.chLink} target='_blank' rel='noreferrer'>
                   <Button fullWidth>Get on Marketplace</Button>
                 </a>
               </div>
