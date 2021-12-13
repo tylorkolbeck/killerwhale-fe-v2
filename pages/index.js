@@ -87,7 +87,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='section bg-light'>
+      <section className='section'>
         <div className='container center flow' style={{ maxWidth: '600px' }}>
           <SectionHeader
             header='What Type Of Trader are you?'

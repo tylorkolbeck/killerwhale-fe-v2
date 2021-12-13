@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
 import ProductTable from '../../components/ProductTable/ProductTable.component'
 import { useRouter } from 'next/router'
+import { strategies } from '../../data/strategies'
 
 const traderTypes = [
   {
@@ -398,7 +399,12 @@ export default function TypeOfTrader() {
               })}
             >
               <img src={type.imgSrc} alt={type.alt} />
-              <p className={clsx({ bold: type?.type === typeSelected?.type })}>
+              <p
+                className={clsx(
+                  { bold: type?.type === typeSelected?.type },
+                  styles.type
+                )}
+              >
                 {type?.type}
               </p>
             </div>
@@ -408,9 +414,9 @@ export default function TypeOfTrader() {
       {typeSelected && (
         <div className={clsx(styles.description, 'bg-light')} id='ProductTable'>
           <div className={clsx('container', 'flow', styles.descriptionContent)}>
-            <p className='text-green bold'>
+            {/* <p className='text-green bold'>
               <i>{typeSelected.type}</i>
-            </p>
+            </p> */}
             <SectionHeader
               header={typeSelected.sectionTitle}
               subText={typeSelected.description}
@@ -418,10 +424,7 @@ export default function TypeOfTrader() {
             />
           </div>
           <div className={clsx(styles.productCardWrapper, 'bg-dark')}>
-            <ProductTable
-              products={typeSelected?.products}
-              type={typeSelected?.type}
-            />
+            <ProductTable products={strategies} type={typeSelected?.type} />
           </div>
           <p
             className='center text-green bold pointer'
