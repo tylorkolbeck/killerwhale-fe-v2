@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import clsx from 'clsx'
+
 import Button from '../../components/Button/Button.component'
 
 export default function Navbar() {
@@ -131,6 +132,15 @@ export default function Navbar() {
                           Free Strategy
                         </Link>
                       </li>
+                      <li>
+                        <Link
+                          linkTo='strategies-signals'
+                          className='button primary'
+                          fullWidth
+                        >
+                          View All
+                        </Link>
+                      </li>
                     </ul>
                     <ul>
                       <li>
@@ -164,11 +174,17 @@ export default function Navbar() {
                           Bank Robber
                         </Link>
                       </li>
+                      <li>
+                        <Link
+                          linkTo='strategies-signals'
+                          className='button primary'
+                          fullWidth
+                        >
+                          View All
+                        </Link>
+                      </li>
                     </ul>
                   </div>
-                  <Button className='button primary' fullWidth>
-                    All
-                  </Button>
                 </>
               }
             >

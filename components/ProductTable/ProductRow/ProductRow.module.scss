@@ -1,6 +1,5 @@
 .productRowContainer {
   border: 1px solid rgba(238, 238, 238, 0.2);
-
   border-radius: 8px;
   position: relative;
 
@@ -33,7 +32,7 @@
     transform: rotate(-45deg);
 
     /* Background color */
-    background-color: hsl(var(--clr-green));
+    background-color: hsl(var(--clr-dark));
 
     /* Centerize the text content */
     text-align: center;
@@ -55,17 +54,13 @@
   & .productRow {
     border-radius: 4px;
     margin: 0;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   & .row {
     display: grid;
     grid-template-columns: 1fr;
 
-    align-items: center;
+    align-items: flex-start;
     margin: 1rem 0rem;
 
     & .cell {
@@ -104,6 +99,16 @@
   }
 }
 
+.productInfo {
+  padding: 1rem;
+  min-width: 400px;
+  margin: 0 auto;
+
+  & .controls {
+    max-width: 400px;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .productRowContainer {
     & .ctaRow {
@@ -111,7 +116,10 @@
     }
 
     & .row {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
+  }
+
+  .productInfo {
   }
 }
