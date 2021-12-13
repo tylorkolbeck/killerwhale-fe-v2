@@ -12,7 +12,7 @@ export default function ArticleLayout({ children }) {
             <h1>Promoting Products:</h1>
           </div>
         </div>
-        <div className={styles.bottomPromo}>Promo</div>
+        {/* <div className={styles.bottomPromo}>Promo</div> */}
         <div className={styles.toTop}>
           <Link type='nav' linkTo='#'>
             Back to top

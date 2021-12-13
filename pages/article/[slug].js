@@ -2,14 +2,15 @@ import Image from 'next/image'
 import styles from './article.module.scss'
 import Link from '../../components/Link/Link.component'
 import { DateTime } from 'luxon'
+import { getStrapiMedia } from '../../utils/media'
 import ArticleLayout from '../../components/layouts/ArticleLayout'
 import { getAllPostsIds, getPostData } from '../../lib/posts'
 import { fetchAPI } from '../../lib/api'
 import NewsLetterSignup from '../../sections/NewsLetterSignup/NewsLetterSignup.component'
 
 const Article = ({ postData }) => {
-  let formattedDate = DateTime.fromISO(postData.created_at).toFormat(
-    'dd MMM yyyy'
+  let formattedDate = DateTime.fromISO(postData.publishedAt).toLocaleString(
+    DateTime.DATE_MED
   )
   let formattedContent = postData.content
     .replace(/<br\/>/g, '')
@@ -25,7 +26,7 @@ const Article = ({ postData }) => {
       <div>
         <h1 className={styles.title}>{postData.title}</h1>
         <Image
-          src={postData.image.url}
+          src={getStrapiMedia(postData.image.url)}
           alt={postData.image.alternativeText}
           height={postData.image.height}
           width={postData.image.width}

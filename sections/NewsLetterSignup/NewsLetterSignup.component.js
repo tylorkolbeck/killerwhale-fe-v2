@@ -10,6 +10,7 @@ export default function NewsLetterSignup() {
     <div className={clsx('flow', styles.newsLetterSignup)}>
       <div className='flow'>
         <SectionHeader
+          hSize={'s'}
           header='Stay Up To Date'
           subText='Get weekly insights and updates from the Killer Whale Crew'
         />
