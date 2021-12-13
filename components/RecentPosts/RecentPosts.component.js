@@ -1,46 +1,51 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import Link from '../Link/Link.component'
 import { getStrapiMedia } from '../../utils/media'
 import styles from './RecentPosts.module.scss'
-const { DateTime } = require('luxon')
+import { DateTime } from 'luxon'
 
 const RecentPosts = ({ articles }) => {
   return (
-    <>
-      <h3>Most Recent</h3>
-      <div className={styles.App}>{retrieveRecentPosts(articles)}</div>
-    </>
+    <div className={styles.App}>
+      {articles.length && renderRecentPosts(articles)}
+    </div>
   )
 }
 
-const retrieveRecentPosts = (articles) => {
-  let posts = []
-  for (let i = 1; i < 7; i++) {
-    let post = articles[i]
+const renderRecentPosts = (articles) => {
+  return articles.map((post) => {
     let publishedDate = DateTime.fromISO(post.publishedAt).toLocaleString(
       DateTime.DATE_MED
     )
 
-    posts.push(
-      <Link passHref href={`/article/${post.slug}`} key={post.id}>
-        <a>
-          <div className={styles.card}>
-            <Image
-              src={getStrapiMedia(post.image.formats.thumbnail.url)}
-              alt={post.image.alternativeText}
-              layout='fill'
-              objectFit='cover'
-            />
+    return (
+      <Link linkTo={`/article/${post.slug}`} key={post.id}>
+        <div className='card'>
+          <div className='card-image'>
+            <figure
+              className='image is-4by3'
+              style={{ position: 'relative', height: '200px' }}
+            >
+              <Image
+                src={getStrapiMedia(post.image.formats.thumbnail.url)}
+                alt='Placeholder image'
+                layout='fill'
+                objectFit='cover'
+              />
+            </figure>
           </div>
-          <p>{post.title}</p>
-          <p>
-            {post.author.name} - {publishedDate}
-          </p>
-        </a>
+          <div className='card-content'>
+            <div className='content mt-1'>
+              <p className='fs-400'>{post.title}</p>
+              <p className='fs-200'>
+                {post.author.name} - {publishedDate}
+              </p>
+            </div>
+          </div>
+        </div>
       </Link>
     )
-  }
-  return posts
+  })
 }
 
 export default RecentPosts

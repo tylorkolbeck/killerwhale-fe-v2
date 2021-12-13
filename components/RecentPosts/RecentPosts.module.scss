@@ -1,11 +1,11 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
   max-width: 900px;
   margin: 0 auto;
+  margin-top: 2rem;
   & p {color:white;}
 }
 
@@ -14,6 +14,10 @@
   height: 200px;
   width: 200px;
   margin:0 auto;
+  & img {
+    width: 200px;
+    height:auto;
+  }
 }
 
 @media only screen and (min-width: 600px) {

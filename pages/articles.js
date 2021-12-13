@@ -2,8 +2,7 @@ import { fetchAPI } from '../lib/api'
 import RecentPosts from '../components/RecentPosts/RecentPosts.component.js'
 
 export default function Articles({ articles, authors }) {
-  console.log(articles)
-  return <RecentPosts articles={articles} />
+  return <RecentPosts articles={articles.slice(1, 7)} />
 }
 
 export async function getStaticProps() {
