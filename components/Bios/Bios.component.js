@@ -49,7 +49,6 @@ export default function AboutUs() {
   }, [])
 
   function onViewBio(bioId, row) {
-    console.log(bioId, bioShown)
     if (bioId === bioShown) {
       setBioRows(bioRows.map((r) => [])) // reset the rows
       setBioShown(null)

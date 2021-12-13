@@ -25,6 +25,7 @@ export default function ProductRow({ product }) {
             <span className='fs-500 bold'>{product.name}</span>
             <p className='fs-300'>
               <Link linkTo={product.setupGuideLink}>
+                background: rgb(17, 17, 17);
                 <FontAwesomeIcon icon={faInfoCircle} />
                 <span className='ml'>
                   <u>View Setup Guide</u>
@@ -49,7 +50,7 @@ export default function ProductRow({ product }) {
               </Link>
             </div>
             <div className='mt-1'>
-              <a href={product.chLink} target='_blank'>
+              <a href={product.chLink} target='_blank' rel='noreferrer'>
                 <Button fullWidth>Get on Marketplace</Button>
               </a>
             </div>
