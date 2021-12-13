@@ -15,3 +15,15 @@
 .strategyCard {
   // transform: scale(0.75);
 }
+
+.embla__slide {
+  position: relative;
+  min-width: 100%;
+  // padding-left: 10px;
+}
+
+.embla__slide__inner {
+  position: relative;
+  overflow: hidden;
+  // height: 190px;
+}
