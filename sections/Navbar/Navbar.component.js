@@ -88,7 +88,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link linkTo='/' type='nav'>
+            <Link linkTo='/support' type='nav'>
               OnBoarding & Support
             </Link>
           </li>
