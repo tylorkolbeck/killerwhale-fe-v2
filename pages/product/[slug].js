@@ -23,6 +23,10 @@ export default function product({ product }) {
           <FontAwesomeIcon icon={faArrowLeft} /> All Strategies and Signals
         </Link>
 
+        <h1 className='ff-good fs-700 mt-2'>
+          {product.name} {product.type}
+        </h1>
+
         {/* <h2 className='ff-good fs-600 mt-1' style={{ columnSpan: 'all' }}>
           {product.name} {product.type}
         </h2> */}
@@ -34,6 +38,7 @@ export default function product({ product }) {
               type={product.type}
               tradeDuration={product.tradeDuration}
               tradeFreq={product.tradeFreq}
+              experience={product.experience}
             />
           </div>
           <div>

@@ -12,8 +12,8 @@ export default function SectionHeader({
   const sizes = {
     s: 'fs-500',
     m: 'fs-600',
-    l: 'fs-700',
-    xl: 'fs-800'
+    l: 'fs-600',
+    xl: 'fs-700'
   }
 
   const headerSize = hSize ? sizes[hSize] : sizes['l']

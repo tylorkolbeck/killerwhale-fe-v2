@@ -2,13 +2,43 @@ import clsx from 'clsx'
 import styles from './ProductCard.module.scss'
 import Image from 'next/image'
 
-export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
+export default function ProductCard({
+  name,
+  type,
+  tradeDuration,
+  tradeFreq,
+  experience
+}) {
+  const experienceBadges = {
+    1: (
+      <Image
+        src='/images/badges/badge_fish.svg'
+        height='30'
+        width='30'
+        key={'fish'}
+      />
+    ),
+    2: (
+      <Image
+        src='/images/badges/badge_dolphin.svg'
+        height='30'
+        width='30'
+        key={'dolphin'}
+      />
+    ),
+    3: (
+      <Image
+        src='/images/badges/badge_whale.svg'
+        height='30'
+        width='30'
+        key={'whale'}
+      />
+    )
+  }
   return (
     <div className={styles.productCard}>
       <div className={clsx(styles.badges)}>
-        <Image src='/images/badges/badge_dolphin.svg' height='30' width='30' />
-        <Image src='/images/badges/badge_fish.svg' height='30' width='30' />
-        <Image src='/images/badges/badge_whale.svg' height='30' width='30' />
+        {experience.map((e) => experienceBadges[e])}
       </div>
       <div className={styles.header}>
         <Image

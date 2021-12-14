@@ -9,96 +9,19 @@ import { strategies } from '../../data/strategies'
 const traderTypes = [
   {
     id: 1,
+    experience: 1,
     type: 'New',
     sectionTitle: 'Best for new traders',
     title: 'New To Trading',
     description:
       'Killer Whale strategies and signals and automated bot trading is a great way to start out in Crypto, without the need to understand market trends and do deep analysis.',
-    products: [
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      }
-    ],
+    products: [],
     imgSrc: '/images/badges/badge_fish.svg',
     alt: 'New To Trading'
   },
   {
     id: 2,
+    experience: 2,
     type: 'Experienced',
     title: 'Experienced Trader',
     sectionTitle: 'Best for experienced traders',
@@ -107,89 +30,11 @@ const traderTypes = [
     products: [],
     imgSrc: '/images/badges/badge_dolphin.svg',
     alt: 'Experienced Trader',
-    products: [
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      }
-    ]
+    products: []
   },
   {
     id: 3,
+    experience: 3,
     type: 'Killer Whale',
     title: 'Killer Whale',
     sectionTitle: 'Best for the Killer Whales',
@@ -198,192 +43,57 @@ const traderTypes = [
     products: [],
     imgSrc: '/images/badges/badge_whale.svg',
     alt: 'Killer Whale',
-    products: [
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      }
-    ]
+    products: []
   },
   {
     id: 4,
+    experience: 'all',
     type: 'All Products',
     title: 'See everything?',
-    sectionTitle: 'Viewing All Products',
+    sectionTitle: 'All Strategies & Signals',
     description:
       'Want to browse everything we have and make your own choice? Below are all the Killer Whale Strategies and Signals',
     products: [],
     imgSrc: '/images/badges/badge_all.svg',
     alt: 'All products',
-    products: [
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      },
-      {
-        name: 'GAIN BTC',
-        type: 'Strategy',
-        tradeDuration: '50',
-        tradeFreq: '50',
-        startingBalance: [
-          '$500 - $1,000',
-          '$1,000 - $2,500',
-          '$2,500 - $10,000',
-          '$10,000+'
-        ],
-        plans: ['Explorer', 'Adventurer']
-      }
-    ]
+    products: []
   }
 ]
 
 export default function TypeOfTrader() {
-  const [typeSelected, setTypeSelected] = useState(null)
+  const [experienceSelected, setExperienceSelected] = useState(traderTypes[0])
+  const [productsToShow, setProductsToShow] = useState(null)
+  // const [allProducts, setAllProducts] = useState([])
+
   const router = useRouter()
 
-  useEffect(() => {
-    setTypeSelected(traderTypes[0])
-  }, [])
+  // useEffect(() => {
+  // setAllProducts(strategies)
+  // filterProducts(experienceSelected)
+  // setExperienceSelected(traderTypes[0])
+  // }, [experienceSelected])
 
-  function setSelectedTypeHandler(typeId) {
+  function setExperienceSelectedHandler(experience) {
     router.push('#ProductTable')
-    let type = traderTypes.filter((type) => type.id === typeId)[0]
-    setTypeSelected(type)
+    let traderType = traderTypes.filter((type) => type.id === experience)[0]
+
+    if (experience === 'all') {
+      setExperienceSelected(traderTypes[3])
+      setProductsToShow(strategies)
+      return
+    } else {
+      setExperienceSelected(traderType)
+      filterProducts(traderType.experience)
+    }
+  }
+
+  function filterProducts(experienceLevel) {
+    if (experienceLevel) {
+      const filteredProducts = strategies.filter((prod) => {
+        return prod.experience.includes(experienceLevel)
+      })
+      setProductsToShow(filteredProducts)
+    }
   }
 
   return (
@@ -393,15 +103,15 @@ export default function TypeOfTrader() {
           return (
             <div
               key={type.id}
-              onClick={() => setSelectedTypeHandler(type.id)}
+              onClick={() => setExperienceSelectedHandler(type.experience)}
               className={clsx(styles.typeCard, {
-                [styles.selected]: type.id === typeSelected?.id
+                [styles.selected]: type.id === experienceSelected?.id
               })}
             >
               <img src={type.imgSrc} alt={type.alt} />
               <p
                 className={clsx(
-                  { bold: type?.type === typeSelected?.type },
+                  { bold: type?.type === experienceSelected?.type },
                   styles.type
                 )}
               >
@@ -411,24 +121,23 @@ export default function TypeOfTrader() {
           )
         })}
       </div>
-      {typeSelected && (
+      {experienceSelected && (
         <div className={clsx(styles.description, 'bg-light')} id='ProductTable'>
           <div className={clsx('container', 'flow', styles.descriptionContent)}>
-            {/* <p className='text-green bold'>
-              <i>{typeSelected.type}</i>
-            </p> */}
             <SectionHeader
-              header={typeSelected.sectionTitle}
-              subText={typeSelected.description}
+              header={experienceSelected.sectionTitle}
+              subText={experienceSelected.description}
               hSize='m'
             />
           </div>
           <div className={clsx(styles.productCardWrapper, 'bg-dark')}>
-            <ProductTable products={strategies} type={typeSelected?.type} />
+            {productsToShow && <ProductTable products={productsToShow} />}
           </div>
           <p
             className='center text-green bold pointer'
-            onClick={() => setSelectedTypeHandler(typeSelected.id)}
+            onClick={() =>
+              setExperienceSelectedHandler(experienceSelected.experience)
+            }
           >
             Back to top
           </p>

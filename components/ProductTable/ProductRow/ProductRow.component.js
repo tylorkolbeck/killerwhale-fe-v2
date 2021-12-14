@@ -25,7 +25,6 @@ export default function ProductRow({ product }) {
             <span className='fs-500 bold'>{product.name}</span>
             <p className='fs-300'>
               <Link linkTo={product.setupGuideLink}>
-                background: rgb(17, 17, 17);
                 <FontAwesomeIcon icon={faInfoCircle} />
                 <span className='ml'>
                   <u>View Setup Guide</u>

@@ -21,7 +21,11 @@ export default function TradeScroller() {
         <p>
           {stringArray.map((string, index) => {
             if (index === profitIndex || index === profitStringIndex) {
-              return <span className='text-green'>{string + ' '}</span>
+              return (
+                <span className='text-green' key={`profit_${index}`}>
+                  {string + ' '}
+                </span>
+              )
             } else {
               return string + ' '
             }

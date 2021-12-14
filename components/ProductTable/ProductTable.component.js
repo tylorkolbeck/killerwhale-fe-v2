@@ -1,7 +1,7 @@
 import styles from './ProductTable.module.scss'
 import ProductRow from './ProductRow/ProductRow.component'
 
-export default function ProductTable({ products, type }) {
+export default function ProductTable({ products }) {
   return (
     <div className='bg-light'>
       {products.map((product) => (
