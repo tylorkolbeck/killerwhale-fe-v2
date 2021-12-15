@@ -1,0 +1,34 @@
+.topPromo {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: hsl(var(--clr-green));
+  text-align: center;
+}
+
+.bottomPromo {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: hsl(var(--clr-green));
+  text-align: center;
+}
+
+.sideBar {
+  display: none;
+}
+
+.toTop {
+  text-align: right;
+  padding: 0 2rem;
+}
+
+@media screen and (min-width: 960px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--gap, 3rem);
+  }
+  .sideBar {
+    display: block;
+    margin-top: 2rem;
+  }
+}

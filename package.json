@@ -16,6 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "axios": "^0.24.0",
     "clsx": "^1.1.1",
+    "luxon": "^2.1.1",
     "embla-carousel-react": "^6.0.2",
     "next": "11.1.2",
     "react": "17.0.2",

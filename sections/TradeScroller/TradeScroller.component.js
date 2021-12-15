@@ -1,4 +1,5 @@
 import styles from './TradeScroller.module.scss'
+import Link from 'next/link'
 import Marquee from 'react-fast-marquee'
 import useSWR from 'swr'
 import React from 'react'
