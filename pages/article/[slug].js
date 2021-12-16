@@ -3,16 +3,20 @@ import { getAllPostsIds, getPostData } from '../../lib/posts'
 import { fetchAPI } from '../../lib/api'
 import Image from 'next/image'
 import { getStrapiMedia } from '../../utils/media'
+import Markdown from '../../components/Markdown/Markdown.component'
 
-const Article = ({ postData }) => {
-  console.log(postData.image.url)
+const Article = ({ postData, coinList }) => {
+  console.log(postData)
   return (
-    <Image
-      src={getStrapiMedia(postData.image.url)}
-      alt='image'
-      height='200'
-      width='400'
-    ></Image>
+    <>
+      <Image
+        src={getStrapiMedia(postData.image.url)}
+        alt='image'
+        height='200'
+        width='400'
+      ></Image>
+      <Markdown coinList={coinList}>{postData.content}</Markdown>
+    </>
   )
 }
 

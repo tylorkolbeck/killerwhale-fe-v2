@@ -1,0 +1,81 @@
+.enlargedImage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    &:hover {
+      cursor: pointer
+    }
+    & img {
+      width: 90vw;
+      max-width: 1200px;
+    }
+  }
+
+  .coinList {
+          & p {
+        color: white;
+      }
+  }
+
+  .markdownStyling {
+    position: relative;
+    & img {
+      max-width: 100%;
+      padding: 20px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      display: block;
+      margin: 20px auto;
+
+      &:hover {
+        cursor: pointer
+      }
+    }
+    & span {
+      width: 100%;
+      display: block
+    }
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%
+    }
+
+    & video {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25% /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    }
+    & li {
+      font-size: 18px;
+      line-height: 34px
+    }
+  }
+
+  .backdrop {
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .8;
+    z-index: 100;
+  }
+
+  .markdownImage {
+            max-width: 100%;
+            padding: 20px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            display: block;
+            margin: 20px auto;
+  }
