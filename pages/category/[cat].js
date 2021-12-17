@@ -14,11 +14,10 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps({ params }) {
-  console.log(params)
   const articles = await fetchAPI(
     `/articles?_sort=publishedAt:DESC&category[slug]_eq=${params.cat}`
   )
-  console.log(articles)
+
   return {
     props: {
       articles

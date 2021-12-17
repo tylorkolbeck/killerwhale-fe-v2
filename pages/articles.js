@@ -1,20 +1,19 @@
 import { fetchAPI } from '../lib/api'
 import Image from 'next/image'
-import Button from '../components/Button/Button.component'
 import { getStrapiMedia } from '../utils/media'
 import Link from '../components/Link/Link.component'
 import RecentPosts from '../components/RecentPosts/RecentPosts.component.js'
 import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.component'
 import ArticleLayout from '../components/layouts/ArticleLayout'
 import { DateTime } from 'luxon'
+import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 
-export default function Articles({ articles }) {
-  // console.log(articles.category.name)
-  const categories = articles.map((category) => {
+export default function Articles({ articles, categories }) {
+  const renderCategories = categories.map((category) => {
     return (
-      <Link linkTo={`/article/${category.slug}`} key={category.id}>
-        <Button key={category.id}>{category.name}</Button>
-      </Link>
+      <span className='tag is-success' key={category.id}>
+        {category.name}
+      </span>
     )
   })
   const latestPost = articles[0]
@@ -23,9 +22,12 @@ export default function Articles({ articles }) {
   )
   return (
     <>
-      <h2>Categories</h2>
-      <div>{categories}</div>
-      <h1>Latest Post</h1>
+      {/* <h2 className='fs-400'>Categories</h2> */}
+      {/* <div>{renderCategories}</div> */}
+      <div className='mt-2'>
+        <SectionHeader header='Latest News' />
+      </div>
+
       <Link linkTo={`/article/${latestPost.slug}`} key={latestPost.id}>
         <Image
           src={getStrapiMedia(latestPost.image.url)}
@@ -36,15 +38,19 @@ export default function Articles({ articles }) {
         />
       </Link>
       <h2 className='mb-1 bold fs-600 mt-1'>{latestPost.title}</h2>
-      <p className='mb-1'>{latestPost.description}</p>
+      <p className='mb-1 '>{latestPost.description}</p>
       <p className='mb-2'>
         {latestPost.author.name} - {publishedDate}
       </p>
-      <div className='bg-light container'>
+
+      <div className='mt-4'>
+        <SectionHeader header='Most Recent' />
+        {/* <h1 className='mt-3 ff-good fs-700'>Most Recent</h1> */}
+        <RecentPosts articles={articles.slice(1, 7)} />
+      </div>
+      <div className='mt-4'>
         <NewsLetterSignup />
       </div>
-      <h1 className='mt-3 ff-good fs-700'>Most Recent</h1>
-      <RecentPosts articles={articles.slice(1, 7)} />
     </>
   )
 }
@@ -56,7 +62,6 @@ export async function getStaticProps() {
 
   const articles = await fetchAPI('/articles?_sort=publishedAt:DESC&_limit=7')
   const categories = await fetchAPI('/categories')
-  // console.log(articles)
   return {
     props: {
       articles,

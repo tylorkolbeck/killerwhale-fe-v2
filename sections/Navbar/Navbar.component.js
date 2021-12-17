@@ -6,8 +6,6 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { strategies } from '../../data/strategies'
 
-import Button from '../../components/Button/Button.component'
-
 export default function Navbar() {
   function filterProducts(filter) {
     return strategies.filter((strat) => strat.type === filter)
@@ -94,8 +92,8 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link linkTo='/' type='nav'>
-              Articles
+            <Link linkTo='/articles' type='nav'>
+              News
             </Link>
           </li>
           <li>

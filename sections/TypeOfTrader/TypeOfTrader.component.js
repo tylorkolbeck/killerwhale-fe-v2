@@ -63,15 +63,13 @@ const traderTypes = [
 export default function TypeOfTrader() {
   const [experienceSelected, setExperienceSelected] = useState(traderTypes[0])
   const [productsToShow, setProductsToShow] = useState(null)
-  // const [allProducts, setAllProducts] = useState([])
 
   const router = useRouter()
 
-  // useEffect(() => {
-  // setAllProducts(strategies)
-  // filterProducts(experienceSelected)
-  // setExperienceSelected(traderTypes[0])
-  // }, [experienceSelected])
+  useEffect(() => {
+    setExperienceSelected(traderTypes[0])
+    filterProducts(1)
+  }, [])
 
   function setExperienceSelectedHandler(experience) {
     router.push('#ProductTable')

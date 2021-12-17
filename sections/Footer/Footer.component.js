@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { strategies } from '../../data/strategies'
 
 export default function Footer() {
   return (
@@ -18,34 +19,57 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.linkCategory}>
               <h3 className='fs-400 ff-serif uppercase'>Strategies</h3>
-              <Link linkTo='/' type='nav'>
-                Gain BTC
-              </Link>
-              <Link linkTo='/' type='nav'>
-                Gain ETH
-              </Link>
+              {strategies.map((strat) => {
+                if (strat.type === 'strategy') {
+                  return (
+                    <Link
+                      linkTo={`/product/${strat.slug}`}
+                      type='nav'
+                      key={`signal_${strat.id}`}
+                    >
+                      {strat.name}
+                    </Link>
+                  )
+                }
+              })}
             </div>
 
             <div className={styles.linkCategory}>
               <h3 className='fs-400 ff-serif uppercase'>Signals</h3>
-              <Link linkTo='/' type='nav'>
-                Bank Robber
-              </Link>
+              {strategies.map((strat) => {
+                if (strat.type === 'signal') {
+                  return (
+                    <Link
+                      linkTo={`/product/${strat.slug}`}
+                      type='nav'
+                      key={`strat_${strat.id}`}
+                    >
+                      {strat.name}
+                    </Link>
+                  )
+                }
+              })}
             </div>
 
             <div className={styles.linkCategory}>
               <h3 className='fs-400 ff-serif uppercase'>Links</h3>
-              <Link linkTo='/' type='nav'>
+              <Link
+                linkTo='https://support.killerwhalecrypto.com/hc/en-us'
+                type='nav'
+              >
                 Knowledgebase
               </Link>
-              <Link linkTo='/' type='nav'>
-                Education
+              <Link
+                linkTo='https://support.killerwhalecrypto.com/hc/en-us/categories/4407769214875-Setup-Guides'
+                type='nav'
+              >
+                Setup Guides
               </Link>
-              <Link linkTo='/' type='nav'>
+              <Link linkTo='/support' type='nav'>
                 Support
               </Link>
-              <Link linkTo='/' type='nav'>
-                Updates
+              <Link linkTo='/articles' type='nav'>
+                News
               </Link>
             </div>
 

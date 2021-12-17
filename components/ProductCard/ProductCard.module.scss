@@ -31,6 +31,10 @@
     padding: 1.5rem 0;
     max-width: 75%;
     height: 100%;
+
+    &.mini {
+      padding-top: 0px;
+    }
   }
 
   .stats {

@@ -19,7 +19,7 @@ const renderRecentPosts = (articles) => {
     )
 
     return (
-      <Link linkTo={`/article/${post.slug}`} key={post.id}>
+      <Link key={post.id} linkTo={`/article/${post.slug}`} key={post.id}>
         <div className='card'>
           <div className='card-image'>
             <figure

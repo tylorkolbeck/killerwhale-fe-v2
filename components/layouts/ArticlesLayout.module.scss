@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.productCardLink {
+  cursor: pointer;
+}
+
 .bottomPromo {
   margin: 2rem 0;
   padding: 2rem;
@@ -13,7 +17,20 @@
 }
 
 .sideBar {
-  display: none;
+  // display: none;
+
+  .promo {
+    margin-top: 4rem;
+  }
+
+  .strategies {
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      margin: 1rem auto;
+    }
+  }
 }
 
 .toTop {
@@ -24,11 +41,39 @@
 @media screen and (min-width: 960px) {
   .grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: auto 400px;
     gap: var(--gap, 3rem);
   }
   .sideBar {
     display: block;
     margin-top: 2rem;
+
+    .promo {
+      margin-top: 0;
+    }
+
+    .strategies {
+      & > div {
+        margin: 1rem 0;
+      }
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      a {
+        color: white !important;
+      }
+
+      span {
+        background-color: hsl(var(--clr-green));
+        border-radius: 4px;
+        font-size: 14px;
+        padding: 2px 4px;
+        margin-left: 4px;
+        margin-bottom: 4px;
+      }
+    }
   }
 }
