@@ -1,18 +1,16 @@
 import Image from 'next/image'
 import Link from '../Link/Link.component'
 import { getStrapiMedia } from '../../utils/media'
-import styles from './RecentPosts.module.scss'
+import styles from './PostsGrid.module.scss'
 import { DateTime } from 'luxon'
 
-const RecentPosts = ({ articles }) => {
+const PostsGrid = ({ articles }) => {
   return (
-    <div className={styles.App}>
-      {articles.length && renderRecentPosts(articles)}
-    </div>
+    <div className={styles.App}>{articles.length && renderPosts(articles)}</div>
   )
 }
 
-const renderRecentPosts = (articles) => {
+const renderPosts = (articles) => {
   return articles.map((post) => {
     let publishedDate = DateTime.fromISO(post.publishedAt).toLocaleString(
       DateTime.DATE_MED
@@ -48,4 +46,4 @@ const renderRecentPosts = (articles) => {
   })
 }
 
-export default RecentPosts
+export default PostsGrid
