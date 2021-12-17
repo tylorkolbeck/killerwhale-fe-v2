@@ -61,12 +61,6 @@ export async function getStaticProps() {
   // Run API calls in parallel
 
   const articles = await fetchAPI('/articles?_sort=publishedAt:DESC&_limit=7')
-<<<<<<< HEAD
-  const authors = await fetchAPI('/writers')
-
-  return {
-    props: { articles, authors },
-=======
   const categories = await fetchAPI('/categories')
   return {
     props: {
@@ -75,7 +69,6 @@ export async function getStaticProps() {
         return { id, name, slug }
       })
     },
->>>>>>> c76ca27acfb883dff3d017509ae4812a3c38af3c
     revalidate: 1
   }
 }
