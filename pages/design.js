@@ -436,6 +436,7 @@ function Styles() {
                       type='strategy'
                       tradeDuration={0}
                       tradeFreq={50}
+                      experience={[1, 2, 3]}
                     />
                   }
                 />

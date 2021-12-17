@@ -145,6 +145,9 @@ export default function Markdown({ children, coinList }) {
     //     </BodyText>
     //   )
     // },
+    p: ({children}) => {
+      return <p>{children}</p>
+    },
     a: ({ href, children }) => {
       return (
         <Link linkTo={href} newTab={true} >

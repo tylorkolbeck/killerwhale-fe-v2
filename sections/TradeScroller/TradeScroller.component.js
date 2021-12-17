@@ -1,4 +1,5 @@
 import styles from './TradeScroller.module.scss'
+import Link from 'next/link'
 import Marquee from 'react-fast-marquee'
 import useSWR from 'swr'
 import React from 'react'
@@ -21,7 +22,11 @@ export default function TradeScroller() {
         <p>
           {stringArray.map((string, index) => {
             if (index === profitIndex || index === profitStringIndex) {
-              return <span className='text-green'>{string + ' '}</span>
+              return (
+                <span className='text-green' key={`profit_${index}`}>
+                  {string + ' '}
+                </span>
+              )
             } else {
               return string + ' '
             }

@@ -30,6 +30,10 @@
 
 .cRight {
   margin-top: 4rem;
+
+  &.testimonialWrappper {
+    max-width: 600px;
+  }
 }
 
 .twoColumn {
@@ -68,6 +72,7 @@
   gap: 2rem;
   justify-content: center;
   grid-template-columns: 1fr;
+  margin: 0 auto;
 }
 
 .centerOnSmall {
@@ -76,7 +81,7 @@
 }
 
 .signUpSection {
-  background: hsl(var(--clr-light));
+  // background: hsl(var(--clr-light));
 }
 
 @media screen and (min-width: 900px) {
@@ -116,7 +121,6 @@
   }
 }
 
-
 .embla {
   position: relative;
   // padding: 20px;
@@ -146,5 +150,3 @@
   -khtml-user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-
-

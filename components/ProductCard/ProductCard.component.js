@@ -2,25 +2,65 @@ import clsx from 'clsx'
 import styles from './ProductCard.module.scss'
 import Image from 'next/image'
 
-export default function ProductCard({ name, type, tradeDuration, tradeFreq }) {
+export default function ProductCard({
+  name,
+  type,
+  tradeDuration,
+  tradeFreq,
+  experience,
+  mini
+}) {
+  const experienceBadges = {
+    1: (
+      <Image
+        src='/images/badges/badge_fish.svg'
+        height='30'
+        width='30'
+        key={'fish'}
+      />
+    ),
+    2: (
+      <Image
+        src='/images/badges/badge_dolphin.svg'
+        height='30'
+        width='30'
+        key={'dolphin'}
+      />
+    ),
+    3: (
+      <Image
+        src='/images/badges/badge_whale.svg'
+        height='30'
+        width='30'
+        key={'whale'}
+      />
+    )
+  }
   return (
     <div className={styles.productCard}>
       <div className={clsx(styles.badges)}>
-        <Image src='/images/badges/badge_dolphin.svg' height='30' width='30' />
-        <Image src='/images/badges/badge_fish.svg' height='30' width='30' />
-        <Image src='/images/badges/badge_whale.svg' height='30' width='30' />
+        {experience && experience.map((e) => experienceBadges[e])}
       </div>
-      <div className={styles.header}>
-        <Image
-          src='/images/kw_logo_accent.svg'
-          width='50'
-          height='50'
-          alt='Killer Whale Logo'
-        />
-      </div>
+      {!mini && (
+        <div className={styles.header}>
+          <Image
+            src='/images/kw_logo_accent.svg'
+            width='50'
+            height='50'
+            alt='Killer Whale Logo'
+          />
+        </div>
+      )}
 
-      <div className={styles.title}>
-        <h4 className='fs-600 uppercase ff-good'>{name}</h4>
+      <div className={clsx(styles.title, { [styles.mini]: mini })}>
+        <h4
+          className={clsx('uppercase ff-good', {
+            'fs-600': !mini,
+            'fs-500': mini
+          })}
+        >
+          {name}
+        </h4>
         <p className='fs-300 uppercase ff-serif letter-spacing-3 text-green'>
           {type}
         </p>

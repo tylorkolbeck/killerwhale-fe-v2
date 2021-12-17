@@ -14,6 +14,7 @@ export default function CustomLink({
   children,
   active,
   className,
+  noStyle,
   newTab
 }) {
   const [dropdownVisible, setDropdownVisible] = useState(false)
@@ -29,7 +30,8 @@ export default function CustomLink({
   const linkClasses = [
     type ? styles[type] : styles.link,
     type === 'nav' || type === 'navSub' ? navClasses : '',
-    active ? styles.active : ''
+    active ? styles.active : '',
+    noStyle ? styles.noStyle : ''
   ].join(' ')
 
   if (subLinks) {

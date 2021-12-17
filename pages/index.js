@@ -100,11 +100,6 @@ export default function Home() {
               signals, sent via our experienced traders.'
               hSize='l'
             />
-
-            <Button type='cta'>About Us</Button>
-          </div>
-
-          <div className={clsx(styles.cRight, 'v-align-c')}>
             <List
               items={[
                 'All Skill Levels',
@@ -113,6 +108,19 @@ export default function Home() {
                 'Large Community'
               ]}
             ></List>
+
+            <Button type='cta'>About Us</Button>
+          </div>
+
+          <div className={clsx(styles.cRight, 'v-align-c')}>
+            {/* <List
+              items={[
+                'All Skill Levels',
+                'Trade While You Sleep',
+                'Advanced AI',
+                'Large Community'
+              ]}
+            ></List> */}
           </div>
         </div>
       </section>
@@ -122,6 +130,7 @@ export default function Home() {
           style={{ position: 'relative' }}
         >
           <div>
+            <Image src='/images/gas.png' width='100' height='100'></Image>
             <h4 className='fs-500 fw-bold'>All Skill Levels</h4>
             <p>
               Killer Whale Signals and strategies have been designed for all
@@ -130,6 +139,8 @@ export default function Home() {
             </p>
           </div>
           <div>
+            <Image src='/images/sleeping.png' width='100' height='100'></Image>
+
             <h4 className='fs-500 fw-bold'>Trade While You Sleep</h4>
             <p>
               Never miss a dip in the market, a pump, or an all time high.
@@ -140,6 +151,8 @@ export default function Home() {
             </p>
           </div>
           <div>
+            <Image src='/images/ai.png' width='100' height='100'></Image>
+
             <h4 className='fs-500 fw-bold'>Advanced AI</h4>
             <p>
               Our Team of experienced traders use advanced AI to watch the
@@ -246,7 +259,7 @@ export default function Home() {
         }
       />
 
-      <section className='section bg-light'>
+      <section className='section bg-dark'>
         <div className={clsx('container', styles.twoColumn)}>
           <div className={clsx('flow', styles.cLeft)}>
             <SectionHeader
@@ -259,35 +272,47 @@ export default function Home() {
           </div>
 
           <div className={clsx(styles.productCards, styles.cRight)}>
-            <ProductCard
-              name='GAIN BTC '
-              type='strategy'
-              tradeDuration={0}
-              tradeFreq={50}
-            />
-            <ProductCard
-              name='GAIN BTC LONGER'
-              type='strategy'
-              tradeDuration={100}
-              tradeFreq={100}
-            />
-            <ProductCard
-              name='GAIN BTC '
-              type='strategy'
-              tradeDuration={0}
-              tradeFreq={50}
-            />
-            <ProductCard
-              name='GAIN BTC '
-              type='strategy'
-              tradeDuration={0}
-              tradeFreq={50}
-            />
+            <Link linkTo={`/product/gain-btc`} type='nav'>
+              <ProductCard
+                name='GAIN BTC '
+                type='strategy'
+                tradeDuration={0}
+                tradeFreq={50}
+                experience={[1, 2, 3]}
+              />
+            </Link>
+            <Link linkTo={`/product/gain-btc`} type='nav'>
+              <ProductCard
+                name='GAIN BTC'
+                type='strategy'
+                tradeDuration={100}
+                tradeFreq={100}
+                experience={[1, 2, 3]}
+              />
+            </Link>
+            <Link linkTo={`/product/gain-btc`} type='nav'>
+              <ProductCard
+                name='GAIN BTC '
+                type='strategy'
+                tradeDuration={0}
+                tradeFreq={50}
+                experience={[1, 2, 3]}
+              />
+            </Link>
+            <Link linkTo={`/product/gain-btc`} type='nav'>
+              <ProductCard
+                name='GAIN BTC '
+                type='strategy'
+                tradeDuration={0}
+                tradeFreq={50}
+                experience={[1, 2, 3]}
+              />
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className='section bg-dark'>
+      <section className='section bg-light'>
         <div className={clsx('container', styles.twoColumn)}>
           <div className={clsx('flow', styles.cLeft)}>
             <SectionHeader
@@ -310,11 +335,15 @@ export default function Home() {
               profitability of Killer Whale Strategies & Signals. These results
               can be verified in our Discord community
             </p> */}
-            <Button type='cta'>View All Products</Button>
+            <Button type='cta'>All Strategies and Signals</Button>
           </div>
 
           <div
-            className={clsx(styles.cRight, 'bg-light')}
+            className={clsx(
+              styles.cRight,
+              styles.testimonialWrappper,
+              'bg-dark'
+            )}
             style={{
               padding: '2rem',
               borderRadius: 6
@@ -338,6 +367,7 @@ export default function Home() {
                           type={testimonial.type}
                           tradeDuration={testimonial.tradeDuration}
                           tradeFreq={testimonial.tradeFreq}
+                          experience={[1, 2, 3]}
                         />
                       }
                     />
@@ -352,7 +382,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={clsx('section', styles.signUpSection)}>
+      <section className={clsx('section', 'bg-dark', styles.signUpSection)}>
         <div className='container'>
           <NewsLetterSignup />
         </div>

@@ -20,13 +20,13 @@ export default function Testimonial({
         </div>
         <div className='flex'>
           <div>
-            <p className='fs-200 uppercase letter-spacing-3 text-accent'>
+            <p className='fs-200 uppercase letter-spacing-3 text-accent bold'>
               Starting Balance
             </p>
             <p className='text-green'>{startBal}</p>
           </div>
           <div>
-            <p className='fs-200 uppercase letter-spacing-3 text-accent'>
+            <p className='fs-200 uppercase letter-spacing-3 text-accent bold'>
               Profit
             </p>
             <p className='text-green'>{profit}</p>
