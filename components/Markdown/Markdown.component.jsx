@@ -8,7 +8,7 @@ import rehypeRaw from 'rehype-raw'
 export default function Markdown({ children, coinList }) {
   const components = {
     p: ({ children }) => {
-      return <p>{children}</p>
+      return <p style={{ lineHeight: '2rem' }}>{children}</p>
     },
     h1: ({ children, level }) => {
       return <h1 className={'ff-good fs-700'}>{children}</h1>

@@ -4,7 +4,7 @@ import Link from '../../components/Link/Link.component'
 import { DateTime } from 'luxon'
 import { getStrapiMedia } from '../../utils/media'
 import ArticleLayout from '../../components/layouts/ArticleLayout'
-import RecentPosts from '../../components/RecentPosts/RecentPosts.component'
+import PostsGrid from '../../components/PostsGrid/PostsGrid.component'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
 import { getAllPostsIds, getPostData } from '../../lib/posts'
 import { fetchAPI } from '../../lib/api'
@@ -32,18 +32,18 @@ const Article = ({ articles, postData }) => {
         </p>
         <Markdown>{postData.content}</Markdown>
       </div>
-      <div className={styles.nav}>
+      {/* <div className={styles.nav}>
         <Link type='nav' linkTo='#'>
           Previous
         </Link>
         <Link type='nav' linkTo='#'>
           Next
         </Link>
-      </div>
+      </div> */}
       <div className='mt-4'>
         <SectionHeader header='Most Recent' />
         {/* <h1 className='mt-3 ff-good fs-700'>Most Recent</h1> */}
-        <RecentPosts articles={articles.slice(1, 7)} />
+        <PostsGrid articles={articles.slice(1, 7)} />
       </div>
       <div className='mt-4'>
         <NewsLetterSignup />
@@ -67,7 +67,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.slug)
   const articles = await fetchAPI('/articles?_sort=publishedAt:DESC&_limit=7')
-  console.log(articles)
   return {
     props: {
       articles,
