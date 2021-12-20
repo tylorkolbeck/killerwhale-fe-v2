@@ -5,14 +5,28 @@ import ProductCard from '../../components/ProductCard/ProductCard.component'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
 import Link from '../../components/Link/Link.component'
 import List from '../../components/List/List.component'
-import { strategies } from '../../data/strategies'
+import { fetchAPI } from '../../lib/api'
+// import { strategies } from '../../data/strategies'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faExternalLinkAlt,
   faArrowLeft
 } from '@fortawesome/free-solid-svg-icons'
 
-export default function product({ product }) {
+const arrayOfObjectsToStrings = (array, objectKey) => {
+  return array.map((item) => {
+    return item[objectKey]
+  })
+}
+
+export default function product({ product, strategies }) {
+  const experience = arrayOfObjectsToStrings(product.experience, 'experience')
+  const features = arrayOfObjectsToStrings(product.features, 'feature')
+  const requirements = arrayOfObjectsToStrings(
+    product.requirements,
+    'requirement'
+  )
+
   if (!product) {
     return <p>Loading...</p>
   }
@@ -38,7 +52,7 @@ export default function product({ product }) {
               type={product.type}
               tradeDuration={product.tradeDuration}
               tradeFreq={product.tradeFreq}
-              experience={product.experience}
+              experience={experience}
             />
           </div>
           <div>
@@ -47,7 +61,7 @@ export default function product({ product }) {
             </p>
             <div className='text-accent'>
               <div style={{ marginLeft: '1rem' }}>
-                <List items={product.features} />
+                <List items={features} />
               </div>
             </div>
             <div>
@@ -55,7 +69,7 @@ export default function product({ product }) {
                 <b>Templates</b>
               </p>
 
-              {product.template.map((temp, index) => (
+              {product.templates.map((temp, index) => (
                 <p key={index}>
                   <Link linkTo={temp.link} className='text-accent'>
                     {temp.title}
@@ -72,13 +86,13 @@ export default function product({ product }) {
           >
             {/* <p className={clsx(styles.detailHeader)}>
               <b>Price</b>
-            </p> */}
-            {/* <p className='fs-500 flex center v-align-c'>{product.price}</p> */}
+            </p>
+            <p className='fs-500 flex center v-align-c'>${product.price}</p> */}
             <div>
               <p className={clsx(styles.detailHeader)}>
                 <b>Requires</b>
               </p>
-              <List items={product.requirements} />
+              <List items={requirements} />
               {/* {product.requirements.map((req) => (
                 <p className='text-accent'>{req}</p>
               ))} */}
@@ -135,7 +149,8 @@ export default function product({ product }) {
 }
 
 export async function getStaticPaths() {
-  const paths = strategies.map((s) => {
+  const products_v2 = await fetchAPI('/products-v-2-s')
+  const paths = products_v2.map((s) => {
     return { params: { slug: s.slug } }
   })
 
@@ -147,12 +162,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // const postData = await getPostData(params.slug)
-  // const { coin } = await fetchAPI('/coin-list')
-  const product = strategies.find((strat) => strat.slug === params.slug)
+  const products = await fetchAPI(`/products-v-2-s?slug=${params.slug}`)
+  // const product = strategies.find((strat) => strat.slug === params.slug)
+  // const product = await fetchAPI('/')
 
   return {
     props: {
-      product: product
+      product: products[0]
     },
     revalidate: 1
   }
