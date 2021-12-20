@@ -6,7 +6,6 @@ import SectionHeader from '../../components/SectionHeader/SectionHeader.componen
 import Link from '../../components/Link/Link.component'
 import List from '../../components/List/List.component'
 import { fetchAPI } from '../../lib/api'
-// import { strategies } from '../../data/strategies'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faExternalLinkAlt,
@@ -19,7 +18,7 @@ const arrayOfObjectsToStrings = (array, objectKey) => {
   })
 }
 
-export default function product({ product, strategies }) {
+export default function product({ product }) {
   const experience = arrayOfObjectsToStrings(product.experience, 'experience')
   const features = arrayOfObjectsToStrings(product.features, 'feature')
   const requirements = arrayOfObjectsToStrings(
@@ -161,11 +160,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const postData = await getPostData(params.slug)
   const products = await fetchAPI(`/products-v-2-s?slug=${params.slug}`)
-  // const product = strategies.find((strat) => strat.slug === params.slug)
-  // const product = await fetchAPI('/')
-
   return {
     props: {
       product: products[0]
