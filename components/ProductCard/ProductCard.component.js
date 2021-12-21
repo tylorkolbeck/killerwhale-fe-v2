@@ -11,7 +11,7 @@ export default function ProductCard({
   mini
 }) {
   const experienceBadges = {
-    1: (
+    fish: (
       <Image
         src='/images/badges/badge_fish.svg'
         height='30'
@@ -19,7 +19,7 @@ export default function ProductCard({
         key={'fish'}
       />
     ),
-    2: (
+    dolphin: (
       <Image
         src='/images/badges/badge_dolphin.svg'
         height='30'
@@ -27,7 +27,7 @@ export default function ProductCard({
         key={'dolphin'}
       />
     ),
-    3: (
+    whale: (
       <Image
         src='/images/badges/badge_whale.svg'
         height='30'
