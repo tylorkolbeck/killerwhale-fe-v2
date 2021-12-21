@@ -28,7 +28,9 @@ export default function Hero({ bgImage }) {
             Get started with the #1 scalp and trading bots on Cryptohopper
           </p>
 
-          <Button type='cta'>Get Started</Button>
+          <Button type='cta' link='/strategies-signals'>
+            Get Started
+          </Button>
         </div>
 
         <div className={styles.infoCardWrapper}>
@@ -44,11 +46,13 @@ export default function Hero({ bgImage }) {
               <p>Rated #1 seller on Cryptohopper </p>
               <span className='fs-200'>
                 <Link
-                  linkTo='/'
+                  linkTo='https://www.cryptohopper.com/marketplace/search?q=killer+whale'
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                  newTab
                 >
                   Marketplace
                 </Link>
+                <link></link>
               </span>
             </div>
           </InfoCard>
@@ -64,7 +68,7 @@ export default function Hero({ bgImage }) {
               <p>Daily news articles from Killer Whale Experts</p>
               <span className='fs-200'>
                 <Link
-                  linkTo='/'
+                  linkTo='/articles'
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
                 >
                   Articles
@@ -85,8 +89,9 @@ export default function Hero({ bgImage }) {
               <p>A large Killer Whale Community!</p>
               <span className='fs-200'>
                 <Link
-                  linkTo='/'
+                  linkTo='https://discord.gg/UNXZhFVnrA'
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                  newTab
                 >
                   Discord
                 </Link>

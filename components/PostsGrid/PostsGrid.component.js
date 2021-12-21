@@ -6,7 +6,9 @@ import { DateTime } from 'luxon'
 
 const PostsGrid = ({ articles }) => {
   return (
-    <div className={styles.App}>{articles.length && renderPosts(articles)}</div>
+    <div className={styles.App}>
+      {articles?.length && renderPosts(articles)}
+    </div>
   )
 }
 
@@ -24,12 +26,14 @@ const renderPosts = (articles) => {
               className='image is-4by3'
               style={{ position: 'relative', height: '200px' }}
             >
-              <Image
-                src={getStrapiMedia(post.image.formats.thumbnail.url)}
-                alt='Placeholder image'
-                layout='fill'
-                objectFit='cover'
-              />
+              {post?.image?.formats && (
+                <Image
+                  src={getStrapiMedia(post?.image?.formats?.thumbnail?.url)}
+                  alt='Placeholder image'
+                  layout='fill'
+                  objectFit='cover'
+                />
+              )}
             </figure>
           </div>
           <div className='card-content'>

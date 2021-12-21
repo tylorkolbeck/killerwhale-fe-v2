@@ -9,7 +9,7 @@ import clsx from 'clsx'
 import { useRouter } from 'next/dist/client/router'
 
 export default function ArticleLayout({ children }) {
-  const [categories, setCategories] = useState(null)
+  const [categories, setCategories] = useState([])
   const router = useRouter()
 
   useEffect(async () => {
@@ -33,7 +33,7 @@ export default function ArticleLayout({ children }) {
             <div className={styles.promo}>
               <SectionHeader header='Start Trading'>
                 Want to get started in automated crypto trading? Check out
-                Killer Whale's top earning strategies
+                Killer Whale&apos;s top earning strategies
               </SectionHeader>
               <div className={clsx('flow mt-2', styles.strategies)}>
                 {strategies.slice(0, 4).map((strat) => (

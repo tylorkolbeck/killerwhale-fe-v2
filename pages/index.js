@@ -109,22 +109,15 @@ export default function Home() {
               ]}
             ></List>
 
-            <Button type='cta'>About Us</Button>
+            <Button type='cta' link='about'>
+              About Us
+            </Button>
           </div>
           <div className={styles.cRight}>
             <img src='/images/dashboard.png' />
           </div>
 
-          <div className={clsx(styles.cRight, 'v-align-c')}>
-            {/* <List
-              items={[
-                'All Skill Levels',
-                'Trade While You Sleep',
-                'Advanced AI',
-                'Large Community'
-              ]}
-            ></List> */}
-          </div>
+          <div className={clsx(styles.cRight, 'v-align-c')}></div>
         </div>
       </section>
       <section>
@@ -135,7 +128,7 @@ export default function Home() {
           <div>
             <Image src='/images/gas.png' width='100' height='100'></Image>
             <h4 className='fs-500 fw-bold'>All Skill Levels</h4>
-            <p>
+            <p className='text-accent'>
               Killer Whale Signals and strategies have been designed for all
               levels of traders, if you’re new to Crypto or an experienced
               HODL’R we have strategies and signals for every experience level.{' '}
@@ -145,7 +138,7 @@ export default function Home() {
             <Image src='/images/sleeping.png' width='100' height='100'></Image>
 
             <h4 className='fs-500 fw-bold'>Trade While You Sleep</h4>
-            <p>
+            <p className='text-accent'>
               Never miss a dip in the market, a pump, or an all time high.
               Killer Whale monitors all of your favorite currencies 24/7. Our
               Advanced AI picks the right time to buy and sell to ensure the
@@ -157,7 +150,7 @@ export default function Home() {
             <Image src='/images/ai.png' width='100' height='100'></Image>
 
             <h4 className='fs-500 fw-bold'>Advanced AI</h4>
-            <p>
+            <p className='text-accent'>
               Our Team of experienced traders use advanced AI to watch the
               market and then executing with precision the best trades on up to
               75 different coins, giving our users the best exposure to multiple
@@ -256,7 +249,7 @@ export default function Home() {
       <InfoBar
         text='Are you ready to join the Killer Whale Pod?'
         button={
-          <Button type='ctaInverted' inverted>
+          <Button type='ctaInverted' inverted link='/support'>
             Getting Started
           </Button>
         }
@@ -271,7 +264,9 @@ export default function Home() {
               Killer Whale monitors all of your favorite currencies 24/7. Our'
             />
 
-            <Button type='cta'>View All Products</Button>
+            <Button type='cta' link='strategies-signals'>
+              View All Products
+            </Button>
           </div>
 
           <div className={clsx(styles.productCards, styles.cRight)}>
@@ -338,7 +333,9 @@ export default function Home() {
               profitability of Killer Whale Strategies & Signals. These results
               can be verified in our Discord community
             </p> */}
-            <Button type='cta'>All Strategies and Signals</Button>
+            <Button type='cta' link='strategies-signals'>
+              All Strategies and Signals
+            </Button>
           </div>
 
           <div

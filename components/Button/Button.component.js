@@ -2,6 +2,7 @@ import styles from './Button.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import clsx from 'clsx'
+import { useRouter } from 'next/router'
 
 export default function Button({
   type,
@@ -10,9 +11,26 @@ export default function Button({
   iconStart,
   iconEnd,
   fullWidth,
-  inverted
+  inverted,
+  link
 }) {
+  const router = useRouter()
+
   const typeStyle = type ? styles[type] : styles.contained
+
+  const navigate = () => {
+    router.push(link)
+  }
+
+  function clickHandler() {
+    if (onClick) onClick()
+    else if (link) navigate()
+    else {
+      router.push('/')
+    }
+  }
+
+  // const clickHandler = onClick ? onClick : navigate
 
   return (
     <button
@@ -22,7 +40,7 @@ export default function Button({
         { [styles.fullWidth]: fullWidth, inverted: inverted },
         'letter-spacing-3'
       )}
-      onClick={onClick}
+      onClick={clickHandler}
     >
       {iconStart && iconStart} {children} {iconEnd && iconEnd}{' '}
       {(type === 'cta' || type === 'ctaInverted') && (

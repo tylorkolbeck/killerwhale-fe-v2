@@ -13,16 +13,20 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const arrayOfObjectsToStrings = (array, objectKey) => {
-  return array.map((item) => {
-    return item[objectKey]
-  })
+  if (Array.isArray(array)) {
+    return array.map((item) => {
+      return item[objectKey]
+    })
+  } else {
+    return []
+  }
 }
 
 export default function product({ product }) {
-  const experience = arrayOfObjectsToStrings(product.experience, 'experience')
-  const features = arrayOfObjectsToStrings(product.features, 'feature')
+  const experience = arrayOfObjectsToStrings(product?.experience, 'experience')
+  const features = arrayOfObjectsToStrings(product?.features, 'feature')
   const requirements = arrayOfObjectsToStrings(
-    product.requirements,
+    product?.requirements,
     'requirement'
   )
 
@@ -84,7 +88,7 @@ export default function product({ product }) {
                 <b>Templates</b>
               </p>
 
-              {product.templates.map((temp, index) => (
+              {product?.templates?.map((temp, index) => (
                 <p key={index}>
                   <Link linkTo={temp.link} className='text-accent'>
                     {temp.title}
@@ -103,7 +107,7 @@ export default function product({ product }) {
                 </p>
                 <div className='text-accent'>
                   <div style={{ marginLeft: '1rem' }}>
-                    <List items={requirements} />
+                    {requirements?.length && <List items={requirements} />}
                   </div>
                 </div>
               </div>

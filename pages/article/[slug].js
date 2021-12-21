@@ -12,38 +12,31 @@ import NewsLetterSignup from '../../sections/NewsLetterSignup/NewsLetterSignup.c
 import Markdown from '../../components/Markdown/Markdown.component'
 
 const Article = ({ articles, postData }) => {
-  let formattedDate = DateTime.fromISO(postData.publishedAt).toLocaleString(
+  let formattedDate = DateTime.fromISO(postData?.publishedAt).toLocaleString(
     DateTime.DATE_MED
   )
 
   return (
     <>
       <div>
-        <h1 className={styles.title}>{postData.title}</h1>
-        <Image
-          src={getStrapiMedia(postData.image.url)}
-          alt={postData.image.alternativeText}
-          height={postData.image.height}
-          width={postData.image.width}
-        />
-        <h2 className={styles.description}>{postData.description}</h2>
+        <h1 className={styles.title}>{postData?.title}</h1>
+        {postData?.image && (
+          <Image
+            src={getStrapiMedia(postData?.image?.url)}
+            alt={postData?.image?.alternativeText}
+            height={postData?.image?.height}
+            width={postData?.image?.width}
+          />
+        )}
+        <h2 className={styles.description}>{postData?.description}</h2>
         <p className={styles.author}>
-          {postData.author.name} - {formattedDate}
+          {postData?.author?.name} - {formattedDate}
         </p>
-        <Markdown>{postData.content}</Markdown>
+        <Markdown>{postData?.content}</Markdown>
       </div>
-      {/* <div className={styles.nav}>
-        <Link type='nav' linkTo='#'>
-          Previous
-        </Link>
-        <Link type='nav' linkTo='#'>
-          Next
-        </Link>
-      </div> */}
       <div className='mt-4'>
         <SectionHeader header='Most Recent' />
-        {/* <h1 className='mt-3 ff-good fs-700'>Most Recent</h1> */}
-        <PostsGrid articles={articles.slice(1, 7)} />
+        <PostsGrid articles={articles?.slice(1, 7)} />
       </div>
       <div className='mt-4'>
         <NewsLetterSignup />
@@ -74,8 +67,4 @@ export async function getStaticProps({ params }) {
     },
     revalidate: 1
   }
-}
-
-Article.defaultProps = {
-  postData: {}
 }
