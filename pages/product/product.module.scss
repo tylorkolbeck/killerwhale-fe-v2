@@ -4,7 +4,7 @@
   align-items: flex-start;
   justify-items: center;
   margin-top: 2rem;
-  gap: 4rem;
+  gap: 1rem;
   padding: 2rem;
   border-radius: 6px;
 
@@ -31,12 +31,25 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.productInfoGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
 @media screen and (min-width: 900px) {
   .productHeader {
-    grid-template-columns: auto 1fr 1fr;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
 
     .controls {
       margin-top: auto !important;
     }
+  }
+
+  .productInfoGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 }

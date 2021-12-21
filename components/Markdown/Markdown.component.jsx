@@ -5,27 +5,30 @@ import styles from './Markdown.module.scss'
 import { getStrapiMedia } from '../../utils/media'
 import rehypeRaw from 'rehype-raw'
 
-export default function Markdown({ children, coinList }) {
+export default function Markdown({ children }) {
+  function renderCustomInput(input) {
+    console.log('rendering input', input)
+  }
   const components = {
     p: ({ children }) => {
       return <p style={{ lineHeight: '2rem' }}>{children}</p>
     },
-    h1: ({ children, level }) => {
+    h1: ({ children }) => {
       return <h1 className={'ff-good fs-700'}>{children}</h1>
     },
-    h2: ({ children, level }) => {
+    h2: ({ children }) => {
       return <h2 className={'ff-good fs-600'}>{children}</h2>
     },
-    h3: ({ children, level }) => {
+    h3: ({ children }) => {
       return <h3 className={'ff-good fs-500'}>{children}</h3>
     },
-    h4: ({ children, level }) => {
+    h4: ({ children }) => {
       return <h4 className={'ff-good fs-400'}>{children}</h4>
     },
-    h5: ({ children, level }) => {
+    h5: ({ children }) => {
       return <h5 className={'ff-good fs-300'}>{children}</h5>
     },
-    h6: ({ children, level }) => {
+    h6: ({ children }) => {
       return <h6 className={'ff-good fs-200'}>{children}</h6>
     },
     a: ({ href, children }) => {
@@ -35,8 +38,9 @@ export default function Markdown({ children, coinList }) {
         </Link>
       )
     },
-    code: ({ value }) => {
-      return <div id={value} className={styles.coinList}></div>
+    code: ({ node }) => {
+      renderCustomInput(node?.children[0]?.value?.split('\n'))
+      return <div id={'asd'} className={styles.coinList}></div>
     },
     img: (props) => {
       return (

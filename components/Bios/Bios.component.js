@@ -6,27 +6,35 @@ import Bio from './Bio/Bio.component'
 const bios = [
   {
     id: 1,
-    name: 'Albert Einstein 1',
-    title: 'Creator',
+    name: 'Dylan Shively',
+    img: '/images/bios/dylan.jpg',
+    title: 'Founder',
     bio: 'Adipisicing eu dolor deserunt occaecat voluptate proident Lorem. Eiusmod dolor aliquip nulla voluptate. Duis commodo esse laboris voluptate laborum magna quis adipisicing sit cupidatat.'
   },
   {
     id: 2,
-    name: 'Albert Einstein 2',
-    title: 'Creator',
-    bio: 'Adipisicing eu dolor deserunt occaecat voluptate proident Lorem. Eiusmod dolor aliquip nulla voluptate. Duis commodo esse laboris voluptate laborum magna quis adipisicing sit cupidatat.'
+    name: 'Chris Freeman',
+    img: '/images/bios/dylan.jpg',
+    title: 'Business Manager',
+    bio: `Chris is an entrepreneurial, customer-centric executive who has acquired over 23 years of experience in IT. Success in process excellence, digital and business transformation and operational leadership, integrating business strategy into delivery with exceptional results delivering a superior customer focused experience.
+    With a strong interest in Crypto since 2017, Chris has been involved in several startups within the crypto space, in a business advisory capacity. He has also spoken at local government events around blockchain technologies, and was interviewed by the ABC on "Betting on Bitcoin" back in 2017. 
+    `
   },
   {
     id: 3,
-    name: 'Albert Einstein 3',
+    name: 'Tony Cherven',
+    img: '/images/bios/dylan.jpg',
     title: 'Creator',
-    bio: 'Adipisicing eu dolor deserunt occaecat voluptate proident Lorem. Eiusmod dolor aliquip nulla voluptate. Duis commodo esse laboris voluptate laborum magna quis adipisicing sit cupidatat.'
+    bio: `Tony is a professional writer, with experience in both journalism and advertising. He first discovered cryptocurrency back in 2017 and immediately developed a strong passion for both investing and blockchain technology. Tony has been with Killer Whale Crypto since its inception. Tony has spent years researching a wide variety of cryptocurrency projects and crypto related topics. Tony’s other interests include a variety of media production, ranging from audio to video and was one of the first content creators on the YouTube video platform.`
   },
   {
     id: 4,
-    name: 'Albert Einstein 4',
+    name: 'Customer Supprt',
+    img: '/images/bios/dylan.jpg',
     title: 'Creator',
-    bio: 'Adipisicing eu dolor deserunt occaecat voluptate proident Lorem. Eiusmod dolor aliquip nulla voluptate. Duis commodo esse laboris voluptate laborum magna quis adipisicing sit cupidatat.'
+    bio: `Started mining Bitcoin when it just started, started trading, staking and taught myself how the crypto world works.
+    Seen the highs and the lows and all that knowledge I use to help the users of Killer Whale Crypto to get a head start.
+    `
   }
 ]
 
