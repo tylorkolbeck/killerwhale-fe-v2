@@ -52,7 +52,8 @@ export default function Home() {
       prodName: 'GAIN BTC ',
       type: 'strategy',
       tradeDuration: 0,
-      tradeFreq: 50
+      tradeFreq: 50,
+      slug: 'gain-btc'
     },
     {
       description:
@@ -64,7 +65,8 @@ export default function Home() {
       prodName: 'GAIN BTC ',
       type: 'strategy',
       tradeDuration: 0,
-      tradeFreq: 50
+      tradeFreq: 50,
+      slug: 'gain-btc'
     },
     {
       description:
@@ -76,7 +78,8 @@ export default function Home() {
       prodName: 'GAIN BTC ',
       type: 'strategy',
       tradeDuration: 0,
-      tradeFreq: 50
+      tradeFreq: 50,
+      slug: 'gain-btc'
     }
   ]
 
@@ -275,7 +278,7 @@ export default function Home() {
           </div>
 
           <div className={clsx(styles.productCards, styles.cRight)}>
-            <Link linkTo={`/product/gain-btc`} type='nav'>
+            <Link linkTo={`/product/gain-btc`} type='nav' noStyle>
               <ProductCard
                 name='GAIN BTC '
                 type='strategy'
@@ -284,7 +287,7 @@ export default function Home() {
                 experience={[1, 2, 3]}
               />
             </Link>
-            <Link linkTo={`/product/gain-btc`} type='nav'>
+            <Link linkTo={`/product/gain-btc`} type='nav' noStyle>
               <ProductCard
                 name='GAIN BTC'
                 type='strategy'
@@ -293,7 +296,7 @@ export default function Home() {
                 experience={[1, 2, 3]}
               />
             </Link>
-            <Link linkTo={`/product/gain-btc`} type='nav'>
+            <Link linkTo={`/product/gain-btc`} type='nav' noStyle>
               <ProductCard
                 name='GAIN BTC '
                 type='strategy'
@@ -302,7 +305,7 @@ export default function Home() {
                 experience={[1, 2, 3]}
               />
             </Link>
-            <Link linkTo={`/product/gain-btc`} type='nav'>
+            <Link linkTo={`/product/gain-btc`} type='nav' noStyle>
               <ProductCard
                 name='GAIN BTC '
                 type='strategy'
@@ -365,13 +368,19 @@ export default function Home() {
                       profit={testimonial.profit}
                       name={testimonial.name}
                       strategyCard={
-                        <ProductCard
-                          name={testimonial.prodName}
-                          type={testimonial.type}
-                          tradeDuration={testimonial.tradeDuration}
-                          tradeFreq={testimonial.tradeFreq}
-                          experience={[1, 2, 3]}
-                        />
+                        <Link
+                          linkTo={`/product/${testimonial.slug}`}
+                          type='nav'
+                          noStyle
+                        >
+                          <ProductCard
+                            name={testimonial.prodName}
+                            type={testimonial.type}
+                            tradeDuration={testimonial.tradeDuration}
+                            tradeFreq={testimonial.tradeFreq}
+                            experience={[1, 2, 3]}
+                          />
+                        </Link>
                       }
                     />
                   ))}
