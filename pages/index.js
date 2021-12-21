@@ -111,6 +111,9 @@ export default function Home() {
 
             <Button type='cta'>About Us</Button>
           </div>
+          <div className={styles.cRight}>
+            <img src='/images/dashboard.png' />
+          </div>
 
           <div className={clsx(styles.cRight, 'v-align-c')}>
             {/* <List

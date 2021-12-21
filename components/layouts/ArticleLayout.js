@@ -60,7 +60,7 @@ export default function ArticleLayout({ children }) {
                 {categories ? (
                   categories.map((cat) => {
                     return (
-                      <Link linkTo={`/categories/${cat.slug}`} key={cat.id}>
+                      <Link linkTo={`/category/${cat.slug}`} key={cat.id}>
                         <span>{cat.name}</span>
                       </Link>
                     )

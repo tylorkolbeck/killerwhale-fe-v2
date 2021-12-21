@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
 import styles from './support.module.scss'
 import clsx from 'clsx'
@@ -6,23 +7,47 @@ import Link from '../../components/Link/Link.component'
 import Button from '../../components/Button/Button.component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { useRouter } from 'next/router'
 
 export default function OnboardingSupport() {
+  const [inputState, setInputState] = useState('')
+  const router = useRouter()
+
+  function onSearchHandler() {
+    const link = document.getElementById('externalNavigation')
+    const searchString = inputState.split(' ').join('+')
+
+    link.setAttribute(
+      'href',
+      `https://support.killerwhalecrypto.com/hc/en-us/search?utf8=%E2%9C%93&query=${searchString}`
+    )
+    link.click()
+  }
+
   return (
     <div style={{ backgroundImage: `url('/images/background_2_ov.png')` }}>
+      <a
+        id='externalNavigation'
+        style={{ display: 'none' }}
+        target='_blank'
+      ></a>
       <div></div>
       <div className={styles.header}>
         <SectionHeader center header={'We are here to help'}></SectionHeader>
-        <div className={styles.inputWrapper}>
-          <input
-            className='input is-rounded'
-            type='text'
-            placeholder='Search Knowledgebase...'
-          />
-          <Button>
-            <FontAwesomeIcon icon={faSearch} />
-          </Button>
-        </div>
+        <form onSubmit={onSearchHandler}>
+          <div className={styles.inputWrapper}>
+            <input
+              className='input is-rounded'
+              type='text'
+              placeholder='Search Knowledgebase...'
+              value={inputState}
+              onChange={(event) => setInputState(event.target.value)}
+            />
+            <Button onClick={onSearchHandler}>
+              <FontAwesomeIcon icon={faSearch} />
+            </Button>
+          </div>
+        </form>
       </div>
       <div className={clsx(styles.supportCards)}>
         <div className={styles.card}>

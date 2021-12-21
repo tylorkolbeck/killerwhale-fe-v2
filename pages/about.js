@@ -9,49 +9,41 @@ export default function about() {
       <div className='hero v-align-c'>
         <SectionHeader
           header='The People Behind Killer Whale'
-          subText="We understand the market conditions, and we don't let emotions cloud
-            our judgement. We help you look for the optimum time to buy and sell
-            - in summary, we have strategy!"
+          subText='Our mission is to give everyone equal access to state of the art trading tools & technologies to transform your crypto trading experience. '
           center
         />
       </div>
       <div className='bg-light logoBg' style={{ position: 'relative' }}>
         <section className='section container grid flow c1-c2 v-align-c'>
           <div>
-            <SectionHeader header='The Killer Whale Story' />
+            <SectionHeader header='The Killer Whale Story'>
+              Our vision is to become the world’s most innovative company in
+              crypto trading.{' '}
+            </SectionHeader>
           </div>
 
           <div>
             <p>
-              Established in 2019, Killer Whale is the brainchild of Dylan
-              Shively, an experienced trader, software engineer and
-              entrepreneur. Being an early adopter of crypto, Dylan saw a flood
-              of new traders enter the market, some made it big, others lost
-              everything. What sets the good traders apart from the bad traders?
-              They understood the market conditions, did not let emotions cloud
-              their judgement and looked for the optimum time to buy and sell -
-              in summary they had a strategy! Dylan created Killer Whale as a
-              way for new traders to have access to the same skills and
-              strategies of an experienced trader, leveling the playing field.
-              Killer Whale gives everyone access to robotic trading utilising
-              advanced AI. One of the benefits of AI Trading is that experienced
-              traders create the strategies for you, monitoring different
-              indicators and trend analysis, giving you years of experience at
-              your disposal buying in the dips and selling at the top. You
-              decide when to take profit, arm trailing stop loss based on your
-              comfort level.
+              Built from humble beginnings Killer Whale is the enabler to start
+              your journey into the world of AI driven automated trading. Now,
+              we’re one of the largest names in automated crypto trading and top
+              downloaded on Cryptohopper. We exist to demystify the world of
+              crypto and enhance your trading experience.
             </p>
             <br />
 
             <p>
-              Killer Whale have designed various strategies and signals for any
-              investment type, comfort level and trading frequency.So no matter
-              if you are a shrimp or a killer whale, we have a strategy that
-              will help you grow your crypto portfolio. We are the most
-              downloaded strategy on Cryptohopper and have a 4+ star rating on
-              the market place. Connect to your exchange, select your strategy,
-              configure your hopper and swim with the whales.
+              Our Team of innovators and entrepreneurs come from diverse
+              backgrounds but share the experience of being early crypto
+              adopters and developers.
             </p>
+            <p>
+              Our future roadmap encompasses projects in NFT, Mining, DeFi. We
+              will continue to drive innovation and customer experience as we
+              diversify into emerging technologies.
+            </p>
+
+            <p>Perhaps the mans best friend is truly a Killer Whale</p>
           </div>
         </section>
       </div>

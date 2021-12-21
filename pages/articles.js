@@ -2,7 +2,7 @@ import { fetchAPI } from '../lib/api'
 import Image from 'next/image'
 import { getStrapiMedia } from '../utils/media'
 import Link from '../components/Link/Link.component'
-import RecentPosts from '../components/RecentPosts/RecentPosts.component.js'
+import RecentPosts from '../components/PostsGrid/PostsGrid.component'
 import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.component'
 import ArticleLayout from '../components/layouts/ArticleLayout'
 import { DateTime } from 'luxon'
@@ -28,7 +28,11 @@ export default function Articles({ articles, categories }) {
         <SectionHeader header='Latest News' />
       </div>
 
-      <Link linkTo={`/article/${latestPost.slug}`} key={latestPost.id}>
+      <Link
+        linkTo={`/article/${latestPost.slug}`}
+        key={latestPost.id}
+        type='nav'
+      >
         <Image
           src={getStrapiMedia(latestPost.image.url)}
           alt={latestPost.image.alternativeText}
@@ -36,12 +40,15 @@ export default function Articles({ articles, categories }) {
           width={latestPost.image.width}
           className='mb-2'
         />
+
+        <h2 className='mb-1 bold fs-600 mt-1'>{latestPost.title}</h2>
       </Link>
-      <h2 className='mb-1 bold fs-600 mt-1'>{latestPost.title}</h2>
       <p className='mb-1 '>{latestPost.description}</p>
+
       <p className='mb-2'>
         {latestPost.author.name} - {publishedDate}
       </p>
+      <Link linkTo={`/article/${latestPost.slug}`}>Read More</Link>
 
       <div className='mt-4'>
         <SectionHeader header='Most Recent' />

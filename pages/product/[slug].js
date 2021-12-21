@@ -40,12 +40,8 @@ export default function product({ product }) {
           {product.name} {product.type}
         </h1>
 
-        {/* <h2 className='ff-good fs-600 mt-1' style={{ columnSpan: 'all' }}>
-          {product.name} {product.type}
-        </h2> */}
-
         <div className={clsx(styles.productHeader, 'bg-light')}>
-          <div>
+          <div className='flex' style={{ flexDirection: 'column' }}>
             <ProductCard
               name={product.name}
               type={product.type}
@@ -53,50 +49,6 @@ export default function product({ product }) {
               tradeFreq={product.tradeFreq}
               experience={experience}
             />
-          </div>
-          <div>
-            <p className={clsx(styles.detailHeader)}>
-              <b>Features</b>
-            </p>
-            <div className='text-accent'>
-              <div style={{ marginLeft: '1rem' }}>
-                <List items={features} />
-              </div>
-            </div>
-            <div>
-              <p className={clsx(styles.detailHeader, 'mt-1')}>
-                <b>Templates</b>
-              </p>
-
-              {product.templates.map((temp, index) => (
-                <p key={index}>
-                  <Link linkTo={temp.link} className='text-accent'>
-                    {temp.title}
-                    <span className='ml'>
-                      <FontAwesomeIcon icon={faExternalLinkAlt} />
-                    </span>
-                  </Link>
-                </p>
-              ))}
-            </div>
-          </div>
-          <div
-            style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
-          >
-            {/* <p className={clsx(styles.detailHeader)}>
-              <b>Price</b>
-            </p>
-            <p className='fs-500 flex center v-align-c'>${product.price}</p> */}
-            <div>
-              <p className={clsx(styles.detailHeader)}>
-                <b>Requires</b>
-              </p>
-              <List items={requirements} />
-              {/* {product.requirements.map((req) => (
-                <p className='text-accent'>{req}</p>
-              ))} */}
-            </div>
-
             <div
               className={clsx(styles.controls)}
               style={{ marginTop: 'auto' }}
@@ -114,33 +66,67 @@ export default function product({ product }) {
               </div>
             </div>
           </div>
+
+          <div className={styles.productInfoGrid}>
+            <div>
+              <p className={clsx(styles.detailHeader)}>
+                <b>Features</b>
+              </p>
+              <div className='text-accent'>
+                <div style={{ marginLeft: '1rem' }}>
+                  <List items={features} />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className={clsx(styles.detailHeader)}>
+                <b>Templates</b>
+              </p>
+
+              {product.templates.map((temp, index) => (
+                <p key={index}>
+                  <Link linkTo={temp.link} className='text-accent'>
+                    {temp.title}
+                    <span className='ml'>
+                      <FontAwesomeIcon icon={faExternalLinkAlt} />
+                    </span>
+                  </Link>
+                </p>
+              ))}
+            </div>
+
+            <div>
+              <div>
+                <p className={clsx(styles.detailHeader)}>
+                  <b>Requires</b>
+                </p>
+                <div className='text-accent'>
+                  <div style={{ marginLeft: '1rem' }}>
+                    <List items={requirements} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className={styles.detailHeader}>
+                <b>Recommended Balance</b>
+              </p>
+              <div className='text-accent'>
+                <div style={{ marginLeft: '1rem' }}>
+                  {product.minStartBalance}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className='bg-dark'>
           <div className='mt-2'>
             <SectionHeader header='Description' hSize='s'>
-              <p>{product.description}</p>
-              <p>
-                Take the emotion out of your trading and let the best in the
-                business take care of your trading for Killer Whale Premium
-                signal, exclusive to Cryptohopper.
-              </p>
+              <p className='text-accent'>{product.description}</p>
             </SectionHeader>
           </div>
-          {/* <div>
-            <div className='mt-4'>
-              <SectionHeader header='Need Help?' hSize='s'>
-                <p>
-                  Not sure where to get started? We have setup guides, a large
-                  community, live chat, as well as a support team that is here
-                  to answer any questions you have.
-                </p>
-              </SectionHeader>
-            </div>
-            <div className='mt-3'>
-              <Button>Getting Started</Button>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
