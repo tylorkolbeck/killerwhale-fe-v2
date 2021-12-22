@@ -1,5 +1,4 @@
 import styles from './TradeScroller.module.scss'
-import Link from 'next/link'
 import Marquee from 'react-fast-marquee'
 import useSWR from 'swr'
 import React from 'react'
@@ -49,7 +48,7 @@ export default function TradeScroller() {
             rel='noreferrer'
             className={styles.link}
           >
-            <Marquee gradient={false}>
+            <Marquee gradient={false} speed={30}>
               {data?.tweets?.map(({ text, id }) => formatTweet(text, id))}
             </Marquee>
           </a>

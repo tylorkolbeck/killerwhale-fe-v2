@@ -17,12 +17,23 @@
   }
 
   .controls {
-    margin-top: 2rem !important;
+    // margin-top: 2rem !important;
+    // max-width: 400px;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2rem;
+    // background: red;
 
-    & a:nth-child(2) {
-      margin-top: 3rem;
-      padding-top: 100px;
+    & button {
+      margin: 0 auto;
     }
+
+    // & a:nth-child(2) {
+    //   margin-top: 3rem;
+    //   padding-top: 100px;
+    // }
   }
 }
 

@@ -1,11 +1,10 @@
 import React from 'react'
 import styles from './Testimonial.module.scss'
 import clsx from 'clsx'
-import Link from '../Link/Link.component'
+import { FiArrowUpRight } from 'react-icons/fi'
 
 export default function Testimonial({
   description,
-  strategy,
   startBal,
   profit,
   name,
@@ -18,7 +17,7 @@ export default function Testimonial({
           <h4 className='fs-500'> {name}</h4>
           <p className='text-accent'>{description}</p>
         </div>
-        <div className='flex'>
+        <div className='flex' style={{ justifyContent: 'space-between' }}>
           <div>
             <p className='fs-200 uppercase letter-spacing-3 text-accent bold'>
               Starting Balance
@@ -29,7 +28,10 @@ export default function Testimonial({
             <p className='fs-200 uppercase letter-spacing-3 text-accent bold'>
               Profit
             </p>
-            <p className='text-green'>{profit}</p>
+            <p className='text-green bold'>
+              {profit}{' '}
+              <FiArrowUpRight size={25} style={{ marginBottom: '-6px' }} />
+            </p>
           </div>
           {/* <div>
           <p className='fs-200 uppercase letter-spacing-3'>Used</p>

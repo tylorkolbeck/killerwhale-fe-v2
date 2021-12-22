@@ -42,7 +42,7 @@ export default function Navbar() {
                       </li>
                       <li>
                         <Link
-                          linkTo='strategies-signals'
+                          linkTo='/strategies-signals'
                           className='button primary'
                           fullWidth
                         >
@@ -63,7 +63,7 @@ export default function Navbar() {
                       </li>
                       <li>
                         <Link
-                          linkTo='strategies-signals'
+                          linkTo='/strategies-signals'
                           className='button primary'
                           fullWidth
                         >

@@ -25,9 +25,6 @@ export default function Button({
   function clickHandler() {
     if (onClick) onClick()
     else if (link) navigate()
-    else {
-      router.push('/')
-    }
   }
 
   // const clickHandler = onClick ? onClick : navigate

@@ -1,8 +1,9 @@
 import TypeOfTrader from '../sections/TypeOfTrader/TypeOfTrader.component'
 import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.component'
 import Divider from '../components/Divider/Divider.component'
+import { fetchAPI } from '../lib/api'
 
-export default function StrategiesSignals() {
+export default function StrategiesSignals({ products }) {
   return (
     <div>
       <div className='container'>
@@ -14,7 +15,7 @@ export default function StrategiesSignals() {
 
       <div>
         <div className='mt-5'>
-          <TypeOfTrader />
+          <TypeOfTrader products={products} />
         </div>
       </div>
       <section className='section bg-light mt-5'>
@@ -24,4 +25,14 @@ export default function StrategiesSignals() {
       </section>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const products = await fetchAPI(`/products-v-2-s`)
+  return {
+    props: {
+      products
+    },
+    revalidate: 1
+  }
 }

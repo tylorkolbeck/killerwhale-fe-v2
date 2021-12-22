@@ -24,6 +24,14 @@ export default function OnboardingSupport() {
     link.click()
   }
 
+  function cardClickHandler(link) {
+    const linkEl = document.getElementById('externalNavigation')
+    linkEl.setAttribute('href', link)
+    linkEl.setAttribute('target', '_blank')
+
+    linkEl.click()
+  }
+
   return (
     <div style={{ backgroundImage: `url('/images/background_2_ov.png')` }}>
       <a
@@ -50,7 +58,14 @@ export default function OnboardingSupport() {
         </form>
       </div>
       <div className={clsx(styles.supportCards)}>
-        <div className={styles.card}>
+        <div
+          className={styles.card}
+          onClick={() =>
+            cardClickHandler(
+              'https://support.killerwhalecrypto.com/hc/en-us/categories/4407769214875-Setup-Guides'
+            )
+          }
+        >
           <div className={styles.iconWrapper}>
             <FaListAlt size={40} />
           </div>
@@ -73,29 +88,12 @@ export default function OnboardingSupport() {
           </div>
         </div>
 
-        <div className={styles.card}>
-          <div className={styles.iconWrapper}>
-            <FaUsers size={40} />
-          </div>
-          <h2 className='bold ff-good fs-400'>Community Forum</h2>
-          <div className={styles.divider}>
-            {/* <Divider width='100px' /> */}
-          </div>
-          <p className='text-accent'>
-            Get help from the community on our support forum
-          </p>
-          <div style={{ marginTop: 'auto' }}>
-            <Link
-              newTab
-              linkTo='https://support.killerwhalecrypto.com/hc/en-us/community/topics'
-              iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
-            >
-              Visit
-            </Link>
-          </div>
-        </div>
-
-        <div className={styles.card}>
+        <div
+          className={styles.card}
+          onClick={() =>
+            cardClickHandler('https://support.killerwhalecrypto.com/hc/en-us')
+          }
+        >
           <div className={styles.iconWrapper}>
             <FaQuestionCircle size={40} />
           </div>
@@ -118,7 +116,39 @@ export default function OnboardingSupport() {
           </div>
         </div>
 
-        <div className={styles.card}>
+        <div
+          className={styles.card}
+          onClick={() =>
+            cardClickHandler(
+              'https://support.killerwhalecrypto.com/hc/en-us/community/topics'
+            )
+          }
+        >
+          <div className={styles.iconWrapper}>
+            <FaUsers size={40} />
+          </div>
+          <h2 className='bold ff-good fs-400'>Community Forum</h2>
+          <div className={styles.divider}>
+            {/* <Divider width='100px' /> */}
+          </div>
+          <p className='text-accent'>
+            Get help from the community on our support forum
+          </p>
+          <div style={{ marginTop: 'auto' }}>
+            <Link
+              newTab
+              linkTo='https://support.killerwhalecrypto.com/hc/en-us/community/topics'
+              iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+            >
+              Visit
+            </Link>
+          </div>
+        </div>
+
+        <div
+          className={styles.card}
+          onClick={() => cardClickHandler('https://discord.gg/UNXZhFVnrA')}
+        >
           <div className={styles.iconWrapper}>
             <FaDiscord size={40} />
           </div>
@@ -130,12 +160,12 @@ export default function OnboardingSupport() {
           </div>
 
           <p className='text-accent'>
-            Reach out to the large Killer Whale Community for help!
+            Join and participate in the Killer Whale community
           </p>
           <div style={{ marginTop: 'auto' }}>
             <Link
               newTab
-              linkTo='https://discord.gg/'
+              linkTo='https://discord.gg/UNXZhFVnrA'
               iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
             >
               Visit
