@@ -6,9 +6,9 @@ import { getStrapiMedia } from '../../utils/media'
 import rehypeRaw from 'rehype-raw'
 
 export default function Markdown({ children }) {
-  // function renderCustomInput(input) {
-  //   console.log('rendering input', input)
-  // }
+  function renderCustomInput(input) {
+    console.log('rendering input', input)
+  }
   const components = {
     p: ({ children }) => {
       return <p style={{ lineHeight: '2rem' }}>{children}</p>
