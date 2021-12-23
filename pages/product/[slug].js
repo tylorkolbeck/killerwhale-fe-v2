@@ -88,7 +88,7 @@ export default function product({ product }) {
 
                 {product?.templates?.map((temp, index) => (
                   <p key={index} style={{ marginLeft: '1rem' }}>
-                    <Link linkTo={temp.link} className='text-accent'>
+                    <Link linkTo={temp.link} className='text-accent' newTab>
                       {temp.title}
                       <span className='ml'>
                         <FontAwesomeIcon icon={faExternalLinkAlt} />

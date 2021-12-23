@@ -65,8 +65,23 @@ export default function TypeOfTrader({ products }) {
 
   const router = useRouter()
 
+  var traderTypeIndex = ''
+  switch (router.query.level) {
+    case 'fish':
+      traderTypeIndex = 0
+      break
+    case 'dolphin':
+      traderTypeIndex = 1
+      break
+    case 'whale':
+      traderTypeIndex = 2
+      break
+    default:
+      traderTypeIndex = 0
+  }
+
   useEffect(() => {
-    setExperienceSelected(traderTypes[0])
+    setExperienceSelected(traderTypes[traderTypeIndex])
     filterProducts('fish')
   }, [])
 
