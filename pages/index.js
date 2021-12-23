@@ -205,7 +205,7 @@ export default function Home() {
               </p>
               <div>
                 <Link
-                  linkTo='/strategies-signals?level=fish'
+                  linkTo='/strategies-signals?l=0'
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
                 >
                   Get Started
@@ -228,7 +228,7 @@ export default function Home() {
               </p>
               <div>
                 <Link
-                  linkTo='/strategies-signals?level=dolphin'
+                  linkTo='/strategies-signals?l=1'
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
                 >
                   Get Started
@@ -250,7 +250,7 @@ export default function Home() {
               </p>
               <div>
                 <Link
-                  linkTo='/strategies-signals?level=whale'
+                  linkTo='/strategies-signals?l=2'
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
                 >
                   Get Started
