@@ -1,7 +1,11 @@
 .footer {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  background: hsl(var(--clr-light) / 0.3);
+
   & h4 {
     margin-bottom: 1rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 
   a {
@@ -22,8 +26,9 @@
 }
 
 .col {
-  display: grid;
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .partnersWrapper {
@@ -53,7 +58,7 @@
 
 @media screen and (min-width: 400px) {
   .col {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
   }
 }
 

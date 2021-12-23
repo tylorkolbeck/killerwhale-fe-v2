@@ -4,12 +4,11 @@ import clsx from 'clsx'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
 import ProductTable from '../../components/ProductTable/ProductTable.component'
 import { useRouter } from 'next/router'
-import { strategies } from '../../data/strategies'
 
 const traderTypes = [
   {
     id: 1,
-    experience: 1,
+    experience: 'fish',
     type: 'New',
     sectionTitle: 'Best for new traders',
     title: 'New To Trading',
@@ -21,7 +20,7 @@ const traderTypes = [
   },
   {
     id: 2,
-    experience: 2,
+    experience: 'dolphin',
     type: 'Experienced',
     title: 'Experienced Trader',
     sectionTitle: 'Best for experienced traders',
@@ -34,7 +33,7 @@ const traderTypes = [
   },
   {
     id: 3,
-    experience: 3,
+    experience: 'whale',
     type: 'Killer Whale',
     title: 'Killer Whale',
     sectionTitle: 'Best for the Killer Whales',
@@ -60,7 +59,7 @@ const traderTypes = [
   }
 ]
 
-export default function TypeOfTrader() {
+export default function TypeOfTrader({ products }) {
   const [experienceSelected, setExperienceSelected] = useState(traderTypes[0])
   const [productsToShow, setProductsToShow] = useState(null)
 
@@ -68,16 +67,18 @@ export default function TypeOfTrader() {
 
   useEffect(() => {
     setExperienceSelected(traderTypes[0])
-    filterProducts(1)
+    filterProducts('fish')
   }, [])
 
   function setExperienceSelectedHandler(experience) {
     router.push('#ProductTable')
-    let traderType = traderTypes.filter((type) => type.id === experience)[0]
+    let traderType = traderTypes.filter(
+      (type) => type.experience === experience
+    )[0]
 
     if (experience === 'all') {
       setExperienceSelected(traderTypes[3])
-      setProductsToShow(strategies)
+      setProductsToShow(products)
       return
     } else {
       setExperienceSelected(traderType)
@@ -87,10 +88,15 @@ export default function TypeOfTrader() {
 
   function filterProducts(experienceLevel) {
     if (experienceLevel) {
-      const filteredProducts = strategies.filter((prod) => {
-        return prod.experience.includes(experienceLevel)
+      let filtered = []
+      products.forEach((p) => {
+        p.experience.forEach((e) => {
+          if (e.experience === experienceLevel) {
+            filtered.push(p)
+          }
+        })
       })
-      setProductsToShow(filteredProducts)
+      setProductsToShow(filtered)
     }
   }
 

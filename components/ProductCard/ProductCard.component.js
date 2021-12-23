@@ -36,10 +36,14 @@ export default function ProductCard({
       />
     )
   }
+
   return (
     <div className={styles.productCard}>
       <div className={clsx(styles.badges)}>
-        {experience && experience.map((e) => experienceBadges[e])}
+        {experience &&
+          experience.map((e) => {
+            return experienceBadges[e]
+          })}
       </div>
       {!mini && (
         <div className={styles.header}>

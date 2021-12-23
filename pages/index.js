@@ -17,6 +17,11 @@ import InfoBar from '../components/InfoBar/InfoBar.component'
 import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import useEmblaCarousel from 'embla-carousel-react'
 import {
+  GiArtificialIntelligence,
+  GiNightSleep,
+  GiSpeedometer
+} from 'react-icons/gi'
+import {
   PrevButton,
   NextButton
 } from '../components/CarouselButtons/CarouselButtons.component'
@@ -129,8 +134,11 @@ export default function Home() {
           style={{ position: 'relative' }}
         >
           <div>
-            <Image src='/images/gas.png' width='100' height='100'></Image>
-            <h4 className='fs-500 fw-bold'>All Skill Levels</h4>
+            {/* <Image src='/images/gas.png' width='100' height='100'></Image> */}
+            <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+              <GiSpeedometer size={100} color='rgb(36, 174, 144)' />
+            </div>
+            <h4 className='fs-500 fw-bold center'>All Skill Levels</h4>
             <p className='text-accent'>
               Killer Whale Signals and strategies have been designed for all
               levels of traders, if you’re new to Crypto or an experienced
@@ -138,9 +146,11 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <Image src='/images/sleeping.png' width='100' height='100'></Image>
+            <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+              <GiNightSleep size={100} color='rgb(36, 174, 144)' />
+            </div>
 
-            <h4 className='fs-500 fw-bold'>Trade While You Sleep</h4>
+            <h4 className='fs-500 fw-bold center'>Trade While You Sleep</h4>
             <p className='text-accent'>
               Never miss a dip in the market, a pump, or an all time high.
               Killer Whale monitors all of your favorite currencies 24/7. Our
@@ -150,9 +160,11 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <Image src='/images/ai.png' width='100' height='100'></Image>
+            <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+              <GiArtificialIntelligence size={100} color='rgb(36, 174, 144)' />
+            </div>
 
-            <h4 className='fs-500 fw-bold'>Advanced AI</h4>
+            <h4 className='fs-500 fw-bold center'>Advanced AI</h4>
             <p className='text-accent'>
               Our Team of experienced traders use advanced AI to watch the
               market and then executing with precision the best trades on up to

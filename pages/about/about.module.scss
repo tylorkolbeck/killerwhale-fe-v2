@@ -1,0 +1,15 @@
+.header {
+  display: grid;
+  padding-top: 20vh;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+  .header {
+    grid-template-columns: 1fr 1fr;
+  }
+}

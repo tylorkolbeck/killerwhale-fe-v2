@@ -10,7 +10,7 @@ import { strategies } from '../../data/strategies'
 
 export default function Footer() {
   return (
-    <div className={clsx('section', styles.footer)}>
+    <div className={clsx(styles.footer)}>
       <div className='container flow'>
         <h4 className={clsx('uppercase ff-good fs-700 mb-4', styles.logoName)}>
           KILLER WHALE
@@ -75,9 +75,11 @@ export default function Footer() {
 
             <div>
               <h3 className='fs-400 ff-serif uppercase'>Legal</h3>
-              <Link linkTo='/' type='nav'>
-                Privacy Policy
-              </Link>
+              <div>
+                <Link linkTo='/' type='nav'>
+                  Privacy Policy
+                </Link>
+              </div>
               <Link linkTo='/' type='nav'>
                 Risk Disclosure
               </Link>

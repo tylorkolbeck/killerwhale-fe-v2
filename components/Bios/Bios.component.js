@@ -29,7 +29,7 @@ const bios = [
   },
   {
     id: 4,
-    name: 'Customer Supprt',
+    name: 'Berend Botje',
     img: '/images/bios/dylan.jpg',
     title: 'Creator',
     bio: `Started mining Bitcoin when it just started, started trading, staking and taught myself how the crypto world works.

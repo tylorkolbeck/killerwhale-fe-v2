@@ -7,6 +7,7 @@ import Link from '../../components/Link/Link.component'
 import List from '../../components/List/List.component'
 import { fetchAPI } from '../../lib/api'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import {
   faExternalLinkAlt,
   faArrowLeft
@@ -33,6 +34,7 @@ export default function product({ product }) {
   if (!product) {
     return <p>Loading...</p>
   }
+
   return (
     <div className='bg-dark'>
       <div className={clsx('container')} style={{ padding: '2rem' }}>
@@ -53,6 +55,94 @@ export default function product({ product }) {
               tradeFreq={product.tradeFreq}
               experience={experience}
             />
+          </div>
+
+          <div>
+            <div className={styles.productInfoGrid}>
+              <div>
+                <p className={clsx(styles.detailHeader)}>
+                  <b>Features</b>
+                </p>
+                <div className='text-accent'>
+                  <div style={{ marginLeft: '1rem' }}>
+                    <List
+                      items={[
+                        ...features,
+                        <Link
+                          linkTo='https://discord.gg/UNXZhFVnrA'
+                          newTab
+                          key={'discord_link'}
+                        >
+                          Access to Discord Channel
+                        </Link>
+                      ]}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p className={clsx(styles.detailHeader)}>
+                  <b>Templates</b>
+                </p>
+
+                {product?.templates?.map((temp, index) => (
+                  <p key={index} style={{ marginLeft: '1rem' }}>
+                    <Link linkTo={temp.link} className='text-accent'>
+                      {temp.title}
+                      <span className='ml'>
+                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      </span>
+                    </Link>
+                  </p>
+                ))}
+              </div>
+
+              <div>
+                <div>
+                  <p className={clsx(styles.detailHeader)}>
+                    <b>Requires</b>
+                  </p>
+                  <div className='text-accent'>
+                    <div style={{ marginLeft: '1rem' }}>
+                      {requirements && (
+                        <List
+                          items={[
+                            ...requirements,
+
+                            <Link
+                              linkTo='https://www.kucoin.com/ucenter/signup?rcode=sdr57y'
+                              newTab
+                              key={'kucoin_link'}
+                            >
+                              A crypto exchange account, Binance/ KuCoin
+                            </Link>,
+                            <Link
+                              key='ch_link'
+                              linkTo='https://www.cryptohopper.com/?atid=14880'
+                              newTab
+                            >
+                              Cryptohopper Account (any subscription)
+                            </Link>
+                          ]}
+                        />
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p className={styles.detailHeader}>
+                  <b>Recommended Balance</b>
+                </p>
+                <div className='text-accent'>
+                  <div style={{ marginLeft: '1rem' }}>
+                    {product.minStartBalance}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div
               className={clsx(styles.controls)}
               style={{ marginTop: 'auto' }}
@@ -63,63 +153,10 @@ export default function product({ product }) {
                 </Button>
               </a>
 
-              <div className='mt-1'>
+              <div>
                 <a href={product.chLink} target='_blank' rel='noreferrer'>
                   <Button fullWidth>Get on Marketplace</Button>
                 </a>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.productInfoGrid}>
-            <div>
-              <p className={clsx(styles.detailHeader)}>
-                <b>Features</b>
-              </p>
-              <div className='text-accent'>
-                <div style={{ marginLeft: '1rem' }}>
-                  <List items={features} />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <p className={clsx(styles.detailHeader)}>
-                <b>Templates</b>
-              </p>
-
-              {product?.templates?.map((temp, index) => (
-                <p key={index}>
-                  <Link linkTo={temp.link} className='text-accent'>
-                    {temp.title}
-                    <span className='ml'>
-                      <FontAwesomeIcon icon={faExternalLinkAlt} />
-                    </span>
-                  </Link>
-                </p>
-              ))}
-            </div>
-
-            <div>
-              <div>
-                <p className={clsx(styles.detailHeader)}>
-                  <b>Requires</b>
-                </p>
-                <div className='text-accent'>
-                  <div style={{ marginLeft: '1rem' }}>
-                    {requirements?.length && <List items={requirements} />}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className={styles.detailHeader}>
-                <b>Recommended Balance</b>
-              </p>
-              <div className='text-accent'>
-                <div style={{ marginLeft: '1rem' }}>
-                  {product.minStartBalance}
-                </div>
               </div>
             </div>
           </div>
