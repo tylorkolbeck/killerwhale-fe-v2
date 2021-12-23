@@ -1,14 +1,21 @@
 import styles from './Navbar.module.scss'
 import Link from '../../components/Link/Link.component'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { strategies } from '../../data/strategies'
+import Hamburger from '../../components/Hamburger/Hamburger.component'
+import { useState } from 'react'
 
 export default function Navbar() {
   function filterProducts(filter) {
     return strategies.filter((strat) => strat.type === filter)
+  }
+
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen)
+    console.log('[Nav] hamburger: ', hamburgerOpen)
   }
 
   return (
@@ -24,8 +31,8 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className={styles.hamburger}>
-          <FontAwesomeIcon icon={faBars} size='1x' />
+        <div className='hamburger' onClick={toggleHamburger}>
+          <Hamburger isOpen={hamburgerOpen} />
         </div>
 
         <ul className={styles.navLinks}>
@@ -103,6 +110,21 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+      <style jsx>{`
+        .hamburger {
+          display: none;
+          z-index: 6;
+        }
+        
+        @media (max-width: 960px) {
+          .hamburger {
+            display: block;
+            padding-top: 10px;
+            margin-left: 10px;
+            z-index: 6;
+          }
+        }
+      `}</style>
     </nav>
   )
 }
