@@ -3,6 +3,7 @@ import '../styles/utilities.scss'
 import '../styles/typography.css'
 import '../styles/reset.css'
 
+import { useEffect } from 'react'
 import GlobalLayout from '../layouts/global/global.layout.component'
 import DefaultLayout from '../components/layouts/DefaultLayout'
 import TagManager from 'react-gtm-module'
