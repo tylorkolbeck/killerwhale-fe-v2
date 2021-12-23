@@ -15,7 +15,6 @@ export default function Navbar() {
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
-    console.log('[Nav] hamburger: ', hamburgerOpen)
   }
 
   return (
@@ -31,18 +30,18 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className='hamburger' onClick={toggleHamburger}>
+        <div className={styles.hamburger} onClick={toggleHamburger}>
           <Hamburger isOpen={hamburgerOpen} />
         </div>
 
-        <ul className={styles.navLinks}>
+        <ul className='navLinks'>
           <li>
             <Link
               linkTo='/strategies-signals'
               type='nav'
               subLinks={
                 <>
-                  <div className={styles.subLinks}>
+                  <div className='subLinks'>
                     <ul>
                       <li>
                         <b className='fs-400'>Strategies</b>
@@ -111,17 +110,28 @@ export default function Navbar() {
         </ul>
       </div>
       <style jsx>{`
-        .hamburger {
-          display: none;
-          z-index: 6;
+        .navLinks {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
         }
-        
+        .subLinks {
+          display: flex;
+        }
+        li {
+          margin-right: 20px;
+        }
+        a {
+          font-size: var(--fs-200);
+        }
         @media (max-width: 960px) {
-          .hamburger {
-            display: block;
-            padding-top: 10px;
-            margin-left: 10px;
-            z-index: 6;
+          .navLinks {
+            display: ${hamburgerOpen ? 'block' : 'none'};
+            background-color: #07121d;
+            position: absolute;
+            right: 0;
+            top: 6rem;
           }
         }
       `}</style>
