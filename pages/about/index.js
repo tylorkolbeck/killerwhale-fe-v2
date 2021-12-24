@@ -34,12 +34,13 @@ export default function about() {
               backgrounds but share the experience of being early crypto
               adopters and developers.
             </p>
+            <br />
             <p>
               Our future roadmap encompasses projects in NFT, Mining, DeFi. We
               will continue to drive innovation and customer experience as we
               diversify into emerging technologies.
             </p>
-
+            <br />
             <p>Perhaps the mans best friend is truly a Killer Whale</p>
           </div>
         </div>

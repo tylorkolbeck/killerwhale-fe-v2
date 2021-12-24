@@ -43,7 +43,7 @@ export default function Hero({ bgImage }) {
               width='37px'
             />
             <div className='grid'>
-              <p>#1 Rated seller on Cryptohopper </p>
+              <p>#1 Rated Seller on Cryptohopper </p>
               <span className='fs-200'>
                 <Link
                   linkTo='https://www.cryptohopper.com/marketplace/search?q=killer+whale'
@@ -86,7 +86,7 @@ export default function Hero({ bgImage }) {
             />
 
             <div className='grid'>
-              <p>Join the Killer Whale Community</p>
+              <p>Join the Global Killer Whale Community</p>
               <span className='fs-200'>
                 <Link
                   linkTo='https://discord.gg/UNXZhFVnrA'

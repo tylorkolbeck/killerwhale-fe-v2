@@ -160,7 +160,7 @@ export default function OnboardingSupport() {
           </div>
 
           <p className='text-accent'>
-            Join and participate in the Killer Whale community
+            Join and Participate in the Global Killer Whale Community
           </p>
           <div style={{ marginTop: 'auto' }}>
             <Link
