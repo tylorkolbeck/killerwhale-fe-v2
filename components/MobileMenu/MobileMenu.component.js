@@ -45,7 +45,7 @@ export default function MobileMenu({ shown, toggleShown }) {
                   </p>
                   {dropdownVisible && (
                     <div className={styles.subLinks}>
-                      <ul>
+                      <ul style={{ marginRight: '1rem' }}>
                         <li>
                           <b
                             className='fs-400'
@@ -78,13 +78,13 @@ export default function MobileMenu({ shown, toggleShown }) {
                             )}
                             onClick={() =>
                               onClickHandler(`/product/${strat.slug}`)
-                            }
+                            }                            
                           >
                             {strat.name}
                           </li>
                         ))}
                       </ul>
-                      <ul>
+                      <ul style={{ marginRight: '1rem' }}>
                         <li>
                           <b
                             className='fs-400'
