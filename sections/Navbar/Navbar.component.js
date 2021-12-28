@@ -55,7 +55,7 @@ export default function Navbar() {
               type='nav'
               subLinks={
                 <>
-                  <div className='subLinks'>
+                  <div className={clsx(styles.subLinks)}>
                     <ul>
                       <li>
                         <b className='fs-400'>Strategies</b>

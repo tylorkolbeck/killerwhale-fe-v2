@@ -1,11 +1,6 @@
 import styles from './Hamburger.module.scss'
-import { strategies } from '../../data/strategies'
 
 export default function Hamburger({ isOpen }) {
-  function filterProducts(filter) {
-    return strategies.filter((strat) => strat.type === filter)
-  }
-
   return (
     <>
       <div className={styles.hamburger}>

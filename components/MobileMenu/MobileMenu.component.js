@@ -1,4 +1,5 @@
 import styles from './MobileMenu.module.scss'
+import { navLinks } from '../../data/navLinks'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
@@ -14,12 +15,17 @@ export default function MobileMenu({ shown, toggleShown }) {
     <>
       {shown && (
         <div className={styles.mobileMenu}>
-          <h3
-            className={clsx('ff-good', 'text-accent', styles.link)}
-            onClick={() => onClickHandler('/support')}
-          >
-            Support
-          </h3>
+          {navLinks.map((item, index) => {
+            return (
+              <h3
+                key={index}
+                className={clsx('ff-good', 'text-accent', styles.link)}
+                onClick={() => onClickHandler(item.url)}
+              >
+                {item.text}
+              </h3>
+            )
+          })}
         </div>
       )}
     </>
