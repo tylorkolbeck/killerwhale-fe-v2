@@ -1,14 +1,20 @@
 import styles from './Navbar.module.scss'
 import Link from '../../components/Link/Link.component'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { strategies } from '../../data/strategies'
+import Hamburger from '../../components/Hamburger/Hamburger.component'
+import { useState } from 'react'
 
 export default function Navbar() {
   function filterProducts(filter) {
     return strategies.filter((strat) => strat.type === filter)
+  }
+
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen)
   }
 
   return (
@@ -24,18 +30,18 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className={styles.hamburger}>
-          <FontAwesomeIcon icon={faBars} size='1x' />
+        <div className={styles.hamburger} onClick={toggleHamburger}>
+          <Hamburger isOpen={hamburgerOpen} />
         </div>
 
-        <ul className={styles.navLinks}>
+        <ul className='navLinks'>
           <li>
             <Link
               linkTo='/strategies-signals'
               type='nav'
               subLinks={
                 <>
-                  <div className={styles.subLinks}>
+                  <div className='subLinks'>
                     <ul>
                       <li>
                         <b className='fs-400'>Strategies</b>
@@ -103,6 +109,32 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+      <style jsx>{`
+        .navLinks {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+        }
+        .subLinks {
+          display: flex;
+        }
+        li {
+          margin-right: 20px;
+        }
+        a {
+          font-size: var(--fs-200);
+        }
+        @media (max-width: 960px) {
+          .navLinks {
+            display: ${hamburgerOpen ? 'block' : 'none'};
+            background-color: #07121d;
+            position: absolute;
+            right: 0;
+            top: 6rem;
+          }
+        }
+      `}</style>
     </nav>
   )
 }
