@@ -11,6 +11,7 @@
   text-align: right;
 }
 
+
 .link {
   cursor: pointer;
   margin-bottom: 0.5rem;
@@ -20,8 +21,53 @@
   }
 }
 
+.view {
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  color: hsl(var(--clr-green));
+
+  &:hover {
+    color: white;
+  }
+}
+
+.dropdownWrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.subLinks {
+  background: rgb(17, 17, 17);
+  display: flex;
+  z-index: 300;
+  border-radius: 0px 0px 2px 2px;
+  padding: 1rem;
+  position: absolute;
+  top: 30px;
+  font-size: var(--fs-200);
+  & li {
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+  }
+  
+  & ul {
+    margin: 0;
+    padding: 0;
+  }
+  & ul li {
+    list-style: none;
+  }
+}
+
 @media (min-width: 960px) {
   .mobileMenu {
     display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .subLinks {
+    display: block;
+    right: 0;
   }
 }
