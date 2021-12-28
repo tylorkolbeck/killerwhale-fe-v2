@@ -60,28 +60,15 @@ const traderTypes = [
 ]
 
 export default function TypeOfTrader({ products }) {
-  const [experienceSelected, setExperienceSelected] = useState(traderTypes[0])
+  const [experienceSelected, setExperienceSelected] = useState(null)
   const [productsToShow, setProductsToShow] = useState(null)
 
   const router = useRouter()
 
-  var traderTypeIndex = ''
-  switch (router.query.level) {
-    case 'fish':
-      traderTypeIndex = 0
-      break
-    case 'dolphin':
-      traderTypeIndex = 1
-      break
-    case 'whale':
-      traderTypeIndex = 2
-      break
-    default:
-      traderTypeIndex = 0
-  }
-
   useEffect(() => {
-    setExperienceSelected(traderTypes[traderTypeIndex])
+    setExperienceSelected(
+      traderTypes[router.query.l ? parseInt(router.query.l) : 0]
+    )
     filterProducts('fish')
   }, [])
 
