@@ -4,24 +4,39 @@
   padding: 0.35em 40px;
 }
 
-.quote:before {
-  display: block;
-  padding-left: 10px;
-  content: '\201C';
-  font-size: 80px;
-  position: absolute;
-  left: -20px;
-  top: -20px;
-  color: #e2e2e2;
-}
+// .quote:before {
+//   display: block;
+//   padding-left: 10px;
+//   content: '\201C';
+//   font-size: 80px;
+//   position: absolute;
+//   left: -20px;
+//   top: -20px;
+//   color: #e2e2e2;
+// }
 
-.quote cite:before {
-  content: '\2014 \2009';
-}
+// .quote:after {
+//   display: block;
+//   padding-left: 10px;
+//   content: '\201C';
+//   font-size: 80px;
+//   position: absolute;
+//   left: -20px;
+//   top: -20px;
+//   color: #e2e2e2;
+// }
 
-.quote cite {
-  color: #999999;
-  font-size: 14px;
-  display: block;
-  margin-top: 5px;
-}
+// .quote cite:before {
+//   content: '\2014 \2009';
+// }
+
+// .quote cite:after {
+//   content: '\2014 \2009';
+// }
+
+// .quote cite {
+//   color: #999999;
+//   font-size: 14px;
+//   display: block;
+//   margin-top: 5px;
+// }

@@ -9,7 +9,7 @@ export default function about() {
   return (
     <div>
       <div className='hero'>
-        <div className={clsx('container', styles.header)} style={{}}>
+        <div className={clsx('container', styles.header)}>
           <div>
             <SectionHeader
               header='The People Behind Killer Whale'
@@ -50,6 +50,7 @@ export default function about() {
         text={
           'Our mission is to give everyone equal access to state of the art trading tools & technologies to transform your crypto trading experience.'
         }
+        bold
         // button={
         //   <Button type='ctaInverted' inverted>
         //     Getting Started
