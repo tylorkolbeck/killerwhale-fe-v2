@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import styles from './Navbar.module.scss'
 import Link from '../../components/Link/Link.component'
 import Image from 'next/image'
@@ -5,6 +6,7 @@ import clsx from 'clsx'
 import { strategies } from '../../data/strategies'
 import Hamburger from '../../components/Hamburger/Hamburger.component'
 import { useState } from 'react'
+import MobileMenu from '../../components/MobileMenu/MobileMenu.component'
 
 export default function Navbar() {
   function filterProducts(filter) {
@@ -16,6 +18,18 @@ export default function Navbar() {
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
+
+  useEffect(() => {
+    const bodyEl = document.querySelector('body')
+
+    if (bodyEl) {
+      if (hamburgerOpen) {
+        bodyEl.style.overflow = 'hidden'
+      } else {
+        bodyEl.style.overflow = 'auto'
+      }
+    }
+  }, [hamburgerOpen])
 
   return (
     <nav className={clsx(styles.navBar)}>
@@ -34,7 +48,7 @@ export default function Navbar() {
           <Hamburger isOpen={hamburgerOpen} />
         </div>
 
-        <ul className='navLinks'>
+        <ul className={clsx(styles.navLinks)}>
           <li>
             <Link
               linkTo='/strategies-signals'
@@ -109,7 +123,24 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-      <style jsx>{`
+
+      <MobileMenu shown={hamburgerOpen} toggleShown={toggleHamburger} />
+
+      {/* <div
+        style={{
+          height: '100vh',
+          width: '100vw',
+          maxWidth: '600px',
+          right: 0,
+          background: 'red',
+          zIndex: 1,
+          position: 'fixed'
+        }}
+      >
+
+      </div> */}
+
+      {/* <style jsx>{`
         .navLinks {
           list-style: none;
           padding: 0;
@@ -134,7 +165,7 @@ export default function Navbar() {
             top: 6rem;
           }
         }
-      `}</style>
+      `}</style> */}
     </nav>
   )
 }

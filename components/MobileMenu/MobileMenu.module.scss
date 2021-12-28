@@ -1,0 +1,26 @@
+.mobileMenu {
+  position: fixed;
+  height: 100vh;
+  z-index: 1;
+  width: 100vw;
+  background-color: hsl(var(--clr-dark));
+  padding: 2rem 3rem;
+  position: absolute;
+  right: 0;
+  top: 6rem;
+  text-align: right;
+}
+
+.link {
+  cursor: pointer;
+
+  &:hover {
+    color: hsl(var(--clr-green));
+  }
+}
+
+@media (min-width: 960px) {
+  .mobileMenu {
+    display: none;
+  }
+}
