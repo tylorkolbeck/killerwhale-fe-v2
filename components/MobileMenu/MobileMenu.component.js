@@ -63,7 +63,7 @@ export default function MobileMenu({ shown, toggleShown }) {
                               styles.view
                             )}
                             fullWidth
-                            onClick={() => onClickHandler(item.subLinks.url)}
+                            onClick={() => onClickHandler('/strategies-signals')}
                           >
                             View All
                           </h3>
@@ -102,7 +102,7 @@ export default function MobileMenu({ shown, toggleShown }) {
                               styles.view
                             )}
                             fullWidth
-                            onClick={() => onClickHandler(item.subLinks.url)}
+                            onClick={() => onClickHandler('/strategies-signals')}
                           >
                             View All
                           </h3>
