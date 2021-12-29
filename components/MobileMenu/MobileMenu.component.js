@@ -45,29 +45,10 @@ export default function MobileMenu({ shown, toggleShown }) {
                   </p>
                   {dropdownVisible && (
                     <div className={styles.subLinks}>
-                      <ul style={{ marginRight: '1rem' }}>
-                        <li>
-                          <b
-                            className='fs-400'
-                            style={{ marginBottom: '.5rem' }}
-                          >
-                            Strategies
-                          </b>
-                        </li>
-                        <li>
-                          <h3
-                            key={index}
-                            className={clsx(
-                              'ff-good',
-                              'text-accent',
-                              styles.view
-                            )}
-                            fullWidth
-                            onClick={() => onClickHandler('/strategies-signals')}
-                          >
-                            View All
-                          </h3>
-                        </li>
+                      <ul>
+                        {/* <li>
+                          <b className='fs-400'>Strategies</b>
+                        </li> */}
                         {filterProducts('strategy').map((strat) => (
                           <li
                             key={strat.id}
@@ -78,21 +59,11 @@ export default function MobileMenu({ shown, toggleShown }) {
                             )}
                             onClick={() =>
                               onClickHandler(`/product/${strat.slug}`)
-                            }                            
+                            }
                           >
                             {strat.name}
                           </li>
                         ))}
-                      </ul>
-                      <ul style={{ marginRight: '1rem' }}>
-                        <li>
-                          <b
-                            className='fs-400'
-                            style={{ marginBottom: '.5rem' }}
-                          >
-                            Signals
-                          </b>
-                        </li>
                         <li>
                           <h3
                             key={index}
@@ -102,11 +73,24 @@ export default function MobileMenu({ shown, toggleShown }) {
                               styles.view
                             )}
                             fullWidth
-                            onClick={() => onClickHandler('/strategies-signals')}
+                            onClick={() =>
+                              onClickHandler('/strategies-signals')
+                            }
                           >
                             View All
                           </h3>
                         </li>
+                      </ul>
+                      <ul>
+                        {/* <li>
+                          <b
+                            className='fs-400'
+                            style={{ marginBottom: '.5rem' }}
+                          >
+                            Signals
+                          </b>
+                        </li> */}
+
                         {filterProducts('signal').map((strat) => (
                           <li
                             key={strat.id}
@@ -122,6 +106,22 @@ export default function MobileMenu({ shown, toggleShown }) {
                             {strat.name}
                           </li>
                         ))}
+                        <li>
+                          <h3
+                            key={index}
+                            className={clsx(
+                              'ff-good',
+                              'text-accent',
+                              styles.view
+                            )}
+                            fullWidth
+                            onClick={() =>
+                              onClickHandler('/strategies-signals')
+                            }
+                          >
+                            View All
+                          </h3>
+                        </li>
                       </ul>
                     </div>
                   )}
