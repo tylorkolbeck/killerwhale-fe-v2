@@ -1,15 +1,29 @@
-const links = [
+export const navLinks = [
   {
-    text: 'Strategies',
+    text: 'Signals & Strategies',
     subLinks: [
       {
-        url: 'sub1',
-        text: 'sub 1'
+        url: '/strategies-signals',
+        header: 'Strategies',
+        text: 'View All'
+      },
+      {
+        url: '/strategies-signals',
+        header: 'Signals',
+        text: 'View All'
       }
     ]
   },
   {
     url: '/support',
-    text: 'Onboarding & Support'
-  }
+    text: 'OnBoarding & Support'
+  },
+  {
+    url: '/articles',
+    text: 'News'
+  },
+  {
+    url: '/about',
+    text: 'About'
+  },
 ]
