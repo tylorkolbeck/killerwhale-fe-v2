@@ -73,7 +73,12 @@ export default function TypeOfTrader({ products }) {
   }, [])
 
   function setExperienceSelectedHandler(experience) {
-    router.push('#ProductTable')
+    const tableRef = document.querySelector('#ProductTable')
+    const offsetTop = document.querySelector('#ProductTable').offsetTop
+    scroll({
+      top: offsetTop,
+      behavior: 'smooth'
+    })
     let traderType = traderTypes.filter(
       (type) => type.experience === experience
     )[0]

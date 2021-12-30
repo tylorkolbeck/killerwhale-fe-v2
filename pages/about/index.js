@@ -1,4 +1,3 @@
-import Button from '../../components/Button/Button.component'
 import styles from './about.module.scss'
 import InfoBar from '../../components/InfoBar/InfoBar.component'
 import Bios from '../../components/Bios/Bios.component'

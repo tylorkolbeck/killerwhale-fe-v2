@@ -38,10 +38,25 @@ const bios = [
   {
     id: 4,
     name: 'Berend Botje',
-    img: '/images/bios/dylan.jpg',
+    img: '/images/bios/berend2.png',
     title: 'Customer Experience',
     bio: `Started mining Bitcoin when it just started, started trading, staking and taught myself how the crypto world works.
     Seen the highs and the lows and all that knowledge I use to help the users of Killer Whale Crypto to get a head start.
+    `
+  },
+  {
+    id: 5,
+    name: 'Tylor Kolbeck',
+    img: '/images/bios/tylor.png',
+    title: 'Software Developer / UX',
+    bio: `Tylor Kolbeck is software engineer with 7 years experience working in web development and User Experience. Tylor is passionate about providing customers with not only high-quality user interfaces but high quality and timeless software design `
+  },
+  {
+    id: 6,
+    name: 'John Kaplanis',
+    img: '/images/bios/john.png',
+    title: 'Software Developer / Analytics',
+    bio: `John is a Full Stack Software Developer with a passion for problem solving and learning. He enjoys collaborating with team members to efficiently build intuitive features and apps. His background in technology-focused sales and marketing has positioned him well to provide unique perspectives on how end-users interact with web-apps and platforms..
     `
   }
 ]

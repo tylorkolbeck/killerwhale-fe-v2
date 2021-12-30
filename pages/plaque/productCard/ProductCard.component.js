@@ -23,7 +23,6 @@ export default function ProductCard({
     dolphin: (
       <img
         src='/images/badges/badge_dolphin.svg'
-        src='/images/badges/200ppi/fish_2.png'
         height='30'
         width='30'
         key={'dolphin'}

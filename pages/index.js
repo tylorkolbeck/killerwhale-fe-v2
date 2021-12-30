@@ -49,42 +49,55 @@ export default function Home() {
   let testimonialArray = [
     {
       description:
-        'Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.',
-      strategy: 'Gain BTC',
-      startBal: '$2,000 USD',
-      profit: '$2,000 USD (100%)',
-      name: 'Fred Durst',
-      prodName: 'GAIN BTC ',
-      type: 'strategy',
-      tradeDuration: 0,
-      tradeFreq: 50,
-      slug: 'gain-btc'
+        'Experience is great. Premium signals are worth every penny. I also use the AI with multiple strategy&apos;s Just let the bot do it&apos;s work. Most important is not to sell at a loss. The support on discord is great. The community is very helpfull. ',
+      strategy: 'Premium',
+      startBal: '$2,775 USD',
+      profit: '$2858 (103%)',
+      name: 'Gert-Jan',
+      prodName: 'Premium ',
+      type: 'signal',
+      tradeDuration: 80,
+      tradeFreq: 25,
+      slug: 'premium'
     },
     {
       description:
-        'Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.',
-      strategy: 'Gain BTC',
-      startBal: '$2,000 USD',
-      profit: '$2,000 USD (100%)',
-      name: 'Fred Durst',
-      prodName: 'GAIN BTC ',
+        'I have found the Killer Whale free strategy to be very good with some minor tweaks after the recommended setup. The discord server has been of much help to see what other people are running to tweak and resolve any issues with my hopper setup.',
+      strategy: 'Free',
+      startBal: '$1,200 USD',
+      profit: '$300 (25%)',
+      name: 'DeltaNachos',
+      prodName: 'free',
       type: 'strategy',
-      tradeDuration: 0,
+      tradeDuration: 50,
       tradeFreq: 50,
-      slug: 'gain-btc'
+      slug: 'free'
     },
     {
       description:
-        'Testimonial goes here. Only four days trading with KW. My profits have significantly increased. Couldn’t be happier.',
-      strategy: 'Gain BTC',
-      startBal: '$2,000 USD',
-      profit: '$2,000 USD (100%)',
-      name: 'Fred Durst',
-      prodName: 'GAIN BTC ',
-      type: 'strategy',
-      tradeDuration: 0,
-      tradeFreq: 50,
-      slug: 'gain-btc'
+        'Used the YouTube video about Killer Whale Premium Signals to setup.',
+      strategy: 'Premium',
+      startBal: '$250 USD',
+      profit: '$625 USD (250%)',
+      name: 'Hiena',
+      prodName: 'Premium ',
+      type: 'signal',
+      tradeDuration: 80,
+      tradeFreq: 25,
+      slug: 'premium'
+    },
+    {
+      description:
+        'Used the YouTube video about Killer Whale Premium Signals to setup.',
+      strategy: 'Premium',
+      startBal: '$5,000 USD',
+      profit: '$1,250 USD (25%)',
+      name: 'Etienne Ghigo',
+      prodName: 'Premium ',
+      type: 'signal',
+      tradeDuration: 80,
+      tradeFreq: 25,
+      slug: 'premium'
     }
   ]
 
@@ -200,8 +213,9 @@ export default function Home() {
               </div>
               <h5 className='fs-400 fw-bold uppercase'>New To Trading</h5>
               <p className='text-accent'>
-                Your first step to gain access to our top rated strategies. Your
-                first step to gain access to our top rated strategies.
+                You are new to trading? Don&apos;t worry we&apos;ve got you. Our
+                hand picked strategies and signals are a great way to start,
+                without the need to understand market trends.
               </p>
               <div>
                 <Link
@@ -223,8 +237,10 @@ export default function Home() {
               />
               <h5 className='fs-400 fw-bold uppercase'>Experienced</h5>
               <p className='text-accent'>
-                Your first step to gain access to our top rated strategies. Your
-                first step to gain access to our top rated strategies.
+                You are a Dolphin and know how to swim? Let us make your
+                portfolio work for you. Our strategies and signals will take
+                your trading to the next level, no matter what your investment
+                strategy is.
               </p>
               <div>
                 <Link
@@ -245,8 +261,9 @@ export default function Home() {
               />
               <h5 className='fs-400 fw-bold uppercase'>Killer Whale</h5>
               <p className='text-accent'>
-                Your first step to gain access to our top rated strategies. Your
-                first step to gain access to our top rated strategies.
+                Consider yourself a Killer Whale? Welcome to the Pod. Our Elite
+                strategies and signals cater for a multitude of trading styles
+                and market conditions. We have you covered.
               </p>
               <div>
                 <Link
@@ -275,7 +292,7 @@ export default function Home() {
           <div className={clsx('flow', styles.cLeft)}>
             <SectionHeader
               header='Our Hand Picked Strategies & Signals'
-              subText=' Never miss a dip in the market, a pump, or an all time high.
+              subText='Never miss a dip in the market, a pump, or an all time high.
               Killer Whale monitors all of your favorite currencies 24/7. Our'
             />
 
@@ -285,40 +302,40 @@ export default function Home() {
           </div>
 
           <div className={clsx(styles.productCards, styles.cRight)}>
-            <Link linkTo={`/product/gain-btc`} type='nav' noStyle>
+            <Link linkTo={`/product/elite`} type='nav' noStyle>
               <ProductCard
-                name='GAIN BTC '
-                type='strategy'
-                tradeDuration={0}
-                tradeFreq={50}
-                experience={[1, 2, 3]}
+                name='Elite'
+                type='signal'
+                tradeDuration={50}
+                tradeFreq={60}
+                experience={['dolphin', 'whale']}
               />
             </Link>
-            <Link linkTo={`/product/gain-btc`} type='nav' noStyle>
+            <Link linkTo={`/product/premium`} type='nav' noStyle>
               <ProductCard
-                name='GAIN BTC'
-                type='strategy'
-                tradeDuration={100}
-                tradeFreq={100}
-                experience={[1, 2, 3]}
-              />
-            </Link>
-            <Link linkTo={`/product/gain-btc`} type='nav' noStyle>
-              <ProductCard
-                name='GAIN BTC '
-                type='strategy'
-                tradeDuration={0}
-                tradeFreq={50}
-                experience={[1, 2, 3]}
+                name='Premium'
+                type='Signal'
+                tradeDuration={80}
+                tradeFreq={25}
+                experience={['fish', 'dolphin', 'whale']}
               />
             </Link>
             <Link linkTo={`/product/gain-btc`} type='nav' noStyle>
               <ProductCard
                 name='GAIN BTC '
                 type='strategy'
-                tradeDuration={0}
+                tradeDuration={50}
                 tradeFreq={50}
-                experience={[1, 2, 3]}
+                experience={['fish', 'dolphin', 'whale']}
+              />
+            </Link>
+            <Link linkTo={`/product/gain-eth`} type='nav' noStyle>
+              <ProductCard
+                name='GAIN ETH '
+                type='strategy'
+                tradeDuration={50}
+                tradeFreq={50}
+                experience={['fish', 'dolphin', 'whale']}
               />
             </Link>
           </div>
