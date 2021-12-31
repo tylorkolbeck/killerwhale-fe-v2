@@ -115,7 +115,23 @@ const traderTypes = [
     type: 'All Products',
     title: 'See everything?',
     sectionTitle: 'All Strategies & Signals',
-    description: () => null,
+    description: () => (
+      <div>
+        <p>
+          Killer Whale Signals and strategies have been designed for all levels
+          of traders, if you're new to Crypto or an experienced HODL'R we have
+          strategies and signals for every experience level.
+        </p>
+        <br />
+        <p>
+          From signals sent by hand to AI that picks the right time to buy and
+          sell, Killer Whale enables you to get the most out of your trading
+          without the need to worry about market conditions.
+        </p>
+        <br />
+        <p>Welcome to the Pod.</p>
+      </div>
+    ),
     // 'Want to browse everything we have and make your own choice? Below are all the Killer Whale Strategies and Signals',
     products: [],
     imgSrc: '/images/badges/badge_all.svg',

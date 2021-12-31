@@ -20,11 +20,11 @@ export default function about() {
           </div>
           <div>
             <p>
-              Built from humble beginnings Killer Whale is the enabler to start
-              your journey into the world of AI driven automated trading. Now,
-              we’re one of the largest names in automated crypto trading and top
-              downloaded on Cryptohopper. We exist to demystify the world of
-              crypto and enhance your trading experience.
+              Built from humble beginnings <b>Killer Whale</b> is the enabler to
+              start your journey into the world of AI driven automated trading.
+              Now, we’re one of the largest names in automated crypto trading
+              and top downloaded on Cryptohopper. We exist to demystify the
+              world of crypto and enhance your trading experience.
             </p>
             <br />
 

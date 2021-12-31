@@ -67,6 +67,12 @@ export default function AboutUs() {
   const [bioRows, setBioRows] = useState([])
 
   useEffect(() => {
+    if (!bioShown && bioRows && bioPairs) {
+      onViewBio(1, 0)
+    }
+  }, [bioRows, bioPairs])
+
+  useEffect(() => {
     let rows = []
 
     const pairs = bios.reduce((result, value, index, array) => {
@@ -77,7 +83,6 @@ export default function AboutUs() {
     pairs.forEach(() => rows.push([]))
     setBioRows(rows)
     setBioPairs(pairs)
-    setBioShown(1)
   }, [])
 
   function onViewBio(bioId, row) {
