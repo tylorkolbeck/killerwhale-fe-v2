@@ -10,10 +10,29 @@ const traderTypes = [
     id: 1,
     experience: 'fish',
     type: 'New',
-    sectionTitle: 'Best for new traders',
+    sectionTitle: 'So, you’re new to Crypto..',
     title: 'New To Trading',
-    description:
-      'Killer Whale strategies and signals and automated bot trading is a great way to start out in Crypto, without the need to understand market trends and do deep analysis.',
+    description: () => (
+      <div>
+        <p>
+          Don’t worry, we’ve got you. Crypto trading can be overwhelming to
+          those getting into it for the first time. There’s lots to learn,
+          staking. forking. burning, Layer 1 and Layer 2 Protocols, DEFI, NFTs
+          the list goes on. The easiest way is to buy crypto from an exchange
+          and storing it in your cryptocurrency wallet. A great way to build
+          your long term portfolio, but for those who want to see consistent and
+          steady gains across an array of coins, Killer Whale strategies and
+          signals and automated bot trading is a great way to start, without the
+          need to understand market trends and do deep analysis.
+        </p>
+        <br />
+        <p>
+          Our free strategy allows you to trade up to 15 coins and we provide
+          full support via our Discord channel to ensure you get off to a
+          profitable start in your trading bot journey.
+        </p>
+      </div>
+    ),
     products: [],
     imgSrc: '/images/badges/badge_fish.svg',
     alt: 'New To Trading'
@@ -23,9 +42,32 @@ const traderTypes = [
     experience: 'dolphin',
     type: 'Experienced',
     title: 'Experienced Trader',
-    sectionTitle: 'Best for experienced traders',
-    description:
-      'Our variety of strategies will let you take your trading to the next level, no matter what your investment strategy or the market condition. ',
+    sectionTitle: `So you're a Dolphin and know how to swim?`,
+    description: () => (
+      <div>
+        <p>
+          So you’ve been around crypto for a while and are looking for new ways
+          to make your portfolio work for you.{' '}
+        </p>
+        <br />
+        <p>
+          Our variety of strategies will let you take your trading to the next
+          level, no matter what your investment strategy or the market
+          condition.
+        </p>
+        <br />
+        <p>
+          Have you lost money buying into a project at the wrong time? Or sold
+          your holdings in a coin only to see it gain in value? Take the emotion
+          out of your trades and let our advanced AI and Signals do the work for
+          you. Join our pod of 1,000’s on our Discord community and ensure you
+          are part of the action when the Pod next feeds!
+        </p>
+        <br />
+        <p></p>
+      </div>
+    ),
+    // 'Our variety of strategies will let you take your trading to the next level, no matter what your investment strategy or the market condition. ',
     products: [],
     imgSrc: '/images/badges/badge_dolphin.svg',
     alt: 'Experienced Trader',
@@ -36,9 +78,26 @@ const traderTypes = [
     experience: 'whale',
     type: 'Killer Whale',
     title: 'Killer Whale',
-    sectionTitle: 'Best for the Killer Whales',
-    description:
-      'Our variety of strategies and signals suit a multitude of trading styles. Whether you want to get in and out of trades in hours or invest in trades in the mid to short term Killer Whale has you covered.',
+    sectionTitle: 'So you are one of us? A Killer Whale.',
+    description: () => (
+      <div>
+        <p>
+          So you consider yourself a Killer Whale? Welcome to the Pod. You’re
+          here because you’ve heard of the kind of returns possible using
+          automated trading and want part of the action. You want to see your
+          already healthy crypto holdings continue to give you solid returns on
+          a daily basis.
+        </p>
+        <br />
+        <p>
+          Our variety of strategies and signals suit a multitude of trading
+          styles. Whether you want to get in and out of trades in hours or
+          invest in trades in the mid to short term Killer Whale has you
+          covered.
+        </p>
+      </div>
+    ),
+    // 'Our variety of strategies and signals suit a multitude of trading styles. Whether you want to get in and out of trades in hours or invest in trades in the mid to short term Killer Whale has you covered.',
     products: [],
     imgSrc: '/images/badges/badge_whale.svg',
     alt: 'Killer Whale',
@@ -137,7 +196,7 @@ export default function TypeOfTrader({ products }) {
           <div className={clsx('container', 'flow', styles.descriptionContent)}>
             <SectionHeader
               header={experienceSelected.sectionTitle}
-              subText={experienceSelected.description}
+              subText={experienceSelected.description()}
               hSize='m'
             />
           </div>

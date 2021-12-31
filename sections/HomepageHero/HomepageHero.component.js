@@ -93,7 +93,7 @@ export default function Hero({ bgImage }) {
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
                   newTab
                 >
-                  Discord
+                  Join Discord
                 </Link>
               </span>
             </div>

@@ -126,7 +126,7 @@ export default function Home() {
                 'All Skill Levels',
                 'Trade While You Sleep',
                 'Advanced AI',
-                'Large Community'
+                'Global Community'
               ]}
             ></List>
 
