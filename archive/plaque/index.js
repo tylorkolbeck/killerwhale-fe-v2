@@ -8,7 +8,6 @@ export default function Plaque() {
     event.preventDefault()
 
     var svgElements = document.body.querySelectorAll('svg')
-    console.log(svgElements)
     svgElements.forEach(function (item) {
       item.setAttribute('width', item.getBoundingClientRect().width)
       item.setAttribute('height', item.getBoundingClientRect().height)

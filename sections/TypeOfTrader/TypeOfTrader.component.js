@@ -149,7 +149,6 @@ export default function TypeOfTrader({ products }) {
       (type) => type.experience === experience
     )[0]
 
-    console.log('>>>', experience)
     if (experience === 'all') {
       setExperienceSelected(traderTypes[3])
       setProductsToShow(products)
