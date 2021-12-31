@@ -8,7 +8,6 @@
   & > div {
     border-radius: 6px;
     padding: 2rem;
-    // background: red;
     margin: 0 20px;
     h4 {
       margin-bottom: 2rem;
@@ -32,7 +31,7 @@
   margin-top: 4rem;
 
   &.testimonialWrappper {
-    max-width: 600px;
+    max-width: 90vw;
   }
 }
 
@@ -95,6 +94,10 @@
 
     .cRight {
       margin-top: 0;
+
+      &.testimonialWrappper {
+        max-width: 600px;
+      }
     }
   }
 
@@ -127,6 +130,7 @@
   // max-width: 670px;
   margin-left: auto;
   margin-right: auto;
+  padding: 2rem;
 }
 
 .embla__viewport {

@@ -3,14 +3,17 @@ import styles from './Navbar.module.scss'
 import Link from '../../components/Link/Link.component'
 import Image from 'next/image'
 import clsx from 'clsx'
-import { strategies } from '../../data/strategies'
 import Hamburger from '../../components/Hamburger/Hamburger.component'
 import { useState } from 'react'
 import MobileMenu from '../../components/MobileMenu/MobileMenu.component'
 
-export default function Navbar() {
+export default function Navbar({ strategies }) {
   function filterProducts(filter) {
-    return strategies.filter((strat) => strat.type === filter)
+    if (strategies) {
+      return strategies.filter((strat) => strat.type === filter)
+    } else {
+      return []
+    }
   }
 
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
@@ -69,13 +72,14 @@ export default function Navbar() {
                           <b>View All</b>
                         </Link>
                       </li>
-                      {filterProducts('strategy').map((strat) => (
-                        <li key={strat.id}>
-                          <Link linkTo={`/product/${strat.slug}`} type='nav'>
-                            {strat.name}
-                          </Link>
-                        </li>
-                      ))}
+                      {strategies &&
+                        filterProducts('strategy').map((strat) => (
+                          <li key={strat.id}>
+                            <Link linkTo={`/product/${strat.slug}`} type='nav'>
+                              {strat.name}
+                            </Link>
+                          </li>
+                        ))}
                     </ul>
                     <ul>
                       <li>

@@ -77,6 +77,7 @@ export default function AboutUs() {
     pairs.forEach(() => rows.push([]))
     setBioRows(rows)
     setBioPairs(pairs)
+    setBioShown(1)
   }, [])
 
   function onViewBio(bioId, row) {

@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
 import ProductTable from '../../components/ProductTable/ProductTable.component'
 import { useRouter } from 'next/router'
+import Link from '../../components/Link/Link.component'
 
 const traderTypes = [
   {
@@ -19,16 +20,21 @@ const traderTypes = [
           those getting into it for the first time. There’s lots to learn,
           staking. forking. burning, Layer 1 and Layer 2 Protocols, DEFI, NFTs
           the list goes on. The easiest way is to buy crypto from an exchange
-          and storing it in your cryptocurrency wallet. A great way to build
-          your long term portfolio, but for those who want to see consistent and
-          steady gains across an array of coins, Killer Whale strategies and
-          signals and automated bot trading is a great way to start, without the
-          need to understand market trends and do deep analysis.
+          and storing it in your cryptocurrency wallet.
+        </p>
+        <br />
+        <p>
+          A great way to build your long term portfolio, but for those who want
+          to see consistent and steady gains across an array of coins, Killer
+          Whale strategies and signals and automated bot trading is a great way
+          to start, without the need to understand market trends and do deep
+          analysis.
         </p>
         <br />
         <p>
           Our free strategy allows you to trade up to 15 coins and we provide
-          full support via our Discord channel to ensure you get off to a
+          full support via our on-boarding and{' '}
+          <Link linkTo='/support'>Support</Link> to ensure you get off to a
           profitable start in your trading bot journey.
         </p>
       </div>
@@ -109,8 +115,8 @@ const traderTypes = [
     type: 'All Products',
     title: 'See everything?',
     sectionTitle: 'All Strategies & Signals',
-    description:
-      'Want to browse everything we have and make your own choice? Below are all the Killer Whale Strategies and Signals',
+    description: () => null,
+    // 'Want to browse everything we have and make your own choice? Below are all the Killer Whale Strategies and Signals',
     products: [],
     imgSrc: '/images/badges/badge_all.svg',
     alt: 'All products',
@@ -125,11 +131,12 @@ export default function TypeOfTrader({ products }) {
   const router = useRouter()
 
   useEffect(() => {
-    setExperienceSelected(
-      traderTypes[router.query.l ? parseInt(router.query.l) : 0]
-    )
-    filterProducts('fish')
-  }, [])
+    const levels = ['fish', 'dolphin', 'whale', 'all']
+    let levelParam = parseInt(router.query.l)
+    setExperienceSelected(traderTypes[levelParam ? levelParam : 0])
+    // setExperienceSelectedHandler(levels[levelParam])
+    filterProducts(levels[levelParam] ? levels[levelParam] : 'fish')
+  }, [router.query.l])
 
   function setExperienceSelectedHandler(experience) {
     const tableRef = document.querySelector('#ProductTable')
@@ -142,6 +149,7 @@ export default function TypeOfTrader({ products }) {
       (type) => type.experience === experience
     )[0]
 
+    console.log('>>>', experience)
     if (experience === 'all') {
       setExperienceSelected(traderTypes[3])
       setProductsToShow(products)
@@ -153,6 +161,10 @@ export default function TypeOfTrader({ products }) {
   }
 
   function filterProducts(experienceLevel) {
+    if (experienceLevel === 'all') {
+      setProductsToShow(products)
+      return
+    }
     if (experienceLevel) {
       let filtered = []
       products.forEach((p) => {
@@ -194,11 +206,9 @@ export default function TypeOfTrader({ products }) {
       {experienceSelected && (
         <div className={clsx(styles.description, 'bg-light')} id='ProductTable'>
           <div className={clsx('container', 'flow', styles.descriptionContent)}>
-            <SectionHeader
-              header={experienceSelected.sectionTitle}
-              subText={experienceSelected.description()}
-              hSize='m'
-            />
+            <SectionHeader header={experienceSelected.sectionTitle} hSize='m'>
+              {experienceSelected.description()}
+            </SectionHeader>
           </div>
           <div className={clsx(styles.productCardWrapper, 'bg-dark')}>
             {productsToShow && <ProductTable products={productsToShow} />}

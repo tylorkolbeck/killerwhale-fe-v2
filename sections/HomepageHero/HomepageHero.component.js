@@ -50,7 +50,7 @@ export default function Hero({ bgImage }) {
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
                   newTab
                 >
-                  Marketplace
+                  View Marketplace
                 </Link>
                 <link></link>
               </span>
@@ -93,7 +93,7 @@ export default function Hero({ bgImage }) {
                   iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
                   newTab
                 >
-                  Join Discord
+                  Visit Discord
                 </Link>
               </span>
             </div>

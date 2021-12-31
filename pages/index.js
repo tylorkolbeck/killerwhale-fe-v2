@@ -49,7 +49,7 @@ export default function Home() {
   let testimonialArray = [
     {
       description:
-        'Experience is great. Premium signals are worth every penny. I also use the AI with multiple strategy&apos;s Just let the bot do it&apos;s work. Most important is not to sell at a loss. The support on discord is great. The community is very helpfull. ',
+        "Experience is great. Premium signals are worth every penny. I also use the AI with multiple strategy's Just let the bot do it's work. Most important is not to sell at a loss. The support on discord is great. The community is very helpfull. ",
       strategy: 'Premium',
       startBal: '$2,775 USD',
       profit: '$2858 (103%)',
@@ -293,10 +293,10 @@ export default function Home() {
             <SectionHeader
               header='Our Hand Picked Strategies & Signals'
               subText='Never miss a dip in the market, a pump, or an all time high.
-              Killer Whale monitors all of your favorite currencies 24/7. Our'
+              Killer Whale monitors all of your favorite currencies 24/7.'
             />
 
-            <Button type='cta' link='strategies-signals'>
+            <Button type='cta' link='/strategies-signals?l=3'>
               View All Products
             </Button>
           </div>
@@ -351,21 +351,7 @@ export default function Home() {
               profitability of Killer Whale Strategies & Signals. These results
               can be verified in our Discord community'
             />
-            {/* <h3
-              className={clsx('fs-600 uppercase ff-good', styles.centerOnSmall)}
-              style={{ maxWidth: '500px' }}
-            >
-              Killer Whale Pod Results
-            </h3>
-            <div className={styles.divider}>
-              <Divider width='200px' />
-            </div>
-            <p className={clsx('text-accent')}>
-              These results are taken live from CryptoHopper, and showcase trade
-              profitability of Killer Whale Strategies & Signals. These results
-              can be verified in our Discord community
-            </p> */}
-            <Button type='cta' link='strategies-signals'>
+            <Button type='cta' link='/strategies-signals?l=3'>
               All Strategies and Signals
             </Button>
           </div>
@@ -377,8 +363,9 @@ export default function Home() {
               'bg-dark'
             )}
             style={{
-              padding: '2rem',
+              // padding: '2rem',
               borderRadius: 6
+              // maxWidth: '100vw'
             }}
           >
             {/* Testimonial Carousel start */}

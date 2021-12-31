@@ -97,9 +97,7 @@ export default function OnboardingSupport() {
           <div className={styles.iconWrapper}>
             <FaQuestionCircle size={40} />
           </div>
-          <h2 className='bold ff-good fs-400 text-green'>
-            Knowledgebase & FAQ
-          </h2>
+          <h2 className='bold ff-good fs-400 text-green'>Knowledgebase</h2>
           <div className={styles.divider}>
             {/* <Divider width='100px' /> */}
           </div>

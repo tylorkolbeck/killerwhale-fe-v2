@@ -40,7 +40,9 @@ export default function about() {
               diversify into emerging technologies.
             </p>
             <br />
-            <p>Perhaps the mans best friend is truly a Killer Whale</p>
+            <p>
+              Perhaps the mans best friend is truly a <b>Killer Whale</b>.
+            </p>
           </div>
         </div>
       </div>
