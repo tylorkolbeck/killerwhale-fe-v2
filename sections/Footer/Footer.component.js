@@ -122,55 +122,6 @@ export default function Footer({ strategies }) {
                     </a>
                   )
                 })}
-              {/* <Image
-                src='/images/partners/partner1.png'
-                layout='fixed'
-                height='43'
-                width='141'
-                alt='Kucoin'
-              /> */}
-              {/* <Image
-                src='/images/partners/partner2.png'
-                layout='fixed'
-                height='43'
-                width='141'
-                alt='Kucoin'
-              />
-              <Image
-                src='/images/partners/partner3.png'
-                layout='fixed'
-                height='43'
-                width='141'
-                alt='Kucoin'
-              />
-              <Image
-                src='/images/partners/partner4.png'
-                layout='fixed'
-                height='43'
-                width='141'
-                alt='Kucoin'
-              />
-              <Image
-                src='/images/partners/partner5.png'
-                layout='fixed'
-                height='43'
-                width='141'
-                alt='Kucoin'
-              />
-              <Image
-                src='/images/partners/partner6.png'
-                layout='fixed'
-                height='43'
-                width='141'
-                alt='Kucoin'
-              />
-              <Image
-                src='/images/partners/partner7.png'
-                layout='fixed'
-                height='43'
-                width='141'
-                alt='Kucoin'
-              /> */}
             </div>
           </div>
         </div>
