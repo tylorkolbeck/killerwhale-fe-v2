@@ -35,8 +35,8 @@ export default function about() {
             </p>
             <br />
             <p>
-              Our future roadmap encompasses projects in NFT, Mining, DeFi. We
-              will continue to drive innovation and customer experience as we
+              Our future roadmap encompasses projects in NFTs, Mining, and DeFi.
+              We will continue to drive innovation and customer experience as we
               diversify into emerging technologies.
             </p>
             <br />
