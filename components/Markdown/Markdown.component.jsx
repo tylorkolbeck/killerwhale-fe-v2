@@ -11,7 +11,9 @@ export default function Markdown({ children }) {
   }
   const components = {
     p: ({ children }) => {
-      return <p style={{ lineHeight: '2rem' }}>{children}</p>
+      return (
+        <p style={{ lineHeight: '2rem', marginBottom: '1rem' }}>{children}</p>
+      )
     },
     h1: ({ children }) => {
       return <h1 className={'ff-good fs-700'}>{children}</h1>
