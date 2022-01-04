@@ -7,7 +7,7 @@ import Link from '../../components/Link/Link.component'
 import List from '../../components/List/List.component'
 import { fetchAPI } from '../../lib/api'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { NextSeo } from 'next-seo'
 import {
   faExternalLinkAlt,
   faArrowLeft
@@ -37,6 +37,11 @@ export default function product({ product }) {
 
   return (
     <div className='bg-dark'>
+      <NextSeo
+        title={product.name}
+        description='KillerWhaleCrypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
+        Join us today and CHANGE THE WAY YOU TRADE'
+      />
       <div className={clsx('container')} style={{ padding: '2rem' }}>
         <Link linkTo='/strategies-signals'>
           <FontAwesomeIcon icon={faArrowLeft} /> All Strategies and Signals

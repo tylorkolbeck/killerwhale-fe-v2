@@ -7,6 +7,7 @@ import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.comp
 import ArticleLayout from '../components/layouts/ArticleLayout'
 import { DateTime } from 'luxon'
 import SectionHeader from '../components/SectionHeader/SectionHeader.component'
+import { NextSeo } from 'next-seo'
 
 export default function Articles({ articles, categories }) {
   const renderCategories = categories.map((category) => {
@@ -22,6 +23,11 @@ export default function Articles({ articles, categories }) {
   )
   return (
     <>
+      <NextSeo
+        title='Articles'
+        description='KillerWhaleCrypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
+        Join us today and CHANGE THE WAY YOU TRADE'
+      />
       {/* <h2 className='fs-400'>Categories</h2> */}
       {/* <div>{renderCategories}</div> */}
       <div className='mt-2'>

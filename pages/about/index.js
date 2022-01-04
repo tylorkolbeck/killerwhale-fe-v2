@@ -4,10 +4,16 @@ import InfoBar from '../../components/InfoBar/InfoBar.component'
 import Bios from '../../components/Bios/Bios.component'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
 import clsx from 'clsx'
+import { NextSeo } from 'next-seo'
 
 export default function about() {
   return (
     <div>
+      <NextSeo
+        title='About'
+        description='KillerWhaleCrypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
+        Join us today and CHANGE THE WAY YOU TRADE'
+      />
       <div className='hero'>
         <div className={clsx('container', styles.header)} style={{}}>
           <div>

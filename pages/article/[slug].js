@@ -10,6 +10,7 @@ import { getAllPostsIds, getPostData } from '../../lib/posts'
 import { fetchAPI } from '../../lib/api'
 import NewsLetterSignup from '../../sections/NewsLetterSignup/NewsLetterSignup.component'
 import Markdown from '../../components/Markdown/Markdown.component'
+import { NextSeo } from 'next-seo'
 
 const Article = ({ articles, postData }) => {
   let formattedDate = DateTime.fromISO(postData?.publishedAt).toLocaleString(
@@ -18,6 +19,11 @@ const Article = ({ articles, postData }) => {
 
   return (
     <>
+      <NextSeo
+        title={postData?.title}
+        description='KillerWhaleCrypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
+        Join us today and CHANGE THE WAY YOU TRADE'
+      />
       <div>
         <h1 className={styles.title}>{postData?.title}</h1>
         {postData?.image && (
