@@ -10,7 +10,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import clsx from 'clsx'
 import Image from 'next/image'
 
-export default function Hero({ bgImage }) {
+export default function Hero({ bgImage, salesAndDownloads }) {
   return (
     <div className={styles.hero} style={{ backgroundImage: `url(${bgImage})` }}>
       <section className={clsx(styles.heroSection, 'container')}>
@@ -106,7 +106,7 @@ export default function Hero({ bgImage }) {
           bottom: 0
         }}
       >
-        <StatsBar />
+        <StatsBar salesAndDownloads={salesAndDownloads} />
       </div>
     </div>
   )
