@@ -1,14 +1,27 @@
+import { useEffect } from 'react'
 import styles from './Footer.module.scss'
 import Link from '../../components/Link/Link.component'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { faDiscord } from '@fortawesome/free-brands-svg-icons'
-import { strategies } from '../../data/strategies'
+import {
+  faTwitter,
+  faYoutube,
+  faDiscord
+} from '@fortawesome/free-brands-svg-icons'
+import useSWR from 'swr'
+import { fetchAPI } from '../../lib/api'
+// import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+// import { strategies } from '../../data/strategies'
 
-export default function Footer() {
+const fetcher = (url) => fetchAPI(url).then((res) => res.Links)
+
+export default function Footer({ strategies }) {
+  const { data: affiliateLinks, error: affiliateLinksError } = useSWR(
+    '/affiliate-links',
+    fetcher
+  )
+
   return (
     <div className={clsx(styles.footer)}>
       <div className='container flow'>
@@ -19,36 +32,38 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.linkCategory}>
               <h3 className='fs-400 ff-serif uppercase'>Strategies</h3>
-              {strategies.map((strat) => {
-                if (strat.type === 'strategy') {
-                  return (
-                    <Link
-                      linkTo={`/product/${strat.slug}`}
-                      type='nav'
-                      key={`signal_${strat.id}`}
-                    >
-                      {strat.name}
-                    </Link>
-                  )
-                }
-              })}
+              {strategies &&
+                strategies.map((strat) => {
+                  if (strat.type === 'strategy') {
+                    return (
+                      <Link
+                        linkTo={`/product/${strat.slug}`}
+                        type='nav'
+                        key={`signal_${strat.id}`}
+                      >
+                        {strat.name}
+                      </Link>
+                    )
+                  }
+                })}
             </div>
 
             <div className={styles.linkCategory}>
               <h3 className='fs-400 ff-serif uppercase'>Signals</h3>
-              {strategies.map((strat) => {
-                if (strat.type === 'signal') {
-                  return (
-                    <Link
-                      linkTo={`/product/${strat.slug}`}
-                      type='nav'
-                      key={`strat_${strat.id}`}
-                    >
-                      {strat.name}
-                    </Link>
-                  )
-                }
-              })}
+              {strategies &&
+                strategies.map((strat) => {
+                  if (strat.type === 'signal') {
+                    return (
+                      <Link
+                        linkTo={`/product/${strat.slug}`}
+                        type='nav'
+                        key={`strat_${strat.id}`}
+                      >
+                        {strat.name}
+                      </Link>
+                    )
+                  }
+                })}
             </div>
 
             <div className={styles.linkCategory}>
@@ -76,69 +91,38 @@ export default function Footer() {
             <div>
               <h3 className='fs-400 ff-serif uppercase'>Legal</h3>
               <div>
-                <Link linkTo='/' type='nav'>
+                <Link linkTo='/privacy-policy' type='nav'>
                   Privacy Policy
                 </Link>
               </div>
-              <Link linkTo='/' type='nav'>
+              <Link linkTo='/risk-disclosure' type='nav'>
                 Risk Disclosure
               </Link>
             </div>
           </div>
-        </div>
 
-        <div className='flow'>
-          <h4 className='uppercase fs-500 ff-good'>Our Partners</h4>
-          <div className={styles.partnersWrapper}>
-            <Image
-              src='/images/partners/partner1.png'
-              layout='fixed'
-              height='43'
-              width='141'
-              alt='Kucoin'
-            />
-            <Image
-              src='/images/partners/partner2.png'
-              layout='fixed'
-              height='43'
-              width='141'
-              alt='Kucoin'
-            />
-            <Image
-              src='/images/partners/partner3.png'
-              layout='fixed'
-              height='43'
-              width='141'
-              alt='Kucoin'
-            />
-            <Image
-              src='/images/partners/partner4.png'
-              layout='fixed'
-              height='43'
-              width='141'
-              alt='Kucoin'
-            />
-            <Image
-              src='/images/partners/partner5.png'
-              layout='fixed'
-              height='43'
-              width='141'
-              alt='Kucoin'
-            />
-            <Image
-              src='/images/partners/partner6.png'
-              layout='fixed'
-              height='43'
-              width='141'
-              alt='Kucoin'
-            />
-            <Image
-              src='/images/partners/partner7.png'
-              layout='fixed'
-              height='43'
-              width='141'
-              alt='Kucoin'
-            />
+          <div className='flow'>
+            <h4 className='uppercase fs-500 ff-good'>Our Partners</h4>
+            <div className={styles.partnersWrapper}>
+              {affiliateLinks &&
+                affiliateLinks.map((affiliate) => {
+                  return (
+                    <a
+                      href={affiliate?.link?.url}
+                      target='_blank'
+                      key={affiliate.id}
+                    >
+                      <Image
+                        src={affiliate?.link?.linkImage[0].url}
+                        layout='fixed'
+                        height='43'
+                        width='141'
+                        alt='Kucoin'
+                      />
+                    </a>
+                  )
+                })}
+            </div>
           </div>
         </div>
 
@@ -149,23 +133,39 @@ export default function Footer() {
               <p>
                 <FontAwesomeIcon icon={faTwitter} />
               </p>
-              <Link linkTo='/' type='nav'>
+              <Link
+                linkTo='https://twitter.com/DylanShively6'
+                type='nav'
+                newTab
+              >
                 Twitter
               </Link>
             </div>
             <div>
+              <p>
+                <FontAwesomeIcon icon={faYoutube} />
+              </p>
+              <Link
+                linkTo='https://www.youtube.com/channel/UCnd-fXjzI__H_gtfdfTb3tw'
+                type='nav'
+                newTab
+              >
+                YouTube
+              </Link>
+            </div>
+            {/* <div>
               <p>
                 <FontAwesomeIcon icon={faFacebook} />
               </p>
               <Link linkTo='/' type='nav'>
                 Facebook
               </Link>
-            </div>
+            </div> */}
             <div>
               <p>
                 <FontAwesomeIcon icon={faDiscord} />
               </p>
-              <Link linkTo='/' type='nav'>
+              <Link linkTo='https://discord.gg/UNXZhFVnrA' type='nav' newTab>
                 Discord
               </Link>
             </div>
@@ -173,7 +173,7 @@ export default function Footer() {
         </div>
 
         <p className='fs-200 text-accent center'>
-          Copyright Killer Whale © 2021
+          Copyright Killer Whale © 2022
         </p>
       </div>
     </div>

@@ -23,6 +23,7 @@
 
 .hamburger {
   display: none;
+  z-index: 6;
 }
 
 .navLinks {
@@ -45,12 +46,21 @@
   }
 }
 
-@media screen and (max-width: 960px) {
-  .navLinks {
-    display: none;
-  }
+.block {
+  display: block !important;
+}
 
+@media screen and (max-width: 960px) {
   .hamburger {
     display: block;
+    padding-top: 10px;
+    margin-left: 10px;
+    z-index: 6;
+  }
+}
+
+@media (max-width: 960px) {
+  .navLinks {
+    display: none;
   }
 }

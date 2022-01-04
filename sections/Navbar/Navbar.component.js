@@ -1,15 +1,38 @@
+import { useEffect } from 'react'
 import styles from './Navbar.module.scss'
 import Link from '../../components/Link/Link.component'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import clsx from 'clsx'
-import { strategies } from '../../data/strategies'
+import Hamburger from '../../components/Hamburger/Hamburger.component'
+import { useState } from 'react'
+import MobileMenu from '../../components/MobileMenu/MobileMenu.component'
 
-export default function Navbar() {
+export default function Navbar({ strategies }) {
   function filterProducts(filter) {
-    return strategies.filter((strat) => strat.type === filter)
+    if (strategies) {
+      return strategies.filter((strat) => strat.type === filter)
+    } else {
+      return []
+    }
   }
+
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen)
+  }
+
+  useEffect(() => {
+    const bodyEl = document.querySelector('body')
+
+    if (bodyEl) {
+      if (hamburgerOpen) {
+        bodyEl.style.overflow = 'hidden'
+      } else {
+        bodyEl.style.overflow = 'auto'
+      }
+    }
+  }, [hamburgerOpen])
 
   return (
     <nav className={clsx(styles.navBar)}>
@@ -24,18 +47,18 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className={styles.hamburger}>
-          <FontAwesomeIcon icon={faBars} size='1x' />
+        <div className={styles.hamburger} onClick={toggleHamburger}>
+          <Hamburger isOpen={hamburgerOpen} />
         </div>
 
-        <ul className={styles.navLinks}>
+        <ul className={clsx(styles.navLinks)}>
           <li>
             <Link
               linkTo='/strategies-signals'
               type='nav'
               subLinks={
                 <>
-                  <div className={styles.subLinks}>
+                  <div className={clsx(styles.subLinks)}>
                     <ul>
                       <li>
                         <b className='fs-400'>Strategies</b>
@@ -49,13 +72,14 @@ export default function Navbar() {
                           <b>View All</b>
                         </Link>
                       </li>
-                      {filterProducts('strategy').map((strat) => (
-                        <li key={strat.id}>
-                          <Link linkTo={`/product/${strat.slug}`} type='nav'>
-                            {strat.name}
-                          </Link>
-                        </li>
-                      ))}
+                      {strategies &&
+                        filterProducts('strategy').map((strat) => (
+                          <li key={strat.id}>
+                            <Link linkTo={`/product/${strat.slug}`} type='nav'>
+                              {strat.name}
+                            </Link>
+                          </li>
+                        ))}
                     </ul>
                     <ul>
                       <li>
@@ -103,6 +127,49 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+
+      <MobileMenu shown={hamburgerOpen} toggleShown={toggleHamburger} />
+
+      {/* <div
+        style={{
+          height: '100vh',
+          width: '100vw',
+          maxWidth: '600px',
+          right: 0,
+          background: 'red',
+          zIndex: 1,
+          position: 'fixed'
+        }}
+      >
+
+      </div> */}
+
+      {/* <style jsx>{`
+        .navLinks {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+        }
+        .subLinks {
+          display: flex;
+        }
+        li {
+          margin-right: 20px;
+        }
+        a {
+          font-size: var(--fs-200);
+        }
+        @media (max-width: 960px) {
+          .navLinks {
+            display: ${hamburgerOpen ? 'block' : 'none'};
+            background-color: #07121d;
+            position: absolute;
+            right: 0;
+            top: 6rem;
+          }
+        }
+      `}</style> */}
     </nav>
   )
 }

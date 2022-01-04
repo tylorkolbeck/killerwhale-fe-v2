@@ -75,7 +75,7 @@ export default function OnboardingSupport() {
           <div className={styles.iconWrapper}>
             <FaListAlt size={40} />
           </div>
-          <h2 className='bold ff-good fs-400'>Setup Guides</h2>
+          <h2 className='bold ff-good fs-400 text-green'>Setup Guides</h2>
           <div className={styles.divider}>
             {/* <Divider width='100px' /> */}
           </div>
@@ -103,7 +103,7 @@ export default function OnboardingSupport() {
           <div className={styles.iconWrapper}>
             <FaQuestionCircle size={40} />
           </div>
-          <h2 className='bold ff-good fs-400'>Knowledgebase & FAQ</h2>
+          <h2 className='bold ff-good fs-400 text-green'>Knowledgebase</h2>
           <div className={styles.divider}>
             {/* <Divider width='100px' /> */}
           </div>
@@ -133,7 +133,7 @@ export default function OnboardingSupport() {
           <div className={styles.iconWrapper}>
             <FaUsers size={40} />
           </div>
-          <h2 className='bold ff-good fs-400'>Community Forum</h2>
+          <h2 className='bold ff-good fs-400 text-green'>Community Forum</h2>
           <div className={styles.divider}>
             {/* <Divider width='100px' /> */}
           </div>
@@ -160,13 +160,13 @@ export default function OnboardingSupport() {
           </div>
           {/* <FontAwesomeIcon icon={FaDiscord} /> */}
 
-          <h2 className='bold ff-good fs-400'>Discord Community</h2>
+          <h2 className='bold ff-good fs-400 text-green'>Discord Community</h2>
           <div className={styles.divider}>
             {/* <Divider width='100px' /> */}
           </div>
 
           <p className='text-accent'>
-            Join and participate in the Killer Whale community
+            Join and Participate in the Global Killer Whale Community
           </p>
           <div style={{ marginTop: 'auto' }}>
             <Link

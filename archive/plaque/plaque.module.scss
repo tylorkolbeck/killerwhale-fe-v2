@@ -1,0 +1,15 @@
+.formWrapper {
+  form {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3rem;
+    justify-content: center;
+    padding: 2rem;
+  }
+}
+
+.productWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}

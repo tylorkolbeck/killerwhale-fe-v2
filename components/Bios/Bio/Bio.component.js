@@ -8,7 +8,11 @@ export default function Bio({ bio, shown, img, ...props }) {
         <div className={clsx(styles.BioCard)}>
           <div className={clsx(styles.imgWrapper)}>
             <div className={clsx(styles.imgOverlay)}>
-              <img src={bio.img} alt='Some Person' />
+              <img
+                src={bio.img}
+                alt='Some Person'
+                style={{ maxHeight: '300px' }}
+              />
             </div>
           </div>
           <div className={styles.Bio_img_footer}>

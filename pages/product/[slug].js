@@ -120,7 +120,7 @@ export default function product({ product }) {
                               newTab
                               key={'kucoin_link'}
                             >
-                              A crypto exchange account, Binance/ KuCoin
+                              A crypto exchange account: KuCoin
                             </Link>,
                             <Link
                               key='ch_link'

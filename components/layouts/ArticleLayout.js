@@ -33,7 +33,7 @@ export default function ArticleLayout({ children }) {
             <div className={styles.promo}>
               <SectionHeader header='Start Trading'>
                 Want to get started in automated crypto trading? Check out
-                Killer Whale&apos;s top earning strategies
+                Killer Whale&apos;s hand picked strategies
               </SectionHeader>
               <div className={clsx('flow mt-2', styles.strategies)}>
                 {strategies.slice(0, 4).map((strat) => (

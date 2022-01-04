@@ -3,6 +3,10 @@
   gap: 2rem;
 }
 
+.errorMessage {
+  color: hsl(var(--clr-red));
+}
+
 .rightColumn {
   display: flex;
   flex-direction: column;
