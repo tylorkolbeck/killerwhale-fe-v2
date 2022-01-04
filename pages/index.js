@@ -29,7 +29,8 @@ import {
 } from '../components/CarouselButtons/CarouselButtons.component'
 import { fetchAPI } from '../lib/api'
 
-export default function Home({ seo }) {
+export default function Home({ seo, salesAndDownloads }) {
+  console.log(salesAndDownloads)
   // Testimonial carousel helper functions start
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false })
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
@@ -112,7 +113,10 @@ export default function Home({ seo }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <NextSeo title={seo?.metaTitle} description={seo?.metaDescription} />
-      <HomepageHero bgImage='/images/background_2_ov.png' />
+      <HomepageHero
+        bgImage='/images/background_2_ov.png'
+        salesAndDownloads={salesAndDownloads}
+      />
       <TradeScroller />
 
       <section className='section bg-light'>
@@ -422,9 +426,11 @@ export default function Home({ seo }) {
 
 export async function getStaticProps(context) {
   const global = await fetchAPI('/global')
+  const salesAndDownloads = await fetchAPI('/sales-and-downloads')
   return {
     props: {
-      seo: global?.defaultSeo
+      seo: global?.defaultSeo,
+      salesAndDownloads
     }, // will be passed to the page component as props
     revalidate: 10
   }
