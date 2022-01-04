@@ -8,6 +8,7 @@ import Button from '../../components/Button/Button.component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/router'
+import { NextSeo } from 'next-seo'
 
 export default function OnboardingSupport() {
   const [inputState, setInputState] = useState('')
@@ -34,6 +35,11 @@ export default function OnboardingSupport() {
 
   return (
     <div style={{ backgroundImage: `url('/images/background_2_ov.png')` }}>
+      <NextSeo
+        title='Support'
+        description='KillerWhaleCrypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
+        Join us today and CHANGE THE WAY YOU TRADE'
+      />
       <a
         id='externalNavigation'
         style={{ display: 'none' }}

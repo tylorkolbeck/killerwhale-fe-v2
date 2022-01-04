@@ -6,10 +6,16 @@ import NewsLetterSignup from '../../sections/NewsLetterSignup/NewsLetterSignup.c
 import Link from '../../components/Link/Link.component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { NextSeo } from 'next-seo'
 
 export default function Cat({ articles, catName }) {
   return (
     <>
+      <NextSeo
+        title={catName}
+        description='KillerWhaleCrypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
+        Join us today and CHANGE THE WAY YOU TRADE'
+      />
       <div className='mt-2'>
         <SectionHeader header={`News - ${catName}`}>
           <Link linkTo='/articles'>
