@@ -36,15 +36,6 @@ const bios = [
     bio: `Tony is a professional writer, with experience in both journalism and advertising. He first discovered cryptocurrency back in 2017 and immediately developed a strong passion for both investing and blockchain technology. Tony has been with Killer Whale Crypto since its inception. Tony has spent years researching a wide variety of cryptocurrency projects and crypto related topics. Tony’s other interests include a variety of media production, ranging from audio to video and was one of the first content creators on the YouTube video platform.`
   },
   {
-    id: 4,
-    name: 'Berend Botje',
-    img: '/images/bios/berend2.png',
-    title: 'Customer Experience',
-    bio: `Started mining Bitcoin when it just started, started trading, staking and taught myself how the crypto world works.
-    Seen the highs and the lows and all that knowledge I use to help the users of Killer Whale Crypto to get a head start.
-    `
-  },
-  {
     id: 5,
     name: 'Tylor Kolbeck',
     img: '/images/bios/tylor.png',
