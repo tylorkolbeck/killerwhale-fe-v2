@@ -18,6 +18,13 @@
   // color: rgb(17, 17, 17);
 }
 
+.externalLink {
+  color: white;
+  &:visited {
+    color: white;
+  }
+}
+
 /* ---------- */
 /* Colors */
 /* ---------- */
