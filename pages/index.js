@@ -157,7 +157,7 @@ export default function Home({ seo, salesAndDownloads }) {
           <div>
             {/* <Image src='/images/gas.png' width='100' height='100'></Image> */}
             <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-              <GiSpeedometer size={100} color='rgb(36, 174, 144)' />
+              <GiSpeedometer size={75} color='rgb(36, 174, 144)' />
             </div>
             <h4 className='fs-500 fw-bold center'>All Skill Levels</h4>
             <p className='text-accent'>
@@ -168,7 +168,7 @@ export default function Home({ seo, salesAndDownloads }) {
           </div>
           <div>
             <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-              <GiNightSleep size={100} color='rgb(36, 174, 144)' />
+              <GiNightSleep size={75} color='rgb(36, 174, 144)' />
             </div>
 
             <h4 className='fs-500 fw-bold center'>Trade While You Sleep</h4>
@@ -182,7 +182,7 @@ export default function Home({ seo, salesAndDownloads }) {
           </div>
           <div>
             <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
-              <GiArtificialIntelligence size={100} color='rgb(36, 174, 144)' />
+              <GiArtificialIntelligence size={75} color='rgb(36, 174, 144)' />
             </div>
 
             <h4 className='fs-500 fw-bold center'>Advanced AI</h4>
@@ -209,78 +209,89 @@ export default function Home({ seo, salesAndDownloads }) {
 
         <div className='container grid center'>
           <div className={styles.experienceLevels}>
-            <div className='flow'>
-              <div>
-                <Image
-                  src='/images/badges/badge_fish.svg'
-                  height='100'
-                  width='100'
-                  layout='fixed'
-                  alt='Fish Badge'
-                />
-              </div>
-              <h5 className='fs-400 fw-bold uppercase'>New To Trading</h5>
-              <p className='text-accent'>
-                You are new to trading? Don&apos;t worry we&apos;ve got you. Our
-                hand picked strategies and signals are a great way to start,
-                without the need to understand market trends.
-              </p>
-              <div>
-                <Link
-                  linkTo='/strategies-signals?l=0'
-                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
-                >
-                  Get Started
-                </Link>
-              </div>
+            <div>
+              <Link linkTo='/strategies-signals?l=0'>
+                <div className='flow'>
+                  <div>
+                    <Image
+                      src='/images/badges/badge_fish.svg'
+                      height='100'
+                      width='100'
+                      layout='fixed'
+                      alt='Fish Badge'
+                    />
+                  </div>
+                  <h5 className='fs-400 fw-bold uppercase'>New To Trading</h5>
+                  <p className='text-accent'>
+                    You are new to trading? Don&apos;t worry we&apos;ve got you.
+                    Our hand picked strategies and signals are a great way to
+                    start, without the need to understand market trends.
+                  </p>
+                  <div>
+                    <Link
+                      linkTo='/strategies-signals?l=0'
+                      iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                    >
+                      Get Started
+                    </Link>
+                  </div>
+                </div>
+              </Link>
             </div>
-
-            <div className='flow'>
-              <Image
-                src='/images/badges/badge_dolphin.svg'
-                height='100'
-                width='100'
-                layout='fixed'
-                alt='Dolphin Badge'
-              />
-              <h5 className='fs-400 fw-bold uppercase'>Experienced</h5>
-              <p className='text-accent'>
-                You are a Dolphin and know how to swim? Let us make your
-                portfolio work for you. Our strategies and signals will take
-                your trading to the next level, no matter what your investment
-                strategy is.
-              </p>
-              <div>
-                <Link
-                  linkTo='/strategies-signals?l=1'
-                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
-                >
-                  Get Started
-                </Link>
-              </div>
+            <div>
+              <Link linkTo='/strategies-signals?l=1'>
+                <div className='flow'>
+                  <Image
+                    src='/images/badges/badge_dolphin.svg'
+                    height='100'
+                    width='100'
+                    layout='fixed'
+                    alt='Dolphin Badge'
+                  />
+                  <h5 className='fs-400 fw-bold uppercase'>Experienced</h5>
+                  <p className='text-accent'>
+                    You are a Dolphin and know how to swim? Let us make your
+                    portfolio work for you. Our strategies and signals will take
+                    your trading to the next level, no matter what your
+                    investment strategy is.
+                  </p>
+                  <div>
+                    <Link
+                      linkTo='/strategies-signals?l=1'
+                      iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                    >
+                      Get Started
+                    </Link>
+                  </div>
+                </div>
+              </Link>
             </div>
-            <div className='flow'>
-              <Image
-                src='/images/badges/badge_whale.svg'
-                height='100'
-                width='100'
-                layout='fixed'
-                alt='Whale Badge'
-              />
-              <h5 className='fs-400 fw-bold uppercase'>Killer Whale</h5>
-              <p className='text-accent'>
-                Consider yourself a Killer Whale? Welcome to the Pod. Our Elite
-                strategies and signals cater for a multitude of trading styles
-                and market conditions. We have you covered.
-              </p>
-              <div>
-                <Link
-                  linkTo='/strategies-signals?l=2'
-                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
-                >
-                  Get Started
-                </Link>
-              </div>
+            <div>
+              <Link linkTo='/strategies-signals?l=2'>
+                <div className='flow'>
+                  <Image
+                    src='/images/badges/badge_whale.svg'
+                    height='100'
+                    width='100'
+                    layout='fixed'
+                    alt='Whale Badge'
+                  />
+                  <h5 className='fs-400 fw-bold uppercase'>Killer Whale</h5>
+                  <p className='text-accent'>
+                    Consider yourself a Killer Whale? Welcome to the Pod. Our
+                    Elite strategies and signals cater for a multitude of
+                    trading styles and market conditions. We have you covered.
+                  </p>
+                  <div>
+                    <Link
+                      linkTo='/strategies-signals?l=2'
+                      iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                    >
+                      Get Started
+                    </Link>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
