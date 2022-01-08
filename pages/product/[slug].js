@@ -12,6 +12,7 @@ import {
   faExternalLinkAlt,
   faArrowLeft
 } from '@fortawesome/free-solid-svg-icons'
+import router from 'next/router'
 
 const arrayOfObjectsToStrings = (array, objectKey) => {
   if (Array.isArray(array)) {
@@ -53,13 +54,20 @@ export default function product({ product }) {
 
         <div className={clsx(styles.productHeader, 'bg-light')}>
           <div className='flex' style={{ flexDirection: 'column' }}>
-            <ProductCard
-              name={product.name}
-              type={product.type}
-              tradeDuration={product.tradeDuration}
-              tradeFreq={product.tradeFreq}
-              experience={experience}
-            />
+            <a
+              href={product.chLink}
+              target='_blank'
+              rel='noreferrer'
+              className='externalLink'
+            >
+              <ProductCard
+                name={product.name}
+                type={product.type}
+                tradeDuration={product.tradeDuration}
+                tradeFreq={product.tradeFreq}
+                experience={experience}
+              />
+            </a>
           </div>
 
           <div>

@@ -14,10 +14,12 @@ export default function ProductRow({ product }) {
     <div className={styles.productRowContainer}>
       <div className={clsx(styles.row, styles.productRow)} key={product.id}>
         <div className={styles.cell}>
-          <ProductCard
-            {...product}
-            experience={product?.experience.map((e) => e.experience)}
-          />
+          <Link linkTo={`/product/${product.slug}`}>
+            <ProductCard
+              {...product}
+              experience={product?.experience.map((e) => e.experience)}
+            />
+          </Link>
         </div>
 
         <div className={styles.productInfo}>

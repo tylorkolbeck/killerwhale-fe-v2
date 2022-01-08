@@ -30,7 +30,6 @@ import {
 import { fetchAPI } from '../lib/api'
 
 export default function Home({ seo, salesAndDownloads }) {
-  console.log(salesAndDownloads)
   // Testimonial carousel helper functions start
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false })
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
