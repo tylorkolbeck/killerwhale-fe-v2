@@ -4,7 +4,7 @@ import Divider from '../components/Divider/Divider.component'
 import { fetchAPI } from '../lib/api'
 import { NextSeo } from 'next-seo'
 
-export default function StrategiesSignals({ products }) {
+export default function StrategiesSignals({ products, pageData }) {
   return (
     <div>
       <NextSeo
@@ -21,7 +21,7 @@ export default function StrategiesSignals({ products }) {
 
       <div>
         <div className='mt-5'>
-          <TypeOfTrader products={products} />
+          <TypeOfTrader products={products} pageData={pageData} />
         </div>
       </div>
       <section className='section bg-light mt-5'>
@@ -35,9 +35,12 @@ export default function StrategiesSignals({ products }) {
 
 export async function getStaticProps() {
   const products = await fetchAPI(`/products-v-2-s`)
+  const pageData = await fetchAPI('/pages?pageName=products')
+
   return {
     props: {
-      products
+      products,
+      pageData
     },
     revalidate: 1
   }
