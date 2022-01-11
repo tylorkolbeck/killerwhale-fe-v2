@@ -160,7 +160,12 @@ export default function TypeOfTrader({ products, pageData }) {
                 [styles.selected]: type.id === experienceSelected?.id
               })}
             >
-              <img src={type.imgSrc} alt={type.alt} />
+              <img
+                src={type.imgSrc}
+                alt={type.alt}
+                height='200px'
+                width='200px'
+              />
               <p
                 className={clsx(
                   { bold: type?.type === experienceSelected?.type },

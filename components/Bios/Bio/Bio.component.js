@@ -1,5 +1,6 @@
 import styles from './Bio.module.scss'
 import clsx from 'clsx'
+import Image from 'next/image'
 
 export default function Bio({ bio, shown, img, ...props }) {
   return (
@@ -8,9 +9,11 @@ export default function Bio({ bio, shown, img, ...props }) {
         <div className={clsx(styles.BioCard)}>
           <div className={clsx(styles.imgWrapper)}>
             <div className={clsx(styles.imgOverlay)}>
-              <img
+              <Image
                 src={bio.img}
                 alt='Some Person'
+                height='300px'
+                width='300px'
                 style={{ maxHeight: '300px' }}
               />
             </div>
