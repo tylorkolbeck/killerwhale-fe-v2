@@ -1,10 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Navbar.module.scss'
 import Link from '../../components/Link/Link.component'
 import Image from 'next/image'
 import clsx from 'clsx'
 import Hamburger from '../../components/Hamburger/Hamburger.component'
-import { useState } from 'react'
 import MobileMenu from '../../components/MobileMenu/MobileMenu.component'
 
 export default function Navbar({ strategies }) {
