@@ -3,6 +3,7 @@ import styles from './Link.module.scss'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FaChevronDown } from 'react-icons/fa'
 import useOnclickOutside from 'react-cool-onclickoutside'
 
 export default function CustomLink({
@@ -41,7 +42,8 @@ export default function CustomLink({
           <p className={[styles.nav, navClasses].join(' ')}>
             {children}
             <span className={styles.iconEnd}>
-              <FontAwesomeIcon icon={faChevronDown} />
+              {/* <FontAwesomeIcon icon={faChevronDown} width="25" height="25" /> */}
+              <FaChevronDown />
             </span>
           </p>
           {dropdownVisible && (
