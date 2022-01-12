@@ -29,7 +29,7 @@ const renderPosts = (articles) => {
               {post?.image?.formats && (
                 <Image
                   src={getStrapiMedia(post?.image?.formats?.thumbnail?.url)}
-                  alt='Placeholder image'
+                  alt={post?.image?.alternativeText ? post?.image?.alternativeText: 'presentational'}
                   layout='fill'
                   objectFit='cover'
                 />

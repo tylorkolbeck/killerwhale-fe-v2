@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import styles from './article.module.scss'
-import Link from '../../components/Link/Link.component'
 import { DateTime } from 'luxon'
 import { getStrapiMedia } from '../../utils/media'
 import ArticleLayout from '../../components/layouts/ArticleLayout'
@@ -29,7 +28,11 @@ const Article = ({ articles, postData }) => {
         {postData?.image && (
           <Image
             src={getStrapiMedia(postData?.image?.url)}
-            alt={postData?.image?.alternativeText}
+            alt={
+              postData?.image?.alternativeText
+                ? postData?.image?.alternativeText
+                : 'presentational'
+            }
             height='485'
             width='920'
           />

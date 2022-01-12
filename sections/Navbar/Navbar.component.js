@@ -1,10 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Navbar.module.scss'
 import Link from '../../components/Link/Link.component'
 import Image from 'next/image'
 import clsx from 'clsx'
 import Hamburger from '../../components/Hamburger/Hamburger.component'
-import { useState } from 'react'
 import MobileMenu from '../../components/MobileMenu/MobileMenu.component'
 
 export default function Navbar({ strategies }) {
@@ -129,47 +128,6 @@ export default function Navbar({ strategies }) {
       </div>
 
       <MobileMenu shown={hamburgerOpen} toggleShown={toggleHamburger} />
-
-      {/* <div
-        style={{
-          height: '100vh',
-          width: '100vw',
-          maxWidth: '600px',
-          right: 0,
-          background: 'red',
-          zIndex: 1,
-          position: 'fixed'
-        }}
-      >
-
-      </div> */}
-
-      {/* <style jsx>{`
-        .navLinks {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-        }
-        .subLinks {
-          display: flex;
-        }
-        li {
-          margin-right: 20px;
-        }
-        a {
-          font-size: var(--fs-200);
-        }
-        @media (max-width: 960px) {
-          .navLinks {
-            display: ${hamburgerOpen ? 'block' : 'none'};
-            background-color: #07121d;
-            position: absolute;
-            right: 0;
-            top: 6rem;
-          }
-        }
-      `}</style> */}
     </nav>
   )
 }
