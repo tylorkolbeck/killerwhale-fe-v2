@@ -12,20 +12,22 @@ export default function ProductCard({
 }) {
   const experienceBadges = {
     fish: (
-      <img
+      <Image
         src='/images/badges/120ppi/fish.png'
         height='30'
         width='30'
         key={'fish'}
         className='svg'
+        alt='fish'
       />
     ),
     dolphin: (
-      <img
+      <Image
         src='/images/badges/badge_dolphin.svg'
         height='30'
         width='30'
         key={'dolphin'}
+        alt='dolphin'
       />
     ),
     whale: (
@@ -34,6 +36,7 @@ export default function ProductCard({
         height='30'
         width='30'
         key={'whale'}
+        alt='whale'
       />
     )
   }

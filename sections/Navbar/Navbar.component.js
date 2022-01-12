@@ -128,47 +128,6 @@ export default function Navbar({ strategies }) {
       </div>
 
       <MobileMenu shown={hamburgerOpen} toggleShown={toggleHamburger} />
-
-      {/* <div
-        style={{
-          height: '100vh',
-          width: '100vw',
-          maxWidth: '600px',
-          right: 0,
-          background: 'red',
-          zIndex: 1,
-          position: 'fixed'
-        }}
-      >
-
-      </div> */}
-
-      {/* <style jsx>{`
-        .navLinks {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-        }
-        .subLinks {
-          display: flex;
-        }
-        li {
-          margin-right: 20px;
-        }
-        a {
-          font-size: var(--fs-200);
-        }
-        @media (max-width: 960px) {
-          .navLinks {
-            display: ${hamburgerOpen ? 'block' : 'none'};
-            background-color: #07121d;
-            position: absolute;
-            right: 0;
-            top: 6rem;
-          }
-        }
-      `}</style> */}
     </nav>
   )
 }
