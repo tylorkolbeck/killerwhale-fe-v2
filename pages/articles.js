@@ -41,7 +41,7 @@ export default function Articles({ articles, categories }) {
       >
         <Image
           src={getStrapiMedia(latestPost.image.url)}
-          alt={latestPost.image.alternativeText}
+          alt={latestPost?.image?.alternativeText ? latestPost?.image?.alternativeText: 'presentational'}
           height='485px'
           width='920px'
           className='mb-2'
