@@ -145,8 +145,8 @@ export default function Home({ seo, salesAndDownloads }) {
             <Image
               src='/images/dashboard.png'
               alt='Dashboard'
-              height='353px'
-              width='604px'
+              height='353'
+              width='604'
             />
           </div>
 

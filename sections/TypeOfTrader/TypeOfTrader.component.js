@@ -6,6 +6,7 @@ import ProductTable from '../../components/ProductTable/ProductTable.component'
 import { useRouter } from 'next/router'
 import Link from '../../components/Link/Link.component'
 import Markdown from '../../components/Markdown/Markdown.component'
+import Image from 'next/image'
 
 const traderTypes = [
   {
@@ -160,12 +161,14 @@ export default function TypeOfTrader({ products, pageData }) {
                 [styles.selected]: type.id === experienceSelected?.id
               })}
             >
-              <img
-                src={type.imgSrc}
-                alt={type.alt}
-                height='200px'
-                width='200px'
-              />
+              <div className={styles.badges}>
+                <Image
+                  src={type.imgSrc}
+                  alt={type.alt}
+                  height='200'
+                  width='200'
+                />
+              </div>
               <p
                 className={clsx(
                   { bold: type?.type === experienceSelected?.type },

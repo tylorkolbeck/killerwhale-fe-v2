@@ -30,8 +30,8 @@ const Article = ({ articles, postData }) => {
           <Image
             src={getStrapiMedia(postData?.image?.url)}
             alt={postData?.image?.alternativeText}
-            height='485px'
-            width='920px'
+            height='485'
+            width='920'
           />
         )}
         <h2 className={styles.description}>{postData?.description}</h2>

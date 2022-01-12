@@ -12,8 +12,8 @@ export default function Bio({ bio, shown, img, ...props }) {
               <Image
                 src={bio.img}
                 alt='Some Person'
-                height='300px'
-                width='300px'
+                height='300'
+                width='300'
                 style={{ maxHeight: '300px' }}
               />
             </div>
