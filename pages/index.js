@@ -13,6 +13,7 @@ import Testimonial from '../components/Testimonial/Testimonial.component'
 import NewsLetterSignup from '../sections/NewsLetterSignup/NewsLetterSignup.component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { FaArrowRight } from 'react-icons/fa'
 import InfoBar from '../components/InfoBar/InfoBar.component'
 import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import useEmblaCarousel from 'embla-carousel-react'
@@ -142,7 +143,12 @@ export default function Home({ seo, salesAndDownloads }) {
             </Button>
           </div>
           <div className={styles.cRight}>
-            <img src='/images/dashboard.png' />
+            <Image
+              src='/images/dashboard.png'
+              alt='Dashboard'
+              height='353'
+              width='604'
+            />
           </div>
 
           <div className={clsx(styles.cRight, 'v-align-c')}></div>

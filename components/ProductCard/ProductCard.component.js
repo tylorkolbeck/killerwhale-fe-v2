@@ -17,6 +17,7 @@ export default function ProductCard({
         height='30'
         width='30'
         key={'fish'}
+        alt='fish'
       />
     ),
     dolphin: (
@@ -25,6 +26,7 @@ export default function ProductCard({
         height='30'
         width='30'
         key={'dolphin'}
+        alt='dolphin'
       />
     ),
     whale: (
@@ -33,6 +35,7 @@ export default function ProductCard({
         height='30'
         width='30'
         key={'whale'}
+        alt='whale'
       />
     )
   }

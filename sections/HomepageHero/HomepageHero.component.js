@@ -6,7 +6,7 @@ import Link from '../../components/Link/Link.component'
 import StatsBar from '../../components/StatsBar/StatsBar.component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-
+import { FaArrowRight } from 'react-icons/fa'
 import clsx from 'clsx'
 import Image from 'next/image'
 
@@ -47,8 +47,7 @@ export default function Hero({ bgImage, salesAndDownloads }) {
               <span className='fs-200'>
                 <Link
                   linkTo='https://www.cryptohopper.com/marketplace/search?q=killer+whale'
-                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
-                  newTab
+                  iconEnd={<FaArrowRight style={{marginBottom: "-3px"}}/>}
                 >
                   View Marketplace
                 </Link>
@@ -69,7 +68,7 @@ export default function Hero({ bgImage, salesAndDownloads }) {
               <span className='fs-200'>
                 <Link
                   linkTo='/articles'
-                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                  iconEnd={<FaArrowRight style={{marginBottom: "-3px"}}/>}
                 >
                   News & Articles
                 </Link>
@@ -90,7 +89,7 @@ export default function Hero({ bgImage, salesAndDownloads }) {
               <span className='fs-200'>
                 <Link
                   linkTo='https://discord.gg/UNXZhFVnrA'
-                  iconEnd={<FontAwesomeIcon icon={faArrowRight} />}
+                  iconEnd={<FaArrowRight style={{marginBottom: "-3px"}}/>}
                   newTab
                 >
                   Visit Discord
