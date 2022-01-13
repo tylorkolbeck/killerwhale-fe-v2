@@ -143,7 +143,12 @@ export default function Home({ seo, salesAndDownloads }) {
             </Button>
           </div>
           <div className={styles.cRight}>
-            <img src='/images/dashboard.png' />
+            <Image
+              src='/images/dashboard.png'
+              alt='Dashboard'
+              height='353'
+              width='604'
+            />
           </div>
 
           <div className={clsx(styles.cRight, 'v-align-c')}></div>
