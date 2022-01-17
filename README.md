@@ -36,4 +36,4 @@ A directory exsists to hold UI components. These components should contain very 
 
 ### Sections
 
-Sections hold multiple components as well as the logic required to provide their child components with the data neccessary to render it. API calls and other data formatting logic will always be contained inside a section.
+Sections hold multiple components as well as the logic required to provide their child components with the data neccessary to render it. API calls and other data formatting logic will always be contained inside a section .
