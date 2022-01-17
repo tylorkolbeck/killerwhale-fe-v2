@@ -30,6 +30,22 @@ export default function ArticleLayout({ children }) {
         <div className={styles.grid}>
           <div>{children}</div>
           <div className={styles.sideBar}>
+            <div className='mb-2'>
+              <SectionHeader header='Categories' />
+              <div className={styles.tags}>
+                {categories ? (
+                  categories.map((cat) => {
+                    return (
+                      <Link linkTo={`/category/${cat.slug}`} key={cat.id}>
+                        <span>{cat.name}</span>
+                      </Link>
+                    )
+                  })
+                ) : (
+                  <p>Loading...</p>
+                )}
+              </div>
+            </div>
             <div className={styles.promo}>
               <SectionHeader header='Start Trading'>
                 Want to get started in automated crypto trading? Check out
@@ -52,22 +68,6 @@ export default function ArticleLayout({ children }) {
                     />
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className='mt-4'>
-              <SectionHeader header='Categories' />
-              <div className={styles.tags}>
-                {categories ? (
-                  categories.map((cat) => {
-                    return (
-                      <Link linkTo={`/category/${cat.slug}`} key={cat.id}>
-                        <span>{cat.name}</span>
-                      </Link>
-                    )
-                  })
-                ) : (
-                  <p>Loading...</p>
-                )}
               </div>
             </div>
           </div>

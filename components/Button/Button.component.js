@@ -22,8 +22,8 @@ export default function Button({
     router.push(link)
   }
 
-  function clickHandler() {
-    if (onClick) onClick()
+  function clickHandler(event) {
+    if (onClick) onClick(event)
     else if (link) navigate()
   }
 

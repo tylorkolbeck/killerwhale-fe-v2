@@ -8,8 +8,15 @@ import ArticleLayout from '../components/layouts/ArticleLayout'
 import { DateTime } from 'luxon'
 import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import { NextSeo } from 'next-seo'
+import Button from '../components/Button/Button.component'
+import { useState } from 'react'
+import SpinnerSmall from '../components/Spinner/SpinnerSmall.component'
 
 export default function Articles({ articles, categories }) {
+  const [searchValue, setSearchValue] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+  const [searchLoading, setSearchLoading] = useState(true)
+
   const renderCategories = categories.map((category) => {
     return (
       <span className='tag is-success' key={category.id}>
@@ -21,6 +28,38 @@ export default function Articles({ articles, categories }) {
   let publishedDate = DateTime.fromISO(latestPost.publishedAt).toLocaleString(
     DateTime.DATE_MED
   )
+
+  function searchSubmitHandler(e) {
+    e.preventDefault()
+
+    if (!searchValue) {
+      setSearchResults([])
+      return
+    }
+
+    setSearchLoading(true)
+    fetch(`http://localhost:1337/articles?title_contains=${searchValue}`).then(
+      async (res) => {
+        if (res.ok) {
+          const data = await res.json()
+          setSearchResults(data)
+        } else {
+          console.log('There was an error searching articles')
+        }
+        setSearchLoading(false)
+      }
+    )
+  }
+
+  function searchHandler(e) {
+    const { value } = e.target
+
+    if (!value) {
+      setSearchResults([])
+    }
+    setSearchValue(value)
+  }
+
   return (
     <>
       <NextSeo
@@ -31,34 +70,73 @@ export default function Articles({ articles, categories }) {
       {/* <h2 className='fs-400'>Categories</h2> */}
       {/* <div>{renderCategories}</div> */}
       <div className='mt-2'>
-        <SectionHeader header='Latest News' />
+        <form>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'baseline',
+              position: 'relative'
+            }}
+          >
+            <input
+              type='text'
+              placeholder='Search Articles...'
+              className='mb-2'
+              value={searchValue}
+              onChange={searchHandler}
+            />
+
+            <div style={{ marginLeft: '1rem' }}>
+              <Button
+                className='ml'
+                type='contained'
+                onClick={searchSubmitHandler}
+              >
+                Search
+              </Button>
+            </div>
+          </div>
+        </form>
       </div>
+      {searchLoading && (
+        <div className='mb-4'>
+          <SpinnerSmall />
+        </div>
+      )}
 
-      <Link
-        linkTo={`/article/${latestPost.slug}`}
-        key={latestPost.id}
-        type='nav'
-      >
-        <Image
-          src={getStrapiMedia(latestPost.image.url)}
-          alt={
-            latestPost?.image?.alternativeText
-              ? latestPost?.image?.alternativeText
-              : 'presentational'
-          }
-          height='485'
-          width='920'
-          className='mb-2'
-        />
+      {searchResults.length > 0 ? (
+        <RecentPosts articles={searchResults} />
+      ) : (
+        <div>
+          {/* <SectionHeader header='Latest News' /> */}
 
-        <h2 className='mb-1 bold fs-600 mt-1'>{latestPost.title}</h2>
-      </Link>
-      <p className='mb-1 '>{latestPost.description}</p>
+          <Link
+            linkTo={`/article/${latestPost.slug}`}
+            key={latestPost.id}
+            type='nav'
+          >
+            <Image
+              src={getStrapiMedia(latestPost.image.url)}
+              alt={
+                latestPost?.image?.alternativeText
+                  ? latestPost?.image?.alternativeText
+                  : 'presentational'
+              }
+              height='485'
+              width='920'
+              className='mb-2'
+            />
 
-      <p className='mb-2'>
-        {latestPost.author.name} - {publishedDate}
-      </p>
-      <Link linkTo={`/article/${latestPost.slug}`}>Read More</Link>
+            <h2 className='mb-1 bold fs-600 mt-1'>{latestPost.title}</h2>
+          </Link>
+          <p className='mb-1 '>{latestPost.description}</p>
+
+          <p className='mb-2'>
+            {latestPost.author.name} - {publishedDate}
+          </p>
+          <Link linkTo={`/article/${latestPost.slug}`}>Read More</Link>
+        </div>
+      )}
 
       <div className='mt-4'>
         <SectionHeader header='Most Recent' />

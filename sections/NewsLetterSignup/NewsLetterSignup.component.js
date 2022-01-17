@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button.component'
 import Link from '../../components/Link/Link.component'
 import clsx from 'clsx'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
-import Spinner from '../../components/Spinner/Spinner.component'
+import SpinnerSmall from '../../components/Spinner/SpinnerSmall.component'
 import { fetchAPI } from '../../lib/api'
 import axios from 'axios'
 
