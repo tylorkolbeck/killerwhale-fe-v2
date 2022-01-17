@@ -1,6 +1,7 @@
 import styles from './Button.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { FaArrowRight } from 'react-icons/fa'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
 
@@ -42,7 +43,7 @@ export default function Button({
       {iconStart && iconStart} {children} {iconEnd && iconEnd}{' '}
       {(type === 'cta' || type === 'ctaInverted') && (
         <span className={styles.icon}>
-          <FontAwesomeIcon icon={faArrowRight} />
+          <FaArrowRight style={{ marginBottom: '-3px' }} />
         </span>
       )}
     </button>
