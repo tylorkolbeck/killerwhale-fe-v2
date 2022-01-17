@@ -10,12 +10,11 @@ import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import { NextSeo } from 'next-seo'
 import Button from '../components/Button/Button.component'
 import { useState } from 'react'
-import SpinnerSmall from '../components/Spinner/SpinnerSmall.component'
 
 export default function Articles({ articles, categories }) {
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState([])
-  const [searchLoading, setSearchLoading] = useState(true)
+  const [searchLoading, setSearchLoading] = useState(false)
 
   const renderCategories = categories.map((category) => {
     return (
@@ -75,18 +74,19 @@ export default function Articles({ articles, categories }) {
             style={{
               display: 'flex',
               alignItems: 'baseline',
-              position: 'relative'
+              position: 'relative',
+              flexWrap: 'wrap',
+              gap: '10px'
             }}
           >
             <input
               type='text'
               placeholder='Search Articles...'
-              className='mb-2'
               value={searchValue}
               onChange={searchHandler}
             />
 
-            <div style={{ marginLeft: '1rem' }}>
+            <div>
               <Button
                 className='ml'
                 type='contained'
@@ -107,7 +107,7 @@ export default function Articles({ articles, categories }) {
       {searchResults.length > 0 ? (
         <RecentPosts articles={searchResults} />
       ) : (
-        <div>
+        <div className='mt-2'>
           {/* <SectionHeader header='Latest News' /> */}
 
           <Link
