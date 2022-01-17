@@ -10,12 +10,12 @@ import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import { NextSeo } from 'next-seo'
 import Button from '../components/Button/Button.component'
 import { useState } from 'react'
-import Spinner from '../components/Spinner/Spinner.component'
+import SpinnerSmall from '../components/Spinner/SpinnerSmall.component'
 
 export default function Articles({ articles, categories }) {
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState([])
-  const [searchLoading, setSearchLoading] = useState(false)
+  const [searchLoading, setSearchLoading] = useState(true)
 
   const renderCategories = categories.map((category) => {
     return (
@@ -38,17 +38,16 @@ export default function Articles({ articles, categories }) {
     }
 
     setSearchLoading(true)
-    fetch(`http://localhost:1337/articles?title_contains=${searchValue}`).then(
-      async (res) => {
-        if (res.ok) {
-          const data = await res.json()
-          setSearchResults(data)
-        } else {
-          console.log('There was an error searching articles')
-        }
+    fetchAPI(`/articles?title_contains=${searchValue}`)
+      .then(async (res) => {
+        setSearchResults(res)
+
         setSearchLoading(false)
-      }
-    )
+      })
+      .catch((error) => {
+        console.log('Error fetching articles', error)
+        setSearchLoading(false)
+      })
   }
 
   function searchHandler(e) {
@@ -100,8 +99,8 @@ export default function Articles({ articles, categories }) {
         </form>
       </div>
       {searchLoading && (
-        <div className='mb-4'>
-          <Spinner />
+        <div className='mb' style={{ textAlign: 'center' }}>
+          <SpinnerSmall />
         </div>
       )}
 
