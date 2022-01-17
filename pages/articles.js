@@ -15,7 +15,7 @@ import SpinnerSmall from '../components/Spinner/SpinnerSmall.component'
 export default function Articles({ articles, categories }) {
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState([])
-  const [searchLoading, setSearchLoading] = useState(true)
+  const [searchLoading, setSearchLoading] = useState(false)
 
   const renderCategories = categories.map((category) => {
     return (
