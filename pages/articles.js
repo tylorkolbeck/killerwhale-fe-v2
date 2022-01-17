@@ -10,6 +10,7 @@ import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import { NextSeo } from 'next-seo'
 import Button from '../components/Button/Button.component'
 import { useState } from 'react'
+import Spinner from '../components/Spinner/Spinner.component'
 
 export default function Articles({ articles, categories }) {
   const [searchValue, setSearchValue] = useState('')
@@ -100,7 +101,7 @@ export default function Articles({ articles, categories }) {
       </div>
       {searchLoading && (
         <div className='mb-4'>
-          <SpinnerSmall />
+          <Spinner />
         </div>
       )}
 
