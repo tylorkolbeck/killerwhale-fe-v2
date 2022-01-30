@@ -1,0 +1,79 @@
+.productCard {
+  max-width: 350px;
+  padding: 1rem;
+  background: url('/images/bg_card.png');
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(238, 238, 238, 0.171);
+
+  .badges {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .header {
+    & img {
+      width: 50px;
+      height: auto;
+    }
+  }
+
+  .title {
+    padding: 1.5rem 0;
+    max-width: 75%;
+    height: 100%;
+    color: white;
+
+    &.mini {
+      padding-top: 0px;
+    }
+  }
+
+  .stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: auto;
+    color: white;
+
+    .statBox {
+      flex-grow: 1;
+    }
+
+    .bar {
+      width: 100%;
+      height: 25px;
+      border-radius: 20px;
+      margin: 0.5rem 0;
+      position: relative;
+      box-shadow: inset 0 0 0 4px hsl(var(--clr-green));
+
+      .progressBar {
+        content: '';
+        position: absolute;
+        background: hsl(var(--clr-green));
+        bottom: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        // right: 50%;
+        border-radius: 20px;
+        border: 3px solid hsl(var(--clr-green));
+      }
+    }
+
+    .barLabels {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
