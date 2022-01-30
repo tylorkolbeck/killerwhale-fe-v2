@@ -32,7 +32,7 @@ export default function Articles({ articles, categories }) {
   let timeoutId
   useEffect(() => {
     return () => clearTimeout(timeoutId)
-  }, [])
+  }, [timeoutId])
 
   function searchSubmitHandler(e) {
     e.preventDefault()
@@ -72,7 +72,7 @@ export default function Articles({ articles, categories }) {
     <>
       <NextSeo
         title='Articles'
-        description='KillerWhaleCrypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
+        description='Killer Whale Crypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
         Join us today and CHANGE THE WAY YOU TRADE'
       />
       {/* <h2 className='fs-400'>Categories</h2> */}
@@ -109,7 +109,7 @@ export default function Articles({ articles, categories }) {
       </div>
       {searchResults.length == 0 && noArticles && (
         <p className='mb-3 mt-3 fs-500' style={{ textAlign: 'center' }}>
-          No articles found for "{searchValue}"
+          No articles found for &quot;{searchValue}&quot;
         </p>
       )}
       {searchLoading && (

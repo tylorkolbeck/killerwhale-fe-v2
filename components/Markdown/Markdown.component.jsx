@@ -12,28 +12,30 @@ import reactDom from 'react-dom'
 const customComponentDataFetcher = {
   product: async (elementId, dataUrl) => {
     fetchAPI(dataUrl, (data) => {
-      let productData = data[0]
-      let element = document.getElementById(elementId)
+      if (data) {
+        let productData = data[0]
+        let element = document.getElementById(elementId)
 
-      if (productData) {
-        reactDom.render(
-          <div
-            style={{
-              margin: '2rem auto',
-              display: 'flex',
-              justifyContent: 'center'
-            }}
-          >
-            <ProductCard
-              name={productData?.name}
-              type={productData?.type}
-              tradeDuration={productData?.tradeDuration}
-              tradeFreq={productData?.tradeFreq}
-              experience={productData?.experience}
-            />
-          </div>,
-          element
-        )
+        if (productData) {
+          reactDom.render(
+            <div
+              style={{
+                margin: '2rem auto',
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
+              <ProductCard
+                name={productData?.name}
+                type={productData?.type}
+                tradeDuration={productData?.tradeDuration}
+                tradeFreq={productData?.tradeFreq}
+                experience={productData?.experience}
+              />
+            </div>,
+            element
+          )
+        }
       }
     })
   }
@@ -87,9 +89,7 @@ export default function Markdown({ children }) {
       )
     },
     code: ({ node }) => {
-      // console.log('>>>>', await renderCustomInput(node))
       return <div>{renderCustomInput(node)}</div>
-      // return <div id={'asd'} className={styles.coinList}></div>
     },
     img: (props) => {
       return (
