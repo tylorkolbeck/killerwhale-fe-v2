@@ -54,11 +54,6 @@ export default function product({ product }) {
         </h1>
 
         <div className={clsx(styles.productHeader, 'bg-light')}>
-          <div className={styles['container__wrapper']}>
-            <div className={styles['container__ribbon']}>
-              {product.price === 0 ? 'Free' : '$' + currency(product.price)}
-            </div>
-          </div>
           <div className='flex' style={{ flexDirection: 'column' }}>
             <a
               href={product.chLink}
@@ -74,6 +69,9 @@ export default function product({ product }) {
                 experience={experience}
               />
             </a>
+            <div className='text-acccent mt-1'>
+              {product.price === 0 ? 'Free' : product.price}
+            </div>
           </div>
 
           <div>
