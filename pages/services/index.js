@@ -90,14 +90,6 @@ export default function Services({ services }) {
                           id={service?.service_category.id}
                         />
                       </a>
-                    </div>
-                    <div>
-                      <h2 className='bold mb-1'>Features</h2>
-                      <List
-                        items={service?.features.map(
-                          (feature) => feature?.feature
-                        )}
-                      />
                       <div className='mt-2'>
                         <a
                           href={service?.booking_url}
@@ -107,10 +99,19 @@ export default function Services({ services }) {
                           <Button type='cta'>Book Now</Button>
                         </a>
                       </div>
-                      <p className='mt-3 text-green '>
+                    </div>
+                    <div>
+                      <h2 className='bold mb-1'>Features</h2>
+                      <List
+                        items={service?.features.map(
+                          (feature) => feature?.feature
+                        )}
+                      />
+
+                      {/* <p className='mt-3 text-green '>
                         <span className='bold'>Price: </span>
                         {service.price}
-                      </p>
+                      </p> */}
 
                       <div className='mt-2 text-accent fs-300'>
                         <Markdown>{service.disclaimer}</Markdown>
