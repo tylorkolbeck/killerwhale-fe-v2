@@ -4,11 +4,57 @@ import Link from '../Link/Link.component'
 import styles from './Markdown.module.scss'
 import { getStrapiMedia } from '../../utils/media'
 import rehypeRaw from 'rehype-raw'
+import { fetchAPI } from '../../lib/api'
+
+import ProductCard from '../ProductCard/ProductCard.component'
+import reactDom from 'react-dom'
+
+const customComponentDataFetcher = {
+  product: async (elementId, dataUrl) => {
+    fetchAPI(dataUrl, (data) => {
+      let productData = data[0]
+      let element = document.getElementById(elementId)
+
+      if (productData) {
+        reactDom.render(
+          <div
+            style={{
+              margin: '2rem auto',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <ProductCard
+              name={productData?.name}
+              type={productData?.type}
+              tradeDuration={productData?.tradeDuration}
+              tradeFreq={productData?.tradeFreq}
+              experience={productData?.experience}
+            />
+          </div>,
+          element
+        )
+      }
+    })
+  }
+}
 
 export default function Markdown({ children }) {
-  function renderCustomInput(input) {
-    console.log('rendering input', input)
+  function renderCustomInput(node) {
+    try {
+      let componentType = node?.properties?.className[0]?.split('-')[1]
+      let dataUrl = node?.children[0]?.value?.replace(/[\n\r\t\s]+/g, '').trim()
+      customComponentDataFetcher[componentType](
+        `${componentType}_${dataUrl}`,
+        `/products-v-2-s?slug=${dataUrl}`
+      )
+
+      return <div id={`${componentType}_${dataUrl}`}></div>
+    } catch (error) {
+      console.log('Error getting custom inline component', error)
+    }
   }
+
   const components = {
     p: ({ children }) => {
       return (
@@ -41,8 +87,9 @@ export default function Markdown({ children }) {
       )
     },
     code: ({ node }) => {
-      renderCustomInput(node?.children[0]?.value?.split('\n'))
-      return <div id={'asd'} className={styles.coinList}></div>
+      // console.log('>>>>', await renderCustomInput(node))
+      return <div>{renderCustomInput(node)}</div>
+      // return <div id={'asd'} className={styles.coinList}></div>
     },
     img: (props) => {
       return (
