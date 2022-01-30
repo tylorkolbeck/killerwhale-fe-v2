@@ -116,7 +116,7 @@ export default function Navbar({ strategies }) {
 
           <li>
             <Link linkTo='/articles' type='nav'>
-              News
+              Education
             </Link>
           </li>
           <li>

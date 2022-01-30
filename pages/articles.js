@@ -16,6 +16,7 @@ export default function Articles({ articles, categories }) {
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [searchLoading, setSearchLoading] = useState(false)
+  const [noArticles, setNoArticles] = useState(false)
 
   const renderCategories = categories.map((category) => {
     return (
@@ -43,6 +44,10 @@ export default function Articles({ articles, categories }) {
         setSearchResults(res)
 
         setSearchLoading(false)
+        setNoArticles(true)
+        setTimeout(function () {
+          setNoArticles(false)
+        }, 5000)
       })
       .catch((error) => {
         console.log('Error fetching articles', error)
@@ -98,6 +103,11 @@ export default function Articles({ articles, categories }) {
           </div>
         </form>
       </div>
+      {searchResults.length == 0 && noArticles && (
+        <p className='mb-3 mt-3 fs-500' style={{ textAlign: 'center' }}>
+          No articles found for "{searchValue}"
+        </p>
+      )}
       {searchLoading && (
         <div className='mb' style={{ textAlign: 'center' }}>
           <SpinnerSmall />

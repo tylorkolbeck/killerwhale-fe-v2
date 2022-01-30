@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Testimonial.module.scss'
 import clsx from 'clsx'
 import { FiArrowUpRight } from 'react-icons/fi'
+import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 
 export default function Testimonial({
   description,
@@ -15,7 +16,16 @@ export default function Testimonial({
       <div className={styles.embla__slide__inner}>
         <div className={styles.cardHeader}>
           <h4 className='fs-500'> {name}</h4>
-          <p className='text-accent'>{description}</p>
+
+          <p className='text-accent'>
+            <span style={{ marginRight: '.5rem' }}>
+              <FaQuoteLeft size={15} />
+            </span>
+            {description}
+            <span style={{ marginLeft: '.5rem' }}>
+              <FaQuoteRight size={15} />
+            </span>
+          </p>
         </div>
         <div className='flex' style={{ justifyContent: 'space-between' }}>
           <div>
