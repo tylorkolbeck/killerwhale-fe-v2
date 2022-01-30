@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Testimonial.module.scss'
 import clsx from 'clsx'
 import { FiArrowUpRight } from 'react-icons/fi'
+import Image from 'next/image'
 
 export default function Testimonial({
   description,
@@ -28,9 +29,16 @@ export default function Testimonial({
             <p className='fs-200 uppercase letter-spacing-3 text-accent bold'>
               Profit
             </p>
-            <p className='text-green bold'>
+            <p className='text-green bold' style={{ marginTop: '-2px'}}>
               {profit}{' '}
-              <FiArrowUpRight size={25} style={{ marginBottom: '-6px' }} />
+              {/* <FiArrowUpRight size={25} style={{ marginBottom: '-6px' }} /> */}
+              <Image
+                src='/images/profit_arrow.webp'
+                alt='Profit Arrow'
+                width='25'
+                height='20'
+                className={styles.img}
+              />
             </p>
           </div>
           {/* <div>

@@ -30,7 +30,7 @@ import {
 } from '../components/CarouselButtons/CarouselButtons.component'
 import { fetchAPI } from '../lib/api'
 
-export default function Home({ seo, salesAndDownloads }) {
+export default function Home({ seo, salesAndDownloads, testimonials }) {
   // Testimonial carousel helper functions start
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false })
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
@@ -48,63 +48,63 @@ export default function Home({ seo, salesAndDownloads }) {
     embla.on('select', onSelect)
     onSelect()
   }, [embla, onSelect])
+ 
   // Testimonial carousel helper functions end
 
-  let testimonialArray = [
-    {
-      description:
-        "Experience is great. Premium signals are worth every penny. I also use the AI with multiple strategy's Just let the bot do it's work. Most important is not to sell at a loss. The support on discord is great. The community is very helpfull. ",
-      strategy: 'Premium',
-      startBal: '$2,775 USD',
-      profit: '$2858 (103%)',
-      name: 'Gert-Jan',
-      prodName: 'Premium ',
-      type: 'signal',
-      tradeDuration: 80,
-      tradeFreq: 25,
-      slug: 'premium'
-    },
-    {
-      description:
-        'I have found the Killer Whale free strategy to be very good with some minor tweaks after the recommended setup. The discord server has been of much help to see what other people are running to tweak and resolve any issues with my hopper setup.',
-      strategy: 'Free',
-      startBal: '$1,200 USD',
-      profit: '$300 (25%)',
-      name: 'DeltaNachos',
-      prodName: 'free',
-      type: 'strategy',
-      tradeDuration: 50,
-      tradeFreq: 50,
-      slug: 'free'
-    },
-    {
-      description:
-        'Used the YouTube video about Killer Whale Premium Signals to setup.',
-      strategy: 'Premium',
-      startBal: '$250 USD',
-      profit: '$625 USD (250%)',
-      name: 'Hiena',
-      prodName: 'Premium ',
-      type: 'signal',
-      tradeDuration: 80,
-      tradeFreq: 25,
-      slug: 'premium'
-    },
-    {
-      description:
-        'Used the YouTube video about Killer Whale Premium Signals to setup.',
-      strategy: 'Premium',
-      startBal: '$5,000 USD',
-      profit: '$1,250 USD (25%)',
-      name: 'Etienne Ghigo',
-      prodName: 'Premium ',
-      type: 'signal',
-      tradeDuration: 80,
-      tradeFreq: 25,
-      slug: 'premium'
-    }
-  ]
-
+  // let testimonialArray = [
+  //   {
+  //     description:
+  //       "Experience is great. Premium signals are worth every penny. I also use the AI with multiple strategy's Just let the bot do it's work. Most important is not to sell at a loss. The support on discord is great. The community is very helpfull. ",
+  //     strategy: 'Premium',
+  //     startBal: '$2,775 USD',
+  //     profit: '$2858 (103%)',
+  //     name: 'Gert-Jan',
+  //     prodName: 'Premium ',
+  //     type: 'signal',
+  //     tradeDuration: 80,
+  //     tradeFreq: 25,
+  //     slug: 'premium'
+  //   },
+  //   {
+  //     description:
+  //       'I have found the Killer Whale free strategy to be very good with some minor tweaks after the recommended setup. The discord server has been of much help to see what other people are running to tweak and resolve any issues with my hopper setup.',
+  //     strategy: 'Free',
+  //     startBal: '$1,200 USD',
+  //     profit: '$300 (25%)',
+  //     name: 'DeltaNachos',
+  //     prodName: 'free',
+  //     type: 'strategy',
+  //     tradeDuration: 50,
+  //     tradeFreq: 50,
+  //     slug: 'free'
+  //   },
+  //   {
+  //     description:
+  //       'Used the YouTube video about Killer Whale Premium Signals to setup.',
+  //     strategy: 'Premium',
+  //     startBal: '$250 USD',
+  //     profit: '$625 USD (250%)',
+  //     name: 'Hiena',
+  //     prodName: 'Premium ',
+  //     type: 'signal',
+  //     tradeDuration: 80,
+  //     tradeFreq: 25,
+  //     slug: 'premium'
+  //   },
+  //   {
+  //     description:
+  //       'Used the YouTube video about Killer Whale Premium Signals to setup.',
+  //     strategy: 'Premium',
+  //     startBal: '$5,000 USD',
+  //     profit: '$1,250 USD (25%)',
+  //     name: 'Etienne Ghigo',
+  //     prodName: 'Premium ',
+  //     type: 'signal',
+  //     tradeDuration: 80,
+  //     tradeFreq: 25,
+  //     slug: 'premium'
+  //   }
+  // ]
   return (
     <div>
       <Head>
@@ -396,7 +396,7 @@ export default function Home({ seo, salesAndDownloads }) {
             <div className={styles.embla}>
               <div className={styles.embla__viewport} ref={viewportRef}>
                 <div className={styles.embla__container}>
-                  {testimonialArray.map((testimonial, i) => (
+                  {testimonials.map((testimonial, i) => (
                     <Testimonial
                       key={i}
                       description={testimonial.description}
@@ -441,12 +441,16 @@ export default function Home({ seo, salesAndDownloads }) {
 }
 
 export async function getStaticProps(context) {
-  const global = await fetchAPI('/global')
-  const salesAndDownloads = await fetchAPI('/sales-and-downloads')
+  const global = await fetchAPI('/global');
+  const salesAndDownloads = await fetchAPI('/sales-and-downloads');
+  // const testimonials = await fetchAPI('/testimonials');
+  const response = await fetch('http://localhost:1337/testimonials');
+  const testimonials = await response.json();
   return {
     props: {
       seo: global?.defaultSeo,
-      salesAndDownloads
+      salesAndDownloads,
+      testimonials
     }, // will be passed to the page component as props
     revalidate: 10
   }
