@@ -56,7 +56,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       pageData: aboutData[0].pageContent,
-      revalidate: 10
-    }
+    },
+    revalidate: 10
   }
 }

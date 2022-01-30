@@ -27,9 +27,16 @@ export default function Testimonial({
           </div>
           <div>
             <p className='fs-200 uppercase letter-spacing-3 text-accent bold'>
-              Profit
+              Profit&nbsp;
+              <Image
+                src='/images/profit_arrow.webp'
+                alt='Profit Arrow'
+                width='25'
+                height='20'
+                className={styles.img1}
+              />
             </p>
-            <p className='text-green bold' style={{ marginTop: '-2px'}}>
+            <p className='text-green bold' style={{ marginTop: '-2px', fontWeight: 'bold', color: '#24ae90'}}>
               {profit}{' '}
               {/* <FiArrowUpRight size={25} style={{ marginBottom: '-6px' }} /> */}
               <Image
@@ -37,7 +44,7 @@ export default function Testimonial({
                 alt='Profit Arrow'
                 width='25'
                 height='20'
-                className={styles.img}
+                className={styles.img2}
               />
             </p>
           </div>

@@ -31,7 +31,20 @@
   // height: 190px;
 }
 
-.img {
-  // background-color: #fff;
-  // height: fit-content;
+.img1 {
+  visibility: hidden;
+}
+
+.img2 {
+  visibility: visible;
+}
+
+@media screen and (max-width: 560px) {
+  .img1 {
+    visibility: visible;
+  }
+  
+  .img2 {
+    visibility: hidden;
+  }
 }
