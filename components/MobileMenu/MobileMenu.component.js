@@ -131,7 +131,7 @@ export default function MobileMenu({ shown, toggleShown }) {
               return (
                 <h3
                   key={index}
-                  className={clsx('ff-good', 'text-accent', styles.link)}
+                  className={clsx('ff-good', 'text-accent', styles.link, router.pathname == item.url ? styles.active : '')}
                   onClick={() => onClickHandler(item.url)}
                 >
                   {item.text}
