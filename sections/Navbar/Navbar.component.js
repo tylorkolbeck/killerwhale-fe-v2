@@ -109,6 +109,11 @@ export default function Navbar({ strategies }) {
             </Link>
           </li>
           <li>
+            <Link linkTo='/services' type='nav'>
+              Services
+            </Link>
+          </li>
+          <li>
             <Link linkTo='/support' type='nav'>
               OnBoarding & Support
             </Link>

@@ -15,15 +15,19 @@ export const navLinks = [
     ]
   },
   {
+    url: '/services',
+    text: 'Services'
+  },
+  {
     url: '/support',
     text: 'OnBoarding & Support'
   },
   {
     url: '/articles',
-    text: 'News'
+    text: 'Education'
   },
   {
     url: '/about',
     text: 'About'
-  },
+  }
 ]

@@ -9,7 +9,7 @@ import { DateTime } from 'luxon'
 import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import { NextSeo } from 'next-seo'
 import Button from '../components/Button/Button.component'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SpinnerSmall from '../components/Spinner/SpinnerSmall.component'
 
 export default function Articles({ articles, categories }) {
@@ -29,6 +29,10 @@ export default function Articles({ articles, categories }) {
   let publishedDate = DateTime.fromISO(latestPost.publishedAt).toLocaleString(
     DateTime.DATE_MED
   )
+  let timeoutId
+  useEffect(() => {
+    return () => clearTimeout(timeoutId)
+  }, [])
 
   function searchSubmitHandler(e) {
     e.preventDefault()
@@ -45,7 +49,7 @@ export default function Articles({ articles, categories }) {
 
         setSearchLoading(false)
         setNoArticles(true)
-        setTimeout(function () {
+        timeoutId = setTimeout(function () {
           setNoArticles(false)
         }, 5000)
       })
