@@ -14,11 +14,6 @@ export default function ProductRow({ product }) {
 
   return (
     <div className={styles.productRowContainer}>
-      <div className={styles['container__wrapper']}>
-        <div className={styles['container__ribbon']}>
-          {product.price === 0 ? 'Free' : '$' + currency(product.price)}
-        </div>
-      </div>
       <div className={clsx(styles.row, styles.productRow)} key={product.id}>
         <div className={styles.cell}>
           <Link linkTo={`/product/${product.slug}`}>
@@ -27,30 +22,34 @@ export default function ProductRow({ product }) {
               experience={product?.experience.map((e) => e.experience)}
             />
           </Link>
+          <div className='text-acccent mt-1'>
+            {product.price === 0 ? 'Free' : product.price}
+          </div>
         </div>
 
         <div className={styles.productInfo}>
           <div>
-            <span className='fs-500 bold'>{product.name}</span>
-            <p className='fs-300'>
-              <Link linkTo={product.setupGuideLink} newTab>
-                <FontAwesomeIcon icon={faInfoCircle} />
-                <span className='ml'>
-                  <u>View Setup Guide</u>
-                </span>
-              </Link>
-            </p>
-          </div>
+            <h2 className='bold mb-1'>Features</h2>
 
-          <div>
-            <h3 className='bold fs-300 mt-1'>Features</h3>
-            <div className='ml-1 mt'>
+            <div>
+              {/* <span className='fs-500 bold'>{product.name}</span> */}
+              <p className='fs-300'>
+                <Link linkTo={product.setupGuideLink} newTab>
+                  <FontAwesomeIcon icon={faInfoCircle} />
+                  <span className='ml'>
+                    <u>View Setup Guide</u>
+                  </span>
+                </Link>
+              </p>
+            </div>
+
+            <div className='mt'>
               <List items={product?.features?.map((f) => f.feature)} />
             </div>
           </div>
 
           <div className={styles.controls}>
-            <div className='mt-1'>
+            <div className='mt-2'>
               <Link linkTo={`/product/${product.slug}`}>
                 <Button type='outlined' fullWidth>
                   More Info
