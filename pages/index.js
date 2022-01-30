@@ -31,6 +31,7 @@ import {
 import { fetchAPI } from '../lib/api'
 
 export default function Home({ seo, salesAndDownloads, testimonials }) {
+  console.log(testimonials);
   // Testimonial carousel helper functions start
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false })
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
@@ -443,9 +444,9 @@ export default function Home({ seo, salesAndDownloads, testimonials }) {
 export async function getStaticProps(context) {
   const global = await fetchAPI('/global');
   const salesAndDownloads = await fetchAPI('/sales-and-downloads');
-  // const testimonials = await fetchAPI('/testimonials');
-  const response = await fetch('http://localhost:1337/testimonials');
-  const testimonials = await response.json();
+  const testimonials = await fetchAPI('/testimonials');
+  // const response = await fetch('http://localhost:1337/testimonials');
+  // const testimonials = await response.json();
   return {
     props: {
       seo: global?.defaultSeo,
