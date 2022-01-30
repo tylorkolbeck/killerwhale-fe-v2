@@ -79,7 +79,11 @@ export default function Services({ services }) {
                 return (
                   <div className={styles.serviceItem} key={service.id}>
                     <div className={styles.serviceCard}>
-                      <a href={service?.booking_url} target='_blank'>
+                      <a
+                        href={service?.booking_url}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
                         <ServiceCard
                           name={service.name}
                           price={service.price}
@@ -95,7 +99,11 @@ export default function Services({ services }) {
                         )}
                       />
                       <div className='mt-2'>
-                        <a href={service?.booking_url} target='_blank'>
+                        <a
+                          href={service?.booking_url}
+                          target='_blank'
+                          rel='noreferrer'
+                        >
                           <Button type='cta'>Book Now</Button>
                         </a>
                       </div>
