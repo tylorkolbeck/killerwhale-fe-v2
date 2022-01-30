@@ -6,12 +6,19 @@ import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import List from '../../List/List.component'
+import currency from 'currency.js'
 
 export default function ProductRow({ product }) {
+  console.log(product)
   if (!product) return null
 
   return (
     <div className={styles.productRowContainer}>
+      <div className={styles['container__wrapper']}>
+        <div className={styles['container__ribbon']}>
+          {product.price === 0 ? 'Free' : '$' + currency(product.price)}
+        </div>
+      </div>
       <div className={clsx(styles.row, styles.productRow)} key={product.id}>
         <div className={styles.cell}>
           <Link linkTo={`/product/${product.slug}`}>

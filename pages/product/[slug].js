@@ -12,7 +12,8 @@ import {
   faExternalLinkAlt,
   faArrowLeft
 } from '@fortawesome/free-solid-svg-icons'
-import router from 'next/router'
+
+import currency from 'currency.js'
 
 const arrayOfObjectsToStrings = (array, objectKey) => {
   if (Array.isArray(array)) {
@@ -53,6 +54,11 @@ export default function product({ product }) {
         </h1>
 
         <div className={clsx(styles.productHeader, 'bg-light')}>
+          <div className={styles['container__wrapper']}>
+            <div className={styles['container__ribbon']}>
+              {product.price === 0 ? 'Free' : '$' + currency(product.price)}
+            </div>
+          </div>
           <div className='flex' style={{ flexDirection: 'column' }}>
             <a
               href={product.chLink}

@@ -7,7 +7,7 @@ import { NextSeo } from 'next-seo'
 import { fetchAPI } from '../../lib/api'
 import Markdown from '../../components/Markdown/Markdown.component'
 
-export default function about({ pageData }) {
+export default function about({ pageData, bios }) {
   const pageHeader = pageData[0]?.contentBody
 
   return (
@@ -45,7 +45,7 @@ export default function about({ pageData }) {
         <SectionHeader header='Meet Our Team' center />
       </div>
       <div className='mb-4'>
-        <Bios />
+        <Bios bios={bios} />
       </div>
     </div>
   )
@@ -53,9 +53,11 @@ export default function about({ pageData }) {
 
 export async function getStaticProps(context) {
   const aboutData = await fetchAPI('/pages?pageName=about')
+  const bios = await fetchAPI('/bios')
   return {
     props: {
       pageData: aboutData[0].pageContent,
+      bios
     },
     revalidate: 10
   }
