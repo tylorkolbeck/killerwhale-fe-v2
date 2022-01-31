@@ -12,6 +12,7 @@ import reactDom from 'react-dom'
 const customComponentDataFetcher = {
   product: async (elementId, dataUrl) => {
     fetchAPI(dataUrl, (data) => {
+      console.log('>>>', data)
       if (data) {
         let productData = data[0]
         let element = document.getElementById(elementId)
@@ -25,13 +26,15 @@ const customComponentDataFetcher = {
                 justifyContent: 'center'
               }}
             >
-              <ProductCard
-                name={productData?.name}
-                type={productData?.type}
-                tradeDuration={productData?.tradeDuration}
-                tradeFreq={productData?.tradeFreq}
-                experience={productData?.experience}
-              />
+              <a href={productData.chLink} target='_blank'>
+                <ProductCard
+                  name={productData?.name}
+                  type={productData?.type}
+                  tradeDuration={productData?.tradeDuration}
+                  tradeFreq={productData?.tradeFreq}
+                  experience={productData?.experience}
+                />
+              </a>
             </div>,
             element
           )
