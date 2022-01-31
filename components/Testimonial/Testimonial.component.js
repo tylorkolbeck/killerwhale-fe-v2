@@ -46,7 +46,10 @@ export default function Testimonial({
                 className={styles.img1}
               />
             </p>
-            <p className='text-green bold' style={{ marginTop: '-2px', fontWeight: 'bold', color: '#24ae90'}}>
+            <p
+              className='text-green bold'
+              style={{ marginTop: '-2px', fontWeight: 'bold' }}
+            >
               {profit}{' '}
               {/* <FiArrowUpRight size={25} style={{ marginBottom: '-6px' }} /> */}
               <Image
