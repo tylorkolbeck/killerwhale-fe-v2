@@ -5,6 +5,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import Hamburger from '../../components/Hamburger/Hamburger.component'
 import MobileMenu from '../../components/MobileMenu/MobileMenu.component'
+import { useRouter } from 'next/router'
 
 export default function Navbar({ strategies }) {
   function filterProducts(filter) {
@@ -33,6 +34,8 @@ export default function Navbar({ strategies }) {
     }
   }, [hamburgerOpen])
 
+  const router = useRouter();
+
   return (
     <nav className={clsx(styles.navBar)}>
       <div className={styles.navbarContent}>
@@ -55,6 +58,7 @@ export default function Navbar({ strategies }) {
             <Link
               linkTo='/strategies-signals'
               type='nav'
+              active={router.pathname == '/strategies-signals' ? 'active' : ''}
               subLinks={
                 <>
                   <div className={clsx(styles.subLinks)}>
@@ -109,23 +113,23 @@ export default function Navbar({ strategies }) {
             </Link>
           </li>
           <li>
-            <Link linkTo='/services' type='nav'>
+            <Link linkTo='/services' type='nav' active={router.pathname == '/services' ? 'active' : ''}>
               Services
             </Link>
           </li>
           <li>
-            <Link linkTo='/support' type='nav'>
+            <Link linkTo='/support' type='nav' active={router.pathname == '/support' ? 'active' : ''}>
               OnBoarding & Support
             </Link>
           </li>
 
           <li>
-            <Link linkTo='/articles' type='nav'>
+            <Link linkTo='/articles' type='nav' active={router.pathname == '/articles' ? 'active' : ''}>
               Education
             </Link>
           </li>
           <li>
-            <Link linkTo='/about' type='nav'>
+            <Link linkTo='/about' type='nav' active={router.pathname == '/about' ? 'active' : ''}>
               About
             </Link>
           </li>
