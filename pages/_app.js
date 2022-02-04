@@ -16,9 +16,9 @@ function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout || DefaultLayout
   return (
     <>
-      <CookieConsentPopUp></CookieConsentPopUp>
       <GlobalLayout>
         <Layout>
+          <CookieConsentPopUp />
           <Component {...pageProps} />
         </Layout>
       </GlobalLayout>
