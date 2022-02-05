@@ -11,13 +11,22 @@ import Button from '../../components/Button/Button.component'
 
 export default function Services({ services }) {
   const [serviceCategories, setServiceCategories] = useState([])
-  const [catSelected, setCatSelected] = useState(2)
+  const [catSelected, setCatSelected] = useState(1)
+  const [catNameSelected, setCatNameSelected] = useState('install')
 
   const serviceImages = [
     '/images/services/tuneup_green.svg',
     '/images/services/config_blue.svg',
     '/images/services/one_on_one.svg'
   ]
+
+  const serviceDescriptions = {
+    install:
+      'Wanting to start with automated bot trading, but need some help in setting it all up? The Killer Whale Install Service, can help you setup your exchanges, create your cryptohopper account and configure your strategies/signals in no time. We take into consideration your trading style, requirements, and can guide you on the best exchange, most appropriate Cryptohopper plan, and most optimal strategy or signals to maximise your profits.',
+    tune: 'Are we in a Bear Market or a Bull Market? Do you have enough funds to reserve in the case of a market upswing, or downturn? Are you seeing multiple green positions or a sea of red? Killer Whale Tune Up Service provides a health check and review of your cryptohoper account, Killer Whale Strategy or Signal, to ensure that your configuration is tuned appropriately for current market conditions.. We do it all reserve, split and merge funds, and adjust settings to ensure configuration is adjusted for remaining capital.',
+    custom:
+      'Want a custom trading bot? Unique strategy, or have large starting capital?  We bring you Killer Whale Custom Services. This strategic VIP service leverages our team’s years of expertise in cryptocurrency, understanding the markets, trends as well as  managing our clients and our own portfolios in delivering a balanced cryptocurrency portfolio. Let Killer Whale Crypto come up with a tailor made solution specific for your needs. '
+  }
 
   function buildServiceCategories(services) {
     if (services && services.length) {
@@ -37,8 +46,9 @@ export default function Services({ services }) {
     }
   }
 
-  function setServiceCategoryHandler(id) {
+  function setServiceCategoryHandler(id, name) {
     setCatSelected(id)
+    setCatNameSelected(name.toLowerCase())
   }
 
   useEffect(() => {
@@ -47,6 +57,7 @@ export default function Services({ services }) {
   return (
     <div className='mt-3 '>
       <SectionHeader header='Services' center />
+
       <div className={clsx(styles.TypeOfTrader, 'bg-dark')}>
         {serviceCategories &&
           serviceCategories.map((cat) => {
@@ -56,7 +67,7 @@ export default function Services({ services }) {
                   [styles.selected]: cat.id === catSelected
                 })}
                 key={cat.id}
-                onClick={() => setServiceCategoryHandler(cat.id)}
+                onClick={() => setServiceCategoryHandler(cat.id, cat.name)}
               >
                 {
                   <Image
@@ -71,7 +82,14 @@ export default function Services({ services }) {
           })}
       </div>
       <div className='bg-light'>
-        <div className={styles.serviceRows}>
+        <div
+          style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '2rem' }}
+        >
+          <SectionHeader header={catNameSelected}>
+            {serviceDescriptions[catNameSelected]}
+          </SectionHeader>
+        </div>
+        <div className={styles.serviceRows} style={{ paddingBottom: '2rem' }}>
           {services &&
             services.length &&
             services.map((service) => {
