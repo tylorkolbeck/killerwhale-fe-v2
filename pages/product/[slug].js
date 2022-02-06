@@ -12,7 +12,8 @@ import {
   faExternalLinkAlt,
   faArrowLeft
 } from '@fortawesome/free-solid-svg-icons'
-import router from 'next/router'
+
+import currency from 'currency.js'
 
 const arrayOfObjectsToStrings = (array, objectKey) => {
   if (Array.isArray(array)) {
@@ -68,6 +69,9 @@ export default function product({ product }) {
                 experience={experience}
               />
             </a>
+            <div className='text-acccent mt-1'>
+              {product.price === 0 ? 'Free' : product.price}
+            </div>
           </div>
 
           <div>

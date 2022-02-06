@@ -30,3 +30,21 @@
   overflow: hidden;
   // height: 190px;
 }
+
+.img1 {
+  visibility: hidden;
+}
+
+.img2 {
+  visibility: visible;
+}
+
+@media screen and (max-width: 560px) {
+  .img1 {
+    visibility: visible;
+  }
+  
+  .img2 {
+    visibility: hidden;
+  }
+}

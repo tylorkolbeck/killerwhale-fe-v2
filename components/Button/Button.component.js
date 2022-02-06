@@ -13,6 +13,7 @@ export default function Button({
   iconEnd,
   fullWidth,
   inverted,
+  newTab,
   link
 }) {
   const router = useRouter()
