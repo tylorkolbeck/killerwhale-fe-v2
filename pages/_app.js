@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import GlobalLayout from '../layouts/global/global.layout.component'
 import DefaultLayout from '../components/layouts/DefaultLayout'
 import TagManager from 'react-gtm-module'
+import CookieConsentPopUp from '../components/CookieConsent/CookieConsent.component'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -14,11 +15,14 @@ function MyApp({ Component, pageProps }) {
   }, [])
   const Layout = Component.Layout || DefaultLayout
   return (
-    <GlobalLayout>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </GlobalLayout>
+    <>
+      <GlobalLayout>
+        <Layout>
+          <CookieConsentPopUp />
+          <Component {...pageProps} />
+        </Layout>
+      </GlobalLayout>
+    </>
   )
 }
 
