@@ -43,7 +43,7 @@ const customComponentDataFetcher = {
   }
 }
 
-export default function Markdown({ children }) {
+export default function Markdown({ children, lineHeight }) {
   function renderCustomInput(node) {
     try {
       let componentType = node?.properties?.className[0]?.split('-')[1]
@@ -62,7 +62,14 @@ export default function Markdown({ children }) {
   const components = {
     p: ({ children }) => {
       return (
-        <p style={{ lineHeight: '2rem', marginBottom: '1rem' }}>{children}</p>
+        <p
+          style={{
+            lineHeight: lineHeight ? lineHeight : '2rem',
+            marginBottom: '1rem'
+          }}
+        >
+          {children}
+        </p>
       )
     },
     h1: ({ children }) => {
