@@ -95,9 +95,16 @@ export default function Footer({ strategies }) {
                   Privacy Policy
                 </Link>
               </div>
-              <Link linkTo='/risk-disclosure' type='nav'>
-                Risk Disclosure
-              </Link>
+              <div>
+                <Link linkTo='/cookie-policy' type='nav'>
+                  Cookie Policy
+                </Link>
+              </div>
+              <div>
+                <Link linkTo='/risk-disclosure' type='nav'>
+                  Risk Disclosure
+                </Link>
+              </div>
             </div>
           </div>
 
