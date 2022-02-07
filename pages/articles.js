@@ -9,13 +9,14 @@ import { DateTime } from 'luxon'
 import SectionHeader from '../components/SectionHeader/SectionHeader.component'
 import { NextSeo } from 'next-seo'
 import Button from '../components/Button/Button.component'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SpinnerSmall from '../components/Spinner/SpinnerSmall.component'
 
 export default function Articles({ articles, categories }) {
   const [searchValue, setSearchValue] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [searchLoading, setSearchLoading] = useState(false)
+  const [noArticles, setNoArticles] = useState(false)
 
   const renderCategories = categories.map((category) => {
     return (
@@ -28,6 +29,10 @@ export default function Articles({ articles, categories }) {
   let publishedDate = DateTime.fromISO(latestPost.publishedAt).toLocaleString(
     DateTime.DATE_MED
   )
+  let timeoutId
+  useEffect(() => {
+    return () => clearTimeout(timeoutId)
+  }, [timeoutId])
 
   function searchSubmitHandler(e) {
     e.preventDefault()
@@ -43,6 +48,10 @@ export default function Articles({ articles, categories }) {
         setSearchResults(res)
 
         setSearchLoading(false)
+        setNoArticles(true)
+        timeoutId = setTimeout(function () {
+          setNoArticles(false)
+        }, 5000)
       })
       .catch((error) => {
         console.log('Error fetching articles', error)
@@ -63,7 +72,7 @@ export default function Articles({ articles, categories }) {
     <>
       <NextSeo
         title='Articles'
-        description='KillerWhaleCrypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
+        description='Killer Whale Crypto focuses on cryptocurrency trading and automated trading bots. We discuss and educate on chart patterns, technical analysis for various crypto like bitcon (BTC), Ethereum (ETH) and altcoins.
         Join us today and CHANGE THE WAY YOU TRADE'
       />
       {/* <h2 className='fs-400'>Categories</h2> */}
@@ -98,6 +107,11 @@ export default function Articles({ articles, categories }) {
           </div>
         </form>
       </div>
+      {searchResults.length == 0 && noArticles && (
+        <p className='mb-3 mt-3 fs-500' style={{ textAlign: 'center' }}>
+          No articles found for &quot;{searchValue}&quot;
+        </p>
+      )}
       {searchLoading && (
         <div className='mb' style={{ textAlign: 'center' }}>
           <SpinnerSmall />

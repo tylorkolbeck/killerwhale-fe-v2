@@ -41,9 +41,9 @@ export default function CustomLink({
         <div onClick={handleClickBtn} className={styles.dropdownWrapper}>
           <p className={[styles.nav, navClasses].join(' ')}>
             {children}
-            <span className={styles.iconEnd}>
+            <span>
               {/* <FontAwesomeIcon icon={faChevronDown} width="25" height="25" /> */}
-              <FaChevronDown />
+              <FaChevronDown style={{ marginBottom: '-3px', marginLeft: 3 }} />
             </span>
           </p>
           {dropdownVisible && (

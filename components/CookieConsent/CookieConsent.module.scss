@@ -1,0 +1,10 @@
+.cookieWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media only screen and (max-width: 500px) {
+  .cookieWrapper {
+    justify-content: center;
+  }
+}
