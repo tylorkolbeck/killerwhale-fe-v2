@@ -131,8 +131,16 @@ export default function Services({ services }) {
                         {service.price}
                       </p> */}
 
-                      <div className='mt-2 text-accent fs-300'>
-                        <Markdown>{service.disclaimer}</Markdown>
+                      <div
+                        className='mt-2 text-accent fs-300'
+                        style={{ fontSize: '14px' }}
+                      >
+                        <div className='mb-1'>
+                          <b>Disclaimer</b>
+                        </div>
+                        <Markdown lineHeight='1.2rem'>
+                          {service.disclaimer}
+                        </Markdown>
                       </div>
                     </div>
                   </div>
