@@ -30,6 +30,11 @@
     margin: 20px auto;
   }
 }
+.product {
+  background: hsl(var(--clr-light) / 0.2);
+  border-radius: 8px;
+  margin: '2rem auto';
+}
 .markdownStyling {
   position: relative;
   & img {
