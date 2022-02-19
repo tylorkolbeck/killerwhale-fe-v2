@@ -28,7 +28,7 @@ export default function Services({ services }) {
   useEffect(() => {
     const linkedServices = ['install', 'tune', 'consult']
     let serviceParam = parseInt(router.query.l)
-    setCatSelected(serviceParam ? serviceParam : 0)
+    setCatSelected(serviceParam ? serviceParam : 1)
     setCatNameSelected(linkedServices[serviceParam - 1 ? serviceParam - 1 : 0])
   }, [router.query.l])
 
