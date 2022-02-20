@@ -3,6 +3,16 @@ import styles from './Bios.module.scss'
 import { useState } from 'react'
 import Bio from './Bio/Bio.component'
 import Markdown from '../Markdown/Markdown.component'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faTwitter,
+  faYoutube,
+  faDiscord,
+  faLinkedin,
+  faFacebook,
+  faInstagram
+} from '@fortawesome/free-brands-svg-icons'
+import Link from '../Link/Link.component'
 
 // const bios = [
 //   {
@@ -143,6 +153,50 @@ export default function AboutUs({ bios }) {
                     <h4 className='fs-500 text-green bold'>
                       {bioRows[index][0]?.title}
                     </h4>
+                    <div className={styles.social}>
+                      {/* {bioRows[index][0]?.twitter ? ( */}
+                      <Link linkTo='#' type='nav' newTab>
+                        <h1 className={styles.icon}>
+                          <FontAwesomeIcon icon={faTwitter} />
+                        </h1>
+                      </Link>
+                      {/* ) : null} */}
+                      {/* {bioRows[index][0]?.facebook ? ( */}
+                      <Link linkTo='#' type='nav' newTab>
+                        <h1 className={styles.icon}>
+                          <FontAwesomeIcon icon={faFacebook} />
+                        </h1>
+                      </Link>
+                      {/* ) : null} */}
+                      {/* {bioRows[index][0]?.instagram ? ( */}
+                      <Link linkTo='#' type='nav' newTab>
+                        <h1 className={styles.icon}>
+                          <FontAwesomeIcon icon={faInstagram} />
+                        </h1>
+                      </Link>
+                      {/* ) : null} */}
+                      {/* {bioRows[index][0]?.linkedin ? ( */}
+                      <Link linkTo='#' type='nav' newTab>
+                        <h1 className={styles.icon}>
+                          <FontAwesomeIcon icon={faLinkedin} />
+                        </h1>
+                      </Link>
+                      {/* ) : null} */}
+                      {/* {bioRows[index][0]?.youtube ? ( */}
+                      <Link linkTo='#' type='nav' newTab>
+                        <h1 className={styles.icon}>
+                          <FontAwesomeIcon icon={faYoutube} />
+                        </h1>
+                      </Link>
+                      {/* ) : null} */}
+                      {/* {bioRows[index][0]?.discord ? ( */}
+                      <Link linkTo='#' type='nav' newTab>
+                        <h1 className={styles.icon}>
+                          <FontAwesomeIcon icon={faDiscord} />
+                        </h1>
+                      </Link>
+                      {/* ) : null} */}
+                    </div>
                   </div>
                   <div>
                     <Markdown>{bioRows[index][0]?.bio}</Markdown>
