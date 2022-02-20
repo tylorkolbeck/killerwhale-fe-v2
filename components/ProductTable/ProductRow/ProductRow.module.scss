@@ -229,7 +229,8 @@
 }
 
 .mobileTag {
-  visibility: hidden;
+  // visibility: hidden;
+  display: none;
 }
 
 .tag {
@@ -253,7 +254,10 @@
 
 @media screen and (max-width: 900px) {
   .mobileTag {
-    visibility: visible;
+    display: block;
+    align-items: center;
+  display: flex;
+  justify-content: center;
   }
 
   .tag {
