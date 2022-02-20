@@ -153,49 +153,33 @@ export default function AboutUs({ bios }) {
                     <h4 className='fs-500 text-green bold'>
                       {bioRows[index][0]?.title}
                     </h4>
+
                     <div className={styles.social}>
-                      {/* {bioRows[index][0]?.twitter ? ( */}
-                      <Link linkTo='#' type='nav' newTab>
-                        <h1 className={styles.icon}>
-                          <FontAwesomeIcon icon={faTwitter} />
-                        </h1>
-                      </Link>
-                      {/* ) : null} */}
-                      {/* {bioRows[index][0]?.facebook ? ( */}
-                      <Link linkTo='#' type='nav' newTab>
-                        <h1 className={styles.icon}>
-                          <FontAwesomeIcon icon={faFacebook} />
-                        </h1>
-                      </Link>
-                      {/* ) : null} */}
-                      {/* {bioRows[index][0]?.instagram ? ( */}
-                      <Link linkTo='#' type='nav' newTab>
-                        <h1 className={styles.icon}>
-                          <FontAwesomeIcon icon={faInstagram} />
-                        </h1>
-                      </Link>
-                      {/* ) : null} */}
-                      {/* {bioRows[index][0]?.linkedin ? ( */}
-                      <Link linkTo='#' type='nav' newTab>
-                        <h1 className={styles.icon}>
-                          <FontAwesomeIcon icon={faLinkedin} />
-                        </h1>
-                      </Link>
-                      {/* ) : null} */}
-                      {/* {bioRows[index][0]?.youtube ? ( */}
-                      <Link linkTo='#' type='nav' newTab>
-                        <h1 className={styles.icon}>
-                          <FontAwesomeIcon icon={faYoutube} />
-                        </h1>
-                      </Link>
-                      {/* ) : null} */}
-                      {/* {bioRows[index][0]?.discord ? ( */}
-                      <Link linkTo='#' type='nav' newTab>
-                        <h1 className={styles.icon}>
-                          <FontAwesomeIcon icon={faDiscord} />
-                        </h1>
-                      </Link>
-                      {/* ) : null} */}
+                      {bioRows[index][0]?.BioSocials?.map((bioSocials) => (
+                        <div className={styles.icon} key={bioSocials.id}>
+                          <Link linkTo={bioSocials.url} type='nav' newTab>
+                            <h1>
+                              {bioSocials.platform === 'Twitter' && (
+                                <FontAwesomeIcon icon={faTwitter} />
+                              )}
+                              {bioSocials.platform === 'FaceBook' && (
+                                <FontAwesomeIcon icon={faFacebook} />
+                              )}
+                              {bioSocials.platform === 'Linkedin' && (
+                                <FontAwesomeIcon icon={faLinkedin} />
+                              )}
+                              {bioSocials.platform === 'Youtube' && (
+                                <FontAwesomeIcon icon={faYoutube} />
+                              )}
+                              {bioSocials.platform === 'Instagram' && (
+                                <FontAwesomeIcon icon={faInstagram} />
+                              )}
+                            </h1>
+                            {console.log(`fa${bioSocials.platform}`)}
+                          </Link>
+                        </div>
+                      ))}
+                      {console.log(bioRows[index][0].BioSocials)}
                     </div>
                   </div>
                   <div>
