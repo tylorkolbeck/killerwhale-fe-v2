@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faTwitter,
   faYoutube,
-  faDiscord,
   faLinkedin,
   faFacebook,
   faInstagram
@@ -154,33 +153,29 @@ export default function AboutUs({ bios }) {
                       {bioRows[index][0]?.title}
                     </h4>
 
-                    <div className={styles.social}>
-                      {bioRows[index][0]?.BioSocials?.map((bioSocials) => (
-                        <div className={styles.icon} key={bioSocials.id}>
-                          <Link linkTo={bioSocials.url} type='nav' newTab>
-                            <h1>
-                              {bioSocials.platform === 'Twitter' && (
-                                <FontAwesomeIcon icon={faTwitter} />
-                              )}
-                              {bioSocials.platform === 'FaceBook' && (
-                                <FontAwesomeIcon icon={faFacebook} />
-                              )}
-                              {bioSocials.platform === 'Linkedin' && (
-                                <FontAwesomeIcon icon={faLinkedin} />
-                              )}
-                              {bioSocials.platform === 'Youtube' && (
-                                <FontAwesomeIcon icon={faYoutube} />
-                              )}
-                              {bioSocials.platform === 'Instagram' && (
-                                <FontAwesomeIcon icon={faInstagram} />
-                              )}
-                            </h1>
-                            {console.log(`fa${bioSocials.platform}`)}
-                          </Link>
-                        </div>
-                      ))}
-                      {console.log(bioRows[index][0].BioSocials)}
-                    </div>
+                    {bioRows[index][0]?.BioSocials?.map((bioSocials) => (
+                      <div className={styles.icon} key={bioSocials.id}>
+                        <Link linkTo={bioSocials.url} type='nav' newTab>
+                          <h1>
+                            {bioSocials.platform === 'Twitter' && (
+                              <FontAwesomeIcon icon={faTwitter} />
+                            )}
+                            {bioSocials.platform === 'FaceBook' && (
+                              <FontAwesomeIcon icon={faFacebook} />
+                            )}
+                            {bioSocials.platform === 'LinkedIn' && (
+                              <FontAwesomeIcon icon={faLinkedin} />
+                            )}
+                            {bioSocials.platform === 'YouTube' && (
+                              <FontAwesomeIcon icon={faYoutube} />
+                            )}
+                            {bioSocials.platform === 'Instagram' && (
+                              <FontAwesomeIcon icon={faInstagram} />
+                            )}
+                          </h1>
+                        </Link>
+                      </div>
+                    ))}
                   </div>
                   <div>
                     <Markdown>{bioRows[index][0]?.bio}</Markdown>
