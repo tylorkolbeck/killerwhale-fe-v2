@@ -9,11 +9,21 @@ import List from '../../List/List.component'
 import currency from 'currency.js'
 
 export default function ProductRow({ product }) {
-  console.log(product)
   if (!product) return null
 
   return (
     <div className={styles.productRowContainer}>
+      <div
+        className={clsx(
+          'text-acccent',
+          styles.priceTag,
+          styles.swing,
+          styles.tag
+        )}
+        style={{ width: '4em' }}
+      >
+        {product.price === 0 ? 'Free' : product.price.replace('/', '')}
+      </div>
       <div className={clsx(styles.row, styles.productRow)} key={product.id}>
         <div className={styles.cell}>
           <Link linkTo={`/product/${product.slug}`}>
@@ -22,7 +32,15 @@ export default function ProductRow({ product }) {
               experience={product?.experience.map((e) => e.experience)}
             />
           </Link>
-          <div className='text-acccent mt-1'>
+          <div
+            className={clsx(
+              'text-acccent',
+              'mt-1',
+              styles.priceTag,
+              styles.swing,
+              styles.mobileTag
+            )}
+          >
             {product.price === 0 ? 'Free' : product.price}
           </div>
         </div>
