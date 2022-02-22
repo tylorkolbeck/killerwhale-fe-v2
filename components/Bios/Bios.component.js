@@ -157,19 +157,20 @@ export default function AboutUs({ bios }) {
                       <div className={styles.icon} key={bioSocials.id}>
                         <Link linkTo={bioSocials.url} type='nav' newTab>
                           <h1>
-                            {bioSocials.platform === 'Twitter' && (
-                              <FontAwesomeIcon icon={faTwitter} />
-                            )}
-                            {bioSocials.platform === 'FaceBook' && (
+                            {bioSocials.platform.toLowerCase() ===
+                              'twitter' && <FontAwesomeIcon icon={faTwitter} />}
+                            {bioSocials.platform.toLowerCase() ===
+                              'facebook' && (
                               <FontAwesomeIcon icon={faFacebook} />
                             )}
-                            {bioSocials.platform === 'LinkedIn' && (
+                            {bioSocials.platform.toLowerCase() ===
+                              'linkedin' && (
                               <FontAwesomeIcon icon={faLinkedin} />
                             )}
-                            {bioSocials.platform === 'YouTube' && (
-                              <FontAwesomeIcon icon={faYoutube} />
-                            )}
-                            {bioSocials.platform === 'Instagram' && (
+                            {bioSocials.platform.toLowerCase() ===
+                              'youtube' && <FontAwesomeIcon icon={faYoutube} />}
+                            {bioSocials.platform.toLowerCase() ===
+                              'instagram' && (
                               <FontAwesomeIcon icon={faInstagram} />
                             )}
                           </h1>
