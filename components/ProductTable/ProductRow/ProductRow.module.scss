@@ -111,7 +111,7 @@
 .priceTag {
   background: var(--price-tag-background);
   color: #fff;
-
+  cursor: default;
   /* Center the price */
   align-items: center;
   display: flex;
@@ -220,7 +220,7 @@
 //   position:relative;
 // }
 
-.swing:hover{
+.swing:hover {
   // -webkit-transform-origin: top center;
   // transform-origin: top center;
   -webkit-animation-name: swing;
@@ -256,8 +256,8 @@
   .mobileTag {
     display: block;
     align-items: center;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
   }
 
   .tag {
