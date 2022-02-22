@@ -67,6 +67,19 @@ export default function Footer({ strategies }) {
             </div>
 
             <div className={styles.linkCategory}>
+              <h3 className='fs-400 ff-serif uppercase'>Services</h3>
+              <Link linkTo='/services?l=1' type='nav'>
+                Install
+              </Link>
+              <Link linkTo='/services?l=2' type='nav'>
+                Tune
+              </Link>
+              <Link linkTo='/services?l=3' type='nav'>
+                Consult
+              </Link>
+            </div>
+
+            <div className={styles.linkCategory}>
               <h3 className='fs-400 ff-serif uppercase'>Links</h3>
               <Link
                 linkTo='https://support.killerwhalecrypto.com/hc/en-us'
