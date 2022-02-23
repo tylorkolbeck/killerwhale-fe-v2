@@ -5,8 +5,7 @@ import styles from './Markdown.module.scss'
 import { getStrapiMedia } from '../../utils/media'
 import rehypeRaw from 'rehype-raw'
 import { fetchAPI } from '../../lib/api'
-
-import ProductCard from '../ProductCard/ProductCard.component'
+import ProductRow from '../ProductTable/ProductRow/ProductRow.component'
 import reactDom from 'react-dom'
 
 const customComponentDataFetcher = {
@@ -18,22 +17,8 @@ const customComponentDataFetcher = {
 
         if (productData) {
           reactDom.render(
-            <div
-              style={{
-                margin: '2rem auto',
-                display: 'flex',
-                justifyContent: 'center'
-              }}
-            >
-              <a href={productData.chLink} target='_blank' rel='noreferrer'>
-                <ProductCard
-                  name={productData?.name}
-                  type={productData?.type}
-                  tradeDuration={productData?.tradeDuration}
-                  tradeFreq={productData?.tradeFreq}
-                  experience={productData?.experience}
-                />
-              </a>
+            <div className={styles.product}>
+              <ProductRow product={productData} />
             </div>,
             element
           )
