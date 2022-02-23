@@ -22,7 +22,6 @@ export default function AboutUs({ bios }) {
     if (!bioShown && bioRows && bioPairs) {
       onViewBio(1, 0)
     }
-    console.log(bioRows)
   }, [bioRows, bioPairs])
 
   useEffect(() => {
