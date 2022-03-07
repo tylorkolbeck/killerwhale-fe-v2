@@ -234,10 +234,12 @@
 }
 
 .tag {
-  transform: rotate(45deg);
+  // transform: rotate(45deg);
   visibility: visible;
-  margin-top: 1.2em;
-  margin-left: 0.5em;
+  margin-top: 0.5em;
+  margin-left: 1.5em;
+  margin-bottom: -1em;
+  width: fit-content;
 }
 
 @media screen and (min-width: 900px) {
