@@ -9,39 +9,40 @@ import List from '../../List/List.component'
 import currency from 'currency.js'
 
 export default function ProductRow({ product }) {
-  console.log(product)
   if (!product) return null
 
   return (
     <div className={styles.productRowContainer}>
       <div
-            className={clsx(
-              'text-acccent',
-              styles.priceTag,
-              styles.swing,
-              styles.tag
-            )}
-            style={{ width: '4em'}}
-          >
-            {product.price === 0 ? 'Free' : product.price.replace('/', '')}
-          </div>
+        className={clsx(
+          'text-acccent',
+          styles.priceTag,
+          styles.swing,
+          styles.tag
+        )}
+        style={{ width: '4em' }}
+      >
+        {product.price === 0 ? 'Free' : product.price.replace('/', '')}
+      </div>
       <div className={clsx(styles.row, styles.productRow)} key={product.id}>
         <div className={styles.cell}>
-          <Link linkTo={`/product/${product.slug}`}>
+          <a href={`/product/${product.slug}`}>
             <ProductCard
               {...product}
               experience={product?.experience.map((e) => e.experience)}
             />
-          </Link>
-          <div
-            className={clsx(
-              'text-acccent',
-              'mt-1',
-              styles.priceTag,
-              styles.swing,
-              styles.mobileTag
-            )}
-          >
+
+            <div
+              className={clsx(
+                'text-acccent',
+                'mt-1',
+                styles.priceTag,
+                styles.swing,
+                styles.mobileTag
+              )}
+            ></div>
+          </a>
+          <div className='text-acccent mt-1'>
             {product.price === 0 ? 'Free' : product.price}
           </div>
         </div>
@@ -69,11 +70,11 @@ export default function ProductRow({ product }) {
 
           <div className={styles.controls}>
             <div className='mt-2'>
-              <Link linkTo={`/product/${product.slug}`}>
+              <a href={`/product/${product.slug}`} type='nav'>
                 <Button type='outlined' fullWidth>
                   More Info
                 </Button>
-              </Link>
+              </a>
             </div>
             <div className='mt-1'>
               <a href={product.chLink} target='_blank' rel='noreferrer'>

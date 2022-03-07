@@ -16,6 +16,11 @@
     gap: 2rem;
     margin: 0 auto;
   }
+
+  .icon {
+    display: inline-block;
+    margin: 0 1rem 1rem 0;
+  }
 }
 
 @media screen and (min-width: 600px) {
