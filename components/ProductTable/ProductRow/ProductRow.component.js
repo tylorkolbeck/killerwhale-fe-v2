@@ -13,15 +13,35 @@ export default function ProductRow({ product }) {
 
   return (
     <div className={styles.productRowContainer}>
+      <div
+        className={clsx(
+          'text-acccent',
+          styles.priceTag,
+          styles.swing,
+          styles.tag
+        )}
+        // style={{ width: '4em' }}
+      >
+        {/* {product.price === 0 ? 'Free' : product.price.replace (/^/,'$')} */}
+        {product.price[0] !== '$' ? product.price.replace (/^/,'$') : product.price}
+      </div>
       <div className={clsx(styles.row, styles.productRow)} key={product.id}>
         <div className={styles.cell}>
-          <a href={`/product/${product.slug}`}>
+          <Link linkTo={`/product/${product.slug}`}>
             <ProductCard
               {...product}
               experience={product?.experience.map((e) => e.experience)}
             />
-          </a>
-          <div className='text-acccent mt-1'>
+          </Link>
+          <div
+            className={clsx(
+              'text-acccent',
+              'mt-1',
+              styles.priceTag,
+              styles.swing,
+              styles.mobileTag
+            )}
+          >
             {product.price === 0 ? 'Free' : product.price}
           </div>
         </div>
