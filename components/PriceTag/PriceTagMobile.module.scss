@@ -1,0 +1,10 @@
+.mobilePriceTag {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .mobilePriceTag {
+    display: block;
+    width: 100%;
+  }
+}

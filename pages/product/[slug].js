@@ -2,6 +2,8 @@ import clsx from 'clsx'
 import styles from './product.module.scss'
 import Button from '../../components/Button/Button.component'
 import ProductCard from '../../components/ProductCard/ProductCard.component'
+import PriceTag from '../../components/PriceTag/PriceTag.component'
+import PriceTagMobile from '../../components/PriceTag/PriceTagMobile.component'
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component'
 import Link from '../../components/Link/Link.component'
 import List from '../../components/List/List.component'
@@ -54,6 +56,7 @@ export default function product({ product }) {
         </h1>
 
         <div className={clsx(styles.productHeader, 'bg-light')}>
+          <PriceTag price={product.price} />
           <div className='flex' style={{ flexDirection: 'column' }}>
             <a
               href={product.chLink}
@@ -70,7 +73,7 @@ export default function product({ product }) {
               />
             </a>
             <div className='text-acccent mt-1'>
-              {product.price === 0 ? 'Free' : product.price}
+              <PriceTagMobile product={product} />
             </div>
           </div>
 

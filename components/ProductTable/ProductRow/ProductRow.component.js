@@ -1,5 +1,7 @@
 import styles from './ProductRow.module.scss'
 import ProductCard from '../../ProductCard/ProductCard.component'
+import PriceTag from '../../PriceTag/PriceTag.component'
+import PriceTagMobile from '../../PriceTag/PriceTagMobile.component'
 import Button from '../../Button/Button.component'
 import Link from '../../Link/Link.component'
 import clsx from 'clsx'
@@ -13,18 +15,7 @@ export default function ProductRow({ product }) {
 
   return (
     <div className={styles.productRowContainer}>
-      <div
-        className={clsx(
-          'text-acccent',
-          styles.priceTag,
-          styles.swing,
-          styles.tag
-        )}
-        // style={{ width: '4em' }}
-      >
-        {/* {product.price === 0 ? 'Free' : product.price.replace (/^/,'$')} */}
-        {product.price[0] !== '$' ? product.price.replace (/^/,'$') : product.price}
-      </div>
+      <PriceTag price={product.price} />
       <div className={clsx(styles.row, styles.productRow)} key={product.id}>
         <div className={styles.cell}>
           <Link linkTo={`/product/${product.slug}`}>
@@ -33,16 +24,8 @@ export default function ProductRow({ product }) {
               experience={product?.experience.map((e) => e.experience)}
             />
           </Link>
-          <div
-            className={clsx(
-              'text-acccent',
-              'mt-1',
-              styles.priceTag,
-              styles.swing,
-              styles.mobileTag
-            )}
-          >
-            {product.price === 0 ? 'Free' : product.price}
+          <div className='text-acccent mt-1'>
+            <PriceTagMobile product={product} />
           </div>
         </div>
 
