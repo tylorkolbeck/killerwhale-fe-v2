@@ -118,10 +118,20 @@
       grid-template-columns: 1fr 1fr;
     }
   }
-
-  .productInfo {
-  }
 }
+
+// @media screen and (max-width: 900px) {
+//   .mobileTag {
+//     display: block;
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+//   }
+
+//   .tag {
+//     display: none;
+//   }
+// }
 
 .container__wrapper {
   /* Displayed at the top left corner */

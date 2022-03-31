@@ -1,5 +1,7 @@
 import styles from './ProductRow.module.scss'
 import ProductCard from '../../ProductCard/ProductCard.component'
+import PriceTag from '../../PriceTag/PriceTag.component'
+import PriceTagMobile from '../../PriceTag/PriceTagMobile.component'
 import Button from '../../Button/Button.component'
 import Link from '../../Link/Link.component'
 import clsx from 'clsx'
@@ -13,16 +15,17 @@ export default function ProductRow({ product }) {
 
   return (
     <div className={styles.productRowContainer}>
+      <PriceTag price={product.price} />
       <div className={clsx(styles.row, styles.productRow)} key={product.id}>
         <div className={styles.cell}>
-          <a href={`/product/${product.slug}`}>
+          <Link linkTo={`/product/${product.slug}`}>
             <ProductCard
               {...product}
               experience={product?.experience.map((e) => e.experience)}
             />
-          </a>
+          </Link>
           <div className='text-acccent mt-1'>
-            {product.price === 0 ? 'Free' : product.price}
+            <PriceTagMobile product={product} />
           </div>
         </div>
 
