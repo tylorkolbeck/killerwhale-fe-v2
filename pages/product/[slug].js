@@ -15,7 +15,7 @@ import {
   faArrowLeft
 } from '@fortawesome/free-solid-svg-icons'
 
-import currency from 'currency.js'
+import Markdown from '../../components/Markdown/Markdown.component'
 
 const arrayOfObjectsToStrings = (array, objectKey) => {
   if (Array.isArray(array)) {
@@ -185,7 +185,12 @@ export default function product({ product }) {
         <div className='bg-dark'>
           <div className='mt-2'>
             <SectionHeader header='Description' hSize='s'>
-              <p className='text-accent'>{product.description}</p>
+              {product?.descriptionEnhanced && (
+                <Markdown>{product.descriptionEnhanced}</Markdown>
+              )}
+              {!product?.descriptionEnhanced && (
+                <p className='text-accent'>{product.description}</p>
+              )}
             </SectionHeader>
           </div>
         </div>

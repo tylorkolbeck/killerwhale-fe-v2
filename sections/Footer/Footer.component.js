@@ -167,9 +167,8 @@ export default function Footer({ strategies }) {
           <div className={styles.socialWrapper}>
             {socialLinks &&
               socialLinks.map((social) => {
-                console.log(social)
                 return (
-                  <div>
+                  <div key={social.id}>
                     <p>
                       <FontAwesomeIcon
                         icon={iconMap[social.name.toLowerCase()]}
