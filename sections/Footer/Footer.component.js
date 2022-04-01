@@ -7,12 +7,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faTwitter,
   faYoutube,
-  faDiscord
+  faDiscord,
+  faInstagram,
+  faFacebook
 } from '@fortawesome/free-brands-svg-icons'
 import useSWR from 'swr'
 import { fetchAPI } from '../../lib/api'
+import { getStrapiMedia } from '../../utils/media'
 // import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 // import { strategies } from '../../data/strategies'
+
+const iconMap = {
+  discord: faDiscord,
+  youtube: faYoutube,
+  twitter: faTwitter,
+  facebook: faFacebook,
+  instagram: faInstagram
+}
 
 const fetcher = (url) => fetchAPI(url).then((res) => res.Links)
 
@@ -20,6 +31,11 @@ export default function Footer({ strategies }) {
   const { data: affiliateLinks, error: affiliateLinksError } = useSWR(
     '/affiliate-links',
     fetcher
+  )
+
+  const { data: socialLinks, error: socialLinksEroor } = useSWR(
+    '/social-links',
+    (url) => fetchAPI(url).then((res) => res?.socialLinks)
   )
 
   return (
@@ -149,46 +165,22 @@ export default function Footer({ strategies }) {
         <div className='flow'>
           <h4 className='uppercase fs-500 ff-good'>Follow Us</h4>
           <div className={styles.socialWrapper}>
-            <div>
-              <p>
-                <FontAwesomeIcon icon={faTwitter} />
-              </p>
-              <Link
-                linkTo='https://twitter.com/DylanShively6'
-                type='nav'
-                newTab
-              >
-                Twitter
-              </Link>
-            </div>
-            <div>
-              <p>
-                <FontAwesomeIcon icon={faYoutube} />
-              </p>
-              <Link
-                linkTo='https://www.youtube.com/channel/UCnd-fXjzI__H_gtfdfTb3tw'
-                type='nav'
-                newTab
-              >
-                YouTube
-              </Link>
-            </div>
-            {/* <div>
-              <p>
-                <FontAwesomeIcon icon={faFacebook} />
-              </p>
-              <Link linkTo='/' type='nav'>
-                Facebook
-              </Link>
-            </div> */}
-            <div>
-              <p>
-                <FontAwesomeIcon icon={faDiscord} />
-              </p>
-              <Link linkTo='https://discord.gg/UNXZhFVnrA' type='nav' newTab>
-                Discord
-              </Link>
-            </div>
+            {socialLinks &&
+              socialLinks.map((social) => {
+                console.log(social)
+                return (
+                  <div>
+                    <p>
+                      <FontAwesomeIcon
+                        icon={iconMap[social.name.toLowerCase()]}
+                      />
+                    </p>
+                    <Link linkTo={social.link} type='nav' newTab>
+                      {social?.name}
+                    </Link>
+                  </div>
+                )
+              })}
           </div>
         </div>
 
