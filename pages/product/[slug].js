@@ -127,23 +127,24 @@ export default function product({ product }) {
                     <div style={{ marginLeft: '1rem' }}>
                       {requirements && (
                         <List
+                          parseLinks={true}
                           items={[
-                            ...requirements,
+                            ...requirements
 
-                            <Link
-                              linkTo='https://www.kucoin.com/ucenter/signup?rcode=sdr57y'
-                              newTab
-                              key={'kucoin_link'}
-                            >
-                              A crypto exchange account: KuCoin
-                            </Link>,
-                            <Link
-                              key='ch_link'
-                              linkTo='https://www.cryptohopper.com/?atid=14880'
-                              newTab
-                            >
-                              Cryptohopper Account (any subscription)
-                            </Link>
+                            // <Link
+                            //   linkTo='https://www.kucoin.com/ucenter/signup?rcode=sdr57y'
+                            //   newTab
+                            //   key={'kucoin_link'}
+                            // >
+                            //   A crypto exchange account: KuCoin
+                            // </Link>,
+                            // <Link
+                            //   key='ch_link'
+                            //   linkTo='https://www.cryptohopper.com/?atid=14880'
+                            //   newTab
+                            // >
+                            //   Cryptohopper Account (any subscription)
+                            // </Link>
                           ]}
                         />
                       )}
