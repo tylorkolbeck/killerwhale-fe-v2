@@ -1,9 +1,8 @@
 .hero {
+  position: relative;
   width: 100%;
   min-height: 90vh; // account for navbar height of 10vh
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: none;
   display: flex;
   flex-direction: column;
   align-content: space-between;
@@ -11,16 +10,47 @@
   background-attachment: fixed;
 }
 
+.videoWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+
+  video {
+    object-fit: fill;
+    width: 100%;
+    max-height: 90vh;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgb(2,0,36);
+  background:  linear-gradient(0deg, rgba(2,0,36,0.7646768179928222) 0%, rgba(7,18,29,0.8235003474045868) 100%, rgba(7,18,29,1) 100%, rgba(7,18,29,0.7142566499255952) 100%);
+}
+
+.statsBarWrapper {
+  position: relative;
+  bottom: 0;
+}
+
 .heroSection {
   display: grid;
   width: 100%;
   grid-template-areas:
-    'herotext'
+    'herotext'  
     'infocards';
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 10vh;
   padding: 0 4rem;
+  z-index: 1;
 }
 
 .heroText {
@@ -67,6 +97,26 @@
     }
     // background: red;
   }
+}
+
+@media screen and (min-width: 600px) {
+  .hero {
+    background-color: red !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+}
+
+@media screen and (max-width: 601px) {
+  .videoWrapper {
+    display: none;
+  }
+  // .videoWrapper {
+  //   display: block;
+  // }
 }
 
 // xs, extra-small: 0px

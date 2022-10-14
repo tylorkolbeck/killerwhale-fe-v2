@@ -9,8 +9,16 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 export default function Hero({ bgImage, salesAndDownloads }) {
+  console.log('>>>>', bgImage)
   return (
     <div className={styles.hero} style={{ backgroundImage: `url(${bgImage})` }}>
+      <div className={styles.videoWrapper}>
+        <div className={styles.overlay}></div>
+        <video id='background-video' autoPlay loop muted poster={bgImage}>
+          <source src='/videos/homepage_hero.mp4' type='video/mp4'></source>
+        </video>
+      </div>
+
       <section className={clsx(styles.heroSection, 'container')}>
         <div className={clsx(styles.heroText, 'flow')}>
           <h1 className={clsx('fs-400 uppercase ff-good')}>
@@ -45,7 +53,7 @@ export default function Hero({ bgImage, salesAndDownloads }) {
               <span className='fs-200'>
                 <Link
                   linkTo='https://www.cryptohopper.com/marketplace/search?q=killer+whale'
-                  iconEnd={<FaArrowRight style={{marginBottom: "-3px"}}/>}
+                  iconEnd={<FaArrowRight style={{ marginBottom: '-3px' }} />}
                 >
                   View Marketplace
                 </Link>
@@ -66,7 +74,7 @@ export default function Hero({ bgImage, salesAndDownloads }) {
               <span className='fs-200'>
                 <Link
                   linkTo='/articles'
-                  iconEnd={<FaArrowRight style={{marginBottom: "-3px"}}/>}
+                  iconEnd={<FaArrowRight style={{ marginBottom: '-3px' }} />}
                 >
                   News & Articles
                 </Link>
@@ -87,7 +95,7 @@ export default function Hero({ bgImage, salesAndDownloads }) {
               <span className='fs-200'>
                 <Link
                   linkTo='https://discord.gg/UNXZhFVnrA'
-                  iconEnd={<FaArrowRight style={{marginBottom: "-3px"}}/>}
+                  iconEnd={<FaArrowRight style={{ marginBottom: '-3px' }} />}
                   newTab
                 >
                   Visit Discord
@@ -97,12 +105,7 @@ export default function Hero({ bgImage, salesAndDownloads }) {
           </InfoCard>
         </div>
       </section>
-      <div
-        style={{
-          position: 'relative',
-          bottom: 0
-        }}
-      >
+      <div className={styles.statsBarWrapper}>
         <StatsBar salesAndDownloads={salesAndDownloads} />
       </div>
     </div>

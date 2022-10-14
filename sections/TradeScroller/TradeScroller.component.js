@@ -7,6 +7,7 @@ export default function TradeScroller() {
   const tweetFetcher = (url) => fetch(url).then((r) => r.json())
 
   const { data, error } = useSWR('/api/twitter-feed', tweetFetcher)
+  console.log('>>>', data)
 
   function formatTweet(text, id) {
     let stringArray = text.split(' ')
