@@ -9,13 +9,15 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 export default function Hero({ bgImage, salesAndDownloads }) {
-  console.log('>>>>', bgImage)
   return (
-    <div className={styles.hero} style={{ backgroundImage: `url(${bgImage})` }}>
+    <div
+      className={styles.hero}
+      style={{ backgroundImage: `url(${bgImage})`, zIndex: -1 }}
+    >
       <div className={styles.videoWrapper}>
         <div className={styles.overlay}></div>
         <video id='background-video' autoPlay loop muted poster={bgImage}>
-          <source src='/videos/homepage_hero.mp4' type='video/mp4'></source>
+          <source src='/videos/homepage_video_2.mp4' type='video/mp4'></source>
         </video>
       </div>
 

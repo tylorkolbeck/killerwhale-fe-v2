@@ -17,6 +17,7 @@ export default function Hamburger({ isOpen }) {
           background-color: rgb(250, 249, 246);
           transform-origin: 1px;
           transition: all 0.3s linear;
+          z-index: 26;
         }
         .burger1 {
           transform: ${isOpen ? 'rotate(45deg)' : 'rotate(0)'};
