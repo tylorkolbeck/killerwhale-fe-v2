@@ -16,12 +16,14 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
 
 
   video {
     object-fit: fill;
     width: 100%;
     max-height: 90vh;
+    pointer-events:none;
   }
 }
 
@@ -29,6 +31,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  pointer-events: none;
   right: 0;
   left: 0;
   background: rgb(2,0,36);
@@ -50,7 +53,7 @@
   gap: 2rem;
   margin-top: 10vh;
   padding: 0 4rem;
-  z-index: 1;
+  position: relative
 }
 
 .heroText {
@@ -113,6 +116,8 @@
 @media screen and (max-width: 601px) {
   .videoWrapper {
     display: none;
+    pointer-events: none;
+    z-index: 1;
   }
   // .videoWrapper {
   //   display: block;

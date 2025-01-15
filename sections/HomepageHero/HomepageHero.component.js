@@ -12,16 +12,9 @@ export default function Hero({ bgImage, salesAndDownloads }) {
   return (
     <div
       className={styles.hero}
-      style={{ backgroundImage: `url(${bgImage})`, zIndex: -1 }}
+      style={{ backgroundImage: `url(${bgImage})`, zIndex: 1 }}
     >
-      <div className={styles.videoWrapper}>
-        <div className={styles.overlay}></div>
-        <video id='background-video' autoPlay loop muted poster={bgImage}>
-          <source src='/videos/homepage_video_2.mp4' type='video/mp4'></source>
-        </video>
-      </div>
-
-      <section className={clsx(styles.heroSection, 'container')}>
+      <section className={clsx(styles.heroSection, 'container')} style={{zIndex: 100}}>
         <div className={clsx(styles.heroText, 'flow')}>
           <h1 className={clsx('fs-400 uppercase ff-good')}>
             Killer Whale Crypto
@@ -107,6 +100,12 @@ export default function Hero({ bgImage, salesAndDownloads }) {
           </InfoCard>
         </div>
       </section>
+      <div className={styles.videoWrapper}>
+        <div className={styles.overlay}></div>
+        <video id='background-video' autoPlay loop muted poster={bgImage}>
+          <source src='/videos/homepage_video_2.mp4' type='video/mp4'></source>
+        </video>
+      </div>
       <div className={styles.statsBarWrapper}>
         <StatsBar salesAndDownloads={salesAndDownloads} />
       </div>
